@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
-const yaml = require('js-yaml');
+const yaml = require('js-yaml')
+const _ = require('lodash')
 
 function readDoc(file) {
     const data = fs.readFileSync(file, 'utf8')
@@ -13,22 +14,18 @@ function readDoc(file) {
 
 function loadSiteData() {
     const config = yaml.safeLoad(fs.readFileSync('public/admin/config.yml', 'utf8'));
+    const docs = config.collections.map(c => ({
+        name: c.name,
+        docs: _.sortBy(fs.readdirSync(c.folder)
+            .filter(f => path.extname(f) === '.md')
+            .map(file => readDoc(`${c.folder}/${file}`)), ['order', 'name'])
 
-    const data = {
-        collections: {},
+
+    }))
+    return {
+        collections: _(docs).keyBy('name').mapValues('docs').value(),
         files: {}
     }
-    config.collections.map(c => fs.readdirSync(c.folder)
-        .filter(f => path.extname(f) === '.md')
-        .forEach(file => {
-            const name = c.name
-            if (!(name in data.collections)) {
-                data.collections[name] = []
-            }
-            data.collections[name].push(readDoc(`${c.folder}/${file}`))
-        }))
-
-    return data
 }
 
 export default {
@@ -53,9 +50,9 @@ export default {
                 path: '/blog',
                 component: 'src/containers/Blog',
                 getData: () => ({
-                    posts: data.collections.blog
+                    posts: data.collections.post
                 }),
-                children: data.collections.blog.map(post => ({
+                children: data.collections.post.map(post => ({
                     path: `/post/${post.data.slug}`,
                     component: 'src/containers/Post',
                     getData: () => ({
