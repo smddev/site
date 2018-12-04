@@ -13,8 +13,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Order", name: "order", widget: "number", required: "false"}
-      - {label: "Cover", name: "cover", widget: "image", required: "false"}
+      - {label: "Order", name: "order", widget: "number", required: false}
+      - {label: "Cover", name: "cover", widget: "image", required: false}
 
   - name: "project"
     label: "Project"
@@ -23,21 +23,19 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Order", name: "order", widget: "number", required: "false"}
-      - {label: "Cover", name: "cover", widget: "image", required: "false"}
+      - {label: "Order", name: "order", widget: "number", required: false}
+      - {label: "Cover", name: "cover", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Industries"
         name: "industries"
         widget: "list"
         field:
           - label: "Industry"
-            name: "author"
+            name: "industry"
             widget: "relation"
             collection: "industry"
-            searchFields: ["title"]
+            searchFields: ["title",]
             valueField: "title"
-            displayFields: ["title"]
-
   - name: "post"
     label: "Post"
     folder: "src/content/posts"
