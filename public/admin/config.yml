@@ -12,9 +12,9 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Order", name: "order", widget: "number", required: "false"}
+      - {label: "Cover", name: "cover", widget: "image", required: "false"}
 
   - name: "project"
     label: "Project"
@@ -22,9 +22,9 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Order", name: "order", widget: "number", required: "false"}
+      - {label: "Cover", name: "cover", widget: "image", required: "false"}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Industries"
         name: "industries"
@@ -34,9 +34,9 @@ collections:
             name: "author"
             widget: "relation"
             collection: "industry"
-            searchFields: ["name"]
-            valueField: "name"
-            displayFields: ["name"]
+            searchFields: ["title"]
+            valueField: "title"
+            displayFields: ["title"]
 
   - name: "post"
     label: "Post"
