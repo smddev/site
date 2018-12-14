@@ -6,8 +6,8 @@ public_folder: "/uploads" # Folder path where uploaded files will be accessed, r
 media_library:
   name: cloudinary
   output_filename_only: true
-  cloud_name: smddev
-  api_key: 451488314613789
+  cloud_name: 'smddev'
+  api_key: '451488314613789'
 
 collections:
   - name: "industry"
