@@ -1,7 +1,7 @@
 ---
 id: '1'
 order: '0'
-title: Test
+title: Streaming IoT Analytics Platform
 cover: >-
   https://res.cloudinary.com/smddev/image/upload/v1544812685/site/project/iot.jpg
 industries:
