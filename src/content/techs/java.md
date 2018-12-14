@@ -3,6 +3,6 @@ id: '1'
 order: 0
 title: Java
 code: JAV
-image: java.png
+image: 'https://res.cloudinary.com/smddev/image/upload/v1544808858/java.png'
 ---
 
