@@ -1,10 +1,13 @@
 backend:
-#  name: git-gateway
-#  branch: master # Branch to update (optional; defaults to master)
-    name: bitbucket
-    repo: smddev/site-netlify # Path to your Bitbucket repository
+  name: bitbucket
+  repo: smddev/site-netlify # Path to your Bitbucket repository
 media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
 public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
+media_library:
+  name: cloudinary
+  output_filename_only: true
+  cloud_name: smddev
+  api_key: 451488314613789
 
 collections:
   - name: "industry"
@@ -13,18 +16,56 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Order", name: "order", widget: "number", required: false}
-      - {label: "Cover", name: "cover", widget: "image", required: false}
+      - {label: "ID", name: "id", widget: "number", default: 0}
+      - {label: "Order", name: "order", widget: "number", default: 0}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Icon", name: "icon", widget: "string", required: false}
+
+  - name: "service"
+    label: "Service"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "number", default: 0}
+      - {label: "Order", name: "order", widget: "number", default: 0}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Icon", name: "icon", widget: "string", required: false}
+
+  - name: "tech"
+    label: "Technologies"
+    folder: "src/content/techs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "number", default: 0}
+      - {label: "Order", name: "order", widget: "number", default: 0}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Code", name: "code", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+
+  - name: "member"
+    label: "Members"
+    folder: "src/content/members"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "number", default: 0}
+      - {label: "Order", name: "order", widget: "number", default: 0}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "project"
-    label: "Project"
+    label: "Projects"
     folder: "src/content/projects"
     create: true
     slug: "{{slug}}"
     fields:
+      - {label: "ID", name: "id", widget: "number", default: 0}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Order", name: "order", widget: "number", required: false}
+      - {label: "Order", name: "order", widget: "number", default: 0}
       - {label: "Cover", name: "cover", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Industries"
@@ -35,8 +76,43 @@ collections:
             name: "industry"
             widget: "relation"
             collection: "industry"
-            searchFields: ["title",]
-            valueField: "title"
+            searchFields: ["title"]
+            displayFields: ["title"]
+            valueField: "id"
+      - label: "Services"
+        name: "services"
+        widget: "list"
+        field:
+          - label: "Service"
+            name: "service"
+            widget: "relation"
+            collection: "service"
+            searchFields: ["title"]
+            displayFields: ["title"]
+            valueField: "id"
+      - label: "Technologies"
+        name: "techs"
+        widget: "list"
+        field:
+          - label: "Technology"
+            name: "tech"
+            widget: "relation"
+            collection: "tech"
+            searchFields: ["title"]
+            displayFields: ["title"]
+            valueField: "id"
+      - label: "Members"
+        name: "members"
+        widget: "list"
+        field:
+          - label: "Member"
+            name: "member"
+            widget: "relation"
+            collection: "member"
+            searchFields: ["title"]
+            displayFields: ["title"]
+            valueField: "id"
+
   - name: "post"
     label: "Post"
     folder: "src/content/posts"
@@ -48,4 +124,11 @@ collections:
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "member"
+        searchFields: ["title"]
+        displayFields: ["title"]
+        valueField: "id"
 

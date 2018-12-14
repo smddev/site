@@ -7,7 +7,9 @@ const _ = require('lodash')
 function readDoc(file) {
     const data = fs.readFileSync(file, 'utf8')
     const dataObj = matter(data)
-    dataObj.data.slug = dataObj.data.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+    dataObj.data.slug = dataObj.data.title.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/[^\w-]+/g, '')
     delete dataObj.orig
     return dataObj
 }
@@ -35,8 +37,6 @@ export default {
     }),
     getRoutes: () => {
         const data = loadSiteData()
-
-
         return [
             {
                 path: '/',
