@@ -5,9 +5,9 @@ media_folder: "public/uploads" # Media files will be stored in the repo under pu
 public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
 media_library:
   name: cloudinary
-  output_filename_only: true
-  cloud_name: 'smddev'
-  api_key: '451488314613789'
+  config:
+    cloud_name: 'smddev'
+    api_key: '451488314613789'
 
 collections:
   - name: "industry"
