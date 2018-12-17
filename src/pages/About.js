@@ -1,10 +1,20 @@
-
 import React from 'react'
-//
+import {withRouteData} from "react-static";
 
-export default () => (
-  <div>
-    <h1>This is what we're all about.</h1>
-    <p>React, static sites, performance, speed. It's the stuff that makes us tick.</p>
-  </div>
-)
+const MemberList = ({members}) =>
+    <ul>
+        {
+            members.map(s => <li key={s.data.slug}>{s.data.title}</li>)
+        }
+    </ul>
+
+export default withRouteData(({page, data}) => (
+    <div>
+        <h1>{page.data.title}</h1>
+        <p>{page.data.subtitle}</p>
+        <p>{page.data.intro}</p>
+        <p>{page.content}</p>
+        <h2>Management team</h2>
+        <MemberList members={data.members}/>
+    </div>
+))

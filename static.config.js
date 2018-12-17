@@ -16,17 +16,21 @@ function readDoc(folder, file) {
 
 function loadSiteData() {
     const config = yaml.safeLoad(fs.readFileSync('public/admin/config.yml', 'utf8'));
-    const docs = config.collections.map(c => ({
-        name: c.name,
-        docs: _.sortBy(fs.readdirSync(c.folder)
-            .filter(f => path.extname(f) === '.md')
-            .map(file => readDoc(c.folder, file)), ['order', 'name'])
+    const docs = config.collections
+        .filter(c => !!c.folder)
+        .map(c => ({
+            name: c.name,
+            docs: _.sortBy(fs.readdirSync(c.folder)
+                .filter(f => path.extname(f) === '.md')
+                .map(file => readDoc(c.folder, file)), ['order', 'name'])
+        }))
+    const pages = config.collections
+        .filter(c => !!c.files)[0].files
+        .map(f => readDoc(path.dirname(f.file), path.basename(f.file)))
 
-
-    }))
     return {
         collections: _(docs).keyBy('name').mapValues('docs').value(),
-        files: {}
+        pages: _.keyBy(pages, p => p.data.slug)
     }
 }
 
@@ -41,10 +45,24 @@ export default {
             {
                 path: '/',
                 component: `${pages}/Home`,
+                getData: () => ({
+                    page: data.pages.main,
+                    data: {
+                        projects: data.collections.project,
+                        services: data.collections.service,
+                        industries: data.collections.industry
+                    }
+                })
             },
             {
                 path: '/about',
                 component: `${pages}/About`,
+                getData: () => ({
+                    page: data.pages.about,
+                    data: {
+                        members: data.collections.member
+                    }
+                })
             },
             {
                 path: '/projects',

@@ -1,11 +1,19 @@
 import React from 'react'
-import { withSiteData } from 'react-static'
-//
-import logoImg from '../logo.png'
+import {withRouteData} from 'react-static'
+import Markdown from "react-markdown";
 
-export default withSiteData(() => (
-  <div>
-    <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
-    <img src={logoImg} alt="" style={{ display: 'block', margin: '0 auto' }} />
-  </div>
+const ServiceList = ({services}) =>
+    <ul>
+        {
+            services.map(s => <li key={s.data.slug}>{s.data.title}</li>)
+        }
+    </ul>
+
+
+export default withRouteData(({page, data}) => (
+    <div>
+        <h1>{page.data.title}</h1>
+        <ServiceList services={data.services}/>
+        <Markdown source={page.content} escapeHtml={false}/>
+    </div>
 ))
