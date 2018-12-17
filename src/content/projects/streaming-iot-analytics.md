@@ -1,15 +1,15 @@
 ---
-id: '1'
 order: '0'
 title: Streaming IoT Analytics Platform
 cover: >-
   https://res.cloudinary.com/smddev/image/upload/v1544812685/site/project/iot.jpg
 industries:
-  - '1'
+  - manufacturing
 services:
-  - '1'
+  - software-development
 techs:
-  - '1'
+  - java
+  - python
 members:
   - null
 ---
