@@ -58,7 +58,7 @@ export default {
                 }),
                 children: data.collections.post.map(post => ({
                     path: `/post/${post.data.slug}`,
-                    component: 'src/containers/Post',
+                    component: `${pages}/Post`,
                     getData: () => ({
                         post
                     }),
@@ -66,7 +66,7 @@ export default {
             },
             {
                 is404: true,
-                component: 'src/containers/404',
+                component: `${pages}/404`,
             },
         ]
     },

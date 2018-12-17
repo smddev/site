@@ -97,3 +97,21 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Author", name: "author", widget: "string", required: false}
 
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Main"
+        name: "main"
+        file: "src/content/main.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "About"
+        name: "about"
+        file: "src/content/about.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Intro", name: "intro", widget: "markdown"}
+          - {label: "Body", name: "body", widget: "markdown"}
