@@ -4,12 +4,12 @@ const matter = require('gray-matter')
 const yaml = require('js-yaml')
 const _ = require('lodash')
 
-function readDoc(file) {
-    const data = fs.readFileSync(file, 'utf8')
+const pages = 'src/pages'
+
+function readDoc(folder, file) {
+    const data = fs.readFileSync(`${folder}/${file}`, 'utf8')
     const dataObj = matter(data)
-    dataObj.data.slug = dataObj.data.title.toLowerCase()
-        .replace(/ /g, '-')
-        .replace(/[^\w-]+/g, '')
+    dataObj.data.slug = file.replace(/\.md$/, "")
     delete dataObj.orig
     return dataObj
 }
@@ -20,7 +20,7 @@ function loadSiteData() {
         name: c.name,
         docs: _.sortBy(fs.readdirSync(c.folder)
             .filter(f => path.extname(f) === '.md')
-            .map(file => readDoc(`${c.folder}/${file}`)), ['order', 'name'])
+            .map(file => readDoc(c.folder, file)), ['order', 'name'])
 
 
     }))
@@ -40,15 +40,19 @@ export default {
         return [
             {
                 path: '/',
-                component: 'src/containers/Home',
+                component: `${pages}/Home`,
             },
             {
                 path: '/about',
-                component: 'src/containers/About',
+                component: `${pages}/About`,
+            },
+            {
+                path: '/projects',
+                component: `${pages}/Projects`,
             },
             {
                 path: '/blog',
-                component: 'src/containers/Blog',
+                component: `${pages}/Blog`,
                 getData: () => ({
                     posts: data.collections.post
                 }),

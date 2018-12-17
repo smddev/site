@@ -16,7 +16,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "ID", name: "id", widget: "number", default: 0, min: 0}
       - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string", required: false}
@@ -27,7 +26,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "ID", name: "id", widget: "number", default: 0, min: 0}
       - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string", required: false}
@@ -38,7 +36,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "ID", name: "id", widget: "number", default: 0, min: 0}
       - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Code", name: "code", widget: "string"}
@@ -50,7 +47,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "ID", name: "id", widget: "number", default: 0, min: 0}
       - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Role", name: "role", widget: "string"}
@@ -63,7 +59,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "ID", name: "id", widget: "number", default: 0, min: 0}
       - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Cover", name: "cover", widget: "image", required: false}
@@ -72,46 +67,22 @@ collections:
         name: "industries"
         widget: "list"
         field:
-          - label: "Industry"
-            name: "industry"
-            widget: "relation"
-            collection: "industry"
-            searchFields: ["title"]
-            displayFields: ["title"]
-            valueField: "id"
+          - {label: "Industry", name: "industry", widget: "string"}
       - label: "Services"
         name: "services"
         widget: "list"
         field:
-          - label: "Service"
-            name: "service"
-            widget: "relation"
-            collection: "service"
-            searchFields: ["title"]
-            displayFields: ["title"]
-            valueField: "id"
+          - {label: "Service", name: "service", widget: "string"}
       - label: "Technologies"
         name: "techs"
         widget: "list"
         field:
-          - label: "Technology"
-            name: "tech"
-            widget: "relation"
-            collection: "tech"
-            searchFields: ["title"]
-            displayFields: ["title"]
-            valueField: "id"
+          - {label: "Technology", name: "tech", widget: "string"}
       - label: "Members"
         name: "members"
         widget: "list"
         field:
-          - label: "Member"
-            name: "member"
-            widget: "relation"
-            collection: "member"
-            searchFields: ["title"]
-            displayFields: ["title"]
-            valueField: "id"
+          - {label: "Member", name: "member", widget: "string"}
 
   - name: "post"
     label: "Post"
@@ -124,11 +95,5 @@ collections:
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Author"
-        name: "author"
-        widget: "relation"
-        collection: "member"
-        searchFields: ["title"]
-        displayFields: ["title"]
-        valueField: "id"
+      - {label: "Author", name: "author", widget: "string", required: false}
 
