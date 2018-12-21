@@ -1,3 +1,5 @@
+import {theme} from "./src/theme";
+import React from 'react'
 const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
@@ -34,58 +36,105 @@ function loadSiteData() {
     }
 }
 
+const getRoutes = () => {
+    const data = loadSiteData()
+    const routes = [
+        {
+            path: '/projects',
+            name: 'Works'
+        },
+        {
+            path: '/verticals',
+            name: 'Industries'
+        },
+        {
+            path: '/services',
+            name: 'Services'
+        },
+        {
+            path: '/about',
+            name: 'About'
+        },
+        {
+            path: '/contact',
+            name: 'Contact'
+        }
+    ]
+
+    return [
+        {
+            path: '/',
+            component: `${pages}/Home`,
+            getData: () => ({
+                page: data.pages.main,
+                data: {
+                    projects: data.collections.project,
+                    services: data.collections.service,
+                    industries: data.collections.industry
+                },
+                routes
+            })
+        },
+        {
+            path: '/about',
+            component: `${pages}/About`,
+            getData: () => ({
+                page: data.pages.about,
+                data: {
+                    members: data.collections.member
+                },
+                routes
+            })
+        },
+        {
+            path: '/projects',
+            component: `${pages}/Projects`,
+            getData: () => ({
+                items: data.collections.project,
+                routes
+            }),
+        },
+        {
+            path: '/blog',
+            component: `${pages}/Blog`,
+            getData: () => ({
+                posts: data.collections.post,
+                routes
+            }),
+            children: data.collections.post.map(post => ({
+                path: `/post/${post.data.slug}`,
+                component: `${pages}/Post`,
+                getData: () => ({
+                    post,
+                    routes
+                }),
+            })),
+        },
+        {
+            is404: true,
+            component: `${pages}/404`,
+        },
+    ]
+}
+
+const googleFontLink = (name) => `https://fonts.googleapis.com/css?family=${name}`
+const GoogleFont = ({name}) => <link href={googleFontLink(name)} rel="stylesheet"/>
+
+const Document = ({Html, Head, Body, children, siteData, renderMeta}) =>
+    <Html lang="en-US">
+    <Head>
+        <meta charSet="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        {theme.fonts.map((f, i) => <GoogleFont key={i} name={f}/>)}
+    </Head>
+    <Body>{children}</Body>
+    </Html>
+
 export default {
 
     getSiteData: () => ({
-        title: 'React Static with Netlify CMS',
+        title: 'SMDDev site',
     }),
-    getRoutes: () => {
-        const data = loadSiteData()
-        return [
-            {
-                path: '/',
-                component: `${pages}/Home`,
-                getData: () => ({
-                    page: data.pages.main,
-                    data: {
-                        projects: data.collections.project,
-                        services: data.collections.service,
-                        industries: data.collections.industry
-                    }
-                })
-            },
-            {
-                path: '/about',
-                component: `${pages}/About`,
-                getData: () => ({
-                    page: data.pages.about,
-                    data: {
-                        members: data.collections.member
-                    }
-                })
-            },
-            {
-                path: '/projects',
-                component: `${pages}/Projects`,
-            },
-            {
-                path: '/blog',
-                component: `${pages}/Blog`,
-                getData: () => ({
-                    posts: data.collections.post
-                }),
-                children: data.collections.post.map(post => ({
-                    path: `/post/${post.data.slug}`,
-                    component: `${pages}/Post`,
-                    getData: () => ({
-                        post
-                    }),
-                })),
-            },
-            {
-                is404: true,
-                component: `${pages}/404`,
-            },
-        ]
-    },
+    getRoutes,
+    Document
 }

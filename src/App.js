@@ -1,24 +1,22 @@
-import React from 'react'
-import { Router, Link } from 'react-static'
-import { hot } from 'react-hot-loader'
-//
+import React, {Fragment} from 'react'
+import {Router} from 'react-static'
+import {hot} from 'react-hot-loader'
+import {ThemeProvider} from 'styled-components'
 import Routes from 'react-static-routes'
-
-import './app.css'
+import {theme} from "./theme";
+import NavBar from "./components/NavBar";
 
 const App = () => (
-  <Router>
-    <div>
-      <nav>
-        <Link exact to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <div className="content">
-        <Routes />
-      </div>
-    </div>
-  </Router>
+    <Router>
+        <ThemeProvider theme={theme}>
+            <Fragment>
+                <NavBar/>
+                <div className="content">
+                    <Routes/>
+                </div>
+            </Fragment>
+        </ThemeProvider>
+    </Router>
 )
 
 export default hot(module)(App)
