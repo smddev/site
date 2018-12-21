@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link, withRouteData} from "react-static";
+import {Link as RSLink, withRouteData} from "react-static";
 import {Box, Flex} from '@rebass/grid'
 import styled from 'styled-components'
 import logoImg from 'logo_big.png'
-import {NavLink} from "../atoms";
+import {Link} from "../atoms";
 
 
 const Logo = styled.img`
@@ -13,14 +13,14 @@ const Logo = styled.img`
 export default withRouteData(({routes}) =>
     <Flex flexWrap='wrap'>
         <Box width={1 / 4}>
-            <Link to={'/'}><Logo src={logoImg} alt="Smart Design"/></Link>
+            <RSLink to={'/'}><Logo src={logoImg} alt="Smart Design"/></RSLink>
         </Box>
         <Box width={3 / 4}>
             <Flex justifyContent='center'>
                 {
                     routes.map(r =>
                         <Box p={2} key={r.name}>
-                            <NavLink to={r.path}>{r.name}</NavLink>
+                            <Link to={r.path}>{r.name}</Link>
                         </Box>)
                 }
             </Flex>
