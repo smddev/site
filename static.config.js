@@ -1,5 +1,6 @@
 import {theme} from "./src/theme";
 import React from 'react'
+
 const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
@@ -36,8 +37,10 @@ function loadSiteData() {
     }
 }
 
+
 const getRoutes = () => {
     const data = loadSiteData()
+
     const routes = [
         {
             path: '/projects',
@@ -60,6 +63,30 @@ const getRoutes = () => {
             name: 'Contact'
         }
     ]
+
+
+    function collectionPage(name) {
+        const compName = name.charAt(0).toUpperCase() + name.slice(1)
+        const path = `/${name}s`
+        const items = data.collections[name]
+        return {
+            path,
+            component: `${pages}/${compName}s`,
+            getData: () => ({
+                items,
+                routes
+            }),
+            children: items.map(item => ({
+                path: `/${item.data.slug}`,
+                component: `${pages}/${compName}`,
+                getData: () => ({
+                    item,
+                    routes
+                }),
+            })),
+        }
+    }
+
 
     return [
         {
@@ -86,30 +113,8 @@ const getRoutes = () => {
                 routes
             })
         },
-        {
-            path: '/projects',
-            component: `${pages}/Projects`,
-            getData: () => ({
-                items: data.collections.project,
-                routes
-            }),
-        },
-        {
-            path: '/blog',
-            component: `${pages}/Blog`,
-            getData: () => ({
-                posts: data.collections.post,
-                routes
-            }),
-            children: data.collections.post.map(post => ({
-                path: `/post/${post.data.slug}`,
-                component: `${pages}/Post`,
-                getData: () => ({
-                    post,
-                    routes
-                }),
-            })),
-        },
+        collectionPage('project'),
+        collectionPage('post'),
         {
             is404: true,
             component: `${pages}/404`,
