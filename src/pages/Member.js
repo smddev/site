@@ -6,7 +6,7 @@ import {H1} from "../atoms";
 export default withRouteData(({item}) => (
     <div>
         <H1>{item.data.title}</H1>
-        <img className="image" src={item.data.cover} alt={item.data.title}/>
+        <img className="image" src={item.data.cover} alt=""/>
         <Markdown source={item.content} escapeHtml={false}/>
     </div>
 ))

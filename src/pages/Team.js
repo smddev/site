@@ -4,7 +4,7 @@ import Gallery from "../components/Gallery";
 
 export default withRouteData(({data}) => (
     <div>
-        <h1>Our projects</h1>
-        <Gallery items={data.projects} itemsPath={'/portfolio/projects'}/>
+        <h1>Our team</h1>
+        <Gallery items={data.members} itemsPath={'/portfolio/members'}/>
     </div>
 ))

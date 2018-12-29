@@ -40,7 +40,6 @@ function loadSiteData() {
 
 const getRoutes = () => {
     const data = loadSiteData()
-
     const routes = [
         {
             path: '/projects',
@@ -68,7 +67,7 @@ const getRoutes = () => {
         }))
     }
 
-    function pageRoute(path, component, data, children = null) {
+    function pageRoute(path, component, data, children = []) {
         return {
             path,
             component: `${pages}/${component}`,
@@ -81,7 +80,7 @@ const getRoutes = () => {
         }
     }
 
-    return [
+    const siteRoutes = [
         pageRoute('/', 'Home', {
             projects: data.collections.project,
             services: data.collections.service,
@@ -104,6 +103,8 @@ const getRoutes = () => {
             component: `${pages}/404`,
         },
     ]
+    console.log('Routes:', siteRoutes)
+    return siteRoutes
 }
 
 const googleFontLink = (name) => `https://fonts.googleapis.com/css?family=${name}`
