@@ -107,6 +107,11 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Portfolio"
+        name: "portfolio"
+        file: "src/content/portfolio.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
       - label: "About"
         name: "about"
         file: "src/content/about.md"
@@ -114,4 +119,11 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
           - {label: "Intro", name: "intro", widget: "markdown"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Contacts"
+        name: "contacts"
+        file: "src/content/contacts.md"
+        fields:
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}

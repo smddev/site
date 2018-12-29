@@ -44,15 +44,7 @@ const getRoutes = () => {
     const routes = [
         {
             path: '/projects',
-            name: 'Works'
-        },
-        {
-            path: '/verticals',
-            name: 'Industries'
-        },
-        {
-            path: '/services',
-            name: 'Services'
+            name: 'Portfolio'
         },
         {
             path: '/about',
@@ -64,57 +56,49 @@ const getRoutes = () => {
         }
     ]
 
-
-    function collectionPage(name) {
-        const compName = name.charAt(0).toUpperCase() + name.slice(1)
-        const path = `/${name}s`
-        const items = data.collections[name]
-        return {
-            path,
-            component: `${pages}/${compName}s`,
+    function collectionRoutes(name, path) {
+        const component = name.charAt(0).toUpperCase() + name.slice(1)
+        return data.collections[name].map(item => ({
+            path: `/${path}/${item.data.slug}`,
+            component: `${pages}/${component}`,
             getData: () => ({
-                items,
+                item,
                 routes
             }),
-            children: items.map(item => ({
-                path: `/${item.data.slug}`,
-                component: `${pages}/${compName}`,
-                getData: () => ({
-                    item,
-                    routes
-                }),
-            })),
+        }))
+    }
+
+    function pageRoute(path, component, data, children = null) {
+        return {
+            path,
+            component: `${pages}/${component}`,
+            getData: () => ({
+                page: data.pages.main,
+                data,
+                routes
+            }),
+            children
         }
     }
 
-
     return [
-        {
-            path: '/',
-            component: `${pages}/Home`,
-            getData: () => ({
-                page: data.pages.main,
-                data: {
-                    projects: data.collections.project,
-                    services: data.collections.service,
-                    industries: data.collections.industry
-                },
-                routes
-            })
-        },
-        {
-            path: '/about',
-            component: `${pages}/About`,
-            getData: () => ({
-                page: data.pages.about,
-                data: {
-                    members: data.collections.member
-                },
-                routes
-            })
-        },
-        collectionPage('project'),
-        collectionPage('post'),
+        pageRoute('/', 'Home', {
+            projects: data.collections.project,
+            services: data.collections.service,
+            industries: data.collections.industry
+        }),
+        pageRoute('/contacts', 'Contacts'),
+        pageRoute('/about', 'About', {
+            members: data.collections.member,
+        }),
+        pageRoute('/team', 'Team', {
+            members: data.collections.member,
+        }, collectionRoutes('member', 'members')),
+        pageRoute('portfolio', 'Portfolio', {
+            members: data.collections.member,
+        }, [...collectionRoutes('project', 'projects'),
+            ...collectionRoutes('industry', 'industries'),
+            ...collectionRoutes('service', 'services')]),
         {
             is404: true,
             component: `${pages}/404`,
