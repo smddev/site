@@ -100,9 +100,9 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
-      - label: "Main"
-        name: "main"
-        file: "src/content/main.md"
+      - label: "Home"
+        name: "home"
+        file: "src/content/home.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}

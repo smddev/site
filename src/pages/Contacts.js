@@ -1,7 +1,7 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
 import {H1} from "../atoms";
-import Markdown from "./About";
+import Markdown from "react-markdown";
 
 export default withRouteData(({page}) => (
     <div>

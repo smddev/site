@@ -39,10 +39,10 @@ function loadSiteData() {
 
 
 const getRoutes = () => {
-    const data = loadSiteData()
+    const siteData = loadSiteData()
     const routes = [
         {
-            path: '/projects',
+            path: '/portfolio',
             name: 'Portfolio'
         },
         {
@@ -50,15 +50,15 @@ const getRoutes = () => {
             name: 'About'
         },
         {
-            path: '/contact',
-            name: 'Contact'
+            path: '/contacts',
+            name: 'Contacts'
         }
     ]
 
     function collectionRoutes(name, path) {
         const component = name.charAt(0).toUpperCase() + name.slice(1)
-        return data.collections[name].map(item => ({
-            path: `/${path}/${item.data.slug}`,
+        return siteData.collections[name].map(item => ({
+            path: `${path}/${item.data.slug}`,
             component: `${pages}/${component}`,
             getData: () => ({
                 item,
@@ -67,12 +67,14 @@ const getRoutes = () => {
         }))
     }
 
-    function pageRoute(path, component, data, children = []) {
+    function pageRoute(name, data, path = null, children = []) {
+        const component = name.charAt(0).toUpperCase() + name.slice(1)
+        const p = path ? path : `/${name}`
         return {
-            path,
+            path: p,
             component: `${pages}/${component}`,
             getData: () => ({
-                page: data.pages.main,
+                page: siteData.pages[name],
                 data,
                 routes
             }),
@@ -81,21 +83,21 @@ const getRoutes = () => {
     }
 
     const siteRoutes = [
-        pageRoute('/', 'Home', {
-            projects: data.collections.project,
-            services: data.collections.service,
-            industries: data.collections.industry
+        pageRoute('home', {
+            projects: siteData.collections.project,
+            services: siteData.collections.service,
+            industries: siteData.collections.industry
+        }, '/'),
+        pageRoute('contacts'),
+        pageRoute('about', {
+            members: siteData.collections.member,
         }),
-        pageRoute('/contacts', 'Contacts'),
-        pageRoute('/about', 'About', {
-            members: data.collections.member,
-        }),
-        pageRoute('/team', 'Team', {
-            members: data.collections.member,
-        }, collectionRoutes('member', 'members')),
-        pageRoute('portfolio', 'Portfolio', {
-            members: data.collections.member,
-        }, [...collectionRoutes('project', 'projects'),
+        pageRoute('team', {
+            members: siteData.collections.member,
+        }, null, collectionRoutes('member', 'members')),
+        pageRoute('portfolio', {
+            projects: siteData.collections.project,
+        }, null, [...collectionRoutes('project', 'projects'),
             ...collectionRoutes('industry', 'industries'),
             ...collectionRoutes('service', 'services')]),
         {
