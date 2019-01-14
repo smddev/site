@@ -8,6 +8,7 @@ media_library:
   config:
     cloud_name: 'smddev'
     api_key: '451488314613789'
+    output_filename_only: true
 
 collections:
   - name: "industry"
