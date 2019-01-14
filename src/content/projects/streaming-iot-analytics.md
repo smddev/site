@@ -1,7 +1,8 @@
 ---
 order: '0'
 title: Streaming IoT Analytics Platform
-cover: ''
+cover: >-
+  https://res.cloudinary.com/smddev/image/upload/v1544812685/site/project/iot.jpg
 industries:
   - manufacturing
 services:
