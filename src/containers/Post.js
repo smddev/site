@@ -1,11 +1,12 @@
 import React from 'react'
-import {withRouteData, Link} from 'react-static'
+import {withRouteData} from 'react-static'
 import Moment from 'react-moment'
 import Markdown from 'react-markdown'
+import {Link} from '@reach/router'
 
-export default withRouteData(({item, routes}) => (
+export default withRouteData(({item}) => (
     <div className="blog-post">
-        <Link to="/posts">{'<'} Back</Link>
+        <Link to="/blog">{'<'} Back</Link>
         <br/>
         <h3>{item.data.title}</h3>
         <Moment format="MMMM Do, YYYY">{item.data.date}</Moment>

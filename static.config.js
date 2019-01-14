@@ -41,10 +41,10 @@ function loadSiteData() {
 const getRoutes = () => {
     const siteData = loadSiteData()
 
-    function collectionRoutes(name, p) {
+    function collectionRoutes(name, pathName) {
         const component = name.charAt(0).toUpperCase() + name.slice(1)
         return siteData.collections[name].map(item => {
-            const path = `${p}/${item.data.slug}`
+            const path = `${pathName}/${item.data.slug}`
             return {
                 path,
                 component: `src/containers/${component}`,
@@ -93,6 +93,11 @@ const getRoutes = () => {
             ...collectionRoutes('project', 'projects'),
             ...collectionRoutes('industry', 'industries'),
             ...collectionRoutes('service', 'services')]),
+        pageRoute('blog', {
+            posts: siteData.collections.post,
+        }, null, [
+            ...collectionRoutes('post', 'posts')
+        ]),
         {
             path: '404',
             component: `${pages}/404`,
