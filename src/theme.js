@@ -1,8 +1,8 @@
 export const theme = {
-    fonts: [
-        'Archivo',
-        'Archivo Narrow'
-    ],
+    fonts: {
+        regular: 'Archivo',
+        narrow: 'Archivo Narrow'
+    },
     fontSizes: [
         12, 14, 16, 24, 32, 48, 64, 96, 128
     ],

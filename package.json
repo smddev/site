@@ -10,25 +10,26 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "@rebass/grid": "^6.0.0-7",
-    "axios": "^0.16.2",
-    "gray-matter": "^3.1.1",
-    "klaw": "^2.1.1",
+    "gray-matter": "^4.0.2",
+    "klaw": "^3.0.0",
     "lodash": "^4.17.11",
-    "moment": "^2.20.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-hot-loader": "^4.0.0-beta.21",
-    "react-markdown": "^3.1.0",
-    "react-moment": "^0.7.0",
-    "react-router": "^4.2.0",
-    "react-static": "^5.1.10"
+    "moment": "^2.23.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.6.3",
+    "react-markdown": "^4.0.6",
+    "react-moment": "^0.8.4",
+    "react-router": "^4.3.1",
+    "react-static": "^6.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-styled-components": "^1.10.0",
-    "eslint-config-react-tools": "1.x.x",
-    "js-yaml": "^3.12.0",
+    "eslint-config-react-tools": "^1.1.6",
+    "js-yaml": "^3.12.1",
+    "react-static-plugin-styled-components": "^6.1.1",
     "serve": "^6.1.0",
     "styled-components": "^4.1.3"
   }

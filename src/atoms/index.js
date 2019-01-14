@@ -1,31 +1,54 @@
 import React from 'react'
-import {Link as RSLink} from "react-static";
+import {Link as RLink} from '@reach/router'
 import styled, {withTheme} from 'styled-components'
-import {color, fontSize, themeGet} from 'styled-system'
+import {color, fontFamily, fontSize, textAlign} from 'styled-system'
 
-const StyledLink = styled(RSLink)`
-    font-family: ${themeGet('fonts.1')};
+const StyledLink = styled(RLink)`
     text-decoration: none;
+    ${fontFamily}
     ${color}
     ${fontSize}    
 `
-export const Link = withTheme(({theme, to, children, color, bg, fontSize}) =>
+export const Link = withTheme(({theme, to, children, color, fontSize, fontFamily}) =>
     <StyledLink fontSize={fontSize}
                 color={color}
-                bg={bg}
                 to={to}
-                activeStyle={{'borderBottom': `3px solid ${theme.colors.orange[2]}`}}>
+                fontFamily={fontFamily}
+                getProps={({isCurrent}) => {
+                    // the object returned here is passed to the
+                    // anchor element's props
+                    return {
+                        style: {
+                            borderBottom: isCurrent ? `3px solid ${theme.colors.orange[2]}` : null
+                        }
+                    };
+                }}>
         {children}
     </StyledLink>)
 
 export const H1 = styled.h1`
-   font-family: ${themeGet('fonts.0')};
+   ${fontFamily}
    ${color}
    ${fontSize}
+   ${textAlign}
+`
+export const H2 = styled.h2`
+   ${fontFamily}
+   ${color}
+   ${fontSize}
+   ${textAlign}
+`
+
+export const H3 = styled.h3`
+   ${fontFamily}
+   ${color}
+   ${fontSize}
+   ${textAlign}
 `
 
 export const P = styled.p`
-  font-family: ${themeGet('fonts.0')};
+   ${fontFamily}
    ${color}
    ${fontSize}
+   ${textAlign}
 `

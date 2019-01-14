@@ -1,22 +1,14 @@
-import React, {Fragment} from 'react'
-import {Router} from 'react-static'
-import {hot} from 'react-hot-loader'
+import React from 'react'
+import {Root, Routes} from 'react-static'
 import {ThemeProvider} from 'styled-components'
-import Routes from 'react-static-routes'
 import {theme} from "./theme";
-import NavBar from "./components/NavBar";
 
-const App = () => (
-    <Router>
+export default () =>
+    <Root>
         <ThemeProvider theme={theme}>
-            <Fragment>
-                <NavBar/>
-                <div className="content">
-                    <Routes/>
-                </div>
-            </Fragment>
+            <div className="content">
+                <Routes/>
+            </div>
         </ThemeProvider>
-    </Router>
-)
+    </Root>
 
-export default hot(module)(App)

@@ -101,8 +101,8 @@ collections:
     name: "pages"
     files:
       - label: "Home"
-        name: "home"
-        file: "src/content/home.md"
+        name: "index"
+        file: "src/content/index.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}

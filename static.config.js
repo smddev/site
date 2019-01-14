@@ -40,6 +40,69 @@ function loadSiteData() {
 
 const getRoutes = () => {
     const siteData = loadSiteData()
+
+    function collectionRoutes(name, p) {
+        const component = name.charAt(0).toUpperCase() + name.slice(1)
+        return siteData.collections[name].map(item => {
+            const path = `${p}/${item.data.slug}`
+            return {
+                path,
+                component: `src/containers/${component}`,
+                getData: () => {
+                    console.log(`${path} : ${component}, item:`, item)
+                    return {
+                        item
+                    }
+                },
+            }
+        })
+    }
+
+    function pageRoute(name, data, path = null, children = []) {
+        const p = path ? path : `${name}`
+        console.log(`${p} : ${name}`)
+        return {
+            path: p,
+            getData: () => {
+                console.log(`${p} : `, siteData.pages[name])
+                return {
+                    page: siteData.pages[name],
+                    ...data
+                }
+            },
+            children
+        }
+    }
+
+    return [
+        pageRoute('index', {
+            projects: siteData.collections.project,
+            services: siteData.collections.service,
+            industries: siteData.collections.industry
+        }, '/'),
+        pageRoute('contacts', {
+            projects: siteData.collections.project,
+        }),
+        pageRoute('about', {
+            members: siteData.collections.member,
+        }),
+        pageRoute('team', {
+            members: siteData.collections.member,
+        }, null, collectionRoutes('member', 'members')),
+        pageRoute('portfolio', {
+            projects: siteData.collections.project,
+        }, null, [
+            ...collectionRoutes('project', 'projects'),
+            ...collectionRoutes('industry', 'industries'),
+            ...collectionRoutes('service', 'services')]),
+        {
+            path: '404',
+            component: `${pages}/404`,
+        },
+    ]
+}
+
+const getSiteData = () => {
     const routes = [
         {
             path: '/portfolio',
@@ -55,58 +118,9 @@ const getRoutes = () => {
         }
     ]
 
-    function collectionRoutes(name, path) {
-        const component = name.charAt(0).toUpperCase() + name.slice(1)
-        return siteData.collections[name].map(item => ({
-            path: `${path}/${item.data.slug}`,
-            component: `${pages}/${component}`,
-            getData: () => ({
-                item,
-                routes
-            }),
-        }))
+    return {
+        routes,
     }
-
-    function pageRoute(name, data, path = null, children = []) {
-        const component = name.charAt(0).toUpperCase() + name.slice(1)
-        const p = path ? path : `/${name}`
-        return {
-            path: p,
-            component: `${pages}/${component}`,
-            getData: () => ({
-                page: siteData.pages[name],
-                data,
-                routes
-            }),
-            children
-        }
-    }
-
-    const siteRoutes = [
-        pageRoute('home', {
-            projects: siteData.collections.project,
-            services: siteData.collections.service,
-            industries: siteData.collections.industry
-        }, '/'),
-        pageRoute('contacts'),
-        pageRoute('about', {
-            members: siteData.collections.member,
-        }),
-        pageRoute('team', {
-            members: siteData.collections.member,
-        }, null, collectionRoutes('member', 'members')),
-        pageRoute('portfolio', {
-            projects: siteData.collections.project,
-        }, null, [...collectionRoutes('project', 'projects'),
-            ...collectionRoutes('industry', 'industries'),
-            ...collectionRoutes('service', 'services')]),
-        {
-            is404: true,
-            component: `${pages}/404`,
-        },
-    ]
-    console.log('Routes:', siteRoutes)
-    return siteRoutes
 }
 
 const googleFontLink = (name) => `https://fonts.googleapis.com/css?family=${name}`
@@ -117,16 +131,14 @@ const Document = ({Html, Head, Body, children, siteData, renderMeta}) =>
     <Head>
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        {theme.fonts.map((f, i) => <GoogleFont key={i} name={f}/>)}
+        {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]}/>)}
     </Head>
     <Body>{children}</Body>
     </Html>
 
 export default {
-
-    getSiteData: () => ({
-        title: 'SMDDev site',
-    }),
+    getSiteData,
     getRoutes,
-    Document
+    Document,
+    plugins: ["react-static-plugin-styled-components"]
 }

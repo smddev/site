@@ -13,7 +13,8 @@ if (typeof document !== 'undefined') {
     const render = Comp => {
         renderMethod(<Comp/>, document.getElementById('root'))
     }
-
-    // Render!
     render(App)
+    if (module.hot) {
+        module.hot.accept('./App', () => render(require('./App').default))
+    }
 }

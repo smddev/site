@@ -1,5 +1,5 @@
 ---
-phone: +7 XXX XXX XX XX
+phone: +7 (812) 932-7150
 email: info@smddev.com
 ---
 Реквизиты компании...
