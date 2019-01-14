@@ -1,11 +1,11 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
-import Gallery from "../components/Gallery";
-import framed from "../templates/framed";
+import {Galleries} from "../components/galleries";
+import {H1} from "../atoms";
 
-export default framed(withRouteData(({projects}) => (
+export default withRouteData(({projects}) => (
     <div>
-        <h1>Our projects</h1>
-        <Gallery items={projects} itemsPath={'/portfolio/projects'}/>
+        <H1>Our projects</H1>
+        <Galleries projects={projects}/>
     </div>
-)))
+))

@@ -59,7 +59,6 @@ const getRoutes = () => {
 
     function pageRoute(name, data, path = null, children = []) {
         const p = path ? path : `${name}`
-        console.log(`${p} : ${name}`)
         return {
             path: p,
             getData: () => {

@@ -1,12 +1,11 @@
 import React from 'react'
-import Card from "./Card";
 import {Box, Flex} from '@rebass/grid'
 
 
-export default ({items, itemsPath}) =>
+export default ({items, children}) =>
     <Flex flexWrap='wrap'>
         {items.map(item =>
             <Box key={item.data.slug}>
-                <Card path={itemsPath} item={item}/>
+                {React.cloneElement(children, {item})}
             </Box>)}
     </Flex>

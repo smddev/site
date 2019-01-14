@@ -1,6 +1,6 @@
 import React from 'react'
 import {withSiteData} from "react-static";
-import {Link as RSLink} from '@reach/router'
+import {Link} from '@reach/router'
 import {Box, Flex} from '@rebass/grid'
 import styled from 'styled-components'
 import logoImg from 'logo_big.png'
@@ -14,7 +14,7 @@ const Logo = styled.img`
 export default withSiteData(({routes}) => {
     return <Flex flexWrap='wrap'>
         <Box width={1 / 4}>
-            <RSLink to={'/'}><Logo src={logoImg} alt="Smart Design"/></RSLink>
+            <Link to={'/'}><Logo src={logoImg} alt="Smart Design"/></Link>
         </Box>
         <Box width={3 / 4}>
             <Flex justifyContent='center'>

@@ -3,12 +3,14 @@ import {Root, Routes} from 'react-static'
 import {ThemeProvider} from 'styled-components'
 import {theme} from "./theme";
 import {CloudinaryContext} from "cloudinary-react";
+import NavBar from "./components/NavBar";
 
 export default () =>
     <Root>
         <ThemeProvider theme={theme}>
             <CloudinaryContext cloudName="smddev">
                 <div className="content">
+                    <NavBar/>
                     <Routes/>
                 </div>
             </CloudinaryContext>

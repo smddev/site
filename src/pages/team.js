@@ -1,10 +1,11 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
-import Gallery from "../components/Gallery";
+import {TeamGallery} from "../components/galleries";
+import {H1} from "../atoms";
 
 export default withRouteData(({members}) => (
     <div>
-        <h1>Our team</h1>
-        <Gallery items={members} itemsPath={'/portfolio/members'}/>
+        <H1>Our team</H1>
+        <TeamGallery members={members}/>
     </div>
 ))

@@ -2,7 +2,6 @@ import React from 'react'
 import {withRouteData} from "react-static";
 import Markdown from "react-markdown";
 import {H1} from "../atoms";
-import framed from "../templates/framed";
 
 const MemberList = ({members}) =>
     <ul>
@@ -11,7 +10,7 @@ const MemberList = ({members}) =>
         }
     </ul>
 
-export default framed(withRouteData(({page, members}) => (
+export default withRouteData(({page, members}) => (
     <div>
         <H1>{page.data.title}</H1>
         <p>{page.data.subtitle}</p>
@@ -20,4 +19,4 @@ export default framed(withRouteData(({page, members}) => (
         <h2>Management team</h2>
         <MemberList members={members}/>
     </div>
-)))
+))
