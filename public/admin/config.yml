@@ -65,26 +65,10 @@ collections:
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Cover", name: "cover", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Industries"
-        name: "industries"
-        widget: "list"
-        field:
-          - {label: "Industry", name: "industry", widget: "string"}
-      - label: "Services"
-        name: "services"
-        widget: "list"
-        field:
-          - {label: "Service", name: "service", widget: "string"}
-      - label: "Technologies"
-        name: "techs"
-        widget: "list"
-        field:
-          - {label: "Technology", name: "tech", widget: "string"}
-      - label: "Members"
-        name: "members"
-        widget: "list"
-        field:
-          - {label: "Member", name: "member", widget: "string"}
+      - {label: "Industries", name: "industries", widget: "list"}
+      - {label: "Services", name: "services",  widget: "list"}
+      - {label: "Technologies", name: "techs", widget: "list"}
+      - {label: "Members",  name: "members",  widget: "list", required: false   }
 
   - name: "post"
     label: "Post"

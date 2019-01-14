@@ -1,9 +1,12 @@
 import React from 'react'
 import Card from "./Card";
+import {Box, Flex} from '@rebass/grid'
+
 
 export default ({items, itemsPath}) =>
-    <ul>{items.map(item =>
-        <li key={item.data.slug}>
-            <Card path={itemsPath} item={item}/>
-        </li>)}
-    </ul>
+    <Flex flexWrap='wrap'>
+        {items.map(item =>
+            <Box key={item.data.slug}>
+                <Card path={itemsPath} item={item}/>
+            </Box>)}
+    </Flex>

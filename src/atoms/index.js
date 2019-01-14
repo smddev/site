@@ -1,15 +1,15 @@
 import React from 'react'
-import {Link as RLink} from '@reach/router'
+import {Link} from '@reach/router'
 import styled, {withTheme} from 'styled-components'
 import {color, fontFamily, fontSize, textAlign} from 'styled-system'
 
-const StyledLink = styled(RLink)`
+const StyledLink = styled(Link)`
     text-decoration: none;
     ${fontFamily}
     ${color}
     ${fontSize}    
 `
-export const Link = withTheme(({theme, to, children, color, fontSize, fontFamily}) =>
+export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFamily}) =>
     <StyledLink fontSize={fontSize}
                 color={color}
                 to={to}

@@ -4,7 +4,7 @@ import {Link as RSLink} from '@reach/router'
 import {Box, Flex} from '@rebass/grid'
 import styled from 'styled-components'
 import logoImg from 'logo_big.png'
-import {Link} from "../atoms";
+import {NavLink} from "../atoms";
 
 
 const Logo = styled.img`
@@ -21,7 +21,7 @@ export default withSiteData(({routes}) => {
                 {
                     routes && routes.map(r =>
                         <Box p={2} key={r.name}>
-                            <Link to={r.path} fontFamily='narrow'>{r.name}</Link>
+                            <NavLink to={r.path} fontFamily='narrow'>{r.name}</NavLink>
                         </Box>)
                 }
             </Flex>
