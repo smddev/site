@@ -1,5 +1,4 @@
 ---
-id: '1'
 order: 0
 title: Vitaly Tishkov
 role: CEO
