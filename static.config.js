@@ -49,7 +49,6 @@ const getRoutes = () => {
                 path,
                 component: `src/containers/${component}`,
                 getData: () => {
-                    console.log(`${path} : ${component}, item:`, item)
                     return {
                         item
                     }
@@ -64,7 +63,6 @@ const getRoutes = () => {
         return {
             path: p,
             getData: () => {
-                console.log(`${p} : `, siteData.pages[name])
                 return {
                     page: siteData.pages[name],
                     ...data
@@ -140,5 +138,5 @@ export default {
     getSiteData,
     getRoutes,
     Document,
-    plugins: ["react-static-plugin-styled-components"]
+    // plugins: ["react-static-plugin-styled-components"]
 }

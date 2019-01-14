@@ -22,7 +22,7 @@ export default framed(withRouteData(({page, services}) => (
                 <Markdown source={page.content} escapeHtml={false}/>
             </Box>
             <Box width={1 / 2} px={2}>
-                <ServiceList services={services}/>TEst8
+                <ServiceList services={services}/>
             </Box>
         </Flex>
     </div>

@@ -7,13 +7,14 @@
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "bundle": "react-static bundle",
+    "export": "react-static export",
+    "serve": "serve dist -p 3000 -s"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@rebass/grid": "^6.0.0-7",
     "gray-matter": "^4.0.2",
-    "klaw": "^3.0.0",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
     "react": "^16.7.0",
@@ -29,8 +30,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "eslint-config-react-tools": "^1.1.6",
     "js-yaml": "^3.12.1",
-    "react-static-plugin-styled-components": "^6.1.1",
-    "serve": "^6.1.0",
+    "serve": "^10.1.1",
     "styled-components": "^4.1.3"
   }
 }
