@@ -1,7 +1,7 @@
 import {theme} from "./src/theme";
 import React from 'react'
 
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const matter = require('gray-matter')
 const yaml = require('js-yaml')
@@ -9,27 +9,29 @@ const _ = require('lodash')
 
 const pages = 'src/pages'
 
-function readDoc(folder, file) {
-    const data = fs.readFileSync(`${folder}/${file}`, 'utf8')
+async function readDoc(folder, file) {
+    const data = await fs.readFile(`${folder}/${file}`, 'utf8')
     const dataObj = matter(data)
     dataObj.data.slug = file.replace(/\.md$/, "")
     delete dataObj.orig
     return dataObj
 }
 
-function loadSiteData() {
-    const config = yaml.safeLoad(fs.readFileSync('public/admin/config.yml', 'utf8'));
-    const docs = config.collections
+async function loadSiteData() {
+    const config = yaml.safeLoad(await fs.readFileSync('public/admin/config.yml', 'utf8'));
+    const docs = await Promise.all(config.collections
         .filter(c => !!c.folder)
-        .map(c => ({
-            name: c.name,
-            docs: _.sortBy(fs.readdirSync(c.folder)
-                .filter(f => path.extname(f) === '.md')
-                .map(file => readDoc(c.folder, file)), ['order', 'name'])
+        .map(async c => {
+            const fileNames = (await fs.readdir(c.folder)).filter(f => path.extname(f) === '.md')
+            const files = await Promise.all(fileNames.map(file => readDoc(c.folder, file)))
+            return {
+                name: c.name,
+                docs: _.sortBy(files, ['order', 'name'])
+            }
         }))
-    const pages = config.collections
+    const pages = await Promise.all(config.collections
         .filter(c => !!c.files)[0].files
-        .map(f => readDoc(path.dirname(f.file), path.basename(f.file)))
+        .map(f => readDoc(path.dirname(f.file), path.basename(f.file))))
 
     return {
         collections: _(docs).keyBy('name').mapValues('docs').value(),
@@ -38,8 +40,8 @@ function loadSiteData() {
 }
 
 
-const getRoutes = () => {
-    const siteData = loadSiteData()
+const getRoutes = async () => {
+    const siteData = await loadSiteData()
 
     function collectionRoutes(name, pathName) {
         const component = name.charAt(0).toUpperCase() + name.slice(1)

@@ -11,9 +11,8 @@ const ServiceList = ({services}) =>
         }
     </ul>
 
-
 export default withRouteData(({page, services}) => (
-    <Flex>
+    <Flex alignItems='center'>
         <Box width={1 / 2} px={2} py={4}>
             <H1 fontSize={6}>{page.data.title}</H1>
             <P fontSize={3}>{page.data.subtitle}</P>
