@@ -1,9 +1,8 @@
 import React from 'react'
-import {Link} from 'react-static'
 import Gallery from "./Gallery";
 import Card from "./Card";
 
-export const Galleries = ({projects}) =>
+export const ProjectGallery = ({projects}) =>
     <Gallery items={projects}>
         <Card basePath='/portfolio/projects'/>
     </Gallery>

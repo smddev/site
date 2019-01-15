@@ -1,9 +1,24 @@
 import React from 'react'
 import {Link} from '@reach/router'
 import styled, {withTheme} from 'styled-components'
-import {color, fontFamily, fontSize, textAlign} from 'styled-system'
+import {Box, Flex} from '@rebass/grid'
+import {
+    backgroundImage,
+    backgroundPosition,
+    backgroundRepeat,
+    backgroundSize,
+    borderColor,
+    borderRadius,
+    borders,
+    boxShadow,
+    color,
+    fontFamily,
+    fontSize,
+    opacity,
+    textAlign
+} from 'styled-system'
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
     text-decoration: none;
     ${fontFamily}
     ${color}
@@ -52,3 +67,15 @@ export const P = styled.p`
    ${fontSize}
    ${textAlign}
 `
+
+export const Card = styled(Flex)(
+    borders,
+    borderColor,
+    borderRadius,
+    boxShadow,
+    backgroundImage,
+    backgroundSize,
+    backgroundPosition,
+    backgroundRepeat,
+    opacity
+)
