@@ -1,18 +1,23 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
 import Markdown from "react-markdown";
-import {H1, P} from "../atoms";
+import {H1, H2, P, StyledLink} from "../atoms";
 import {Box, Flex} from '@rebass/grid'
 import {ProjectGallery} from "../components/galleries";
+import List from "../components/List";
 
 const ServiceList = ({services}) =>
     <ul>
         {
-            services.map(s => <li key={s.data.slug}>{s.data.title}</li>)
+            services.map(s => <li key={s.data.slug}>
+                <StyledLink to={`/portfolio?service=${s.data.slug}`}>
+                    {s.data.title}
+                </StyledLink>
+            </li>)
         }
     </ul>
 
-export default withRouteData(({page, services, projects}) => (
+export default withRouteData(({page, services, projects, industries}) => (
     <Fragment>
         <Flex alignItems='center'>
             <Box width={1 / 2} px={2} py={4}>
@@ -24,6 +29,10 @@ export default withRouteData(({page, services, projects}) => (
                 <ServiceList services={services}/>
             </Box>
         </Flex>
+        <H2>Industries</H2>
+        <List items={industries} itemPath='/portfolio?industry'/>
+        <H2>Recent projects</H2>
         <ProjectGallery projects={projects}/>
+
     </Fragment>
 ))
