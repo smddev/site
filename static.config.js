@@ -144,5 +144,5 @@ export default {
     getSiteData,
     getRoutes,
     Document,
-    // plugins: ["react-static-plugin-styled-components"]
+    plugins: ["react-static-plugin-styled-components"]
 }
