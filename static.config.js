@@ -43,18 +43,17 @@ async function loadSiteData() {
 const getRoutes = async () => {
     const siteData = await loadSiteData()
 
-    function collectionRoutes(name, pathName) {
+    function collectionRoutes(name, pathName, data = {}) {
         const component = name.charAt(0).toUpperCase() + name.slice(1)
         return siteData.collections[name].map(item => {
             const path = `${pathName}/${item.data.slug}`
             return {
                 path,
                 component: `src/containers/${component}`,
-                getData: () => {
-                    return {
-                        item
-                    }
-                },
+                getData: () => ({
+                    item,
+                    data
+                }),
             }
         })
     }
@@ -63,12 +62,10 @@ const getRoutes = async () => {
         const p = path ? path : `${name}`
         return {
             path: p,
-            getData: () => {
-                return {
-                    page: siteData.pages[name],
-                    ...data
-                }
-            },
+            getData: () => ({
+                page: siteData.pages[name],
+                ...data
+            }),
             children
         }
     }
@@ -77,7 +74,8 @@ const getRoutes = async () => {
         pageRoute('index', {
             projects: siteData.collections.project,
             services: siteData.collections.service,
-            industries: siteData.collections.industry
+            industries: siteData.collections.industry,
+            techs: siteData.collections.tech
         }, '/'),
         pageRoute('contacts', {
             projects: siteData.collections.project,
@@ -91,9 +89,14 @@ const getRoutes = async () => {
         pageRoute('portfolio', {
             projects: siteData.collections.project,
         }, null, [
-            ...collectionRoutes('project', 'projects'),
-            ...collectionRoutes('industry', 'industries'),
-            ...collectionRoutes('service', 'services')]),
+            ...collectionRoutes('project', 'projects',
+                {
+                    projects: siteData.collections.project,
+                    services: siteData.collections.service,
+                    industries: siteData.collections.industry,
+                    techs: siteData.collections.tech
+                })
+        ]),
         pageRoute('blog', {
             posts: siteData.collections.post,
         }, null, [

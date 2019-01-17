@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 import {H1, H2, P, StyledLink} from "../atoms";
 import {Box, Flex} from '@rebass/grid'
 import {ProjectGallery} from "../components/galleries";
-import List from "../components/List";
+import PortfolioFilterList from "../components/PortfolioFilterList";
 
 const ServiceList = ({services}) =>
     <ul>
@@ -30,7 +30,7 @@ export default withRouteData(({page, services, projects, industries}) => (
             </Box>
         </Flex>
         <H2>Industries</H2>
-        <List items={industries} itemPath='/portfolio?industry'/>
+        <PortfolioFilterList items={industries} name='industry'/>
         <H2>Recent projects</H2>
         <ProjectGallery projects={projects}/>
 

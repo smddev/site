@@ -3,23 +3,24 @@ import {withRouteData} from 'react-static'
 import Markdown from 'react-markdown'
 import {H1} from "../atoms";
 import {Image} from "cloudinary-react";
-import styled from 'styled-components'
+import {Box} from '@rebass/grid'
+import PortfolioFilterList from "../components/PortfolioFilterList";
 
-
-const Container = styled.div`
-    width: 100%
-`
-
-export default withRouteData(({item}) => (
+export default withRouteData(({item, data}) => (
     <div>
         <H1>{item.data.title}</H1>
-        <Container>
+        <PortfolioFilterList items={data.services}
+                             filter={item.data.services}
+                             name='service'/>
+        <Box width={1} mx={5}>
             <Image publicId={item.data.cover}
-                   crop="scale"
+                   crop="fill"
+                   gravity='auto'
                    width="auto"
+                   height="320"
                    responsive
                    responsive_use_breakpoints/>
-        </Container>
+        </Box>
         <Markdown source={item.content} escapeHtml={false}/>
     </div>
 ))
