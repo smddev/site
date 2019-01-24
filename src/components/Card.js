@@ -1,24 +1,35 @@
 import React from 'react'
-import {Card, H2, StyledLink} from "../atoms";
+import {FlexDiv, H2, StyledLink} from "../atoms";
 import cloudinary from "../cloudinary"
+
 
 export default ({item, basePath}) =>
     <StyledLink to={`${basePath}/${item.data.slug}`}>
-        <Card backgroundImage={`url(${cloudinary.url(item.data.cover,
-            {width: 320, crop: "scale"})})`}
-              backgroundSize='cover'
-              borderRadius={0}
-              px={4}
-              py={4}
-              css={{
-                  minHeight: '320px'
-              }}
-              alignItems='flex-end'
-              bg='gray.0'>
-            <H2 color='gray.2'
-                fontSize={3}>
-                {item.data.title}
-            </H2>
-        </Card>
+        <FlexDiv height='320px' position={'relative'}>
+            <FlexDiv backgroundImage={`url(${cloudinary.url(item.data.cover,
+                {width: 320, crop: "scale"})})`}
+                     backgroundSize='cover'
+                     borderRadius={0}
+                     position='absolute'
+                     left={0}
+                     right={0}
+                     top={0}
+                     bottom={0}
+                     filter='brightness(75%)'
+                     bg='gray.0'>
+            </FlexDiv>
+            <FlexDiv p={4}
+                     position='absolute'
+                     left={0}
+                     right={0}
+                     top={0}
+                     bottom={0}
+                     alignItems='flex-end'>
+                <H2 color='white'
+                    fontSize={3}>
+                    {item.data.title}
+                </H2>
+            </FlexDiv>
+        </FlexDiv>
     </StyledLink>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from '@reach/router'
 import styled, {withTheme} from 'styled-components'
-import {Box, Flex} from '@rebass/grid'
+import {Flex} from '@rebass/grid'
 import {
     backgroundImage,
     backgroundPosition,
@@ -10,12 +10,24 @@ import {
     borderColor,
     borderRadius,
     borders,
+    bottom,
     boxShadow,
     color,
     fontFamily,
     fontSize,
+    height,
+    left,
+    maxHeight,
+    maxWidth,
+    minHeight,
+    minWidth,
     opacity,
-    textAlign
+    position,
+    right,
+    style,
+    textAlign,
+    top,
+    width
 } from 'styled-system'
 
 export const StyledLink = styled(Link)`
@@ -68,7 +80,12 @@ export const P = styled.p`
    ${textAlign}
 `
 
-export const Card = styled(Flex)(
+const filter = style({
+    prop: 'filter'
+});
+
+
+export const FlexDiv = styled(Flex)(
     borders,
     borderColor,
     borderRadius,
@@ -77,5 +94,17 @@ export const Card = styled(Flex)(
     backgroundSize,
     backgroundPosition,
     backgroundRepeat,
-    opacity
+    opacity,
+    filter,
+    position,
+    top,
+    bottom,
+    left,
+    right,
+    width,
+    height,
+    minWidth,
+    minHeight,
+    maxWidth,
+    maxHeight,
 )
