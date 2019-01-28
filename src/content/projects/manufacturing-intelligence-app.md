@@ -1,7 +1,7 @@
 ---
 order: '1'
 title: Manufacturing intelligence app
-cover: site/project/factory.jpg
+cover: factory.jpg
 industries:
   - manufacturing
 services:

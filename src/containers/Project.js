@@ -4,16 +4,17 @@ import Markdown from 'react-markdown'
 import {H1} from "../atoms";
 import {Image} from "cloudinary-react";
 import {Box} from '@rebass/grid'
-import PortfolioFilterList from "../components/PortfolioFilterList";
+import {ServiceList} from "../components";
 
 export default withRouteData(({item, data}) => (
     <div>
         <H1>{item.data.title}</H1>
-        <PortfolioFilterList items={data.services}
-                             filter={item.data.services}
-                             name='service'/>
+        <ServiceList services={data.services}
+                     include={item.data.services}
+                     bg='gray.1'/>
+
         <Box width={1} mx={5}>
-            <Image publicId={item.data.cover}
+            <Image publicId={'site/project/' + item.data.cover}
                    crop="fill"
                    gravity='auto'
                    width="auto"

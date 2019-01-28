@@ -1,7 +1,7 @@
 ---
 order: '0'
 title: Streaming IoT Analytics Platform
-cover: site/project/iot.jpg
+cover: iot.jpg
 industries:
   - manufacturing
 services:

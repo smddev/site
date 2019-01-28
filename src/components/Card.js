@@ -3,10 +3,10 @@ import {FlexDiv, H2, StyledLink} from "../atoms";
 import cloudinary from "../cloudinary"
 
 
-export default ({item, basePath}) =>
+export default ({item, basePath, imagePath}) =>
     <StyledLink to={`${basePath}/${item.data.slug}`}>
         <FlexDiv height='320px' position={'relative'}>
-            <FlexDiv backgroundImage={`url(${cloudinary.url(item.data.cover,
+            <FlexDiv backgroundImage={`url(${cloudinary.url(imagePath + '/' + item.data.cover,
                 {width: 320, crop: "scale"})})`}
                      backgroundSize='cover'
                      borderRadius={0}

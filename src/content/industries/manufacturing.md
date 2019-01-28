@@ -1,5 +1,6 @@
 ---
 title: Manufacturing
-thumbnail: 
+thumbnail:
+icon: factory 
 ---
 

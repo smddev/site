@@ -1,6 +1,6 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
-import {TeamGallery} from "../components/galleries";
+import {TeamGallery} from "../components";
 import {H1} from "../atoms";
 
 export default withRouteData(({members}) => (

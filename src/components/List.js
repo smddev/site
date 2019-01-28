@@ -1,16 +1,20 @@
 import React from 'react'
-import ListItem from "./ListItem";
 import {Box, Flex} from '@rebass/grid'
 
-export default ({items, itemPath}) =>
+export default ({items, children, path, include, vertical}) =>
     <Flex flexWrap='wrap'
+          flexDirection={vertical ? 'column' : 'row'}
           as='ul'
           css={{listStyleType: "none"}}>
-        {items.map(item =>
-            <Box key={item.data.slug}
-                 as='li'
-                 px={3}
-                 css={{textDecoration: "none"}}>
-                <ListItem path={itemPath} item={item}/>
-            </Box>)}
+        {items.filter(item => !include || include.includes(item.data.slug))
+            .map(item =>
+                <Box key={item.data.slug}
+                     as='li'
+                     px={3}
+                     css={{textDecoration: "none"}}>
+                    {React.cloneElement(children, {
+                        path,
+                        item
+                    })}
+                </Box>)}
     </Flex>

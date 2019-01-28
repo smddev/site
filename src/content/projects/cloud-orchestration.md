@@ -1,7 +1,7 @@
 ---
 order: 0
 title: Cloud orchestration
-cover: site/project/cloud-orch.jpg
+cover: cloud-orch.jpg
 industries:
   - it
 services:

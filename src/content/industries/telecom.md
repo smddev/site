@@ -1,5 +1,6 @@
 ---
 title: Telecom
-thumbnail: 
+thumbnail:
+icon: satellite 
 ---
 

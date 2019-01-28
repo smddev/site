@@ -30,6 +30,7 @@ export const theme = {
         active: {
             borderBottom: '3px solid'
         }
-    }
+    },
+    icons: [64, 92, 128]
 }
 
