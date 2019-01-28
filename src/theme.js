@@ -1,3 +1,21 @@
+const colors = {
+    black: [
+        '#25272E'
+    ],
+    white: [
+        '#FFFFFF'
+    ],
+    gray: [
+        '#5e5e5e',
+        '#A8A9AE'
+    ],
+    orange: [
+        '#F36E1E',
+        '#F5941E',
+        '#FDB811'
+    ],
+}
+
 export const theme = {
     fonts: {
         regular: 'Archivo',
@@ -6,23 +24,7 @@ export const theme = {
     fontSizes: [
         12, 14, 16, 24, 32, 48, 64, 96, 128
     ],
-    colors: {
-        black: [
-            '#25272E'
-        ],
-        white: [
-            '#FFFFFF'
-        ],
-        gray: [
-            '#5e5e5e',
-            '#A8A9AE'
-        ],
-        orange: [
-            '#F36E1E',
-            '#F5941E',
-            '#FDB811'
-        ],
-    },
+    colors,
     space: [
         0, 4, 8, 16, 32, 64, 128, 256
     ],
@@ -31,6 +33,15 @@ export const theme = {
             borderBottom: '3px solid'
         }
     },
-    icons: [64, 92, 128]
+    icons: [64, 92, 128],
+    buttons: {
+        primary: {
+            color: 'black.0',
+            backgroundColor: colors.orange[0],
+            '&:hover': {
+                backgroundColor: colors.orange[1],
+            },
+        },
+    }
 }
 

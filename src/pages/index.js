@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
 import Markdown from "react-markdown";
-import {H1, H2, P} from "../atoms";
+import {Button, H1, H2, P} from "../atoms";
 import {Box, Flex} from '@rebass/grid'
 import {IndustryList, ProjectGallery, ServiceList} from "../components";
 
@@ -31,5 +31,10 @@ export default withRouteData(({page, services, projects, industries}) => (
         </Flex>
         <ProjectGallery projects={projects}/>
 
+        <Flex justifyContent='center'>
+            <Button variant='primary' fontSize={4}>
+                Make calculation
+            </Button>
+        </Flex>
     </Fragment>
 ))

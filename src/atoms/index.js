@@ -27,7 +27,8 @@ import {
     style,
     textAlign,
     top,
-    width
+    width,
+    buttonStyle
 } from 'styled-system'
 
 export const StyledLink = styled(Link)`
@@ -108,3 +109,12 @@ export const FlexDiv = styled(Flex)(
     maxWidth,
     maxHeight,
 )
+
+
+export const Button = styled.button`
+  border-style: none;
+  height: 64px;
+  ${buttonStyle}
+  ${fontSize}
+      
+`
