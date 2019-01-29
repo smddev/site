@@ -5,9 +5,9 @@ import {H2, StyledLink} from "../atoms";
 import {Flex, Box} from '@rebass/grid'
 
 
-export default ({path, item, vertical, size, color, bg}) => {
+export default ({linkPath, item, vertical, size, color, bg}) => {
     const pxSize = themeGet('icons')[size || 0]
-    const url = `${path}${item.data.slug}`
+    const url = `${linkPath}${item.data.slug}`
     return <StyledLink to={url}>
         <Flex
             bg={bg}

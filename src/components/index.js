@@ -12,12 +12,12 @@ export const ProjectGallery = ({projects}) =>
 
 export const TeamGallery = ({members}) =>
     <Gallery items={members}>
-        <MemberCard basePath='/members'  imagePath={'site/member'}/>
+        <MemberCard basePath='/members' imagePath={'site/member'}/>
     </Gallery>
 
-const PortfolioList = ({items, filterBy, include, vertical, color, bg}) =>
-    <List items={items} path={`/portfolio?${filterBy}=`}
-          include={include} vertical={vertical}>
+const PortfolioList = ({items, filterBy, includes, vertical, color, bg}) =>
+    <List items={items} linkPath={`/portfolio?${filterBy}=`}
+          includes={includes} vertical={vertical}>
         <Icon vertical={!vertical} {...{color, bg}}/>
     </List>
 

@@ -10,7 +10,7 @@ export default withRouteData(({item, data}) => (
     <Container>
         <H1>{item.data.title}</H1>
         <ServiceList services={data.services}
-                     include={item.data.services}
+                     includes={item.data.services}
                      bg='gray.1'/>
 
         <Box width={1} mx={5}>

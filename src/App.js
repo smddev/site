@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 export default () =>
     <Root>
         <ThemeProvider theme={theme}>
-            <CloudinaryContext cloudName="smddev">
+            <CloudinaryContext cloudName="smddev" secure="true">
                 <div className="content">
                     <NavBar/>
                     <Routes/>
