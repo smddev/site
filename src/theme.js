@@ -16,15 +16,17 @@ const colors = {
     ],
 }
 
+const fonts = {
+    regular: 'Archivo',
+    narrow: 'Archivo Narrow'
+}
+
 export const theme = {
-    fonts: {
-        regular: 'Archivo',
-        narrow: 'Archivo Narrow'
-    },
+    fonts,
+    colors,
     fontSizes: [
         12, 14, 16, 24, 32, 48, 64, 96, 128
     ],
-    colors,
     space: [
         0, 4, 8, 16, 32, 64, 128, 256
     ],
@@ -38,6 +40,7 @@ export const theme = {
         primary: {
             padding: '0.2em 1em 0.2em 1em',
             color: colors.black[0],
+            fontFamily: fonts.regular,
             backgroundColor: colors.orange[0],
             '&:hover': {
                 backgroundColor: colors.orange[1],
