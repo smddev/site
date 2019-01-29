@@ -3,6 +3,7 @@ import Gallery from "./Gallery";
 import Card from "./Card";
 import Icon from "./Icon";
 import List from "./List";
+import MemberCard from "./MemberCard";
 
 export const ProjectGallery = ({projects}) =>
     <Gallery items={projects}>
@@ -11,7 +12,7 @@ export const ProjectGallery = ({projects}) =>
 
 export const TeamGallery = ({members}) =>
     <Gallery items={members}>
-        <Card basePath='/members'  imagePath={'site/member'}/>
+        <MemberCard basePath='/members'  imagePath={'site/member'}/>
     </Gallery>
 
 const PortfolioList = ({items, filterBy, include, vertical, color, bg}) =>

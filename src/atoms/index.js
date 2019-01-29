@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from '@reach/router'
 import styled, {withTheme} from 'styled-components'
-import {Flex} from '@rebass/grid'
+import {Flex, Box} from '@rebass/grid'
 import {
     backgroundImage,
     backgroundPosition,
@@ -118,3 +118,9 @@ export const Button = styled.button`
   ${fontSize}
       
 `
+
+export const Container = ({props, children}) =>
+    <Box {...props} px={[0, 0, 7]} py={2}>
+        {children}
+    </Box>
+

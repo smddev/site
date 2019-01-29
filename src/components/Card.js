@@ -25,7 +25,7 @@ export default ({item, basePath, imagePath}) =>
                      top={0}
                      bottom={0}
                      alignItems='flex-end'>
-                <H2 color='white'
+                <H2 color='white.0'
                     fontSize={3}>
                     {item.data.title}
                 </H2>

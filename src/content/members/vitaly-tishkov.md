@@ -2,6 +2,8 @@
 order: 0
 title: Vitaly Tishkov
 role: CEO
+avatar: tishkov
+category: management
 ---
 Vitaly has over 15 years experience in software development and management.
 
