@@ -11,6 +11,6 @@ export default withRouteData(({page, members}) => (
         <p>{page.data.intro}</p>
         <Markdown source={page.content} escapeHtml={false}/>
         <h2>Management team</h2>
-        <TeamGallery members={members.filter(m => m.data.category == 'management')}/>
+        <TeamGallery members={members} category='management'/>
     </Container>
 ))

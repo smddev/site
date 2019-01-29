@@ -5,13 +5,22 @@ import Icon from "./Icon";
 import List from "./List";
 import MemberCard from "./MemberCard";
 
-export const ProjectGallery = ({projects}) =>
-    <Gallery items={projects}>
+function filterBy(item, tagName, tagValue) {
+    return tagValue ? (item.data[tagName] && item.data[tagName].includes(tagValue)) : true
+}
+
+export const ProjectGallery = ({projects, industry, service, tech}) => {
+    const selectedProjects = projects.filter(p =>
+        filterBy(p, 'industries', industry) &&
+        filterBy(p, 'services', service) &&
+        filterBy(p, 'tech', tech))
+    return <Gallery items={selectedProjects}>
         <Card basePath='/portfolio/projects' imagePath={'site/project'}/>
     </Gallery>
+}
 
-export const TeamGallery = ({members}) =>
-    <Gallery items={members}>
+export const TeamGallery = ({members, category}) =>
+    <Gallery items={members.filter(m => filterBy(m, 'category', category))}>
         <MemberCard basePath='/members' imagePath={'site/member'}/>
     </Gallery>
 

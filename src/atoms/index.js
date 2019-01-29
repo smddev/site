@@ -115,8 +115,8 @@ export const Button = styled.button`
   border-style: none;
   height: 64px;
   ${buttonStyle}
-  ${fontSize}
-      
+  ${fontSize}   
+  ${fontFamily}   
 `
 
 export const Container = ({props, children}) =>

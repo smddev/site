@@ -18,13 +18,16 @@
     "gray-matter": "^4.0.2",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
+    "query-string": "^6.2.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^4.6.3",
     "react-markdown": "^4.0.6",
     "react-moment": "^0.8.4",
     "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-static": "^6.2.0",
+    "react-static-plugin-react-router": "^6.3.1",
     "styled-system": "^3.2.1"
   },
   "devDependencies": {

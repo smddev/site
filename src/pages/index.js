@@ -32,7 +32,7 @@ export default withRouteData(({page, services, projects, industries}) => (
         <ProjectGallery projects={projects}/>
 
         <Flex justifyContent='center'>
-            <Button variant='primary' fontSize={2}>
+            <Button variant='primary' fontSize={3}>
                 Make calculation
             </Button>
         </Flex>
