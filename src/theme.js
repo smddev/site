@@ -36,13 +36,14 @@ export const theme = {
     icons: [64, 92, 128],
     buttons: {
         primary: {
-            padding : '0.2em 1em 0.2em 1em',
+            padding: '0.2em 1em 0.2em 1em',
             color: colors.black[0],
             backgroundColor: colors.orange[0],
             '&:hover': {
                 backgroundColor: colors.orange[1],
             },
         },
-    }
+    },
+    breakpoints: [40, 52, 64].map(b => b + 'em')
 }
 

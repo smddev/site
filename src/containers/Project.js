@@ -13,7 +13,7 @@ export default withRouteData(({item, data}) => (
                      includes={item.data.services}
                      bg='gray.1'/>
 
-        <Box width={1} mx={5}>
+        <Box width={1}>
             <Image publicId={'site/project/' + item.data.cover}
                    crop="fill"
                    gravity='auto'
