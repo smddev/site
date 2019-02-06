@@ -3,13 +3,15 @@ import {Root, Routes} from 'react-static'
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
 import {theme} from "./theme";
 import {CloudinaryContext} from "cloudinary-react";
-import NavBar from "./components/NavBar";
+import NavBar from "./organisms/NavBar";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Archivo';
+    font-family: ${theme.fonts.base};
     margin: 0;
     padding: 0;
+    background: ${theme.colors.black[0]}
+    color: ${theme.colors.white[0]}
   }
 `
 

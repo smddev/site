@@ -10,25 +10,24 @@ const colors = {
         '#A8A9AE'
     ],
     orange: [
-        '#F36E1E',
         '#F5941E',
-        '#FDB811'
+        '#F36E1E',
+        '#CC5C19',
     ],
 }
 
 const fonts = {
-    regular: 'Archivo',
-    narrow: 'Archivo Narrow'
+    base: 'Khula',
 }
 
 export const theme = {
     fonts,
     colors,
-    fontSizes: [
-        12, 14, 16, 24, 32, 48, 64, 96, 128
-    ],
+    fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
+    lineHeight: [12, 14, 16, 36, 32, 48, 70, 96, 128],
+    fontWeights: [300, 400, 700],
     space: [
-        0, 4, 8, 16, 32, 64, 128, 256
+        0, 4, 8, 16, 32, 40, 64, 72, 128, 256
     ],
     links: {
         active: {
@@ -36,17 +35,6 @@ export const theme = {
         }
     },
     icons: [64, 92, 128],
-    buttons: {
-        primary: {
-            padding: '0.2em 1em 0.2em 1em',
-            color: colors.black[0],
-            fontFamily: fonts.regular,
-            backgroundColor: colors.orange[0],
-            '&:hover': {
-                backgroundColor: colors.orange[1],
-            },
-        },
-    },
-    breakpoints: [40, 52, 64].map(b => b + 'em')
+    breakpoints: [640, 832, 1200].map(b => b + 'px')
 }
 

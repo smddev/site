@@ -15,6 +15,7 @@ import {
     color,
     fontFamily,
     fontSize,
+    fontWeight,
     height,
     left,
     maxHeight,
@@ -28,8 +29,12 @@ import {
     textAlign,
     top,
     width,
-    buttonStyle
+    buttonStyle,
+    space
 } from 'styled-system'
+
+
+export Button from './Button';
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
@@ -37,22 +42,33 @@ export const StyledLink = styled(Link)`
     ${color}
     ${fontSize}    
 `
-export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFamily}) =>
+
+export const Link1 = styled.a`
+    text-decoration: none;
+    color: ${props => props.theme.colors.white[0]};
+    ${fontSize} 
+`
+
+export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFamily, className}) =>
     <StyledLink fontSize={fontSize}
-                color={color}
+                color={theme.colors.white[0]}
                 to={to}
+                className={className}
                 fontFamily={fontFamily}
                 getProps={({isCurrent}) => {
                     // the object returned here is passed to the
                     // anchor element's props
                     return {
                         style: {
-                            borderBottom: isCurrent ? `3px solid ${theme.colors.orange[2]}` : null
+                            color: isCurrent ? `${theme.colors.orange[1]}` : null,
+                            fontWeight: isCurrent ? 700 : 300
                         }
                     };
                 }}>
         {children}
     </StyledLink>)
+
+
 
 export const H1 = styled.h1`
    ${fontFamily}
@@ -79,6 +95,14 @@ export const P = styled.p`
    ${color}
    ${fontSize}
    ${textAlign}
+   ${fontWeight}
+   ${space}
+`
+
+export const Text = styled.span`
+   ${fontSize}
+   ${fontWeight}
+   ${space}
 `
 
 const filter = style({
@@ -109,15 +133,6 @@ export const FlexDiv = styled(Flex)(
     maxWidth,
     maxHeight,
 )
-
-
-export const Button = styled.button`
-  border-style: none;
-  height: 64px;
-  ${buttonStyle}
-  ${fontSize}   
-  ${fontFamily}   
-`
 
 export const Container = ({props, children}) =>
     <Box {...props} px={[0, 0, 7]} py={2}>

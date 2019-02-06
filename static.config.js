@@ -130,15 +130,15 @@ const getSiteData = () => {
     }
 }
 
-const googleFontLink = (name) => `https://fonts.googleapis.com/css?family=${name}`
-const GoogleFont = ({name}) => <link href={googleFontLink(name)} rel="stylesheet"/>
+const googleFontLink = (name, sizes) => `https://fonts.googleapis.com/css?family=${name}:${sizes}`
+const GoogleFont = ({name, sizes}) => <link href={googleFontLink(name, sizes)} rel="stylesheet"/>
 
 const Document = ({Html, Head, Body, children, siteData, renderMeta}) =>
     <Html lang="en-US">
     <Head>
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]}/>)}
+        {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
     </Head>
     <Body>{children}</Body>
     </Html>

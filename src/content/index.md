@@ -1,5 +1,5 @@
 ---
-title: Software at All Times
+title: Software at all times
 subtitle: Development for Web, Mobile and IoT
 ---
-Analytical study of the concept, technical specifications, product implementation and support.
+Analytical study of the concept, technical specifications, software product implementation and technical support.
