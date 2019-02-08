@@ -3,6 +3,7 @@ import {Link} from '@reach/router'
 import styled, {withTheme} from 'styled-components'
 import {Flex, Box} from '@rebass/grid'
 import {
+    themeGet,
     backgroundImage,
     backgroundPosition,
     backgroundRepeat,
@@ -30,11 +31,14 @@ import {
     top,
     width,
     buttonStyle,
-    space
+    space,
+    lineHeight
 } from 'styled-system'
 
 
 export Button from './Button';
+export Hexagon from './Hexagon';
+export HexGrid from './HexGrid';
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
@@ -47,6 +51,19 @@ export const Link1 = styled.a`
     text-decoration: none;
     color: ${props => props.theme.colors.white[0]};
     ${fontSize} 
+`
+
+export const Link2 = styled.a`
+    text-decoration: none;
+    color: ${props => props.theme.colors.white[0]};
+    background-image: ${props => `linear-gradient(to right, ${props.theme.colors.gray[2]} 50%, transparent 50%)`};
+    background-position: ${p => `0 ${themeGet('fontSizes.' + p.fontSize)(p) + 4}px`};
+    background-repeat: repeat-x;
+    background-size: 4px 1px;
+    
+    ${fontSize}
+    ${lineHeight}
+    ${space} 
 `
 
 export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFamily, className}) =>

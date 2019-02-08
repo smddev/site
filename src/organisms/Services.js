@@ -5,6 +5,7 @@ import {H1, P, Button} from "../atoms";
 import Markdown from "react-markdown";
 import {ServiceList} from '../components';
 import styled from 'styled-components';
+import HexServiceList from "../components/HexServiceList";
 
 const Heading = styled(H1)`
   line-height: ${p => `${p.theme.lineHeight[6]}px`};
@@ -17,14 +18,14 @@ const Description = styled(Markdown)`
   line-height: ${p => `${p.theme.lineHeight[3]}px`};
 `
 export default ({page, services}) => <Container alignItems='center'>
-    <Box width={1 / 2} px={2} py={4}>
-        <Heading>{page.data.title}</Heading>
+    <Box width={1 / 2} pr={5}>
+        <Heading dangerouslySetInnerHTML={{ __html: page.data.title }}/>
         <P fontSize={2} fontWeight={0} mb={5} color={'gray.1'}>{page.data.subtitle}</P>
         <Description source={page.content} escapeHtml={false}/>
         <Button mt={3}>See projects</Button>
     </Box>
-    <Box width={1 / 2} px={2} py={4}>
-        <ServiceList services={services} vertical bg='gray.1'/>
+    <Box width={1 / 2}>
+        <HexServiceList services={services}/>
     </Box>
 
 </Container>

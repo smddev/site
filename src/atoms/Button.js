@@ -27,14 +27,14 @@ const StyledButton = styled(Button)`
 `
 
 const Button_Body = styled.div`
-  background-color: ${p => p.theme.colors.orange[0]};
+  background-color: ${p => p.theme.colors.orange[1]};
   padding: 15px 70px 15px 25px;
   ${StyledButton}:hover & {
-    background-color: ${p => p.theme.colors.orange[1]};
+    background-color: ${p => p.theme.colors.orange[2]};
   }
   
   ${StyledButton}:active & {
-    background-color: ${p => p.theme.colors.orange[2]};
+    background-color: ${p => p.theme.colors.orange[3]};
   } 
 `
 

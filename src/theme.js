@@ -6,10 +6,14 @@ const colors = {
         '#FFFFFF'
     ],
     gray: [
+        '#44464F',
         '#5e5e5e',
-        '#A8A9AE'
+        '#A8A9AE',
+
+
     ],
     orange: [
+        '#FDB811',
         '#F5941E',
         '#F36E1E',
         '#CC5C19',
@@ -34,7 +38,7 @@ export const theme = {
             borderBottom: '3px solid'
         }
     },
-    icons: [64, 92, 128],
+    icons: [32, 64, 92, 128],
     breakpoints: [640, 832, 1200].map(b => b + 'px')
 }
 
