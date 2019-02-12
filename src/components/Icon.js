@@ -1,26 +1,30 @@
 import React from 'react'
 import {Image} from "cloudinary-react";
-import {themeGet} from 'styled-system'
-import {H2, StyledLink} from "../atoms";
+import styled from 'styled-components';
+import {themeGet, space} from 'styled-system'
+import {H2, StyledLink, description, Text} from "../atoms";
 import {Flex, Box} from '@rebass/grid'
 
+const Description = styled(Text)`
+    ${description}
+`
 
-export default ({linkPath, item, vertical, size, color, bg}) => {
+export default ({linkPath, item, vertical, size, color, bg, mt, mx}) => {
     const pxSize = themeGet('icons')[size || 0]
     const url = `${linkPath}${item.data.slug}`
-    return <StyledLink to={url}>
+    return <StyledLink to={url} {...{mt, mx}}>
         <Flex
             bg={bg}
             alignItems='center'
             flexDirection={vertical ? 'column' : 'row'}>
-            <Box px={2}>
+            <Box>
                 <Image publicId={`site/icons/${item.data.icon}`}
                        crop="fit"
                        width={pxSize}
                        height={pxSize}/>
             </Box>
-            <Box>
-                <H2 fontSize={[2]} color={color}>{item.data.title}</H2>
+            <Box mt={'14px'}>
+                <Description>{item.data.title}</Description>
             </Box>
         </Flex>
     </StyledLink>

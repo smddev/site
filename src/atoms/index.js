@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from '@reach/router'
-import styled, {withTheme} from 'styled-components'
+import styled, {withTheme, css} from 'styled-components'
 import {Flex, Box} from '@rebass/grid'
 import {
     themeGet,
@@ -39,12 +39,15 @@ import {
 export Button from './Button';
 export Hexagon from './Hexagon';
 export HexGrid from './HexGrid';
+export Container from './Container';
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
+    display: block;
     ${fontFamily}
     ${color}
-    ${fontSize}    
+    ${fontSize}
+    ${space}    
 `
 
 export const Link1 = styled.a`
@@ -57,7 +60,7 @@ export const Link2 = styled.a`
     text-decoration: none;
     color: ${props => props.theme.colors.white[0]};
     background-image: ${props => `linear-gradient(to right, ${props.theme.colors.gray[2]} 50%, transparent 50%)`};
-    background-position: ${p => `0 ${themeGet('fontSizes.' + p.fontSize)(p) + 4}px`};
+    background-position: ${p => `0 ${themeGet('fontSizes.' + p.fontSize)(p) + 2}px`};
     background-repeat: repeat-x;
     background-size: 4px 1px;
     
@@ -136,6 +139,13 @@ export const Text = styled.span`
    ${space}
 `
 
+export const description = css`
+  font-size: ${p => `${p.theme.fontSizes[3]}px`};
+  font-weight: ${p => p.theme.fontWeights[0]};
+  line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  color: white;
+`
+
 const filter = style({
     prop: 'filter'
 });
@@ -164,9 +174,3 @@ export const FlexDiv = styled(Flex)(
     maxWidth,
     maxHeight,
 )
-
-export const Container = ({props, children}) =>
-    <Box {...props} px={[0, 0, 7]} py={2}>
-        {children}
-    </Box>
-

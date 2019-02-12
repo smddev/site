@@ -2,8 +2,8 @@ import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
 import {H1, H2, P, Button} from '../atoms';
 import {Box, Flex} from '@rebass/grid'
-import {IndustryList, ProjectGallery} from '../components';
-import {Services, Facts} from '../organisms'
+import {ProjectGallery} from '../components';
+import {Services, Facts, Industries} from '../organisms'
 
 export default withRouteData(({page, services, projects, industries, facts}) => (
     <Fragment>
@@ -11,12 +11,8 @@ export default withRouteData(({page, services, projects, industries, facts}) => 
 
         <Facts mt={10} facts={facts}/>
 
-        <Flex justifyContent='center'>
-            <H2 fontSize={4}>Industries</H2>
-        </Flex>
-        <Flex justifyContent='center'>
-            <IndustryList industries={industries}/>
-        </Flex>
+        <Industries mt={8} industries={industries}/>
+
         <Flex justifyContent='center'>
             <H2 fontSize={4}>Recent projects</H2>
         </Flex>
