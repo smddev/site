@@ -75,6 +75,7 @@ const getRoutes = async () => {
             projects: siteData.collections.project,
             services: siteData.collections.service,
             facts: siteData.collections.facts,
+            stages: siteData.collections.stages,
             industries: siteData.collections.industry,
             techs: siteData.collections.tech
         }, '/'),

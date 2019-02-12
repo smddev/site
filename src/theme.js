@@ -1,6 +1,9 @@
+import Color from 'color';
+
 const colors = {
     black: [
-        '#25272E'
+        '#25272E',
+        `${Color('#25272E').fade(0.8)}`
     ],
     white: [
         '#FFFFFF'
@@ -31,7 +34,7 @@ export const theme = {
     lineHeight: [12, 14, 24, 36, 32, 48, 70, 96, 128],
     fontWeights: [300, 400, 700],
     space: [
-        0, 4, 8, 16, 32, 40, 64, 72, 100, 128, 140, 256
+        0, 4, 8, 16, 32, 40, 64, 72, 100, 128, 140, 184, 256
     ],
     links: {
         active: {

@@ -1,18 +1,18 @@
 import React, {Children, cloneElement} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {HEX_PROP} from './Hexagon';
 
 const PADDING = 8;
 
-const HexGrid = ({children, direction, className, height}) => {
+const HexGrid = ({children, direction, className, height, horizontal}) => {
     const chldrn = Children.map(children, (child, index) => {
        return  cloneElement(child, {height})
     });
+    console.log('horiz: ', horizontal)
     return <div className={className}>{chldrn}</div>
 }
 
-
-export default styled(HexGrid)`
+const vertical = css`
   >:nth-child(even) {
     margin-left: ${p => `${p.height * HEX_PROP * 2 + PADDING}px`};
   }
@@ -20,4 +20,24 @@ export default styled(HexGrid)`
   >:not(:last-child) {
     margin-bottom: ${p => `-${(p.height - PADDING)/2}px`};
   }
+`
+
+const horizontal = css`
+  padding-bottom: ${p => `${(p.height + PADDING)/2}px`};
+  
+  >* {
+    display: inline-block;
+  }
+  
+  >:nth-child(even) {
+    margin-bottom: ${p => `-${(p.height + PADDING)/2}px`};
+  }
+  
+  >:not(:last-child) {
+    margin-right: ${p => `${PADDING}px`};
+  }
+`
+
+export default styled(HexGrid)`
+  ${p=>p.horizontal ? horizontal : vertical}
 `

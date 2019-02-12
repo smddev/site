@@ -33,7 +33,7 @@ const HexServiceList = withTheme(({services, theme, className}) => {
     },
     ]
     return <div className={className}>
-        <HexGrid height={274} direction={'vertical'}>
+        <HexGrid height={274}>
             {services.slice(0, 3).map((service, index) =>
                 <Hexagon key={index}
                          iconColor={icons[index].color}

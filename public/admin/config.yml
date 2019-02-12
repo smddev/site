@@ -43,6 +43,16 @@ collections:
       - {label: "Subtitle", name: "subtitle", widget: "string"}
       - {label: "Background", name: "background", widget: "string"}
 
+  - name: "stages"
+    label: "Stages"
+    folder: "src/content/stages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+
   - name: "tech"
     label: "Technologies"
     folder: "src/content/techs"

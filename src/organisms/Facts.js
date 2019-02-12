@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../atoms/Container';
+import {Container} from '../atoms';
 import {Box} from '@rebass/grid'
 import {Fact} from '../components';
 import {space} from 'styled-system';
