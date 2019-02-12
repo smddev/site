@@ -32,6 +32,17 @@ collections:
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string", required: false}
 
+  - name: "facts"
+    label: "Facts"
+    folder: "src/content/facts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Background", name: "background", widget: "string"}
+
   - name: "tech"
     label: "Technologies"
     folder: "src/content/techs"

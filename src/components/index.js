@@ -4,6 +4,7 @@ import Card from "./Card";
 import Icon from "./Icon";
 import List from "./List";
 import MemberCard from "./MemberCard";
+import Fact from "./Fact";
 
 function filterBy(item, tagName, tagValue) {
     return tagValue ? (item.data[tagName] && item.data[tagName].includes(tagValue)) : true
@@ -35,3 +36,5 @@ export const IndustryList = (props) =>
 
 export const ServiceList = (props) =>
     <PortfolioList items={props.services} filterBy='service' {...props}/>
+
+export {Fact}

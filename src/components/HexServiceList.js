@@ -1,6 +1,5 @@
 import React from 'react';
 import {Hexagon, HexGrid, Link2} from '../atoms'
-import {themeGet} from "styled-system";
 import {Image} from "cloudinary-react";
 import styled, {withTheme} from "styled-components";
 import background from "../services.png"
@@ -61,5 +60,5 @@ export default styled(HexServiceList)`
   background-image: url(${background});
   background-repeat: no-repeat;
   padding: 20px 60px 60px 60px;
-  margin: -20px -60px -60px -60px;
+  margin: 0 -60px;
 `

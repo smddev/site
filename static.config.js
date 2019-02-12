@@ -74,6 +74,7 @@ const getRoutes = async () => {
         pageRoute('index', {
             projects: siteData.collections.project,
             services: siteData.collections.service,
+            facts: siteData.collections.facts,
             industries: siteData.collections.industry,
             techs: siteData.collections.tech
         }, '/'),

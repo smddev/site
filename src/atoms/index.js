@@ -85,19 +85,33 @@ export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFam
         {children}
     </StyledLink>)
 
-
+export const Subtitle = styled.p`
+  font-size: ${p => `${p.theme.fontSizes[2]}px`};
+  line-height: ${p => `${p.theme.lineHeight[2]}px`};
+  font-weight: ${p => p.theme.fontWeights[0]};
+  margin: 0;
+  color: ${p => p.theme.colors.gray[2]};
+  ${space}
+`
 
 export const H1 = styled.h1`
-   ${fontFamily}
-   ${color}
-   ${fontSize}
-   ${textAlign}
+  line-height: ${p => `${p.theme.lineHeight[6]}px`};
+  font-size: ${p => `${p.theme.fontSizes[6]}px`};
+  margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
 `
 export const H2 = styled.h2`
    ${fontFamily}
    ${color}
    ${fontSize}
    ${textAlign}
+`
+
+export const H5 = styled.h5`
+  line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  font-size: ${p => `${p.theme.fontSizes[3]}px`};
+  font-weight: ${p => p.theme.fontWeights[1]};
+  margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
+  ${space};
 `
 
 export const H3 = styled.h3`
