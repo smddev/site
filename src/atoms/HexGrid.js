@@ -8,7 +8,6 @@ const HexGrid = ({children, direction, className, height, horizontal}) => {
     const chldrn = Children.map(children, (child, index) => {
        return  cloneElement(child, {height})
     });
-    console.log('horiz: ', horizontal)
     return <div className={className}>{chldrn}</div>
 }
 

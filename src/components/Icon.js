@@ -2,12 +2,8 @@ import React from 'react'
 import {Image} from "cloudinary-react";
 import styled from 'styled-components';
 import {themeGet, space} from 'styled-system'
-import {H2, StyledLink, description, Text} from "../atoms";
+import {H2, StyledLink, Description, Text} from "../atoms";
 import {Flex, Box} from '@rebass/grid'
-
-const Description = styled(Text)`
-    ${description}
-`
 
 export default ({linkPath, item, vertical, size, color, bg, mt, mx}) => {
     const pxSize = themeGet('icons')[size || 0]

@@ -101,6 +101,7 @@ export const H1 = styled.h1`
   line-height: ${p => `${p.theme.lineHeight[6]}px`};
   font-size: ${p => `${p.theme.fontSizes[6]}px`};
   margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
+  ${space}
 `
 export const H2 = styled.h2`
    ${fontFamily}
@@ -144,6 +145,11 @@ export const description = css`
   font-weight: ${p => p.theme.fontWeights[0]};
   line-height: ${p => `${p.theme.lineHeight[3]}px`};
   color: white;
+`
+
+export const Description = styled(Text)`
+    ${description}
+    ${space}
 `
 
 const filter = style({

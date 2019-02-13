@@ -31,6 +31,9 @@ export const PortfolioList = ({items, filterBy, includes, vertical, color, bg, m
         <Icon vertical={!vertical} {...{color, bg, mt, mx}}/>
     </List>
 
+export const IndustryList = (props) =>
+    <PortfolioList mt={'60px'} mx={'50px'} items={props.industries} filterBy='industry' {...props}/>
+
 export const ServiceList = (props) =>
     <PortfolioList items={props.services} filterBy='service' {...props}/>
 
