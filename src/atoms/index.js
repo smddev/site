@@ -41,6 +41,25 @@ export HexGrid from './HexGrid';
 export Container from './Container';
 export AspectBox from './AspectBox'
 
+export const Input = styled.input`
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 300;
+    padding:0 0 16px 0;
+    display: block;
+    color: white;
+    font-family: inherit;
+    &::placeholder {
+      color: white;
+    }
+    
+    ${space};
+`
+
 export const StyledLink = styled(Link)`
     text-decoration: none;
     display: block;

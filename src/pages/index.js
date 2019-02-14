@@ -8,7 +8,8 @@ import {
     Industries,
     Stages,
     Feedback,
-    RecentProjects
+    RecentProjects,
+    Footer
 } from '../organisms'
 
 export default withRouteData(({page, services, projects, industries, facts, stages}) => (
@@ -26,10 +27,7 @@ export default withRouteData(({page, services, projects, industries, facts, stag
 
         <RecentProjects mt={8} projects={projects}/>
 
-        <Flex justifyContent='center'>
-            <Button>
-                Make calculation
-            </Button>
-        </Flex>
+        <Footer mt={10}/>
+
     </Fragment>
 ))

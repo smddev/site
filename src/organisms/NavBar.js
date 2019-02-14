@@ -5,7 +5,7 @@ import {Box, Flex} from '@rebass/grid'
 import styled from 'styled-components'
 import logoImg from 'logo-white.png'
 import {NavLink} from "../atoms/index";
-import PhoneLink from '../components/PhoneLink'
+import {PhoneLink} from '../components'
 import ArrowLink from '../atoms/ArrowLink'
 import Container from '../atoms/Container'
 

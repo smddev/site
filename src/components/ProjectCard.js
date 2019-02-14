@@ -90,7 +90,7 @@ const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
     <Industries position='absolute' bottom={CARD_Y_PADDING} industries={project.data.industries}/>
 </div>)`
   ${cover};
-  transition: opacity .8s;  
+  transition: opacity .5s;  
   opacity: 1;
   ${StyledProjectCard}:hover & {
     opacity: 0;

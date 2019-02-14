@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: ${theme.colors.black[0]}
     color: ${theme.colors.white[0]}
+    overflow-x: hidden;
   }
 `
 
