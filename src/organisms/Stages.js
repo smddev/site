@@ -6,7 +6,9 @@ import styled from 'styled-components';
 import background from './../stages.svg'
 
 const Icon = styled.span`
-  ${description}
+  ${description};
+  align-self: baseline;
+  line-height: 24px;
 `
 
 const Stage = styled(Subtitle)`
@@ -27,6 +29,7 @@ const Stages = ({stages, className}) => <Container className={className} alignIt
             {stages.slice(0, 4).map((stage, index) => {
                 return <Hexagon
                         iconPos={'lt'}
+                        iconHeight={43}
                         key={index}
                         iconColor={'black.1'}
                         icon={<Icon>{stage.data.title}</Icon>}

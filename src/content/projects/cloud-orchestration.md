@@ -3,11 +3,12 @@ order: 0
 title: Cloud orchestration
 cover: cloud-orch.jpg
 industries:
-  - it
+  - IT
 services:
   - software-development
 techs:
   - java
+description: The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application
 ---
 The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.
 

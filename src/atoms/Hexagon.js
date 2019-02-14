@@ -13,10 +13,10 @@ const commonStyle = css`
     border-bottom: ${p=> `${p.height/2}px solid transparent`};
 `
 
-const Hexagon = ({children, icon, height, className, iconColor}) => <div className={className}>
+const Hexagon = ({children, icon, iconHeight, height, className, iconColor}) => <div className={className}>
     <div className={`${className}__text`}>{children}</div>
     {icon &&
-        <div className={`${className}__icon`}><StyledHex bg={iconColor || 'orange.1'} height={height*ICON_PROP}>
+        <div className={`${className}__icon`}><StyledHex bg={iconColor || 'orange.1'} height={iconHeight || height*ICON_PROP}>
             {icon}
             </StyledHex>
         </div>
@@ -61,8 +61,8 @@ const StyledHex = styled(Hexagon)`
     right: ${p=> p.iconPos === 'rc' ? `-${p.height*HEX_PROP/2}px` : 'auto'};
     top: ${p=> p.iconPos === 'lt' ? 0 : p.iconPos === 'rc' ? '50%': 'auto'};
     bottom: ${p=> p.iconPos === 'lb' ? 0 : 'auto'};
-    left: ${p=> p.iconPos === 'lt' || p.iconPos === 'lb' ? `-${p.height*ICON_PROP*HEX_PROP/2}px` : 'auto'};
-    margin-top: ${p => p.iconPos === 'rc' ? `-${p.height*ICON_PROP/2}px` : 'default'};
+    left: ${p=> p.iconPos === 'lt' || p.iconPos === 'lb' ? `-${(p.iconHeight || (p.height*ICON_PROP))*HEX_PROP/2}px` : 'auto'};
+    margin-top: ${p => p.iconPos === 'rc' ? `-${(p.iconHeight || (p.height*ICON_PROP))/2}px` : 'default'};
     z-index: 1;
   }
 `

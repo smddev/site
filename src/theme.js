@@ -30,11 +30,14 @@ const fonts = {
 export const theme = {
     fonts,
     colors,
-    fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
-    lineHeight: [12, 14, 24, 36, 32, 48, 70, 96, 128],
+    fontSizes: [10, 12, 14, 16, 24, 32, 48, 64, 96, 128],
+    lineHeight: [10, 12, 14, 24, 36, 32, 48, 70, 96, 128],
     fontWeights: [300, 400, 700],
     space: [
         0, 4, 8, 16, 32, 40, 64, 72, 100, 128, 140, 184, 256
+    ],
+    radii: [
+        2
     ],
     links: {
         active: {

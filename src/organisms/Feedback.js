@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {space} from 'styled-system';
 import quote from '../quote.svg'
 import {Box} from '@rebass/grid'
+import background from '../feedback.svg'
 
 const Em = styled.em`
   color: ${p => p.theme.colors.orange[1]};
@@ -37,5 +38,18 @@ const Feedback = ({className}) => <Container className={className} alignItems='t
 </Container>
 
 export default styled(Feedback)`
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 1133px;
+    height: 686px;
+    background-image: url(${background});
+    background-repeat: no-repeat;
+    background-position: left top;
+    left: -230px;
+    top: 247px;
+  }
   ${space}
 `

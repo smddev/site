@@ -90,6 +90,7 @@ collections:
       - {label: "Services", name: "services",  widget: "list"}
       - {label: "Technologies", name: "techs", widget: "list"}
       - {label: "Members",  name: "members",  widget: "list", required: false   }
+      - {label: "Description",  name: "description",  widget: "string", required: false   }
 
   - name: "post"
     label: "Post"

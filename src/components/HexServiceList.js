@@ -2,7 +2,7 @@ import React from 'react';
 import {Hexagon, HexGrid, Link2} from '../atoms'
 import {Image} from "cloudinary-react";
 import styled, {withTheme} from "styled-components";
-import background from "../services.png"
+import background from "../services.svg"
 
 const Icon = styled((props) => <div className={props.className}><Image {...props}/></div>)`
   width: ${p => `${p.width}px`};
@@ -44,7 +44,7 @@ const HexServiceList = withTheme(({services, theme, className}) => {
                                        height={pxSize} responsive/>}
                          bg={'gray.0'}>
                     <Link
-                        fontSize={3}
+                        fontSize={4}
                         lineHeight={'36px'}
                         href={`/portfolio?service=${service.data.slug}`}>
                         {service.data.title}
