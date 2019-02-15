@@ -4,10 +4,11 @@ import {Link} from '@reach/router'
 import {Box, Flex} from '@rebass/grid'
 import styled from 'styled-components'
 import logoImg from 'logo-white.png'
-import {NavLink} from "../atoms/index";
+import {NavLink, withBackground} from "../atoms/index";
 import {PhoneLink} from '../components'
 import ArrowLink from '../atoms/ArrowLink'
 import Container from '../atoms/Container'
+import background from '../navbar.svg'
 
 const Logo = styled.img`
   height: 32px;
@@ -32,8 +33,8 @@ const NavBar_ArrowLink = styled(ArrowLink)`
     margin-left: ${props => props.theme.space[7] + 'px'};
 `
 
-export default withSiteData(({routes}) => {
-    return <Container height={100}>
+export default withBackground(background, 208, 361)(withSiteData(({routes, className}) => {
+    return <Container height={100} {...{className}}>
         <Column>
             <Link to={'/'}>
                 <NavBar_Logo src={logoImg} alt="Smart Design"/>
@@ -47,5 +48,8 @@ export default withSiteData(({routes}) => {
             <NavBar_ArrowLink>Send request</NavBar_ArrowLink>
         </Column>
     </Container>
-})
+}))`
+    right:-350px;
+    top:-35px;
+`;
 

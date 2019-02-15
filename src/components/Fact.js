@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {space} from 'styled-system';
-import {H5, Subtitle} from "../atoms";
+import {H5, Subtitle, withBackground} from "../atoms";
 
 const Fact = ({fact, className}) => {
-
-
-    return <div className={className} >
+    return <div {...{className}} >
         <H5>{fact.data.title}</H5>
         <Subtitle>{fact.data.subtitle}</Subtitle>
     </div>
@@ -16,13 +14,13 @@ const getImage = (name) => {
   return require(`../${name}.svg`)
 }
 
-export default styled(Fact)`
-  background-repeat: no-repeat;
-  background-image: ${p => `url('${getImage(p.fact.data.background)}')`};
-  background-position: top left;
+export default withBackground(null, 340, 220)(styled(Fact)`
+  padding: 60px 30px;
+  width:240px;
   box-sizing: border-box;
-  width: 340px;
-  height:220px;
-  padding: 60px 40px 60px 80px;
-  ${space}
+`)`
+    background-image: ${p => `url('${getImage(p.fact.data.background)}')`};
+    top:5px;
+    left:-50px;
+    
 `

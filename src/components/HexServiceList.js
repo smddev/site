@@ -1,8 +1,8 @@
 import React from 'react';
-import {Hexagon, HexGrid, Link2} from '../atoms'
+import {Hexagon, HexGrid, Link2, withBackground} from '../atoms'
 import {Image} from "cloudinary-react";
-import styled, {withTheme} from "styled-components";
-import background from "../services.svg"
+import styled, {withTheme, css} from "styled-components";
+import background from "../servicesHex.svg"
 
 const Icon = styled((props) => <div className={props.className}><Image {...props}/></div>)`
   width: ${p => `${p.width}px`};
@@ -56,9 +56,7 @@ const HexServiceList = withTheme(({services, theme, className}) => {
     </div>
 })
 
-export default styled(HexServiceList)`
-  background-image: url(${background});
-  background-repeat: no-repeat;
-  padding: 20px 60px 60px 60px;
-  margin: 0 -60px;
+export default withBackground(background, 703, 631)(HexServiceList)`
+  left:-60px;
+  top: -20px;
 `

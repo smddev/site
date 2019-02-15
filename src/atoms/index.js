@@ -200,3 +200,28 @@ export const FlexDiv = styled(Flex)(
     maxWidth,
     maxHeight,
 )
+
+export const withBackground = (background, w, h, after=false) => (WrappedComponent) => (strings, ...args) => {
+    const position = css(strings, ...args);
+    const width = `${w}px`;
+    const height = `${h}px`;
+
+    const bg = css`
+      content:'';
+      position: absolute;
+      background-image: url(${background});
+      background-position: left top;
+      z-index: -1;
+      width: ${width};
+      height: ${height};
+      background-repeat: no-repeat;
+      ${position}
+    `;
+
+    const wrapper = after ? css`&:after {${bg}}`:css`&:before {${bg}}`
+
+    return styled(WrappedComponent)`
+      position: relative;
+      ${wrapper}
+    `;
+}
