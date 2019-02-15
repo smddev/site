@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
-import {PhoneLink} from '../components';
-import {Button, H1, Input, Subtitle, Container} from '../atoms';
+import {PhoneLink, EmailLink} from '../components';
+import {withSiteData} from "react-static";
+import {Button, H1, Input, Subtitle, Container, NavLink} from '../atoms';
 import styled from 'styled-components';
 import {Flex, Box} from '@rebass/grid';
 import {space} from 'styled-system';
@@ -40,17 +41,39 @@ const CalculateCost = styled(({className}) => <Container {...{className}}>
   }
 `
 
-const FooterContacts = styled(({className}) => <Container {...{className}}>
-    <PhoneLink big/>
-</Container>)`
-  padding-top: 40px;
-  padding-bottom: 40px;
+
+const Link = styled(NavLink)`
+    &:not(:first-child) {
+      margin-left: ${props => props.theme.space[5] + 'px'}
+    }
 `
 
+const Routes = styled(withSiteData(({routes, className})=><div {...{className}}>
+    {routes && routes.map(r => <Link key={r.name} to={r.path}>{r.name}</Link>)}
+</div>))`
+  display: inline-flex;
+`
+
+const Contacts = styled(({className}) => <div {...{className}}>
+    <PhoneLink big/>
+    <EmailLink big/>
+</div>)`>*:not(:last-child) {margin-right: 55px}`
+
+const FooterContacts = styled(({className}) => <Container {...{className, alignItems:'center', justifyContent:'space-between'}}>
+    <Contacts />
+    <Routes />
+</Container>)`
+  ${space};
+`
+
+const Copyright = styled(({className}) => <Container {...{className}}>
+    <Subtitle>© 2018 smmdev.com. All rights reserved.</Subtitle>
+</Container>)`${space}`
 
 export default styled(({noForm, className}) => <div {...{className}}>
     {!noForm && <CalculateCost/>}
-    <FooterContacts/>
+    <FooterContacts mt={7}/>
+    <Copyright mt={3}/>
 </div>)`
   ${space}
 `

@@ -6,6 +6,7 @@ import List from "./List";
 import MemberCard from "./MemberCard";
 import Fact from "./Fact";
 import PhoneLink from "./PhoneLink";
+import EmailLink from "./EmailLink";
 import ProjectCard, {PROJECT_CARD_RATIO} from "./ProjectCard";
 
 function filterBy(item, tagName, tagValue) {
@@ -39,4 +40,4 @@ export const IndustryList = (props) =>
 export const ServiceList = (props) =>
     <PortfolioList items={props.services} filterBy='service' {...props}/>
 
-export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink}
+export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, EmailLink}

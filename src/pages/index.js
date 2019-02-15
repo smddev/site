@@ -27,7 +27,7 @@ export default withRouteData(({page, services, projects, industries, facts, stag
 
         <RecentProjects mt={8} projects={projects}/>
 
-        <Footer mt={10}/>
+        <Footer mt={10} mb={6}/>
 
     </Fragment>
 ))
