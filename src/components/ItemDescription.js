@@ -1,5 +1,5 @@
 import React from 'react'
-import Markdown from 'react-markdown'
+import {Markdown} from '../components'
 import {H1} from "../atoms";
 
 export default ({item}) => <div>

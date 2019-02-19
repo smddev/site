@@ -4,7 +4,7 @@ import {createGlobalStyle, ThemeProvider, css} from 'styled-components'
 import {theme} from "./theme";
 import {CloudinaryContext} from "cloudinary-react";
 import NavBar from "./organisms/NavBar";
-import {description} from './atoms'
+import {description, h2Style} from './atoms'
 import listItem from './listItem.svg'
 
 const paragraph = css`
@@ -23,36 +23,39 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
   
-  h2 {
-    ${description};
-    font-weight: ${theme.fontWeights[1]};
-    font-size:  ${theme.fontSizes[5]}px;
-    line-height: ${theme.lineHeight[5]}px;
-    margin: 60px 0 0 0;
-  }
-  
-  p {
-    font-weight: ${theme.fontWeights[0]};
-    font-size:  ${theme.fontSizes[10]}px;
-    line-height: ${theme.lineHeight[10]}px;
-  }
-  
   ul {
-    list-style: none;
-    padding: 0;
-    li {
-      vertical-align: top;
-      color: ${theme.colors.gray[2]}
-      font-weight: ${theme.fontWeights[1]};
-      font-size:  ${theme.fontSizes[11]}px;
-      line-height: ${theme.lineHeight[11]}px;
-      background: url(${listItem}) no-repeat left top;
-      padding: 0 35px;
-      margin-bottom: 20px;
-      display: inline-block;
-      box-sizing: border-box;
-      width: 50%;
-    }
+    margin: 0;
+  }
+  
+  .markdown {
+      h2 {
+        ${h2Style};
+        margin: 60px 0 0 0;
+      }
+      
+      p {
+        font-weight: ${theme.fontWeights[0]};
+        font-size:  ${theme.fontSizes[10]}px;
+        line-height: ${theme.lineHeight[10]}px;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          vertical-align: top;
+          color: ${theme.colors.gray[2]}
+          font-weight: ${theme.fontWeights[1]};
+          font-size:  ${theme.fontSizes[11]}px;
+          line-height: ${theme.lineHeight[11]}px;
+          background: url(${listItem}) no-repeat left top;
+          padding: 0 35px;
+          margin-bottom: 20px;
+          display: inline-block;
+          box-sizing: border-box;
+          width: 50%;
+        }
+      }
   }
 `
 

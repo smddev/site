@@ -44,7 +44,7 @@ export const theme = {
             borderBottom: '3px solid'
         }
     },
-    icons: [32, 64, 92, 128],
+    icons: [32, 40, 64, 92, 128],
     breakpoints: [640, 832, 1200].map(b => b + 'px')
 }
 

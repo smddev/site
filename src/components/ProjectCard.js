@@ -3,6 +3,7 @@ import {Subtitle, AspectBox, description, StyledLink} from '../atoms'
 import cloudinary from "../cloudinary"
 import styled, {css} from 'styled-components';
 import {position, bottom, left, space} from 'styled-system';
+import {TechList} from './index'
 
 const Title = styled.h3`
   ${description};
@@ -32,26 +33,6 @@ const Industries = styled(({industries, className}) => <Subtitle {...{className}
   padding: 0 ${CARD_X_PADDING};
 `
 
-
-const Tech = styled.span`
-  background-color: ${p => p.theme.colors.black[0]};
-  color: white;
-  font-size: ${p => `${p.theme.fontSizes[0]}px`};
-  border-radius: ${p => `${p.theme.radii[0]}px`};
-  padding: 5px 5px 3px 5px;
-  &:not(:last-child) {
-    margin-right: 8px;
-  };
-`
-
-const Techs = styled(({techs, className}) => <div {...{className}}>
-    {techs.map((t, i)=><Tech key={i}>{t}</Tech>)}
-</div>)`
-  ${position};
-  ${bottom};
-  ${left}
-`
-
 const IMAGE_PATH='site/project'
 const getImageUrl = (name) => cloudinary.url(`${IMAGE_PATH}/${name}`, {width: 320, crop: "scale"})
 
@@ -65,7 +46,8 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
     <HoverTitle mt={'32px'}>{project.data.title}</HoverTitle>
     <Subtitle mt={1} px={CARD_X_PADDING}>{project.data.description}</Subtitle>
     <Industries mt={2} industries={project.data.industries}/>
-    <Techs position='absolute' bottom={CARD_Y_PADDING} left={CARD_X_PADDING} techs={project.data.techs}/>
+    <TechList small position='absolute' bottom={CARD_Y_PADDING}
+              left={CARD_X_PADDING} techs={project.data.techs.map(t => ({data:{title:t, slug:t}}))}/>
 </div>)`
   background-color: ${p => p.theme.colors.gray[0]};
   ${cover};

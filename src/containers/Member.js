@@ -1,6 +1,6 @@
-import React from 'react'
-import {withRouteData} from 'react-static'
-import Markdown from 'react-markdown'
+import React from 'react';
+import {withRouteData} from 'react-static';
+import {Markdown} from '../components';
 import {Container, H1} from "../atoms";
 import {Image} from "cloudinary-react";
 

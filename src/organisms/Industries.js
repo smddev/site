@@ -13,7 +13,7 @@ const Industries = withBackground(bgRight, 274, 343, true)(
     <H1>Industry sectors</H1>
     <Subtitle>We create software taking into account industry features</Subtitle>
     <Container justifyContent='center'>
-        <IndustryList industries={industries}/>
+        <IndustryList mt={'60px'} mx={'65px'} iconSize={2} industries={industries}/>
     </Container>
 </div>)`
     left: -350px;

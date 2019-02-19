@@ -123,11 +123,17 @@ export const H1 = styled.h1`
   margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
   ${space}
 `
+
+export const h2Style = css`
+  font-weight: ${p => p.theme.fontWeights[1]};
+  font-size:  ${p => `${p.theme.fontSizes[5]}px`};
+  line-height: ${p => `${p.theme.lineHeight[5]}px`};
+  margin-bottom: 24px;
+`;
+
 export const H2 = styled.h2`
-   ${fontFamily}
-   ${color}
-   ${fontSize}
-   ${textAlign}
+   ${h2Style};
+   ${space};
 `
 
 export const H5 = styled.h5`
@@ -169,6 +175,8 @@ export const description = css`
 
 export const Description = styled(Text)`
     ${description}
+    ${fontSize}
+    ${lineHeight}
     ${space}
 `
 

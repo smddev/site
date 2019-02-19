@@ -1,7 +1,7 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
 import Moment from 'react-moment'
-import Markdown from 'react-markdown'
+import {Markdown} from '../components'
 import {Link} from '@reach/router'
 
 export default withRouteData(({item}) => (

@@ -1,12 +1,18 @@
 import React from 'react'
 import Gallery from "./Gallery";
 import Card from "./Card";
-import Icon from "./Icon";
+import Icon, {HexIcon} from "./Icon";
 import List from "./List";
 import MemberCard from "./MemberCard";
 import Fact from "./Fact";
 import PhoneLink from "./PhoneLink";
 import EmailLink from "./EmailLink";
+import SideNav from "./SideNav";
+import Tech from "./Techs";
+import {default  as Mrkdn} from "react-markdown";
+import styled from "styled-components";
+import {position, bottom, left} from "styled-system";
+
 import ProjectCard, {PROJECT_CARD_RATIO} from "./ProjectCard";
 
 function filterBy(item, tagName, tagValue) {
@@ -28,16 +34,29 @@ export const TeamGallery = ({members, category}) =>
         <MemberCard basePath='/members' imagePath={'site/member'}/>
     </Gallery>
 
-export const PortfolioList = ({items, filterBy, includes, vertical, color, bg, mt, mx}) =>
+export const PortfolioList = ({items, filterBy, includes, vertical, color, iconSize, bg, mt, mx}) =>
     <List items={items} linkPath={`/portfolio?${filterBy}=`}
           includes={includes} vertical={vertical}>
-        <Icon vertical={!vertical} {...{color, bg, mt, mx}}/>
+        <Icon vertical={!vertical} {...{color, bg, mt, mx, size:iconSize}}/>
     </List>
 
 export const IndustryList = (props) =>
-    <PortfolioList mt={'60px'} mx={'50px'} items={props.industries} filterBy='industry' {...props}/>
+    <PortfolioList items={props.industries} filterBy='industry' {...props}/>
 
 export const ServiceList = (props) =>
-    <PortfolioList items={props.services} filterBy='service' {...props}/>
+    <List items={props.services} linkPath={`/portfolio?service=`}>
+        <HexIcon {...props}/>
+    </List>
 
-export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, EmailLink}
+export const TechList = styled(({className, ...props}) =>
+    <List items={props.techs} includes={props.techIds} className={className} linkPath={`/portfolio?tech=`}>
+        <Tech {...props}/>
+    </List>)`
+  ${position}
+  ${bottom}
+  ${left}
+`
+
+export const Markdown = (props) => <Mrkdn className={'markdown'} {...props}/>
+
+export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, EmailLink, SideNav}

@@ -1,8 +1,7 @@
 import React from 'react'
 import {withRouteData} from "react-static";
-import Markdown from "react-markdown";
 import {Container, H1} from "../atoms";
-import {TeamGallery} from "../components";
+import {TeamGallery, Markdown} from "../components";
 
 export default withRouteData(({page, members}) => (
     <Container>
