@@ -7,7 +7,8 @@ import styled from "styled-components";
 import {space} from "styled-system";
 import AspectBox from "../atoms/AspectBox";
 import cloudinary from "../cloudinary";
-import {SideNav, Markdown, TechList} from '../components';
+import {SideNav, Markdown, TechList, ProjectCard, Carousel, PROJECT_CARD_RATIO} from '../components';
+
 
 const serviceList = (serviceIds, services) => {
     return services.filter(item => serviceIds && serviceIds.includes(item.data.slug)).
@@ -21,6 +22,7 @@ const Cover= styled(AspectBox)`
   ${space}
 `
 
+
 export default withRouteData(({item, data}) => (
     <Fragment>
         <Container>
@@ -28,7 +30,7 @@ export default withRouteData(({item, data}) => (
                 <H1>{item.data.title}</H1>
                 <Subtitle>{serviceList(item.data.services, data.services)}</Subtitle>
 
-                <Cover mt={5} mb={5} ratio={'50%'} item={item}></Cover>
+                <Cover mt={5} mb={5} ratio={.5} item={item}></Cover>
 
                 <Markdown source={item.content} escapeHtml={false}/>
                 <h2>Technologies</h2>
@@ -37,7 +39,17 @@ export default withRouteData(({item, data}) => (
             <Box width={1/3}>
                 <SideNav {...data}/>
             </Box>
+
         </Container>
+        <Container>
+            <Box width={1}>
+                <H1 mt={'200px'}> Other projects</H1>
+                <Carousel mt={6} width={400} height={400 * PROJECT_CARD_RATIO}>
+                    {data.projects.map((p,i) => <ProjectCard  key={i} project={p}/>)}
+                </Carousel>
+            </Box>
+        </Container>
+
         <Footer mt={10} mb={6}/>
     </Fragment>
 ))

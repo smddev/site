@@ -9,6 +9,7 @@ import PhoneLink from "./PhoneLink";
 import EmailLink from "./EmailLink";
 import SideNav from "./SideNav";
 import Tech from "./Techs";
+import Carousel from "./Carousel";
 import {default  as Mrkdn} from "react-markdown";
 import styled from "styled-components";
 import {position, bottom, left} from "styled-system";
@@ -59,4 +60,4 @@ export const TechList = styled(({className, ...props}) =>
 
 export const Markdown = (props) => <Mrkdn className={'markdown'} {...props}/>
 
-export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, EmailLink, SideNav}
+export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, EmailLink, SideNav, Carousel}

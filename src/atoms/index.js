@@ -40,6 +40,7 @@ export Hexagon from './Hexagon';
 export HexGrid from './HexGrid';
 export Container from './Container';
 export AspectBox from './AspectBox'
+export ArrowButton, {ARROW_BUTTON_HEIGHT} from './ArrowButton'
 
 export const Input = styled.input`
     background-color: transparent;

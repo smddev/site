@@ -19,7 +19,7 @@ const HoverTitle = styled(Title)`
   color: ${p => p.theme.colors.orange[1]};
 `
 
-export const PROJECT_CARD_RATIO='73%';
+export const PROJECT_CARD_RATIO=.73;
 const CARD_X_PADDING='40px';
 const CARD_Y_PADDING='24px';
 
@@ -37,10 +37,14 @@ const IMAGE_PATH='site/project'
 const getImageUrl = (name) => cloudinary.url(`${IMAGE_PATH}/${name}`, {width: 320, crop: "scale"})
 
 const cover = css`
+  white-space: normal;
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
+  background-color: ${p => p.theme.colors.gray[0]};
 `
+
+const preventDefault = (e) => {e.preventDefault()}
 
 const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
     <HoverTitle mt={'32px'}>{project.data.title}</HoverTitle>
@@ -49,13 +53,12 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
     <TechList small position='absolute' bottom={CARD_Y_PADDING}
               left={CARD_X_PADDING} techs={project.data.techs.map(t => ({data:{title:t, slug:t}}))}/>
 </div>)`
-  background-color: ${p => p.theme.colors.gray[0]};
   ${cover};
 `
 
 
-const ProjectCard = ({project, className}) => <StyledLink to={`/portfolio/projects/${project.data.slug}`}>
-    <AspectBox ratio={PROJECT_CARD_RATIO} {...{className}}>
+const ProjectCard = ({project, className}) => <StyledLink className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
+    <AspectBox ratio={PROJECT_CARD_RATIO}>
         <HoverProjectCard {...{project}}/>
         <VoidProjectCard {...{project}}/>
     </AspectBox>
@@ -65,6 +68,7 @@ const ProjectCard = ({project, className}) => <StyledLink to={`/portfolio/projec
 const StyledProjectCard = styled(ProjectCard)`
   position: relative;
   overflow: hidden;
+  outline: none;
 `
 
 const VoidProjectCard = styled(({project, className}) => <div {...{className}}>

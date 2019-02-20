@@ -17,5 +17,5 @@ const AspectBox = ({children, ration, className}) => <div {...{className}}>
 export default styled(AspectBox)`
   position: relative;
   height: 0;
-  padding-top: ${p => p.ratio};
+  padding-top: ${p => p.ratio * 100}%;
 `
