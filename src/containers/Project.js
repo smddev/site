@@ -45,7 +45,9 @@ export default withRouteData(({item, data}) => (
             <Box width={1}>
                 <H1 mt={'200px'}> Other projects</H1>
                 <Carousel mt={6} width={400} height={400 * PROJECT_CARD_RATIO}>
-                    {data.projects.map((p,i) => <ProjectCard  key={i} project={p}/>)}
+                    {data.projects.
+                        //reduce((acc, e) => acc.concat([e,e]), []).
+                        map((p,i) => <ProjectCard  key={i} project={p}/>)}
                 </Carousel>
             </Box>
         </Container>

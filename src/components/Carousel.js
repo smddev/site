@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {space} from 'styled-system';
 import {ArrowButton, ARROW_BUTTON_HEIGHT} from "../atoms";
+import {scrollTo} from "../utils";
 
 
 const Container = styled.div`
@@ -86,7 +87,12 @@ class Carousel extends Component {
     }
 
     scroll = (dir) => {
-        console.log('scroll: ', dir);
+        const cs = this.container.current.scrollLeft;
+        const width = this.props.width + 24;
+        const cur = Math.floor(cs / width);
+        const next = cur + dir;
+
+        scrollTo(this.container.current, next * width, 300);
     }
 
     render() {
