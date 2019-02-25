@@ -1,8 +1,11 @@
 import React from 'react'
 import {Box, Flex} from '@rebass/grid'
+import {withWindowLocation} from "../utils";
+import queryString from "query-string";
 
-export default ({items, children, linkPath, includes, vertical, className}) =>
-    <Flex flexWrap='wrap'
+export default withWindowLocation(({items, children, linkPath, includes, vertical, className, location}) => {
+    const query = queryString.parse(location.search);
+    return <Flex flexWrap='wrap'
           flexDirection={vertical ? 'column' : 'row'}
           as='ul'
           className={className}
@@ -18,3 +21,4 @@ export default ({items, children, linkPath, includes, vertical, className}) =>
                     })}
                 </Box>)}
     </Flex>
+})

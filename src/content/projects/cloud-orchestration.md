@@ -3,7 +3,7 @@ order: 0
 title: Cloud orchestration
 cover: cloud-orch.jpg
 industries:
-  - IT
+  - it
 services:
   - software-development
 techs:

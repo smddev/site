@@ -20,4 +20,5 @@ export default styled(({className, item, linkPath, small}) => {
   text-transform: capitalize;
   font-weight: ${p => p.large ? 400 : 300};
   margin-right: 8px;
+  margin-bottom: 8px;
 `

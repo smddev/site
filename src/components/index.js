@@ -16,22 +16,26 @@ import {position, bottom, left} from "styled-system";
 
 import ProjectCard, {PROJECT_CARD_RATIO} from "./ProjectCard";
 
-function filterBy(item, tagName, tagValue) {
+function filterByTag(item, tagName, tagValue) {
     return tagValue ? (item.data[tagName] && item.data[tagName].includes(tagValue)) : true
 }
 
+export const filterBy = ({industry, service, tech}) => (project) => {
+
+    return filterByTag(project, 'industries', industry) &&
+    filterByTag(project, 'services', service) &&
+    filterByTag(project, 'techs', tech)
+}
+
 export const ProjectGallery = ({projects, industry, service, tech}) => {
-    const selectedProjects = projects.filter(p =>
-        filterBy(p, 'industries', industry) &&
-        filterBy(p, 'services', service) &&
-        filterBy(p, 'tech', tech))
+    const selectedProjects = projects.filter(filterBy({industry, service, tech}))
     return <Gallery items={selectedProjects}>
         <Card basePath='/portfolio/projects' imagePath={'site/project'}/>
     </Gallery>
 }
 
 export const TeamGallery = ({members, category}) =>
-    <Gallery items={members.filter(m => filterBy(m, 'category', category))}>
+    <Gallery items={members.filter(m => filterByTag(m, 'category', category))}>
         <MemberCard basePath='/members' imagePath={'site/member'}/>
     </Gallery>
 

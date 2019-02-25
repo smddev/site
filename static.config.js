@@ -90,6 +90,9 @@ const getRoutes = async () => {
         }, null, collectionRoutes('member', 'members')),
         pageRoute('portfolio', {
             projects: siteData.collections.project,
+            industries: siteData.collections.industry,
+            services: siteData.collections.service,
+            techs: siteData.collections.tech,
         }, null, [
             ...collectionRoutes('project', 'projects',
                 {
