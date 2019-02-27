@@ -3,7 +3,7 @@ import {Box, Flex} from '@rebass/grid'
 import {withWindowLocation} from "../utils";
 import queryString from "query-string";
 
-export default withWindowLocation(({items, children, linkPath, includes, vertical, className, location}) => {
+export default withWindowLocation(({items, children, linkPath, includes, vertical, className, location, filterBy}) => {
     const query = queryString.parse(location.search);
     return <Flex flexWrap='wrap'
           flexDirection={vertical ? 'column' : 'row'}
@@ -17,7 +17,8 @@ export default withWindowLocation(({items, children, linkPath, includes, vertica
                      css={{textDecoration: "none"}}>
                     {React.cloneElement(children, {
                         linkPath,
-                        item
+                        item,
+                        active: query[filterBy] === item.data.slug
                     })}
                 </Box>)}
     </Flex>

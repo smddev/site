@@ -4,14 +4,8 @@ import {createGlobalStyle, ThemeProvider, css} from 'styled-components'
 import {theme} from "./theme";
 import {CloudinaryContext} from "cloudinary-react";
 import NavBar from "./organisms/NavBar";
-import {description, h2Style} from './atoms'
+import {description, h2Style, paragraph} from './atoms'
 import listItem from './listItem.svg'
-
-const paragraph = css`
-  font-weight: ${theme.fontWeights[0]};
-  font-size:  ${theme.fontSizes[10]}px;
-  line-height: ${theme.lineHeight[10]}px;
-`
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -34,9 +28,7 @@ const GlobalStyle = createGlobalStyle`
       }
       
       p {
-        font-weight: ${theme.fontWeights[0]};
-        font-size:  ${theme.fontSizes[10]}px;
-        line-height: ${theme.lineHeight[10]}px;
+        ${paragraph};
       }
       
       ul {

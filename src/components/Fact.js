@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {space} from 'styled-system';
-import {H5, Subtitle, withBackground} from "../atoms";
+import {H4, Subtitle, withBackground} from "../atoms";
 
 const Fact = ({fact, className}) => {
     return <div {...{className}} >
-        <H5>{fact.data.title}</H5>
+        <H4>{fact.data.title}</H4>
         <Subtitle>{fact.data.subtitle}</Subtitle>
     </div>
 }

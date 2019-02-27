@@ -1,6 +1,11 @@
 import React from 'react'
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {StyledLink} from "../atoms";
+
+const active = p => ({
+    color: p.theme.colors.gray[0],
+    'background-color': 'white'
+});
 
 export default styled(({className, item, linkPath, small}) => {
         return (small ?
@@ -21,4 +26,18 @@ export default styled(({className, item, linkPath, small}) => {
   font-weight: ${p => p.large ? 400 : 300};
   margin-right: 8px;
   margin-bottom: 8px;
+  
+  transition: color 0.8s;
+  transition: background-color 0.8s;
+  
+  &:hover {
+      ${p => !p.small && !p.active && {color: p.theme.colors.orange[0]}}
+  }
+  
+  &:active {
+      ${p => !p.small && active(p)}
+  }
+  
+  ${p => !p.small && p.active && active(p)}
 `
+

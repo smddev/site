@@ -29,6 +29,7 @@ const StyledButton = styled(Button)`
 const Button_Body = styled.div`
   background-color: ${p => p.theme.colors.orange[1]};
   padding: 16px 70px 14px 25px;
+  transition: background-color 0.5s;
   ${StyledButton}:hover & {
     background-color: ${p => p.theme.colors.orange[2]};
   }

@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
 import {ProjectCard, SideNav, filterBy} from "../components";
-import {Container, description, H1} from "../atoms";
+import {Container, description, H1WithBackground} from "../atoms";
 import {withRouter} from "react-router";
 import queryString from 'query-string'
 import {Box, Flex} from "@rebass/grid";
@@ -29,8 +29,8 @@ export default withRouteData(withWindowLocation(({projects, industries, services
 
     return <Fragment>
         <Container>
-            <Box width={2/3}>
-                <H1>Portfolio</H1>
+            <Box mt={6} width={2/3}>
+                <H1WithBackground>Portfolio</H1WithBackground>
                 <Description>
                     For 7 years our specialists have developed more than 70 different projects.
                     The most successful and interesting solutions are presented here.

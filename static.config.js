@@ -84,6 +84,7 @@ const getRoutes = async () => {
         }),
         pageRoute('about', {
             members: siteData.collections.member,
+            facts: siteData.collections.facts,
         }),
         pageRoute('team', {
             members: siteData.collections.member,

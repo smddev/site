@@ -1,19 +1,31 @@
 import React from 'react'
-import {FlexDiv, H2, StyledLink} from "../atoms";
+import {H5, Subtitle} from "../atoms";
+import {StyledEmailLink} from "../components";
 import {Image} from "cloudinary-react";
-import {Flex} from '@rebass/grid'
+import {Flex, Box} from '@rebass/grid'
+import styled from "styled-components"
 
+const StyledImage = styled.div`
+  img {
+    border-radius: 2px
+  }
+`
 
-export default ({item}) =>
-    <StyledLink to={`/team/members/${item.data.slug}`}>
-        <FlexDiv flexDirection='column'>
-            <Image publicId={`site/member/${item.data.avatar}`}
-                   gravity='face'
-                   crop="fill"
-                   width={320}
-                   height={320}/>
-            <Flex justifyContent='center'>
-                <H2>{item.data.title}</H2>
-            </Flex>
-        </FlexDiv>
-    </StyledLink>
+export default ({item}) => <Box>
+    <Flex>
+        <StyledImage><Image publicId={`site/member/${item.data.avatar}`}
+               gravity='face'
+               crop="fill"
+               width={160}
+               height={160}
+        /></StyledImage>
+        <Box pl={'25px'}>
+            <H5>{item.data.title}</H5>
+            <Subtitle mt={2}>{item.data.role}</Subtitle>
+            <StyledEmailLink mt={2} email={item.data.email}/>
+        </Box>
+    </Flex>
+    <Box mt={'25px'}>
+        {item.content}
+    </Box>
+</Box>

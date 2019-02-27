@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {space} from 'styled-system';
 import quote from '../quote.svg'
 import {Box} from '@rebass/grid'
-import background from '../feedback.svg'
 
 const Em = styled.em`
   color: ${p => p.theme.colors.orange[1]};
@@ -25,7 +24,7 @@ const FeedbackList = withBackground(quote, 240, 160)(styled.div`
     top: 0;
 `
 
-const Feedback = withBackground(background, 1133, 686)(({className}) => <Container className={className} alignItems='top'>
+const Feedback = ({className}) => <Container className={className} alignItems='top'>
     <Box width={1/2} pr={8}>
         <H1 mt={6}>Feedback from our customers</H1>
         <Subtitle mb={'48px'}>Development for Web, Mobile and IoT</Subtitle>
@@ -35,10 +34,7 @@ const Feedback = withBackground(background, 1133, 686)(({className}) => <Contain
     <Box width={1/2}>
         <FeedbackList/>
     </Box>
-</Container>)`
-    left: -230px;
-    top: 247px;
-`
+</Container>
 
 export default styled(Feedback)`
   ${space}

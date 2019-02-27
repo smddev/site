@@ -6,7 +6,7 @@ import {Markdown, ServiceList} from '../components';
 import styled from 'styled-components';
 import HexServiceList from "../components/HexServiceList";
 import {space} from 'styled-system';
-import background from '../services.svg'
+import background from '../h1.svg'
 
 const Description = styled(Markdown)`
   ${description};

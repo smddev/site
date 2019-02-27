@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
-import {H1, H2, P, Button} from '../atoms';
+import {H1, H2, P, Button, withBackground} from '../atoms';
 import {Box, Flex} from '@rebass/grid'
 import {
     Services,
@@ -11,6 +11,12 @@ import {
     RecentProjects,
     Footer
 } from '../organisms'
+import background from "../feedback.svg";
+
+const FeedbackWB = withBackground(background, 1133, 686)(({className, mt}) => <Feedback {...{className, mt}}/>)`
+    left: -230px;
+    top: 247px;
+`
 
 export default withRouteData(({page, services, projects, industries, facts, stages}) => (
     <Fragment>
@@ -23,7 +29,7 @@ export default withRouteData(({page, services, projects, industries, facts, stag
 
         <Stages mt={11} stages={stages}/>
 
-        <Feedback mt={7}/>
+        <FeedbackWB mt={7}/>
 
         <RecentProjects mt={8} projects={projects}/>
 

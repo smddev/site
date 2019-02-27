@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from '@reach/router'
 import styled, {withTheme, css} from 'styled-components'
 import {Flex, Box} from '@rebass/grid'
+import background from '../h1.svg'
+
 import {
     themeGet,
     backgroundImage,
@@ -41,6 +43,13 @@ export HexGrid from './HexGrid';
 export Container from './Container';
 export AspectBox from './AspectBox'
 export ArrowButton, {ARROW_BUTTON_HEIGHT} from './ArrowButton'
+export ArrowLink, {hoverLinkStyles, yellowLinkStyles} from './ArrowLink'
+
+export const paragraph = css`
+  font-weight: ${p => p.theme.fontWeights[0]};
+  font-size:  ${p => p.theme.fontSizes[10]}px;
+  line-height: ${p => p.theme.lineHeight[10]}px;
+`
 
 export const Input = styled.input`
     background-color: transparent;
@@ -127,8 +136,8 @@ export const H1 = styled.h1`
 
 export const h2Style = css`
   font-weight: ${p => p.theme.fontWeights[1]};
-  font-size:  ${p => `${p.theme.fontSizes[5]}px`};
-  line-height: ${p => `${p.theme.lineHeight[5]}px`};
+  font-size:  ${p => `${p.theme.fontSizes[12]}px`};
+  line-height: ${p => `${p.theme.lineHeight[12]}px`};
   margin-bottom: 24px;
 `;
 
@@ -137,11 +146,24 @@ export const H2 = styled.h2`
    ${space};
 `
 
-export const H5 = styled.h5`
+export const P = styled.p`
+   ${paragraph};
+   ${space};
+`
+
+export const H4 = styled.h4`
   line-height: ${p => `${p.theme.lineHeight[4]}px`};
   font-size: ${p => `${p.theme.fontSizes[4]}px`};
   font-weight: ${p => p.theme.fontWeights[1]};
   margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
+  ${space};
+`
+
+export const H5 = styled.h5`
+  line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  font-size: ${p => `${p.theme.fontSizes[3]}px`};
+  font-weight: ${p => p.theme.fontWeights[2]};
+  margin: ${p => `0 0 ${p.theme.space[1]}px 0`};
   ${space};
 `
 
@@ -152,14 +174,7 @@ export const H3 = styled.h3`
    ${textAlign}
 `
 
-export const P = styled.p`
-   ${fontFamily}
-   ${color}
-   ${fontSize}
-   ${textAlign}
-   ${fontWeight}
-   ${space}
-`
+
 
 export const Text = styled.span`
    ${fontSize}
@@ -234,3 +249,8 @@ export const withBackground = (background, w, h, after=false) => (WrappedCompone
       ${wrapper}
     `;
 }
+
+export const H1WithBackground = withBackground(background, 241, 451)(H1)`
+    left:-380px;
+    top:15px;
+`;
