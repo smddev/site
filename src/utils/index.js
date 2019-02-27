@@ -26,7 +26,7 @@ function easeInOutQuad(t, b, c, d) {
 }
 
 export const withWindowLocation = (WrappedComponent) => {
-    const location = window ? window.location : {query: ""};
+    const location = typeof window !== 'undefined' ? window.location : {query: ""};
     return class PP extends React.Component {
         render() {
             return <WrappedComponent {...this.props} {...{location}}/>
