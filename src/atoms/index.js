@@ -76,6 +76,15 @@ const inputStyles = css`
     color: white;
     font-family: inherit;
     width: 100%;
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        -webkit-box-shadow: 0 0 0 30px ${p=>p.theme.colors.black[0]} inset !important;
+        -webkit-text-fill-color: white !important;
+    }
+    
     &::placeholder {
       color: white;
     }

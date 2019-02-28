@@ -10,8 +10,8 @@ const Button_Arrow = styled.img`
   margin-top: -6px;
 `
 
-const Button = ({children, className, onClick}) => <div {...{onClick, className}}>
-    <Button_Body>
+const Button = ({children, className, onClick, disabled}) => <div {...{onClick, disabled, className}}>
+    <Button_Body {...{disabled}}>
         {children}
     </Button_Body>
     <Button_Arrow src={arrowImg}/>
@@ -23,13 +23,15 @@ const StyledButton = styled(Button)`
   display: inline-block;
   padding-right: 40px;
   cursor: pointer;
+  ${p => p.disabled && {'pointer-events': 'none'}}
   ${space}
 `
 
 const Button_Body = styled.div`
-  background-color: ${p => p.theme.colors.orange[1]};
+  background-color: ${p => p.disabled ? p.theme.colors.gray[0] : p.theme.colors.orange[1]};
   padding: 16px 70px 14px 25px;
   transition: background-color 0.5s;
+  
   ${StyledButton}:hover & {
     background-color: ${p => p.theme.colors.orange[2]};
   }

@@ -7,6 +7,7 @@ import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
 import styled from "styled-components";
 import {space} from "styled-system";
+import {validateEmail} from "../utils";
 
 const IconLink = styled(Link1)`
   position: relative;
@@ -50,16 +51,16 @@ class ContactForm extends Component {
         });
     }
 
-
     render() {
         const {className} = this.props;
         const {email} = this.state;
+
         return <form {...{className}} name="contact" method="POST" data-netlify="true"
                  ref={this.formRef}>
             <Input name="name" placeholder={'Name'}/>
             <Input mt={6} value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Your email*'}/>
             <Comment name="message" mt={6} placeholder={'Comment'}/>
-            <Button onClick={this.formSubmit} mt={6} >Submit</Button>
+            <Button disabled={!validateEmail(email)} onClick={this.formSubmit} mt={6} >Submit</Button>
         </form>
     }
 }
