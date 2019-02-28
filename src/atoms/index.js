@@ -64,7 +64,7 @@ export const paragraph = css`
   line-height: ${p => p.theme.lineHeight[10]}px;
 `
 
-export const Input = styled.input`
+const inputStyles = css`
     background-color: transparent;
     border: none;
     border-bottom: 1px solid white;
@@ -72,15 +72,23 @@ export const Input = styled.input`
     line-height: 36px;
     font-size: 24px;
     font-weight: 300;
-    padding:0 0 16px 0;
     display: block;
     color: white;
     font-family: inherit;
+    width: 100%;
     &::placeholder {
       color: white;
     }
     
     ${space};
+`
+
+export const Input = styled.input`
+  ${inputStyles};
+`
+
+export const Textarea = styled.textarea`
+  ${inputStyles};
 `
 
 export const StyledLink = styled(Link)`

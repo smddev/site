@@ -10,7 +10,7 @@ const Button_Arrow = styled.img`
   margin-top: -6px;
 `
 
-const Button = ({children, className}) => <div className={className}>
+const Button = ({children, className, onClick}) => <div {...{onClick, className}}>
     <Button_Body>
         {children}
     </Button_Body>

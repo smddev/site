@@ -8,7 +8,9 @@ import {space} from 'styled-system';
 import background from '../calculateCost.svg'
 
 const Description = styled(Subtitle)`width: 90%`;
-const Email = styled(Input)`width: 100%`;
+const Email = styled(Input)`
+  padding:0 0 16px 0;
+`;
 
 const CalculateCost = withBackground(background, 1957, 415)(styled(({className}) => <Container {...{className}}>
     <Box width={1/2} pr={'40px'}>
