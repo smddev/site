@@ -41,8 +41,8 @@ const Toolbar = styled.div`
   ${space}
   
   >*{
-    &:not(:last-child) {
-      margin-right: 30px;
+    &:not(:first-child) {
+      margin-left: 30px;
     }
   }
 `
@@ -136,8 +136,8 @@ class CarouselPanel extends Component {
         const {className, mt, ...props} = this.props;
         return <div {...{className, mt}}>
             <StyledCarousel ref={this.carousel} {...props}></StyledCarousel>
-            <Toolbar mt={'60px'}>
-                <ArrowButton onClick={this.handleClick(-1)} left/>
+            <Toolbar mt={'40px'}>
+                <ArrowButton onClick={this.handleClick(-1)} left='true'/>
                 <ArrowButton onClick={this.handleClick(1)}/>
             </Toolbar>
         </div>

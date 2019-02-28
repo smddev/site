@@ -43,7 +43,20 @@ export HexGrid from './HexGrid';
 export Container from './Container';
 export AspectBox from './AspectBox'
 export ArrowButton, {ARROW_BUTTON_HEIGHT} from './ArrowButton'
-export ArrowLink, {hoverLinkStyles, yellowLinkStyles} from './ArrowLink'
+export ArrowLink from './ArrowLink'
+
+export const hoverLinkStyles = css`
+    cursor: pointer;
+    
+    &:hover {
+      ${p => !p.active && {color: p.theme.colors.orange[0]}};
+    }
+    &:active {
+      ${p => active(p)}
+    }
+    
+    ${p => p.active && active(p)}
+`
 
 export const paragraph = css`
   font-weight: ${p => p.theme.fontWeights[0]};
@@ -82,6 +95,7 @@ export const StyledLink = styled(Link)`
 export const Link1 = styled.a`
     text-decoration: none;
     color: ${props => props.theme.colors.white[0]};
+    ${hoverLinkStyles};
     ${fontSize} 
 `
 
@@ -98,7 +112,7 @@ export const Link2 = styled.a`
     ${space} 
 `
 
-export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFamily, className}) =>
+export const NavLink = styled(withTheme(({theme, to, children, color, fontSize, fontFamily, className}) =>
     <StyledLink fontSize={fontSize}
                 color={theme.colors.white[0]}
                 to={to}
@@ -115,7 +129,9 @@ export const NavLink = withTheme(({theme, to, children, color, fontSize, fontFam
                     };
                 }}>
         {children}
-    </StyledLink>)
+    </StyledLink>))`
+  ${hoverLinkStyles};
+`
 
 export const Subtitle = styled.p`
   font-size: ${p => `${p.theme.fontSizes[3]}px`};
@@ -254,3 +270,19 @@ export const H1WithBackground = withBackground(background, 241, 451)(H1)`
     left:-380px;
     top:15px;
 `;
+
+const active = p => ({
+    color: p.theme.colors.orange[1]
+})
+
+export const yellowLinkStyles = css`
+    cursor: pointer;
+    transition: color .5s;
+    color: ${p => p.theme.colors.orange[1]};
+    &:hover {
+      color: ${p => p.theme.colors.orange[2]};
+    }
+    &:active {
+      color: ${p => p.theme.colors.orange[3]};
+    }
+`

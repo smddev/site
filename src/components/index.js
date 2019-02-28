@@ -12,7 +12,7 @@ import Carousel from "./Carousel";
 import {default  as Mrkdn} from "react-markdown";
 import styled from "styled-components";
 import {position, bottom, left, space} from "styled-system";
-import Envelop from '../icons/Envelop'
+import {Envelop} from '../icons'
 
 import ProjectCard, {PROJECT_CARD_RATIO} from "./ProjectCard";
 import {yellowLinkStyles, Link1} from "../atoms";

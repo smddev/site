@@ -5,6 +5,7 @@ import {
     IoMdArrowBack as LeftArrow,
     IoMdArrowForward as RightArrow
 } from "react-icons/io";
+import {hoverLinkStyles} from "./index";
 
 const ArrowStyles = css`
   font-size: 17px;
@@ -26,37 +27,6 @@ const ArrowLink = ({href, left, children, className}) => <a className={className
     {children}
     {!left && <ArrowLink_Right ml={1}/>}
 </a>
-
-
-const active = p => ({
-    color: p.theme.colors.orange[1]
-})
-
-export const hoverLinkStyles = css`
-    cursor: pointer;
-    
-    &:hover {
-      ${p => !p.active && {color: p.theme.colors.orange[0]}};
-    }
-    &:active {
-      ${p => active(p)}
-    }
-    
-    ${p => p.active && active(p)}
-`
-
-
-export const yellowLinkStyles = css`
-    cursor: pointer;
-    transition: color .5s;
-    color: ${p => p.theme.colors.orange[1]};
-    &:hover {
-      color: ${p => p.theme.colors.orange[2]};
-    }
-    &:active {
-      color: ${p => p.theme.colors.orange[3]};
-    }
-`
 
 export default styled(ArrowLink)`
     font-weight: ${props => props.theme.fontWeights[0]};

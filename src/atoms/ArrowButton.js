@@ -1,27 +1,24 @@
 import React from 'react';
-import arrowImg from '../arrow-long-orange.svg'
-import arrowImgHover from '../arrow-long-orange-hover.svg'
-import arrowImgActive from '../arrow-long-orange-active.svg'
-import styled from 'styled-components';
+import {Arrow} from '../icons'
+import styled, {css} from 'styled-components';
 
-const WIDTH = '40px';
 export const ARROW_BUTTON_HEIGHT = '20px';
 
-export default styled.div`
-  height: ${ARROW_BUTTON_HEIGHT};
-  width:${WIDTH};
-  background-image: url(${arrowImg});
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: rotate(${p=>p.left ? '180deg' : 0});
+const yellowSvgStyles = css`
   cursor: pointer;
+  transition: fill .5s;
   
+  fill: ${p => p.theme.colors.orange[1]};
   &:hover {
-    background-image: url(${arrowImgHover});
+    fill: ${p => p.theme.colors.orange[2]};
   }
-  
   &:active {
-    background-image: url(${arrowImgActive});
+    fill: ${p => p.theme.colors.orange[3]};
   }
-  
+`
+
+export default styled(Arrow)`
+  display: block;
+  transform: rotate(${p=>p.left ? '180deg' : 0});  
+  ${yellowSvgStyles}
 `;
