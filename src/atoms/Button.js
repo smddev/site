@@ -1,7 +1,8 @@
 import React from 'react';
 import arrowImg from '../arrow-long.png'
 import styled from 'styled-components';
-import {space} from 'styled-system'
+import {space} from 'styled-system';
+import {Link} from '@reach/router';
 
 const Button_Arrow = styled.img`
   position: absolute;
@@ -10,12 +11,12 @@ const Button_Arrow = styled.img`
   margin-top: -6px;
 `
 
-const Button = ({children, className, onClick, disabled}) => <div {...{onClick, disabled, className}}>
+const Button = ({children, className, onClick, disabled, to}) => <Link to={to ? to : '#'} {...{onClick, disabled, className}}>
     <Button_Body {...{disabled}}>
         {children}
     </Button_Body>
     <Button_Arrow src={arrowImg}/>
-</div>
+</Link>
 
 const StyledButton = styled(Button)`
   user-select: none; 
@@ -23,6 +24,9 @@ const StyledButton = styled(Button)`
   display: inline-block;
   padding-right: 40px;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
+  
   ${p => p.disabled && {'pointer-events': 'none'}}
   ${space}
 `

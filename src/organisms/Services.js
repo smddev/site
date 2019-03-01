@@ -8,6 +8,7 @@ import HexServiceList from "../components/HexServiceList";
 import {space} from 'styled-system';
 import background from '../h1.svg'
 
+
 const Description = styled(Markdown)`
   ${description};
   width: 90%;
@@ -18,7 +19,7 @@ const Services =  withBackground(background, 241, 451)(({page, services, classNa
         <H1 dangerouslySetInnerHTML={{ __html: page.data.title }}/>
         <Subtitle mb={5}>{page.data.subtitle}</Subtitle>
         <Description source={page.content} escapeHtml={false}/>
-        <Button mt={3}>See projects</Button>
+        <Button mt={3} to={'/portfolio'}>See projects</Button>
     </Box>
     <Box width={1 / 2} >
         <HexServiceList services={services}/>

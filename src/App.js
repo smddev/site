@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Root, Routes} from 'react-static'
 import {createGlobalStyle, ThemeProvider, css} from 'styled-components'
 import {theme} from "./theme";
@@ -6,6 +6,7 @@ import {CloudinaryContext} from "cloudinary-react";
 import NavBar from "./organisms/NavBar";
 import {description, h2Style, paragraph} from './atoms'
 import listItem from './listItem.svg'
+import {EmailContext} from "./utils";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -51,16 +52,38 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default () =>
-    <Root>
-        <ThemeProvider theme={theme}>
-            <CloudinaryContext cloudName="smddev" secure="true">
-                <div className="content">
-                    <GlobalStyle/>
-                    <NavBar/>
-                    <Routes/>
-                </div>
-            </CloudinaryContext>
-        </ThemeProvider>
-    </Root>
+class App extends Component {
+    constructor(props) {
+        super(props);
 
+        this.changeEmail = (value) => {
+            this.setState(state => ({
+                ...state,
+                email: value
+            }));
+        };
+
+        this.state = {
+            email: "",
+            changeEmail: this.changeEmail,
+        };
+    }
+
+    render() {
+        return <Root>
+            <EmailContext.Provider value={this.state}>
+                <ThemeProvider theme={theme}>
+                    <CloudinaryContext cloudName="smddev" secure="true">
+                        <div className="content">
+                            <GlobalStyle/>
+                            <NavBar/>
+                            <Routes/>
+                        </div>
+                    </CloudinaryContext>
+                </ThemeProvider>
+            </EmailContext.Provider>
+        </Root>
+    }
+}
+
+export default App;

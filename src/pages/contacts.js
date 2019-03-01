@@ -7,7 +7,7 @@ import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
 import styled from "styled-components";
 import {space} from "styled-system";
-import {validateEmail} from "../utils";
+import {validateEmail, EmailContext} from "../utils";
 
 const IconLink = styled(Link1)`
   position: relative;
@@ -36,19 +36,22 @@ class ContactForm extends Component {
         super(props)
         this.formRef = React.createRef();
         this.state = {
-            email: ""
+            email: props.email
         }
     }
 
     formSubmit = (e) => {
-        console.log('submitted');
+        const {email} = this.state;
+        this.props.changeEmail(email);
         this.formRef.current.submit()
     }
 
     handleChange = (e) => {
-        this.setState({
-            email: e.target.value
-        });
+        const value = e.target.value;
+        this.setState(ps => ({
+            ...ps,
+            email: value,
+        }));
     }
 
     render() {
@@ -56,11 +59,13 @@ class ContactForm extends Component {
         const {email} = this.state;
 
         return <form {...{className}} name="contact" method="POST" data-netlify="true"
-                 ref={this.formRef}>
+              ref={this.formRef}>
             <Input name="name" placeholder={'Name'}/>
-            <Input mt={6} value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Your email*'}/>
+            <Input mt={6} value={email} onChange={this.handleChange} type={'email'} name="email"
+                   placeholder={'Your email*'}/>
             <Comment name="message" mt={6} placeholder={'Comment'}/>
-            <Button disabled={!validateEmail(email)} onClick={this.formSubmit} mt={6} >Submit</Button>
+
+            <Button disabled={!validateEmail(email)} onClick={this.formSubmit} mt={6}>Submit</Button>
         </form>
     }
 }
@@ -93,7 +98,11 @@ export default withRouteData(({page}) => (
                 </Flex>
             </Flex>
             <Box width={1/2}>
-                <StyledContactForm mt={6}/>
+                <EmailContext.Consumer>
+                    {context =>
+                        <StyledContactForm {...context} mt={6}/>
+                    }
+                </EmailContext.Consumer>
             </Box>
         </Container>
         <Footer noForm mt={10} mb={6}/>

@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 
+export EmailContext from "./EmailContext";
+
 export function scrollTo(element, to, duration) {
     const start = element.scrollLeft,
         change = to - start,

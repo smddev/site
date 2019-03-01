@@ -12,7 +12,7 @@ const colors = {
         '#44464F',
         '#5e5e5e',
         '#A8A9AE',
-
+        '#2E3038'
 
     ],
     orange: [

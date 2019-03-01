@@ -1,16 +1,69 @@
-import React, {Fragment} from 'react';
+import React, {Component} from 'react';
 import {PhoneLink, EmailLink} from '../components';
-import {withSiteData} from "react-static";
+import {withSiteData, withRouteData} from "react-static";
 import {Button, H1, Input, Subtitle, Container, NavLink, withBackground} from '../atoms';
 import styled from 'styled-components';
 import {Flex, Box} from '@rebass/grid';
 import {space} from 'styled-system';
 import background from '../calculateCost.svg'
+import {EmailContext, validateEmail} from "../utils";
+import {navigate} from '@reach/router'
 
 const Description = styled(Subtitle)`width: 90%`;
 const Email = styled(Input)`
   padding:0 0 16px 0;
+  &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        -webkit-box-shadow: 0 0 0 30px ${p => p.theme.colors.gray[3]} inset !important;
+    }
+        
 `;
+
+class EForm extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            email: this.props.email
+        }
+    }
+
+    handleChange = (e) => {
+        const value = e.target.value;
+        this.setState(ps => ({
+            ...ps,
+            email: value
+        }))
+    }
+
+    processSubmit = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const {email} = this.state;
+        const {changeEmail} = this.props;
+        if (validateEmail(email)) {
+            changeEmail(email);
+            navigate('/contacts');
+        }
+    }
+
+    render() {
+        const {className} = this.props;
+        const {email} = this.state;
+        return <div {...{className}}>
+            <Email value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Your email'}/>
+            <Button disabled={!validateEmail(email)} onClick={this.processSubmit} mt={'48px'}>Calculate Cost</Button>
+        </div>
+    }
+}
+
+const EmailForm = styled(EForm)`
+  ${space}
+`;
+
 
 const CalculateCost = withBackground(background, 1957, 415)(styled(({className}) => <Container {...{className}}>
     <Box width={1/2} pr={'40px'}>
@@ -20,10 +73,13 @@ const CalculateCost = withBackground(background, 1957, 415)(styled(({className})
             testers and project Manager.
         </Description>
     </Box>
-    <Box width={1/2} pl={'120px'}>
-        <Email mt={'136px'} type={'email'} placeholder={'Your email'} />
-        <Button mt={'48px'}>Calculate Cost</Button>
-    </Box>
+    <EmailContext.Consumer>
+        {(context) =>
+            <Box width={1 / 2} pl={'120px'}>
+                <EmailForm mt={'136px'} {...context}/>
+            </Box>
+        }
+    </EmailContext.Consumer>
 </Container>)`
   position: relative;
   height: 415px;
