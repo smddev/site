@@ -60,7 +60,7 @@ class ContactForm extends Component {
         const {className} = this.props;
         const {email} = this.state;
 
-        return <form {...{className}} action="/form-submit" name="contact" method="POST" data-netlify="true"
+        return <form {...{className}} name="contact" method="POST" data-netlify="true"
               ref={this.formRef}>
             <Input name="name" placeholder={'Name'}/>
             <Input mt={6} value={email} onChange={this.handleChange} type={'email'} name="email"
