@@ -86,9 +86,9 @@ const getRoutes = async () => {
             members: siteData.collections.member,
             facts: siteData.collections.facts,
         }),
-        pageRoute('team', {
+        /*pageRoute('team', {
             members: siteData.collections.member,
-        }, null, collectionRoutes('member', 'members')),
+        }, null, collectionRoutes('member', 'members')),*/
         pageRoute('portfolio', {
             projects: siteData.collections.project,
             industries: siteData.collections.industry,
@@ -103,11 +103,15 @@ const getRoutes = async () => {
                     techs: siteData.collections.tech
                 })
         ]),
-        pageRoute('blog', {
+        {
+            path: 'form-submit',
+            component: `${pages}/submit`,
+        },
+        /*pageRoute('blog', {
             posts: siteData.collections.post,
         }, null, [
             ...collectionRoutes('post', 'posts')
-        ]),
+        ]),*/
         {
             path: '404',
             component: `${pages}/404`,
