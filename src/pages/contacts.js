@@ -63,7 +63,7 @@ class ContactForm extends Component {
         return <form {...{className}} name="contact" method="POST" data-netlify="true"
               ref={this.formRef}>
             <Input name="name" placeholder={'Name'}/>
-            <Input mt={6} value={email} onChange={this.handleChange} type={'email'} name="email"
+            <Input mt={6} value={email} onChange={this.handleChange} type={'text'} name="email"
                    placeholder={'Your email*'}/>
             <Comment name="message" mt={6} placeholder={'Comment'}/>
 
