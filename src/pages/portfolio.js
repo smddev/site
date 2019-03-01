@@ -6,7 +6,7 @@ import {withRouter} from "react-router";
 import queryString from 'query-string'
 import {Box, Flex} from "@rebass/grid";
 import styled from "styled-components";
-import {Footer} from "../organisms";
+import {Footer, withLayout} from "../organisms";
 import {withWindowLocation} from "../utils"
 
 const Description = styled.div`
@@ -23,7 +23,7 @@ const Cell = ({children}) => <Box width={[1, 1 / 2]} px={'12px'} pb={'24px'}>
     {children}
 </Box>
 
-export default withRouteData(withWindowLocation(({projects, industries, services, techs, location}) => {
+export default withLayout()(withRouteData(withWindowLocation(({projects, industries, services, techs, location}) => {
     const query = queryString.parse(location.search);
     const selectedProjects = projects.filter(filterBy(query));
 
@@ -45,7 +45,7 @@ export default withRouteData(withWindowLocation(({projects, industries, services
                 <SideNav {...{industries, services, techs}}/>
             </Box>
         </Container>
-        <Footer mt={10} mb={6}/>
+
     </Fragment>
 
-}))
+})))

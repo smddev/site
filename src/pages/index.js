@@ -12,13 +12,14 @@ import {
     Footer
 } from '../organisms'
 import background from "../feedback.svg";
+import {withLayout} from "../organisms";
 
 const FeedbackWB = withBackground(background, 1133, 686)(({className, mt}) => <Feedback {...{className, mt}}/>)`
     left: -230px;
     top: 247px;
 `
 
-export default withRouteData(({page, services, projects, industries, facts, stages}) => (
+export default withLayout()(withRouteData(({page, services, projects, industries, facts, stages}) => (
     <Fragment>
 
         <Services mt={8} page={page} services={services}/>
@@ -33,7 +34,5 @@ export default withRouteData(({page, services, projects, industries, facts, stag
 
         <RecentProjects mt={8} projects={projects}/>
 
-        <Footer mt={10} mb={6}/>
-
     </Fragment>
-))
+)))

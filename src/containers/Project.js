@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
 import {Container, H1WithBackground, H1, H2, Subtitle, withBackground} from "../atoms";
 import {Box} from '@rebass/grid'
-import {Footer} from '../organisms'
+import {Footer, withLayout} from '../organisms'
 import styled from "styled-components";
 import {space} from "styled-system";
 import AspectBox from "../atoms/AspectBox";
@@ -40,10 +40,10 @@ const ProjectCarousel = withBackground(background, 937, 542)(styled(({projects, 
 `
 
 
-export default withRouteData(({item, data}) => (
+export default withLayout()(withRouteData(({item, data}) => (
     <Fragment>
         <Container>
-            <Box width={2/3}>
+            <Box mt={6} width={2/3}>
                 <H1WithBackground>{item.data.title}</H1WithBackground>
                 <Subtitle>{serviceList(item.data.services, data.services)}</Subtitle>
 
@@ -61,7 +61,5 @@ export default withRouteData(({item, data}) => (
         <Container>
             <ProjectCarousel mt={'200px'} projects={data.projects}/>
         </Container>
-
-        <Footer mt={10} mb={6}/>
     </Fragment>
-))
+)))

@@ -5,7 +5,7 @@ import {Markdown, Carousel, Fact} from "../components";
 import {Box, Flex} from "@rebass/grid";
 import styled from 'styled-components';
 import {space} from 'styled-system';
-import {Feedback, Footer, MembersGallery} from "../organisms";
+import {Feedback, Footer, MembersGallery, withLayout} from "../organisms";
 import mgLeft from '../industriesLeft.svg'
 import mgRight from '../managementRight.svg'
 
@@ -45,7 +45,7 @@ const Facts = styled(({facts, className}) => <Carousel width={340} height={212} 
 `
 
 
-export default withRouteData(({page, members, facts}) => (
+export default withLayout()(withRouteData(({page, members, facts}) => (
     <Fragment>
         <Container mt={6}>
             <Box width={1}>
@@ -70,6 +70,5 @@ export default withRouteData(({page, members, facts}) => (
 
         <Feedback mt={11}/>
 
-        <Footer mt={10} mb={6}/>
     </Fragment>
-))
+)))

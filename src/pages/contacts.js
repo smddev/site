@@ -1,7 +1,7 @@
 import React, {Fragment, Component} from 'react'
 import {withRouteData} from 'react-static'
 import {Button, Container, H1, H1WithBackground, Link1, Subtitle, Input, Textarea} from "../atoms";
-import {Footer} from "../organisms";
+import {Footer, withLayout} from "../organisms";
 import {Box, Flex} from "@rebass/grid";
 import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
@@ -74,7 +74,7 @@ const StyledContactForm = styled(ContactForm)`
   ${space};
 `
 
-export default withRouteData(({page}) => (
+export default withLayout({noForm: true})(withRouteData(({page}) => (
     <Fragment>
         <Container mt={7}>
             <Flex width={1/2} flexDirection={'column'}>
@@ -105,8 +105,7 @@ export default withRouteData(({page}) => (
                 </EmailContext.Consumer>
             </Box>
         </Container>
-        <Footer noForm mt={10} mb={6}/>
     </Fragment>
-))
+)))
 
 

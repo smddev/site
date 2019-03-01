@@ -76,7 +76,6 @@ class App extends Component {
                     <CloudinaryContext cloudName="smddev" secure="true">
                         <div className="content">
                             <GlobalStyle/>
-                            <NavBar/>
                             <Routes/>
                         </div>
                     </CloudinaryContext>
