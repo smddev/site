@@ -32,7 +32,10 @@ const Feedback = ({className}) => <Container className={className} alignItems='t
         <Description><Em>5 years</Em> average time worked with one client</Description>
     </Box>
     <Box width={1/2}>
-        <FeedbackList/>
+        <FeedbackList>
+            <div className="clutch-widget" data-url="https://clutch.co" data-widget-type="3" data-height="350"
+                 data-clutchcompany-id="35329"></div>
+        </FeedbackList>
     </Box>
 </Container>
 

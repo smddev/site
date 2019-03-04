@@ -140,6 +140,7 @@ const Document = ({Html, Head, Body, children, siteData, renderMeta}) =>
     <Head>
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script type="text/javascript" src="https://static1.clutch.co/sites/all/modules/custom/clutch_widget/js/widget.js"></script>
         {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
     </Head>
     <Body>{children}</Body>
