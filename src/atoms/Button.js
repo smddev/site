@@ -11,12 +11,12 @@ const Button_Arrow = styled.img`
   margin-top: -6px;
 `
 
-const Button = ({children, className, onClick, disabled, to}) => <div {...{onClick, disabled, className}}>
+const Button = ({children, className, onClick, disabled, to}) => <Link to={to ? to : '#'} {...{onClick, disabled, className}}>
     <Button_Body {...{disabled}}>
         {children}
     </Button_Body>
     <Button_Arrow src={arrowImg}/>
-</div>
+</Link>
 
 const StyledButton = styled(Button)`
   user-select: none; 
