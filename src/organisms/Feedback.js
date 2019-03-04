@@ -21,7 +21,7 @@ const FeedbackList = withBackground(quote, 240, 160)(styled.div`
   min-height: 170px;
 `)`
     left: 15px;
-    top: 0px;
+    top: -100px;
 `
 
 const ClutchWidget = styled.div`
