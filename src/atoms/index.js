@@ -36,14 +36,7 @@ import {
     space,
     lineHeight
 } from 'styled-system'
-
-export Button from './Button';
-export Hexagon from './Hexagon';
-export HexGrid from './HexGrid';
-export Container from './Container';
-export AspectBox from './AspectBox'
-export ArrowButton, {ARROW_BUTTON_HEIGHT} from './ArrowButton'
-export ArrowLink from './ArrowLink'
+import {IoMdArrowBack as LeftArrow, IoMdArrowForward as RightArrow} from "react-icons/io";
 
 export const hoverLinkStyles = css`
     cursor: pointer;
@@ -52,10 +45,10 @@ export const hoverLinkStyles = css`
       ${p => !p.active && {color: p.theme.colors.orange[0]}};
     }
     &:active {
-      ${p => active(p)}
+      ${p => active(p)};
     }
     
-    ${p => p.active && active(p)}
+    ${p => p.active && active(p)};
 `
 
 export const paragraph = css`
@@ -103,8 +96,8 @@ export const Textarea = styled.textarea`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     display: block;
+    color: white;
     ${fontFamily}
-    ${color}
     ${fontSize}
     ${space}    
 `
@@ -303,3 +296,39 @@ export const yellowLinkStyles = css`
       color: ${p => p.theme.colors.orange[3]};
     }
 `
+
+const ArrowStyles = css`
+  font-size: 17px;
+  height: 23px;
+`
+
+const ArrowLink_Left = styled(LeftArrow)`
+  ${ArrowStyles};
+  ${space};
+`
+
+const  ArrowLink_Right = styled(RightArrow)`
+  ${ArrowStyles};
+  ${space};
+`
+
+const SL = styled(StyledLink)`
+    ${hoverLinkStyles};
+    font-weight: ${props => props.theme.fontWeights[0]};
+    display: flex;
+`
+
+export const ArrowLink = ({to, left, children, className, getProps}) => <SL {...{className, to, getProps}}>
+    {left && <ArrowLink_Left mr={1}/>}
+    {children}
+    {!left && <ArrowLink_Right ml={1}/>}
+</SL>
+
+
+export Button from './Button';
+export Hexagon from './Hexagon';
+export HexGrid from './HexGrid';
+export Container from './Container';
+export AspectBox from './AspectBox'
+export ArrowButton, {ARROW_BUTTON_HEIGHT} from './ArrowButton'
+export MenuButton from "./MenuButton";
