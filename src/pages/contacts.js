@@ -41,8 +41,8 @@ class ContactForm extends Component {
     }
 
     formSubmit = (e) => {
-        //e.preventDefault();
-        //e.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
         const {email} = this.state;
         this.props.changeEmail(email);
         this.formRef.current.submit()
