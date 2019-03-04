@@ -19,11 +19,14 @@ const Description = styled.div`
 const FeedbackList = withBackground(quote, 240, 160)(styled.div`
   width: 100%;
   min-height: 170px;
-  width: 290px;
-  margin: 100px auto 0 auto;
 `)`
     left: 15px;
-    top: -100px;
+    top: 0px;
+`
+
+const ClutchWidget = styled.div`
+  width: 290px;
+  margin: 100px auto 0 auto;
 `
 
 const Feedback = ({className}) => <Container className={className} alignItems='top'>
@@ -35,8 +38,8 @@ const Feedback = ({className}) => <Container className={className} alignItems='t
     </Box>
     <Box width={1/2}>
         <FeedbackList>
-            <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350"
-                 data-clutchcompany-id="627124"></div>
+            <ClutchWidget className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350"
+                 data-clutchcompany-id="627124"></ClutchWidget>
         </FeedbackList>
     </Box>
 </Container>
