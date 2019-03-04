@@ -33,8 +33,8 @@ const Feedback = ({className}) => <Container className={className} alignItems='t
     </Box>
     <Box width={1/2}>
         <FeedbackList>
-            <div className="clutch-widget" data-url="https://clutch.co" data-widget-type="3" data-height="350"
-                 data-clutchcompany-id="35329"></div>
+            <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350"
+                 data-clutchcompany-id="627124"></div>
         </FeedbackList>
     </Box>
 </Container>
