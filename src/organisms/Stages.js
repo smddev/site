@@ -22,7 +22,7 @@ const backgrounds = ['orange.1', 'orange.2', 'orange.0', 'orange.1'];
 
 const Stages = withBackground(background, 538, 433)(({stages, className}) => <Container className={className} alignItems='center'>
     <Box width={1/4}>
-        <H1>Stage of work</H1>
+        <H1>Stages of work</H1>
     </Box>
     <Flex width={3/4} justifyContent='flex-end'>
         <HexGrid horizontal height={206}>

@@ -19,9 +19,11 @@ const Description = styled.div`
 const FeedbackList = withBackground(quote, 240, 160)(styled.div`
   width: 100%;
   min-height: 170px;
+  width: 290px;
+  margin: 100px auto 0 auto;
 `)`
     left: 15px;
-    top: 0;
+    top: -100px;
 `
 
 const Feedback = ({className}) => <Container className={className} alignItems='top'>
