@@ -81,7 +81,7 @@ const NavBar_Collapse = styled.div`
   width: 100%;
   left:0;
   bottom: 0;
-  padding: 0 15px;
+  padding: 0 15px 10px;
   box-sizing: border-box;
   transform: translateY(${p => p.collapsed ? 0 : '100%'});
   

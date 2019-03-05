@@ -14,16 +14,46 @@ const Description = styled(Markdown)`
   width: 90%;
 `
 
-const Services =  withBackground(background, 241, 451)(({page, services, className}) => <Container className={className} alignItems='center'>
-    <Box width={1 / 2} pr={5}>
-        <H1 dangerouslySetInnerHTML={{ __html: page.data.title }}/>
-        <Subtitle mb={5}>{page.data.subtitle}</Subtitle>
-        <Description source={page.content} escapeHtml={false}/>
-        <Button mt={3} to={'/portfolio'}>See projects</Button>
-    </Box>
-    <Box width={1 / 2} >
-        <HexServiceList services={services}/>
-    </Box>
+const BT = (props) => <Button {...props} to={'/portfolio'}>See projects</Button>
+
+const B1 = styled(BT)`
+  display: none;
+  @media(min-width: ${p=>p.theme.breakpoints[2]}) {
+    display: inline-block;
+  }
+`
+
+const B2 = styled(BT)`
+  @media(min-width: ${p=>p.theme.breakpoints[2]}) {
+    display: none;
+  }
+`
+
+
+const Dscrptn = styled(({children, ...props}) => <Description {...props}>
+    {children}
+</Description>)`
+  display: none;
+  
+  @media(min-width: ${p=>p.theme.breakpoints[0]}) {
+    max-width: 80%;
+    display: block;
+  }
+`
+
+
+const Services =  withBackground(background, 241, 451)(({page, services, className}) =>
+    <Container className={className} flexWrap='wrap' alignItems='center'>
+        <Box width={[1, 1, 1, 1 / 2]} pr={['0px', 5, 5]}>
+            <H1 dangerouslySetInnerHTML={{ __html: page.data.title }}/>
+            <Subtitle mb={5}>{page.data.subtitle}</Subtitle>
+            <Dscrptn source={page.content} escapeHtml={false}/>
+            <B1 mt={3}/>
+        </Box>
+        <Box width={[1, 1, 1, 1 / 2]} >
+            <HexServiceList services={services}/>
+            <B2 mt={6}/>
+        </Box>
 
 </Container>)`
     left:-370px;

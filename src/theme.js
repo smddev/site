@@ -27,11 +27,13 @@ const fonts = {
     base: 'Khula',
 }
 
+const breakpoints = [640, 832, 1200];
+
 export const theme = {
     fonts,
     colors,
-    fontSizes: [10, 12, 14, 16, 24, 32, 48, 64, 96, 128, 20, 18, 30],
-    lineHeight: [10, 12, 14, 24, 36, 48, 48, 70, 96, 128, 30, 22, 36],
+    fontSizes: [10, 12, 14, 16, 24, 30, 48, 64, 96, 128, 20, 18, 30],
+    lineHeight: [10, 12, 14, 24, 36, 38, 48, 70, 96, 128, 30, 22, 36],
     fontWeights: [300, 400, 700],
     space: [
         0, 4, 8, 16, 32, 40, 64, 72, 100, 128, 140, 184, 256
@@ -45,6 +47,6 @@ export const theme = {
         }
     },
     icons: [32, 40, 64, 92, 128],
-    breakpoints: [640, 832, 1200].map(b => b + 'px')
+    breakpoints: breakpoints.map(b => b + 'px')
 }
 

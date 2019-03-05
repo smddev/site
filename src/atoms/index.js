@@ -154,10 +154,15 @@ export const Subtitle = styled.p`
 `
 
 export const H1 = styled.h1`
-  line-height: ${p => `${p.theme.lineHeight[7]}px`};
-  font-size: ${p => `${p.theme.fontSizes[7]}px`};
+  line-height: ${p => `${p.theme.lineHeight[5]}px`};
+  font-size: ${p => `${p.theme.fontSizes[5]}px`};
   margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
-  ${space}
+  ${space};
+  
+  @media(min-width: ${p =>p.theme.breakpoints[0]}) {
+    line-height: ${p => `${p.theme.lineHeight[7]}px`};
+    font-size: ${p => `${p.theme.fontSizes[7]}px`};
+  } 
 `
 
 export const h2Style = css`
