@@ -7,6 +7,7 @@ export default withWindowLocation(({items, children, linkPath, includes, vertica
     const query = queryString.parse(location.search);
     return <Flex flexWrap='wrap'
           flexDirection={vertical ? 'column' : 'row'}
+          justifyContent={vertical ? 'flex-start' : 'center'}
           as='ul'
           className={className}
           css={{listStyleType: "none", padding: 0}}>

@@ -159,7 +159,7 @@ export const H1 = styled.h1`
   margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
   ${space};
   
-  @media(min-width: ${p =>p.theme.breakpoints[0]}) {
+  @media(min-width: ${p =>p.theme.breakpoints[1]}) {
     line-height: ${p => `${p.theme.lineHeight[7]}px`};
     font-size: ${p => `${p.theme.fontSizes[7]}px`};
   } 
@@ -214,10 +214,15 @@ export const Text = styled.span`
 `
 
 export const description = css`
-  font-size: ${p => `${p.theme.fontSizes[4]}px`};
+  font-size: ${p => `${p.theme.fontSizes[3]}px`};
+  line-height: ${p => `${p.theme.lineHeight[3]}px`};
   font-weight: ${p => p.theme.fontWeights[0]};
-  line-height: ${p => `${p.theme.lineHeight[4]}px`};
   color: white;
+
+  @media(min-width: ${p => p.theme.breakpoints[2]}) {
+    font-size: ${p => `${p.theme.fontSizes[4]}px`};
+    line-height: ${p => `${p.theme.lineHeight[4]}px`};
+  }
 `
 
 export const Description = styled(Text)`

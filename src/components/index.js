@@ -42,10 +42,10 @@ export const MembersGallery = ({members, category}) =>
         <MemberCard basePath='/members' imagePath={'site/member'}/>
     </Gallery>
 
-export const PortfolioList = ({items, filterBy, includes, vertical, color, iconSize, bg, mt, mx}) =>
+export const PortfolioList = ({items, filterBy, includes, vertical, color, iconSize}) =>
     <List items={items} linkPath={`/portfolio?${filterBy}=`} {...{filterBy}}
           includes={includes} vertical={vertical}>
-        <Icon vertical={!vertical} {...{color, bg, mt, mx, size:iconSize}}/>
+        <Icon vertical={!vertical} {...{color, size:iconSize}}/>
     </List>
 
 export const IndustryList = (props) =>

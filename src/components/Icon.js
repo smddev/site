@@ -1,13 +1,18 @@
 import React from 'react'
 import {Image} from "cloudinary-react";
-import styled, {withTheme} from 'styled-components';
-import {themeGet, space} from 'styled-system'
+import styled, {withTheme, css} from 'styled-components';
 import {H2, StyledLink, Description, Text, Hexagon, hoverLinkStyles} from "../atoms";
 import {Flex, Box} from '@rebass/grid'
 
 const ImageWrapper = styled(Box)`
-  width: ${p => p.width}px;
-  height: ${p => p.height}px; 
+  width: ${p=>`${p.theme.icons[2]}px`};
+  height: ${p=>`${p.theme.icons[2]}px`};
+  
+  @media(min-width: ${p => p.theme.breakpoints[2]}) {
+    width: ${p=> `${p.vertical ? p.theme.icons[3] : p.theme.icons[1]}px`};
+    height: ${p=> `${p.vertical ? p.theme.icons[3] : p.theme.icons[1]}px`};
+  }
+   
   img {
     width: 100%;
     height: 100%;
@@ -16,34 +21,44 @@ const ImageWrapper = styled(Box)`
 
 const StyledDescription = styled(Description)`
   ${hoverLinkStyles};
+  ${p => p.vertical && {'margin-top' : '10px'}};
+    
+  @media(min-width: ${p => p.theme.breakpoints[2]}) {
+    ${p => ({[p.vertical ? 'margin-top' : 'margin-left'] : '24px'})}
+  }
+  
+`
+
+const verticalStyles = css`
+  width: 150px;
+  margin-bottom: 22px;
+  @media(min-width: ${p => p.theme.breakpoints[2]}) {
+    width: 240px;
+    margin-bottom: 80px;
+  }
+`
+
+const SL = styled(StyledLink)`
+  ${p => p.vertical && verticalStyles}
 `
 
 export default withTheme((props) => {
-    const {linkPath, item, vertical, size, color, bg, mt, mx, active} = props;
-    const pxSize = themeGet('icons')(props)[size || 0];
+    const {linkPath, item, vertical, active} = props;
     const url = `${linkPath}${item.data.slug}`
-    return <StyledLink to={url} {...{mt, mx}}>
+    return <SL vertical={`${vertical}`} to={url}>
         <Flex
-            bg={bg}
             alignItems='center'
             flexDirection={vertical ? 'column' : 'row'}>
 
-            <ImageWrapper width={pxSize} height={pxSize}>
-                <Image publicId={`site/icons/${item.data.icon}`}
-                       crop="fit"
-                       width={pxSize}
-                       height={pxSize}/>
+            <ImageWrapper {...{vertical}}>
+                <Image publicId={`site/icons/${item.data.icon}`}/>
             </ImageWrapper>
             <StyledDescription
-                mt={vertical ? '24px' : '0'}
-                ml={vertical ? '0' : '24px'}
-                fontSize={vertical ? 4 : 10}
-                lineHeight={vertical ? '24px' : '40px'}
-                active={active}>
+                {...{vertical, active}}>
                     {item.data.title}
             </StyledDescription>
         </Flex>
-    </StyledLink>
+    </SL>
 })
 
 export const HexIcon = ({className, item, pxSize, linkPath, mt, active}) => <StyledLink to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
