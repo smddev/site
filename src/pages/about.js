@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from "react-static";
 import {Container, H2, H1WithBackground, Subtitle, P, withBackground} from "../atoms";
-import {Markdown, Carousel, Fact} from "../components";
+import {Markdown, Facts} from "../components";
 import {Box, Flex} from "@rebass/grid";
 import styled from 'styled-components';
 import {space} from 'styled-system';
@@ -30,20 +30,10 @@ const ManagementSection = styled(withBackground(mgRight,708, 542, true)(
 ${space}
 `
 
-const FactWrapper = styled.div`
-  width:340px;
-  >* {
-    margin: 0 auto;
-  }
-`
-
-const Facts = styled(({facts, className}) => <Carousel width={340} height={212} {...{className}}>
-    {facts.slice(0,3).map((fact, key) => <FactWrapper {...{key}}><Fact {...{fact}}/></FactWrapper>)}
-</Carousel>)`
-  width: 340px;
+const StyledFacts = styled(Facts)`
+  width: 320px;
   margin: 130px 0 0 auto;
 `
-
 
 export default withLayout()(withRouteData(({page, members, facts}) => (
     <Fragment>
@@ -62,7 +52,7 @@ export default withLayout()(withRouteData(({page, members, facts}) => (
                <Markdown source={page.content} escapeHtml={false}/>
             </Box>
             <Box width={1/3}>
-                <Facts {...{facts}}/>
+                <StyledFacts {...{facts}}/>
             </Box>
         </Container>
 

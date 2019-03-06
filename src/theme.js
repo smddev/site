@@ -27,7 +27,7 @@ const fonts = {
     base: 'Khula',
 }
 
-const breakpoints = [640, 832, 1200];
+const brkpnts = [480, 680, 832, 1200];
 
 export const theme = {
     fonts,
@@ -47,6 +47,7 @@ export const theme = {
         }
     },
     icons: [32, 40, 64, 92, 128],
-    breakpoints: breakpoints.map(b => b + 'px')
+    brkpnts,
+    breakpoints: brkpnts.map(b => b + 'px')
 }
 

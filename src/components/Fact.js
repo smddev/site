@@ -14,13 +14,14 @@ const getImage = (name) => {
   return require(`../${name}.svg`)
 }
 
-export default withBackground(null, 340, 220)(styled(Fact)`
-  padding: 60px 30px;
-  width:240px;
+export default withBackground(null, 320, 220)(styled(Fact)`
+  padding: 60px 80px;
+  width:320px;
   box-sizing: border-box;
+  margin-bottom: 40px;
 `)`
     background-image: ${p => `url('${getImage(p.fact.data.background)}')`};
     top:5px;
-    left:-50px;
+    left:0px;
     
 `

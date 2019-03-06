@@ -8,13 +8,14 @@ import {scrollTo} from "../utils";
 const Container = styled.div`
   padding-bottom: 20px;
   height:100%;
-  overflow-x: scroll;
+  ${p => p.carousel && {'overflow-x': 'scroll'}};
   overflow-y: hidden;
   box-sizing: content-box;
   position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: ${p => p.carousel ? 'nowrap' : 'wrap'};
+  ${p => !p.carousel && p.pStyles};
   
   >* {
     width: ${p=>p.width}px;
@@ -96,7 +97,7 @@ class Carousel extends Component {
     }
 
     render() {
-        const {children, className, width, height} = this.props;
+        const {children, className, width, height, pStyles, carousel} = this.props;
         const {x, initialX} = this.state;
         const activeDrag = !!Math.abs(x - initialX);
         return <div {...{className}} onMouseLeave={this.handleUp}
@@ -105,7 +106,7 @@ class Carousel extends Component {
                     onMouseMove={this.handleMove}>
             <Hover active={activeDrag}/>
             <Container ref={this.container}
-                        {...{width, height}}>
+                        {...{width, height, pStyles, carousel}}>
                 {children}
             </Container>
         </div>
@@ -115,7 +116,7 @@ class Carousel extends Component {
 
 const StyledCarousel = styled(Carousel)`
   width: 100%;
-  height: ${p=>p.height}px;
+  ${p=>p.carousel && {height : `${p.height}px`}};
   overflow: hidden;
   position: relative;
   ${space}
@@ -133,13 +134,14 @@ class CarouselPanel extends Component {
     }
 
     render() {
-        const {className, mt, ...props} = this.props;
+        const {className, mt, carousel, ...props} = this.props;
         return <div {...{className, mt}}>
-            <StyledCarousel ref={this.carousel} {...props}></StyledCarousel>
-            <Toolbar mt={'40px'}>
+            <StyledCarousel ref={this.carousel} {...{...props, carousel}}></StyledCarousel>
+            {carousel && <Toolbar mt={'40px'}>
                 <ArrowButton onClick={this.handleClick(-1)} left='true'/>
                 <ArrowButton onClick={this.handleClick(1)}/>
             </Toolbar>
+            }
         </div>
     }
 }

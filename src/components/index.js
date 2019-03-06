@@ -5,6 +5,7 @@ import Icon, {HexIcon} from "./Icon";
 import List from "./List";
 import MemberCard from "./MemberCard";
 import Fact from "./Fact";
+import Facts from "./Facts";
 import PhoneLink from "./PhoneLink";
 import SideNav from "./SideNav";
 import Tech from "./Tech";
@@ -134,4 +135,4 @@ top: 50%;
 margin-top: -350px
 `
 
-export {Fact, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, MemberCard}
+export {Fact, Facts, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, MemberCard}

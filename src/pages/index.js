@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
-import {H1, H2, P, Button, withBackground} from '../atoms';
-import {Box, Flex} from '@rebass/grid'
+import {withBackground} from '../atoms';
+import {Facts} from '../components';
+import styled, {css} from 'styled-components';
 import {
     Services,
-    Facts,
     Industries,
     Stages,
     Feedback,
@@ -13,18 +13,39 @@ import {
 } from '../organisms'
 import background from "../feedback.svg";
 import {withLayout} from "../organisms";
+import {responsive} from "../utils";
 
 const FeedbackWB = withBackground(background, 1133, 686)(({className, mt}) => <Feedback {...{className, mt}}/>)`
     left: -230px;
     top: 247px;
 `
 
+const StyledFacts = styled(Facts)`
+  width: 320px;
+  margin: 140px auto 0;
+  @media(min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 100%;
+  }
+`
+
+const pStyles = css`
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  @media(min-width: ${p => p.theme.breakpoints[3]}) {
+    justify-content: space-between;
+  }
+`;
+
+const SSF = responsive(({isMobile, ...props}) => <StyledFacts carousel={isMobile} {...{...props, pStyles}}/>);
+
 export default withLayout()(withRouteData(({page, services, projects, industries, facts, stages}) => (
     <Fragment>
 
         <Services mt={8} page={page} services={services}/>
 
-        <Facts mt={10} facts={facts}/>
+        <SSF {...{facts}}/>
 
         <Industries mt={8} industries={industries}/>
 

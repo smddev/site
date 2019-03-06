@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 
 import Services from './Services'
-import Facts from './Facts'
+import Facts from '../components/Facts'
 import Industries from './Industries'
 import Stages from './Stages'
 import Feedback from './Feedback'

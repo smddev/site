@@ -3,7 +3,7 @@ import {Hexagon, HexGrid, Link2, withBackground} from '../atoms'
 import {Image} from "cloudinary-react";
 import styled, {withTheme, css} from "styled-components";
 import background from "../servicesHex.svg";
-import withSizes from 'react-sizes';
+import {responsive} from "../utils"
 
 const Icon = styled((props) => <div className={props.className}><Image {...props}/></div>)`
   width: ${p => `${p.width}px`};
@@ -20,8 +20,8 @@ const Link = styled(({className, ...props}) => <div className={className}><Link2
   text-align: center;
 `
 
-const HexServiceList = withTheme(withSizes(({width}) => ({isMobile: width < 640}))(
-    ({services, theme, className, isMobile}) => {
+const HexServiceList = responsive(
+    ({services, theme, className, isXMobile, isMobile}) => {
         const pxSize = isMobile ? 20 : theme.icons[0];
         const icons = [{
             pos: 'lt',
@@ -35,7 +35,7 @@ const HexServiceList = withTheme(withSizes(({width}) => ({isMobile: width < 640}
         },
         ]
         return <div className={className}>
-            <HexGrid height={isMobile ? 128 : 274}>
+            <HexGrid height={isXMobile ? 128 : (isMobile ? 200 : 274)}>
                 {services.slice(0, 3).map((service, index) =>
                     <Hexagon key={index}
                              iconColor={icons[index].color}
@@ -56,17 +56,17 @@ const HexServiceList = withTheme(withSizes(({width}) => ({isMobile: width < 640}
             </HexGrid>
         </div>
     }
-));
+);
 
 export default withBackground(background, 703, 631)(styled(HexServiceList)`
   display: flex;
   justify-content: center;
-  @media(min-width: ${p=>p.theme.breakpoints[2]}) {
+  @media(min-width: ${p=>p.theme.breakpoints[3]}) {
     display: block;
   }
 `)`
   display:none;
-  @media(min-width: ${p=>p.theme.breakpoints[0]}) {
+  @media(min-width: ${p=>p.theme.breakpoints[1]}) {
     display: block;
     left: 50%;
     margin-left: -370px;
