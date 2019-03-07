@@ -76,9 +76,9 @@ const EmailLinkCommon = ({className, email, children}) => {
     </Link1>
 }
 
-export const EmailLink = styled(({props})=>
+export const EmailLink = styled((props)=>
     <EmailLinkCommon {...props} email={'info@smddev.com'}/>)`
-  font-size: ${p => p.big ? '24px' : '16px'}
+  font-size: ${p => p.big ? '24px' : '16px'};
 `
 
 export const StyledEmailLink = styled((props) => <EmailLinkCommon {...props}>

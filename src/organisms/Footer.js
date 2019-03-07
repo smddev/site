@@ -130,12 +130,27 @@ const Routes = styled(withSiteData(({routes, className})=><div {...{className}}>
   display: inline-flex;
 `
 
+const SE = styled(EmailLink)`
+  display: inline-block;
+`
+
 const Contacts = styled(({className}) => <div {...{className}}>
     <PhoneLink big/>
-    <EmailLink big/>
-</div>)`>*:not(:last-child) {margin-right: 55px}`
+    <SE/>
+</div>)`
+  width: 100%;
+  margin-bottom: 30px;
+  
+  @media(min-width: ${p => p.theme.breakpoints[0]}) {
+    width: auto;
+    margin-bottom: 0;
+  }
+  
+  >* {
+  margin-right: 55px
+}`
 
-const FooterContacts = styled(({className}) => <Container {...{className, alignItems:'center', justifyContent:'space-between'}}>
+const FooterContacts = styled(({className}) => <Container {...{className, alignItems:'baseline', justifyContent:'space-between'}}>
     <Contacts />
     <Routes />
 </Container>)`
