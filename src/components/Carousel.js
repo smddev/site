@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {space} from 'styled-system';
 import {ArrowButton, ARROW_BUTTON_HEIGHT} from "../atoms";
 import {scrollTo} from "../utils";
 
+const carouselElement = css`
+  width: ${p=>p.width}px;
+  flex-shrink: 0;
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+`
 
 const Container = styled.div`
   padding-bottom: 20px;
@@ -18,12 +25,9 @@ const Container = styled.div`
   ${p => !p.carousel && p.pStyles};
   
   >* {
-    width: ${p=>p.width}px;
-    flex-shrink: 0;
-    &:not(:last-child) {
-      margin-right: 24px;
-    }
+    ${p => p.carousel && carouselElement};
   }
+  
 `
 const Hover = styled.div`
   position: absolute;

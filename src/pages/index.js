@@ -9,7 +9,6 @@ import {
     Stages,
     Feedback,
     RecentProjects,
-    Footer
 } from '../organisms'
 import background from "../feedback.svg";
 import {withLayout} from "../organisms";
@@ -51,7 +50,7 @@ export default withLayout()(withRouteData(({page, services, projects, industries
 
         <Stages mt={11} stages={stages}/>
 
-        <FeedbackWB mt={11}/>
+        <FeedbackWB mt={[5, 5, 5 ,5, 11]}/>
 
         <RecentProjects mt={8} projects={projects}/>
 
