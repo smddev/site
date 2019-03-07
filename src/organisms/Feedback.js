@@ -11,9 +11,12 @@ const Em = styled.em`
 `;
 
 const Description = styled.div`
-  margin-top: ${p => `${p.theme.space[4]}px`};
   width: 70%;
-  ${description}
+  ${description};
+  
+  @media(min-width: ${p => p.theme.breakpoints[3]}) {
+    margin-top: ${p => `${p.theme.space[4]}px`};
+  }
 `
 
 const FeedbackList = withBackground(quote, 240, 160)(styled.div`
@@ -30,13 +33,13 @@ const ClutchWidget = styled.div`
 `
 
 const Feedback = ({className}) => <Container className={className} alignItems='top'>
-    <Box width={1/2} pr={8}>
+    <Box width={[1, 1, 1, 1, 1/2]} pr={['0px', '0px', '0px', 8]}>
         <H1 mt={6}>Feedback from our customers</H1>
-        <Subtitle mb={'48px'}>Development for Web, Mobile and IoT</Subtitle>
+        <Subtitle mb={[3, 3, 3 ,3, '48px']}>Development for Web, Mobile and IoT</Subtitle>
         <Description><Em>70% customers</Em> come back to us to implement new ideas</Description>
         <Description><Em>5 years</Em> average time worked with one client</Description>
     </Box>
-    <Box width={1/2}>
+    <Box width={[1, 1, 1, 1, 1/2]}>
         <FeedbackList>
             <ClutchWidget className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350"
                  data-clutchcompany-id="627124"></ClutchWidget>

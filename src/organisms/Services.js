@@ -44,13 +44,13 @@ const Dscrptn = styled(({children, ...props}) => <Description {...props}>
 
 const Services =  withBackground(background, 241, 451)(({page, services, className}) =>
     <Container className={className} flexWrap='wrap' alignItems='center'>
-        <Box width={[1, 1, 1, 1 / 2]} pr={['0px', 5, 5]}>
+        <Box width={[1, 1, 1, 1, 1 / 2]} pr={['0px', 5, 5]}>
             <H1 dangerouslySetInnerHTML={{ __html: page.data.title }}/>
             <Subtitle mb={5}>{page.data.subtitle}</Subtitle>
             <Dscrptn source={page.content} escapeHtml={false}/>
             <B1 mt={3}/>
         </Box>
-        <Box width={[1, 1, 1, 1 / 2]} >
+        <Box width={[1, 1, 1, 1, 1 / 2]} >
             <HexServiceList services={services}/>
             <B2 mt={6}/>
         </Box>

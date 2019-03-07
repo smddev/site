@@ -27,13 +27,13 @@ const fonts = {
     base: 'Khula',
 }
 
-const brkpnts = [480, 680, 832, 1200];
+const brkpnts = [480, 680, 850, 1200];
 
 export const theme = {
     fonts,
     colors,
     fontSizes: [10, 12, 14, 16, 24, 30, 48, 64, 96, 128, 20, 18, 30],
-    lineHeight: [10, 12, 14, 24, 36, 38, 48, 70, 96, 128, 30, 22, 36],
+    lineHeight: [10, 12, 20, 24, 36, 38, 48, 70, 96, 128, 30, 22, 36],
     fontWeights: [300, 400, 700],
     space: [
         0, 4, 8, 16, 32, 40, 64, 72, 100, 128, 140, 184, 256

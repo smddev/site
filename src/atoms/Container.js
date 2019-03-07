@@ -8,6 +8,7 @@ export default styled(Flex)`
   max-width: ${CONTAINER_WIDTH};
   padding: 0 ${props => props.theme.space[3] + 'px'}; 
   margin: 0 auto;
+  flex-wrap: wrap;
   ${space};
   ${height};
   ${justifyContent};

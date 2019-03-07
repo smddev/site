@@ -51,7 +51,7 @@ export default withLayout()(withRouteData(({page, services, projects, industries
 
         <Stages mt={11} stages={stages}/>
 
-        <FeedbackWB mt={7}/>
+        <FeedbackWB mt={11}/>
 
         <RecentProjects mt={8} projects={projects}/>
 

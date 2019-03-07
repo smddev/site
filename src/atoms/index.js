@@ -144,13 +144,18 @@ export const NavLink = styled(withTheme(({theme, to, children, color, fontSize, 
 `
 
 export const Subtitle = styled.p`
-  font-size: ${p => `${p.theme.fontSizes[3]}px`};
-  line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  font-size: ${p => `${p.theme.fontSizes[2]}px`};
+  line-height: ${p => `${p.theme.lineHeight[2]}px`};
   font-weight: ${p => p.theme.fontWeights[0]};
   margin: 0;
   color: ${p => p.theme.colors.gray[2]};
-  ${space}
-  ${width}
+  ${space};
+  ${width};
+  
+  @media(min-width: ${p =>p.theme.breakpoints[0]}) {
+    font-size: ${p => `${p.theme.fontSizes[3]}px`};
+    line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  } 
 `
 
 export const H1 = styled.h1`
