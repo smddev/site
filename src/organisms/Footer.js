@@ -6,18 +6,23 @@ import styled from 'styled-components';
 import {Flex, Box} from '@rebass/grid';
 import {space} from 'styled-system';
 import background from '../calculateCost.svg'
+import backgroundMobile from '../calculateCostMobile.svg'
 import {EmailContext, validateEmail} from "../utils";
 import {navigate} from '@reach/router'
 
 const Description = styled(Subtitle)`width: 90%`;
 const Email = styled(Input)`
-  padding:0 0 16px 0;
+  padding:0 0 10px 0;
   &:-webkit-autofill,
-    &:-webkit-autofill:hover, 
-    &:-webkit-autofill:focus, 
-    &:-webkit-autofill:active  {
-        -webkit-box-shadow: 0 0 0 30px ${p => p.theme.colors.gray[3]} inset !important;
-    }
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus, 
+  &:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px ${p => p.theme.colors.gray[3]} inset !important;
+  }
+    
+  @media(min-width: ${p => p.theme.breakpoints[3]}) {
+    padding-bottom: 16px;
+  }
         
 `;
 
@@ -55,7 +60,7 @@ class EForm extends Component {
         const {email} = this.state;
         return <div {...{className}}>
             <Email value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Your email'}/>
-            <Button disabled={!validateEmail(email)} onClick={this.processSubmit} mt={'48px'}>Calculate Cost</Button>
+            <Button disabled={!validateEmail(email)} onClick={this.processSubmit} mt={['35px', '35px', '35px', '35px', '48px']}>Calculate Cost</Button>
         </div>
     }
 }
@@ -64,29 +69,52 @@ const EmailForm = styled(EForm)`
   ${space}
 `;
 
+const SB = styled(Box)`
+  position: absolute;
+  bottom: 80px;
+  left: 16px;
+  right: 16px;
+  @media(min-width: ${p => p.theme.breakpoints[3]}) {
+    position: initial;
+  }
+`
 
-const CalculateCost = withBackground(background, 1957, 415)(styled(({className}) => <Container {...{className}}>
-    <Box width={1/2} pr={'40px'}>
-        <H1 mt={'104px'}>Calculate the cost of the project</H1>
+
+const CalculateCost = withBackground(background, 1957, 415, true)(withBackground(backgroundMobile, 1329, 511)(styled(({className}) => <Container {...{className}}>
+    <Box width={[1, 1, 1, 1, 1/2]} pr={'40px'}>
+        <H1 mt={['60px', '60px','60px','60px','104px']}>Calculate the cost of the project</H1>
         <Description>The price is calculated individually depending on the complexity,
             volume and terms of work. Usually the project involves an analyst, designer, developers,
             testers and project Manager.
         </Description>
     </Box>
-    <EmailContext.Consumer>
-        {(context) =>
-            <Box width={1 / 2} pl={'120px'}>
-                <EmailForm mt={'136px'} {...context}/>
-            </Box>
-        }
-    </EmailContext.Consumer>
+    <SB width={['auto', 'auto', 'auto', 'auto', 1/2]}
+         pl={['0px', '0px', '0px', '0px', '120px']}
+         position={['absolute']}>
+        <EmailContext.Consumer>
+            {(context) =>
+                <EmailForm mt={[4, 4, 4, 4, '136px']} {...context}/>
+            }
+        </EmailContext.Consumer>
+    </SB>
 </Container>)`
   position: relative;
-  height: 415px;
+  height: 511px;
+`)`
+   left:-20px;
+   top: 0;
+   
+   @media(min-width: ${p => p.theme.breakpoints[3]}) {
+    display: none;
+   }
 `)`
     top: 0;
     left: 50%;
     margin-left: calc(-1957px/2);
+    display: none;
+    @media(min-width: ${p => p.theme.breakpoints[3]}) {
+       display: block;
+   }
 `
 
 
