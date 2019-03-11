@@ -52,12 +52,12 @@ export const IndustryList = (props) =>
     <PortfolioList items={props.industries} filterBy='industry' {...props}/>
 
 export const ServiceList = (props) =>
-    <List items={props.services} linkPath={`/portfolio?service=`} filterBy={'service'}>
+    <List items={props.services} vertical={true} linkPath={`/portfolio?service=`} filterBy={'service'}>
         <HexIcon {...props}/>
     </List>
 
 export const TechList = styled(({className, ...props}) =>
-    <List items={props.techs} includes={props.techIds}
+    <List items={props.techs} includes={props.techIds} vertical={true}
           className={className} linkPath={`/portfolio?tech=`} filterBy={'tech'}>
         <Tech {...props}/>
     </List>)`

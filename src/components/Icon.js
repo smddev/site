@@ -38,14 +38,21 @@ const verticalStyles = css`
   }
 `
 
+const horizontalStyles = css`
+  margin-bottom: 24px;
+  @media(min-width: ${p => p.theme.breakpoints[2]}) {
+    
+  }
+`
+
 const SL = styled(StyledLink)`
-  ${p => p.vertical && verticalStyles}
+  ${p => p.vertical ? verticalStyles : horizontalStyles}
 `
 
 export default withTheme((props) => {
     const {linkPath, item, vertical, active} = props;
     const url = `${linkPath}${item.data.slug}`
-    return <SL vertical={`${vertical}`} to={url}>
+    return <SL vertical={vertical ? 1:0} to={url}>
         <Flex
             alignItems='center'
             flexDirection={vertical ? 'column' : 'row'}>
@@ -61,15 +68,23 @@ export default withTheme((props) => {
     </SL>
 })
 
+const HexImageWrapper = styled.div`
+  width: ${p=>`${p.pxSize}px`};
+  height: ${p=>`${p.pxSize}px`};
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`
+
 export const HexIcon = ({className, item, pxSize, linkPath, mt, active}) => <StyledLink to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
     <Flex alignItems={'center'}>
         <Hexagon bg={item.data.background} height={40}>
-            <ImageWrapper width={pxSize} height={pxSize}>
+            <HexImageWrapper {...{pxSize}}>
                 <Image publicId={`site/icons/${item.data.icon}`}
-                       crop="fit"
-                       width={pxSize}
-                       height={pxSize}/>
-            </ImageWrapper>
+                       crop="fit"/>
+            </HexImageWrapper>
         </Hexagon>
         <StyledDescription
             fontSize={10}
