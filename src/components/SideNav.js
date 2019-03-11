@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import {space} from 'styled-system';
 import {H2} from '../atoms'
 import {IndustryList, ServiceList, TechList} from "./index";
 
@@ -13,5 +14,5 @@ const SideNav = ({className, industries, services, techs}) => <div {...{classNam
 </div>
 
 export default styled(SideNav)`
-  padding-left: 120px;
+  ${space};
 `;

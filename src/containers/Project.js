@@ -7,7 +7,7 @@ import styled from "styled-components";
 import {space} from "styled-system";
 import AspectBox from "../atoms/AspectBox";
 import cloudinary from "../cloudinary";
-import {SideNav, Markdown, TechList, ProjectCard, Carousel, PROJECT_CARD_RATIO} from '../components';
+import {SideNav, Markdown, TechList, ProjectCard, Carousel, PROJECT_CARD_RATIO, withSidebar} from '../components';
 import background from '../OtherProjects.svg'
 
 const serviceList = (serviceIds, services) => {
@@ -26,7 +26,7 @@ const Cover= styled(AspectBox)`
 const ProjectCarousel = withBackground(background, 937, 542)(styled(({projects, className}) =>
     <Box width={1}{...{className}}>
         <H1> Other projects</H1>
-        <Carousel mt={6} width={400} height={400 * PROJECT_CARD_RATIO}>
+        <Carousel carousel={true} mt={6} width={400} height={400 * PROJECT_CARD_RATIO}>
             {projects.
             //reduce((acc, e) => acc.concat([e,e]), []).
             map((p,i) => <ProjectCard  key={i} project={p}/>)}
@@ -40,24 +40,25 @@ const ProjectCarousel = withBackground(background, 937, 542)(styled(({projects, 
 `
 
 
+const Project = ({item, techs, services}) => <Fragment>
+    <H1WithBackground>{item.data.title}</H1WithBackground>
+    <Subtitle>{serviceList(item.data.services, services)}</Subtitle>
+
+    <Cover mt={5} mb={5} ratio={.5} item={item}></Cover>
+
+    <Markdown source={item.content} escapeHtml={false}/>
+    <H2>Technologies</H2>
+    <TechList large mt={4} techs={techs} techIds={item.data.techs}/>
+</Fragment>
+
+const ProjectWithSidebar = ({item, data}) => {
+    const WS = withSidebar(Project);
+    return <WS {...{item, ...data}}/>
+}
+
 export default withLayout()(withRouteData(({item, data}) => (
     <Fragment>
-        <Container>
-            <Box mt={6} width={2/3}>
-                <H1WithBackground>{item.data.title}</H1WithBackground>
-                <Subtitle>{serviceList(item.data.services, data.services)}</Subtitle>
-
-                <Cover mt={5} mb={5} ratio={.5} item={item}></Cover>
-
-                <Markdown source={item.content} escapeHtml={false}/>
-                <H2>Technologies</H2>
-                <TechList large mt={4} techs={data.techs} techIds={item.data.techs}/>
-            </Box>
-            <Box width={1/3}>
-                <SideNav {...data}/>
-            </Box>
-
-        </Container>
+        <ProjectWithSidebar {...{item, data}}/>
         <Container>
             <ProjectCarousel mt={'200px'} projects={data.projects}/>
         </Container>

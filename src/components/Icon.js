@@ -5,8 +5,8 @@ import {H2, StyledLink, Description, Text, Hexagon, hoverLinkStyles} from "../at
 import {Flex, Box} from '@rebass/grid'
 
 const ImageWrapper = styled(Box)`
-  width: ${p=>`${p.theme.icons[2]}px`};
-  height: ${p=>`${p.theme.icons[2]}px`};
+  width: ${p=> `${p.vertical ? p.theme.icons[2] : p.theme.icons[1]}px`};
+  height: ${p=> `${p.vertical ? p.theme.icons[2] : p.theme.icons[1]}px`};
   
   @media(min-width: ${p => p.theme.breakpoints[2]}) {
     width: ${p=> `${p.vertical ? p.theme.icons[3] : p.theme.icons[1]}px`};
@@ -21,7 +21,7 @@ const ImageWrapper = styled(Box)`
 
 const StyledDescription = styled(Description)`
   ${hoverLinkStyles};
-  ${p => p.vertical && {'margin-top' : '10px'}};
+  ${p => ({[p.vertical ? 'margin-top' : 'margin-left'] : '10px'})};
     
   @media(min-width: ${p => p.theme.breakpoints[2]}) {
     ${p => ({[p.vertical ? 'margin-top' : 'margin-left'] : '24px'})}
@@ -87,9 +87,7 @@ export const HexIcon = ({className, item, pxSize, linkPath, mt, active}) => <Sty
             </HexImageWrapper>
         </Hexagon>
         <StyledDescription
-            fontSize={10}
-            lineHeight={'20px'}
-            ml={'24px'}
+            ml={['0px', '0px','10px','24px', '24px']}
             active={active}>
             {item.data.title}
         </StyledDescription>

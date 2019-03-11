@@ -17,7 +17,8 @@ import {Envelop} from '../icons'
 import bg from '../servicesHex.svg'
 
 import ProjectCard, {PROJECT_CARD_RATIO} from "./ProjectCard";
-import {yellowLinkStyles, Link1, Description, Button, withBackground} from "../atoms";
+import {yellowLinkStyles, Link1, Description, Button, withBackground, H1WithBackground, Container} from "../atoms";
+import {Box} from "@rebass/grid";
 
 function filterByTag(item, tagName, tagValue) {
     return tagValue ? (item.data[tagName] && item.data[tagName].includes(tagValue)) : true
@@ -57,7 +58,7 @@ export const ServiceList = (props) =>
     </List>
 
 export const TechList = styled(({className, ...props}) =>
-    <List items={props.techs} includes={props.techIds} vertical={true}
+    <List flexDirection={'row'} items={props.techs} includes={props.techIds} vertical={true}
           className={className} linkPath={`/portfolio?tech=`} filterBy={'tech'}>
         <Tech {...props}/>
     </List>)`
@@ -134,5 +135,16 @@ left: -120px;
 top: 50%;
 margin-top: -350px
 `
+
+export const withSidebar = (WrappedComponent) =>  props => <Container>
+    <Box mt={6} width={[1, 1, 2 / 3, 1 / 2, 2 / 3]}>
+        <WrappedComponent {...props}/>
+    </Box>
+    <Box width={[1, 1, 1 / 3, 1 / 2, 1 / 3]}>
+        <SideNav ml={['0px', '0px', '60px', '120px', '120px']} {...props}/>
+    </Box>
+</Container>
+
+
 
 export {Fact, Facts, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, MemberCard}

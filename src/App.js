@@ -46,7 +46,12 @@ const GlobalStyle = createGlobalStyle`
           margin-bottom: 20px;
           display: inline-block;
           box-sizing: border-box;
-          width: 50%;
+          width: 100%;
+          
+          
+          @media(min-width: ${theme.breakpoints[3]}) {
+            width: 50%;
+          }
         }
       }
   }

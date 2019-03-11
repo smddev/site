@@ -3,10 +3,11 @@ import {Box, Flex} from '@rebass/grid'
 import {withWindowLocation} from "../utils";
 import queryString from "query-string";
 
-export default withWindowLocation(({items, children, linkPath, includes, vertical, className, location, filterBy}) => {
+export default withWindowLocation(({items, children, linkPath, includes,
+            vertical, className, location, filterBy, flexDirection}) => {
     const query = queryString.parse(location.search);
     return <Flex flexWrap='wrap'
-          flexDirection={vertical ? 'column' : 'row'}
+          flexDirection={flexDirection || (vertical ? 'column' : 'row')}
           justifyContent={vertical ? 'flex-start' : 'center'}
           as='ul'
           className={className}
