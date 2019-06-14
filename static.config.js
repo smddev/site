@@ -49,7 +49,7 @@ const getRoutes = async () => {
             const path = `${pathName}/${item.data.slug}`
             return {
                 path,
-                component: `src/containers/${component}`,
+                template: `src/containers/${component}`,
                 getData: () => ({
                     item,
                     data
@@ -66,6 +66,7 @@ const getRoutes = async () => {
                 page: siteData.pages[name],
                 ...data
             }),
+            template: `${pages}/${name}`,
             children
         }
     }
@@ -102,11 +103,11 @@ const getRoutes = async () => {
         ]),
         {
             path: 'form-submit',
-            component: `${pages}/submit`,
+            template: `${pages}/submit`,
         },
         {
             path: '404',
-            component: `${pages}/404`,
+            template: `${pages}/404`,
         },
     ]
 }
@@ -151,5 +152,5 @@ export default {
     getRoutes,
     Document,
     plugins: ["react-static-plugin-styled-components",
-        'react-static-plugin-react-router']
+        'react-static-plugin-reach-router']
 }

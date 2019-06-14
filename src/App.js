@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Suspense} from 'react'
 import {Root, Routes} from 'react-static'
 import {createGlobalStyle, ThemeProvider, css} from 'styled-components'
 import {theme} from "./theme";
@@ -81,7 +81,9 @@ class App extends Component {
                     <CloudinaryContext cloudName="smddev" secure="true">
                         <div className="content">
                             <GlobalStyle/>
-                            <Routes/>
+                            <Suspense fallback={<em>Loading...</em>}>
+                                <Routes/>
+                            </Suspense>
                         </div>
                     </CloudinaryContext>
                 </ThemeProvider>
