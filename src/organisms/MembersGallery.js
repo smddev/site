@@ -13,7 +13,23 @@ const Cell = styled(({children, className}) => <Box {...{className}} width={[1, 
   
   &:nth-child(even) {
     padding-left: 60px;
-  }  
+  }
+
+  @media(max-width: ${p => p.theme.breakpoints[2]}) {
+    width: 90%;
+    &:nth-child(odd) {
+      padding-right: 0px;
+      padding-bottom: 30px;
+    }
+    
+    &:nth-child(even) {
+      padding-left: 0px;
+    }
+  }
+
+  @media(max-width: ${p => p.theme.breakpoints[0]}) {
+    width: 100%;
+  }
 `
 
 export default styled(({members, className}) => <Flex width={1} {...{className, flexWrap:'wrap'}}>

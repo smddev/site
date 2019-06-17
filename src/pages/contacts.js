@@ -6,7 +6,7 @@ import {Box, Flex} from "@rebass/grid";
 import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
 import styled from "styled-components";
-import {space} from "styled-system";
+import {space, width} from "styled-system";
 import {validateEmail, EmailContext} from "../utils";
 
 const IconLink = styled(Link1)`
@@ -14,6 +14,7 @@ const IconLink = styled(Link1)`
   display: inline-block;
   font-size: 20px;
   padding-top: 60px;
+  min-width: 150px;
   &:before {
     content: '';
     position: absolute;
@@ -24,6 +25,21 @@ const IconLink = styled(Link1)`
     margin-left: -23px;
     background-repeat: no-repeat;
     background-image: url(${p => p.image});
+  }
+  @media(max-width: ${p => p.theme.breakpoints[0]}) {
+    &:before { 
+        width:46px;
+        height: 40px;
+        left: -50px;
+        top: 10px;
+        margin-left: 0px;
+        background-size: 25px;
+        background-position: left center;
+      }
+      padding-top: 20px;
+      margin-left: 50px;
+      text-decoration: underline dashed;
+      font-size: 17px;
   }
 `
 
@@ -80,27 +96,26 @@ const StyledContactForm = styled(ContactForm)`
 export default withLayout({noForm: true})(withRouteData(({page}) => (
     <Fragment>
         <Container mt={7}>
-            <Flex width={1/2} flexDirection={'column'}>
+            <Flex width={[1, 1, 1/2]} m={[0, 3, 0]} flexDirection={'column'}>
                 <H1WithBackground>{page.data.title}</H1WithBackground>
                 <Subtitle>
                     {page.data.subtitle}
                 </Subtitle>
 
-                <Flex mt={7}>
-                    <Box width={1/2}>
+                <Flex mt={[0, 7]} flexDirection={['column', 'row']}>
+                    <Box width={[1, 1/2]}>
                         <IconLink href={`mailto: ${page.data.email}`} image={Envelop}>
                             {page.data.email}
                         </IconLink>
-
                     </Box>
-                    <Box width={1/2}>
+                    <Box width={[1, 1/2]}>
                         <IconLink href={`tel: ${page.data.phone}`} image={Phone}>
                             {page.data.phone}
                         </IconLink>
                     </Box>
                 </Flex>
             </Flex>
-            <Box width={1/2}>
+            <Box width={[1, 1, 1/2]} m={[0, 3, 0]}>
                 <EmailContext.Consumer>
                     {context =>
                         <StyledContactForm {...context} mt={6}/>

@@ -10,7 +10,34 @@ import mgLeft from '../industriesLeft.svg'
 import mgRight from '../managementRight.svg'
 
 const Intro = styled(P)`
-  width: 80%;
+    width: 100%;
+    font-size: ${p => `${p.theme.fontSizes[4]}px`};
+  
+ 	@media(min-width: ${p => p.theme.breakpoints[2]}) {
+  		width: 80%;
+    }
+    
+    @media(max-width: ${p => p.theme.breakpoints[0]}) {
+        font-size: ${p => `${p.theme.fontSizes[3]}px`};
+        line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  }
+`
+
+const MorphBox = styled(Box)`
+  @media(max-width: ${p => p.theme.breakpoints[2]}) {
+  	width: 100%;
+  }
+`
+
+const StyledFacts = styled(Facts)`
+  width: 320px;
+  margin: 130px 0 0 auto;
+  @media(max-width: ${p => p.theme.breakpoints[2]}) {
+    margin: auto;
+  }
+  @media(max-width: 360px) {
+    margin-left: -15px;
+  }
 `
 
 const ManagementSection = styled(withBackground(mgRight,708, 542, true)(
@@ -30,11 +57,6 @@ const ManagementSection = styled(withBackground(mgRight,708, 542, true)(
 ${space}
 `
 
-const StyledFacts = styled(Facts)`
-  width: 320px;
-  margin: 130px 0 0 auto;
-`
-
 export default withLayout()(withRouteData(({page, members, facts}) => (
     <Fragment>
         <Container mt={6}>
@@ -48,12 +70,12 @@ export default withLayout()(withRouteData(({page, members, facts}) => (
         </Container>
 
         <Container>
-            <Box width={2/3}>
+            <MorphBox width={2/3}>
                <Markdown source={page.content} escapeHtml={false}/>
-            </Box>
-            <Box width={1/3}>
-                <StyledFacts {...{facts}}/>
-            </Box>
+            </MorphBox>
+            <MorphBox width={1/3}>
+                <StyledFacts carousel={true} {...{facts}}/>
+            </MorphBox>
         </Container>
 
         <ManagementSection mt={4} {...{members}}/>
