@@ -1,12 +1,12 @@
 import React, {Fragment, Component} from 'react'
 import {withRouteData} from 'react-static'
-import {Button, Container, H1, H1WithBackground, Link1, Subtitle, Input, Textarea} from "../atoms";
+import {Button, Container, H1, H1WithBackground, Link1, Subtitle, Input, Textarea, Link2, withBackground} from "../atoms";
 import {Footer, withLayout} from "../organisms";
 import {Box, Flex} from "@rebass/grid";
 import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
 import styled from "styled-components";
-import {space, width} from "styled-system";
+import {space, themeGet} from "styled-system";
 import {validateEmail, EmailContext} from "../utils";
 
 const IconLink = styled(Link1)`
@@ -30,17 +30,28 @@ const IconLink = styled(Link1)`
     &:before { 
         width:46px;
         height: 40px;
-        left: -50px;
-        top: 10px;
+        left: -45px;
+        top: 9px;
         margin-left: 0px;
         background-size: 25px;
         background-position: left center;
       }
-      padding-top: 20px;
-      margin-left: 50px;
-      text-decoration: underline dashed;
+      padding-top: 15px;
+      margin-left: 47px;
+      background-image: ${props => `linear-gradient(to right, ${props.theme.colors.gray[2]} 50%, transparent 50%)`};
+      background-position: 0 37px;
+      background-repeat: repeat-x;
+      background-size: 4px 1px;
       font-size: 17px;
   }
+`
+
+const MySubtitle = styled(Subtitle)`
+    font-size: ${p => `${p.theme.fontSizes[3]}px`};
+    margin-bottom: 15px;
+    @media(min-width: ${p =>p.theme.breakpoints[0]}) {
+        font-size: ${p => `${p.theme.fontSizes[4]}px`};
+    } 
 `
 
 const Comment = styled(Textarea)`
@@ -98,15 +109,16 @@ export default withLayout({noForm: true})(withRouteData(({page}) => (
         <Container mt={7}>
             <Flex width={[1, 1, 1/2]} m={[0, 3, 0]} flexDirection={'column'}>
                 <H1WithBackground>{page.data.title}</H1WithBackground>
-                <Subtitle>
+                <MySubtitle>
                     {page.data.subtitle}
-                </Subtitle>
+                </MySubtitle>
 
                 <Flex mt={[0, 7]} flexDirection={['column', 'row']}>
                     <Box width={[1, 1/2]}>
                         <IconLink href={`mailto: ${page.data.email}`} image={Envelop}>
                             {page.data.email}
                         </IconLink>
+                        <Link2></Link2>
                     </Box>
                     <Box width={[1, 1/2]}>
                         <IconLink href={`tel: ${page.data.phone}`} image={Phone}>

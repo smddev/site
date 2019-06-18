@@ -3,6 +3,7 @@ import {Link} from '@reach/router'
 import styled, {withTheme, css} from 'styled-components'
 import {Flex, Box} from '@rebass/grid'
 import background from '../h1.svg'
+import background2 from "../facts2.svg";
 
 import {
     themeGet,
@@ -294,6 +295,13 @@ export const withBackground = (background, w, h, after=false) => (WrappedCompone
 export const H1WithBackground = withBackground(background, 241, 451)(H1)`
     left:-380px;
     top:15px;
+    @media(max-width: ${p => p.theme.breakpoints[0]}) {
+          background-position: right top;
+          left: 170px;
+          width: 310px;
+          top: -65px;
+          background-image: url(${background2});
+  }
 `;
 
 const active = p => ({

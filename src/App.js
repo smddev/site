@@ -54,6 +54,16 @@ const GlobalStyle = createGlobalStyle`
           }
         }
       }
+      @media(max-width: ${p => p.theme.breakpoints[0]}) {
+          h2 {
+            font-size: ${p => `${p.theme.fontSizes[4]}px`};
+            line-height: ${theme.lineHeight[4]}px;
+          }
+          p {
+            font-size: ${p => `${p.theme.fontSizes[3]}px`};
+            line-height: ${theme.lineHeight[3]}px;
+          }
+      }
   }
 `
 
