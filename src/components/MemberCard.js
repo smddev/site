@@ -11,31 +11,19 @@ const StyledImage = styled.div`
   }
 `
 
-const Cell = styled(({children, className}) => <Box {...{className}} width={[1 / 2, 1 / 2]}>
-	{children}
-</Box>)`
-  @media(max-width: ${p => p.theme.breakpoints[0]}) {
-    width: 100%;
-  }
-`
-
 export default ({item}) => <Box>
 	<Flex width={1} {...{flexWrap:'wrap'}}>
-		<Cell>
-			<StyledImage><Image publicId={`site/member/${item.data.avatar}`}
+		<StyledImage><Image publicId={`site/member/${item.data.avatar}`}
 								gravity='face'
 								crop="fill"
 								width={160}
 								height={160}
 			/></StyledImage>
-		</Cell>
-		<Cell>
-			<Box>
-				<H5>{item.data.title}</H5>
-				<Subtitle mt={2}>{item.data.role}</Subtitle>
-				<StyledEmailLink mt={2} email={item.data.email}/>
-			</Box>
-		</Cell>
+		<Box ml={[1, 4]}>
+			<H5> {item.data.title}</H5>
+			<Subtitle mt={2}>{item.data.role}</Subtitle>
+			<StyledEmailLink mt={2} email={item.data.email}/>
+		</Box>
 	</Flex>
 	<Box mt={'25px'}>
 		{item.content}

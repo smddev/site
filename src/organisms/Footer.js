@@ -82,7 +82,7 @@ const SB = styled(Box)`
 
 const CalculateCost = withBackground(background, 1957, 415, true)(withBackground(backgroundMobile, 1329, 511)(styled(({className}) => <Container {...{className}}>
     <Box width={[1, 1, 1, 1, 1/2]} pr={'40px'}>
-        <H1 mt={['60px', '60px','60px','60px','104px']}>Calculate the cost of the project</H1>
+        <H1 mt={['40px', '60px','60px','80px','104px']}>Calculate the cost of the project</H1>
         <Description>The price is calculated individually depending on the complexity,
             volume and terms of work. Usually the project involves an analyst, designer, developers,
             testers and project Manager.
