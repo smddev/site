@@ -110,16 +110,20 @@ export const Link1 = styled.a`
     ${fontSize} 
 `
 
+export const underline = css`
+    background-image: linear-gradient(to right, ${props => props.theme.colors.gray[2]} 50%, transparent 50%);
+    background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 2}px;
+    background-repeat: repeat-x;
+    background-size: 4px 1px;
+`
+
 export const Link2 = styled.a`
     text-decoration: none;
     color: ${props => props.theme.colors.white[0]};
-    background-image: ${props => `linear-gradient(to right, ${props.theme.colors.gray[2]} 50%, transparent 50%)`};
-    background-position: ${p => `0 ${themeGet('fontSizes.' + p.fontSize)(p) + 2}px`};
-    background-repeat: repeat-x;
-    background-size: 4px 1px;
     
-    ${fontSize}
-    ${lineHeight}
+    ${underline};
+    ${fontSize};
+    ${lineHeight};
     ${space} 
 `
 
@@ -145,8 +149,8 @@ export const NavLink = styled(withTheme(({theme, to, children, color, fontSize, 
 `
 
 export const Subtitle = styled.p`
-  font-size: ${p => `${p.theme.fontSizes[2]}px`};
-  line-height: ${p => `${p.theme.lineHeight[2]}px`};
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  line-height: ${p => p.theme.lineHeight[2]}px;
   font-weight: ${p => p.theme.fontWeights[0]};
   margin: 0;
   color: ${p => p.theme.colors.gray[2]};
@@ -154,27 +158,27 @@ export const Subtitle = styled.p`
   ${width};
   
   @media(min-width: ${p =>p.theme.breakpoints[0]}) {
-    font-size: ${p => `${p.theme.fontSizes[3]}px`};
-    line-height: ${p => `${p.theme.lineHeight[3]}px`};
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    line-height: ${p => p.theme.lineHeight[3]}px;
   } 
 `
 
 export const H1 = styled.h1`
-  line-height: ${p => `${p.theme.lineHeight[5]}px`};
-  font-size: ${p => `${p.theme.fontSizes[5]}px`};
-  margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
+  line-height: ${p => p.theme.lineHeight[5]}px;
+  font-size: ${p => p.theme.fontSizes[5]}px;
+  margin: 0 0 ${p => p.theme.space[2]}px 0;
   ${space};
   
   @media(min-width: ${p =>p.theme.breakpoints[1]}) {
-    line-height: ${p => `${p.theme.lineHeight[7]}px`};
-    font-size: ${p => `${p.theme.fontSizes[7]}px`};
+    line-height: ${p => p.theme.lineHeight[7]}px;
+    font-size: ${p => p.theme.fontSizes[7]}px;
   } 
 `
 
 export const h2Style = css`
   font-weight: ${p => p.theme.fontWeights[1]};
-  font-size:  ${p => `${p.theme.fontSizes[12]}px`};
-  line-height: ${p => `${p.theme.lineHeight[12]}px`};
+  font-size:  ${p => p.theme.fontSizes[12]}px;
+  line-height: ${p => p.theme.lineHeight[12]}px;
   margin-bottom: 24px;
 `;
 
@@ -189,18 +193,18 @@ export const P = styled.p`
 `
 
 export const H4 = styled.h4`
-  line-height: ${p => `${p.theme.lineHeight[4]}px`};
-  font-size: ${p => `${p.theme.fontSizes[4]}px`};
+  line-height: ${p => p.theme.lineHeight[4]}px;
+  font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights[1]};
-  margin: ${p => `0 0 ${p.theme.space[2]}px 0`};
+  margin: 0 0 ${p => p.theme.space[2]}px 0;
   ${space};
 `
 
 export const H5 = styled.h5`
-  line-height: ${p => `${p.theme.lineHeight[3]}px`};
-  font-size: ${p => `${p.theme.fontSizes[3]}px`};
+  line-height: ${p => p.theme.lineHeight[3]}px;
+  font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights[2]};
-  margin: ${p => `0 0 ${p.theme.space[1]}px 0`};
+  margin: 0 0 ${p => p.theme.space[1]}px 0;
   ${space};
 `
 
@@ -220,14 +224,14 @@ export const Text = styled.span`
 `
 
 export const description = css`
-  font-size: ${p => `${p.theme.fontSizes[3]}px`};
-  line-height: ${p => `${p.theme.lineHeight[3]}px`};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  line-height: ${p => p.theme.lineHeight[3]}px;
   font-weight: ${p => p.theme.fontWeights[0]};
   color: white;
 
   @media(min-width: ${p => p.theme.breakpoints[2]}) {
-    font-size: ${p => `${p.theme.fontSizes[4]}px`};
-    line-height: ${p => `${p.theme.lineHeight[4]}px`};
+    font-size: ${p => p.theme.fontSizes[4]}px;
+    line-height: ${p => p.theme.lineHeight[4]}px;
   }
 `
 

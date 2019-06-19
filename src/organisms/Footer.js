@@ -158,7 +158,7 @@ const FooterContacts = styled(({className}) => <Container {...{className, alignI
 `
 
 const Copyright = styled(({className}) => <Container {...{className}}>
-    <Subtitle>© 2018 smmdev.com. All rights reserved.</Subtitle>
+    <Subtitle>© 2018 smddev.com. All rights reserved.</Subtitle>
 </Container>)`${space}`
 
 export default styled(({noForm, className}) => <div {...{className}}>

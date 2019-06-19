@@ -1,6 +1,17 @@
 import React, {Fragment, Component} from 'react'
 import {withRouteData} from 'react-static'
-import {Button, Container, H1, H1WithBackground, Link1, Subtitle, Input, Textarea, Link2, withBackground} from "../atoms";
+import {
+    Button,
+    Container,
+    H1,
+    H1WithBackground,
+    Link1,
+    Subtitle,
+    Input,
+    Textarea,
+    withBackground,
+    underline
+} from "../atoms";
 import {Footer, withLayout} from "../organisms";
 import {Box, Flex} from "@rebass/grid";
 import Envelop from "../envelop.svg";
@@ -12,7 +23,7 @@ import {validateEmail, EmailContext} from "../utils";
 const IconLink = styled(Link1)`
   position: relative;
   display: inline-block;
-  font-size: 20px;
+  font-size: ${p => p.theme.fontSizes[10]}px;
   padding-top: 60px;
   min-width: 150px;
   &:before {
@@ -38,19 +49,16 @@ const IconLink = styled(Link1)`
       }
       padding-top: 15px;
       margin-left: 47px;
-      background-image: ${props => `linear-gradient(to right, ${props.theme.colors.gray[2]} 50%, transparent 50%)`};
-      background-position: 0 37px;
-      background-repeat: repeat-x;
-      background-size: 4px 1px;
-      font-size: 17px;
+      font-size: ${p => p.theme.fontSizes[11]}px;
+      ${underline};
   }
 `
 
 const MySubtitle = styled(Subtitle)`
-    font-size: ${p => `${p.theme.fontSizes[3]}px`};
+    font-size: ${p => p.theme.fontSizes[3]}px;
     margin-bottom: 15px;
     @media(min-width: ${p =>p.theme.breakpoints[0]}) {
-        font-size: ${p => `${p.theme.fontSizes[4]}px`};
+        font-size: ${p => p.theme.fontSizes[4]}px;
     } 
 `
 
@@ -115,13 +123,12 @@ export default withLayout({noForm: true})(withRouteData(({page}) => (
 
                 <Flex mt={[0, 7]} flexDirection={['column', 'row']}>
                     <Box width={[1, 1/2]}>
-                        <IconLink href={`mailto: ${page.data.email}`} image={Envelop}>
+                        <IconLink fontSize={13} href={`mailto: ${page.data.email}`} image={Envelop}>
                             {page.data.email}
                         </IconLink>
-                        <Link2></Link2>
                     </Box>
                     <Box width={[1, 1/2]}>
-                        <IconLink href={`tel: ${page.data.phone}`} image={Phone}>
+                        <IconLink fontSize={13} href={`tel: ${page.data.phone}`} image={Phone}>
                             {page.data.phone}
                         </IconLink>
                     </Box>

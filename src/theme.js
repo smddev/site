@@ -32,7 +32,7 @@ const brkpnts = [480, 680, 850, 1200];
 export const theme = {
     fonts,
     colors,
-    fontSizes: [10, 12, 14, 16, 24, 30, 48, 64, 96, 128, 20, 18, 30],
+    fontSizes: [10, 12, 14, 16, 24, 30, 48, 64, 96, 128, 20, 18, 30, 35],
     lineHeight: [10, 12, 20, 24, 36, 38, 48, 70, 96, 128, 30, 22, 36],
     fontWeights: [300, 400, 700],
     space: [
