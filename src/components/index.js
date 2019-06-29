@@ -15,6 +15,10 @@ import styled from "styled-components";
 import {position, bottom, left, space} from "styled-system";
 import {Envelop} from '../icons'
 import bg from '../servicesHex.svg'
+import Photo from './Photo';
+import Photos from './Photos';
+import Review from './Review';
+import Reviews from './Reviews';
 
 import ProjectCard, {PROJECT_CARD_RATIO} from "./ProjectCard";
 import {yellowLinkStyles, Link1, Description, Button, withBackground, H1WithBackground, Container} from "../atoms";
@@ -147,4 +151,4 @@ export const withSidebar = (WrappedComponent) =>  props => <Container>
 
 
 
-export {Fact, Facts, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, MemberCard}
+export {Fact, Facts, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, MemberCard, Photo, Photos, Review, Reviews}

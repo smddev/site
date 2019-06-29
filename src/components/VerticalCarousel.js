@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components';
 import {space} from 'styled-system';
 import {ArrowButton, ARROW_BUTTON_HEIGHT} from "../atoms";
 import {scrollTo} from "../utils";
+import {Flex} from '@rebass/grid'
 
 const carouselElement = css`
   width: ${p => p.width}px;
@@ -40,14 +41,11 @@ const Hover = styled.div`
 `
 
 const Toolbar = styled.div`
-  height: ${ARROW_BUTTON_HEIGHT}px;
-  display: flex;
-  justify-content: center;
   ${space}
   
   >*{
     &:not(:first-child) {
-      margin-left: 30px;
+      margin-top: 40px;
     }
   }
 `
@@ -141,14 +139,14 @@ class CarouselPanel extends Component {
 
 		render() {
 				const {className, mt, carousel, vertical, ...props} = this.props;
-				return <div {...{className, mt}}>
-						<StyledCarousel ref={this.carousel} {...{...props, carousel}}></StyledCarousel>
-						{carousel && <Toolbar mt={'40px'}>
-								<ArrowButton onClick={this.handleClick(-1)} left='true'/>
-								<ArrowButton onClick={this.handleClick(1)}/>
+				return <Flex {...{className, mt}}>
+						{carousel && <Toolbar mt={'80px'}>
+								<ArrowButton onClick={this.handleClick(-1)} up='true'/>
+								<ArrowButton onClick={this.handleClick(1)} down='true'/>
 						</Toolbar>
 						}
-				</div>
+						<StyledCarousel ref={this.carousel} {...{...props, carousel}}></StyledCarousel>
+				</Flex>
 		}
 }
 

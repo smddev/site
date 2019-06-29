@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {space} from 'styled-system';
 import {H4, Subtitle, withBackground} from "../atoms";
 
 const Fact = ({fact, className}) => {

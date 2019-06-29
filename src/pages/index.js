@@ -14,7 +14,7 @@ import background from "../feedback.svg";
 import {withLayout} from "../organisms";
 import {responsive} from "../utils";
 
-const FeedbackWB = withBackground(background, 1133, 686)(({className, mt}) => <Feedback {...{className, mt}}/>)`
+const FeedbackWB = withBackground(background, 1133, 686)(({className, mt, reviews}) => <Feedback {...{className, mt, reviews}}/>)`
     left: -230px;
     top: 247px;
 `
@@ -39,7 +39,7 @@ const pStyles = css`
 
 const SSF = responsive(({isMobile, ...props}) => <StyledFacts carousel={isMobile} {...{...props, pStyles}}/>);
 
-export default withLayout()(withRouteData(({page, services, projects, industries, facts, stages}) => (
+export default withLayout()(withRouteData(({page, services, projects, industries, facts, stages, reviews}) => (
     <Fragment>
 
         <Services mt={8} page={page} services={services}/>
@@ -50,7 +50,7 @@ export default withLayout()(withRouteData(({page, services, projects, industries
 
         <Stages mt={11} stages={stages}/>
 
-        <FeedbackWB mt={[5, 5, 5 ,5, 11]}/>
+        <FeedbackWB mt={[5, 5, 5 ,5, 11]} {...{reviews}}/>
 
         <RecentProjects mt={8} projects={projects}/>
 

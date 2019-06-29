@@ -168,6 +168,7 @@ export const H1 = styled.h1`
   font-size: ${p => p.theme.fontSizes[5]}px;
   margin: 0 0 ${p => p.theme.space[2]}px 0;
   ${space};
+  position: relative;
   
   @media(min-width: ${p =>p.theme.breakpoints[1]}) {
     line-height: ${p => p.theme.lineHeight[7]}px;
@@ -297,15 +298,21 @@ export const withBackground = (background, w, h, after=false) => (WrappedCompone
 }
 
 export const H1WithBackground = withBackground(background, 241, 451)(H1)`
-    left:-380px;
-    top:15px;
-    @media(max-width: ${p => p.theme.breakpoints[0]}) {
-          background-position: right top;
-          left: 170px;
-          width: 310px;
-          top: -65px;
-          background-image: url(${background2});
-  }
+    position: absolute;
+    right: -100px;
+    top: -65px;
+    width: 310px;
+    background-image: url(${background2});
+    @media(min-width: ${p => p.theme.breakpoints[1]}) {
+      right: 0;
+      top: -60px;
+      left: -70px;
+    }
+    @media(min-width: 1600px) {
+      left:-380px;
+      top:15px;
+      background-image: url(${background});
+    }
 `;
 
 const active = p => ({

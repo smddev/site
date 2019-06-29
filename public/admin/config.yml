@@ -138,3 +138,15 @@ collections:
           - {label: "Phone", name: "phone", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "review"
+    label: "Reviews"
+    folder: "src/content/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Review", name: "review", widget: "string"}
+      - {label: "Reviewer", name: "reviewer", widget: "string", required: false}
+      - {label: "Position", name: "position", widget: "string"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Icon", name: "icon", widget: "string", required: false}

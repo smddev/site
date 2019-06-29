@@ -1,10 +1,9 @@
 import React, {Component, Suspense} from 'react'
 import {Root, Routes} from 'react-static'
-import {createGlobalStyle, ThemeProvider, css} from 'styled-components'
+import {createGlobalStyle, ThemeProvider} from 'styled-components'
 import {theme} from "./theme";
 import {CloudinaryContext} from "cloudinary-react";
-import NavBar from "./organisms/NavBar";
-import {description, h2Style, paragraph} from './atoms'
+import {h2Style, paragraph} from './atoms'
 import listItem from './listItem.svg'
 import {EmailContext} from "./utils";
 

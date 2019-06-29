@@ -1,43 +1,44 @@
 import React, {Fragment} from 'react'
 import {Box, Flex} from "@rebass/grid";
-import {MemberCard} from "../components";
+import {MemberCard, Carousel} from "../components";
 import styled from "styled-components";
 import {space} from "styled-system";
+import {responsive} from "../utils";
 
-const Cell = styled(({children, className}) => <Box {...{className}} width={[1, 1 / 2, 1 / 2]}>
-    {children}
+const Cell = styled(({children, className}) => <Box {...{className}}>
+		{children}
 </Box>)`
-  &:nth-child(odd) {
-    padding-right: 60px;
+width: 100%;
+ @media(min-width: 930px) {
+ 	width: 50%;
+ 		&:nth-child(even) {
+    	padding-left: 30px;
+  	}
   }
-  
-  &:nth-child(even) {
-    padding-left: 60px;
-  }
-
-  @media(max-width: ${p => p.theme.breakpoints[2]}) {
-    width: 90%;
-    &:nth-child(odd) {
-      padding-right: 0px;
-      padding-bottom: 30px;
-    }
-    
-    &:nth-child(even) {
-      padding-left: 0px;
-    }
-  }
-
-  @media(max-width: ${p => p.theme.breakpoints[0]}) {
-    width: 100%;
+  @media(min-width: ${p => p.theme.breakpoints[3]}) {
+  	&:nth-child(even) {
+    	padding-left: 60px;
+  	}
+  	&:nth-child(odd) {
+    	padding-right: 60px;
+  	}
   }
 `
 
-export default styled(({members, className}) => <Flex width={1} {...{className, flexWrap:'wrap'}}>
-    {members.map( (m, i)=>
-        <Cell key={i}>
-            <MemberCard item={m}/>
-        </Cell>
-    )}
-</Flex>)`
+const CMG = styled(({members, carousel, className}) =>
+		<Carousel width={265} height={560} carousel={carousel} {...{className}}>
+				{members.map((m, i) =>
+						<Cell key={i}>
+								<MemberCard item={m} key={i} {...{className, carousel}}/>
+						</Cell>
+				)}
+		</Carousel>)`
+	@media (max-width: ${p => p.theme.breakpoints[0]}) {
+		width: 265px;
+		height: 560px;
+		margin: 0 auto;
+	}
   ${space}
-`
+`;
+
+export default responsive(({isXMobile, ...props}) => <CMG carousel={isXMobile} {...{...props}}/>);

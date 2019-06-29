@@ -19,6 +19,6 @@ const yellowSvgStyles = css`
 
 export default styled(Arrow)`
   display: block;
-  transform: rotate(${p=>p.left ? '180deg' : 0});  
+  transform: rotate(${p => p.left ? '180deg' : (p.up ? '270deg' : (p.down ? '90deg' : 0))});  
   ${yellowSvgStyles}
 `;

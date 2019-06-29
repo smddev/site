@@ -46,10 +46,10 @@ const getRoutes = async () => {
     function collectionRoutes(name, pathName, data = {}) {
         const component = name.charAt(0).toUpperCase() + name.slice(1)
         return siteData.collections[name].map(item => {
-            const path = `${pathName}/${item.data.slug}`
+            const path = `${pathName}/${item.data.slug}`;
             return {
                 path,
-                template: `src/containers/${component}`,
+                // template: `src/containers/${component}`,
                 getData: () => ({
                     item,
                     data
@@ -78,7 +78,8 @@ const getRoutes = async () => {
             facts: siteData.collections.facts,
             stages: siteData.collections.stages,
             industries: siteData.collections.industry,
-            techs: siteData.collections.tech
+            techs: siteData.collections.tech,
+            reviews: siteData.collections.review
         }, '/'),
         pageRoute('contacts', {
             projects: siteData.collections.project,
@@ -86,6 +87,7 @@ const getRoutes = async () => {
         pageRoute('about', {
             members: siteData.collections.member,
             facts: siteData.collections.facts,
+            reviews: siteData.collections.review
         }),
         pageRoute('portfolio', {
             projects: siteData.collections.project,

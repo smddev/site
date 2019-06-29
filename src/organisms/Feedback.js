@@ -1,9 +1,9 @@
 import React from 'react';
-import {H1, Container, Subtitle, description, withBackground} from '../atoms';
+import {H1, Container, Subtitle, description} from '../atoms';
 import styled from 'styled-components';
 import {space} from 'styled-system';
-import quote from '../quote.svg'
 import {Box} from '@rebass/grid'
+import Reviews from "../components/Reviews";
 
 const Em = styled.em`
   color: ${p => p.theme.colors.orange[1]};
@@ -19,33 +19,17 @@ const Description = styled.div`
   }
 `
 
-const FeedbackList = withBackground(quote, 240, 160)(styled.div`
-  width: 100%;
-  min-height: 170px;
-`)`
-    left: 15px;
-    top: -100px;
-`
-
-const ClutchWidget = styled.div`
-  width: 290px;
-  margin: 100px auto 0 auto;
-`
-
-const Feedback = ({className}) => <Container className={className} alignItems='top'>
-    <Box width={[1, 1, 1, 1, 1/2]} pr={['0px', '0px', '0px', 8]}>
-        <H1 mt={6}>Feedback from our customers</H1>
-        <Subtitle mb={[3, 3, 3 ,3, '48px']}>Development for Web, Mobile and IoT</Subtitle>
-        <Description><Em>70% customers</Em> come back to us to implement new ideas</Description>
-        <Description><Em>5 years</Em> average time worked with one client</Description>
-    </Box>
-    <Box width={[1, 1, 1, 1, 1/2]}>
-        <FeedbackList>
-            <ClutchWidget className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="3" data-height="350"
-                 data-clutchcompany-id="627124"></ClutchWidget>
-        </FeedbackList>
-    </Box>
-</Container>
+const Feedback = ({className, reviews}) => <Container className={className} alignItems='top'>
+		<Box width={[1, 1, 1, 1, 1 / 2]} pr={['0px', '0px', '0px', 8]}>
+				<H1 mt={6}>Feedback from our customers</H1>
+				<Subtitle mb={[3, 3, 3, 3, '48px']}>Development for Web, Mobile and IoT</Subtitle>
+				<Description><Em>70% customers</Em> come back to us to implement new ideas</Description>
+				<Description><Em>5 years</Em> average time worked with one client</Description>
+		</Box>
+		<Box width={[1, 1, 1, 1, 1 / 2]} mt={6}>
+				<Reviews {...{reviews, className}}/>
+		</Box>
+</Container>;
 
 export default styled(Feedback)`
   ${space}

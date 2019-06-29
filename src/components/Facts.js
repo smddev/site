@@ -1,6 +1,4 @@
 import React from 'react';
-import {Container} from '../atoms';
-import {Box} from '@rebass/grid'
 import {Fact, Carousel} from '../components';
 import {space} from 'styled-system';
 import styled from 'styled-components';
