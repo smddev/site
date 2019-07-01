@@ -42,7 +42,7 @@ const SSF = responsive(({isMobile, ...props}) => <StyledFacts carousel={isMobile
 export default withLayout()(withRouteData(({page, services, projects, industries, facts, stages, reviews}) => (
     <Fragment>
 
-        <Services mt={8} page={page} services={services}/>
+        <Services mt={[6, 7, 8]} page={page} services={services}/>
 
         <SSF {...{facts}}/>
 

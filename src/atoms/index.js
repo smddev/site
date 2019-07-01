@@ -112,7 +112,10 @@ export const Link1 = styled.a`
 
 export const underline = css`
     background-image: linear-gradient(to right, ${props => props.theme.colors.gray[2]} 50%, transparent 50%);
-    background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 2}px;
+    background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 5}px;
+    @media(max-width: ${p=>p.theme.breakpoints[1]}) {
+      background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 2}px;
+    }
     background-repeat: repeat-x;
     background-size: 4px 1px;
 `
