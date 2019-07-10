@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import {Box, Flex} from "@rebass/grid";
-import {MemberCard, Carousel} from "../components";
+import MemberCard from "../components/MemberCard";
+import Carousel from "../components/Carousel";
 import styled from "styled-components";
 import {space} from "styled-system";
 import {responsive} from "../utils";

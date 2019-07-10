@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import {Subtitle, AspectBox, description, StyledLink} from '../atoms'
 import cloudinary from "../cloudinary"
 import styled, {css} from 'styled-components';
 import {position, bottom, left, space} from 'styled-system';
-import {TechList} from './index'
+import {TechList} from '../components';
 
 const Title = styled.h3`
   ${description};

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Review, Carousel} from '../components';
-import {space} from 'styled-system';
-import styled, {css} from 'styled-components';
+import Carousel from '../components/Carousel';
+import Review from '../components/Review';
+import styled from 'styled-components';
 import {withBackground} from "../atoms";
 import quote from "../quote.svg";
 import {responsive} from "../utils";
@@ -13,19 +13,6 @@ const FeedbackList = withBackground(quote, 240, 160)(styled.div`
   margin-top: -60px;
   opacity: 0.3;
 `
-
-// const CarouselCSS = css`
-// 	height:400px;
-//  	width:480px;
-//  	@media(max-width: ${p => p.theme.breakpoints[1]}) {
-//  		height:300px;
-//  		width:380px;
-//  	}
-//  	@media(max-width: ${p => p.theme.breakpoints[0]}) {
-//  		height:300px;
-//  		width:250px;
-//  	}
-// `
 
 const StyledCarousel = styled(Carousel)`
 		height:400px;

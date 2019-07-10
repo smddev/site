@@ -7,8 +7,11 @@ import styled from "styled-components";
 import {space} from "styled-system";
 import AspectBox from "../atoms/AspectBox";
 import cloudinary from "../cloudinary";
-import {SideNav, Markdown, TechList, ProjectCard, Carousel, PROJECT_CARD_RATIO, withSidebar} from '../components';
+import {Markdown, TechList, Carousel} from '../components';
+import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 import background from '../OtherProjects.svg'
+import {withSidebar} from '../hocs'
+
 
 const serviceList = (serviceIds, services) => {
     return services.filter(item => serviceIds && serviceIds.includes(item.data.slug)).

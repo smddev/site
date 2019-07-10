@@ -4,8 +4,9 @@ import {Box} from '@rebass/grid'
 import styled from 'styled-components';
 import {space, display} from 'styled-system';
 import {AspectBox, H1, Subtitle} from "../atoms";
-import {ProjectCard, PROJECT_CARD_RATIO, Carousel} from '../components';
+import {Carousel} from '../components';
 import {responsive} from "../utils";
+import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 
 const Title = styled(({className}) => <div {...{className}}>
     <H1 mt={3}>Latest projects</H1>

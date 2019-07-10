@@ -1,5 +1,6 @@
 import React from 'react';
-import {Fact, Carousel} from '../components';
+import Fact from '../components/Fact'
+import Carousel from '../components/Carousel'
 import {space} from 'styled-system';
 import styled from 'styled-components';
 
