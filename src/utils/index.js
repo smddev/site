@@ -39,7 +39,6 @@ export const withWindowLocation = WrappedComponent => {
 };
 
 const sizeToProps = ({ breakPoints }) => ({ width }) => {
-  console.log(`width: ${width}`);
   return {
     isXMobile: width <= breakPoints[0],
     isMobile: width <= breakPoints[1],

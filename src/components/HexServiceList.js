@@ -35,8 +35,6 @@ const HexServiceList = responsive(
         },
         ]
 
-        console.log(`x-mobile: ${isXMobile} mobile: ${isMobile}`);
-
         return <div className={className}>
             <HexGrid height={isXMobile ? 128 : (isMobile ? 200 : 274)}>
                 {services.slice(0, 3).map((service, index) =>

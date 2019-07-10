@@ -5,7 +5,6 @@ import {HEX_PROP} from './Hexagon';
 const PADDING = 8;
 
 const HexGrid = ({children, direction, className, height, horizontal}) => {
-    console.log(`hex height: ${height}`);
     const chldrn = Children.map(children, (child, index) => {
        return  cloneElement(child, {height})
     });
