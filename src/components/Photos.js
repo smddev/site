@@ -9,10 +9,15 @@ import image3 from '../image_workers_3.png';
 
 const photos = [image1, image2, image3];
 
+const Cell = styled(Box)`
+  overflow: hidden;
+  height: 90%;
+`
+
 const Photos = ({ pStyles, className, carousel }) => (
   <Carousel
     width={320}
-    height={225}
+    height={200}
     {...{ pStyles, className }}
     carousel={carousel}
     alignItems="center"
@@ -20,16 +25,16 @@ const Photos = ({ pStyles, className, carousel }) => (
     {carousel ? (
       photos
         .slice(0, 3)
-        .map((photo, key) => <Photo {...{ photo, height: 320 }} />)
+        .map((photo, key) => <Photo {...{ photo, height: 320, key}} />)
     ) : (
-      <Flex>
-        <Box width={2 / 3} pr={4}>
-          <Photo {...{ photo: photos[0] }} />
-        </Box>
-        <Box width={1 / 3}>
-          <Photo {...{ photo: photos[1], mb: 10 }} />
-          <Photo {...{ photo: photos[2] }} />
-        </Box>
+      <Flex {...{key:1}}>
+        <Cell width={2 / 3} pr={4}>
+          <Photo {...{ photo: photos[0]}} />
+        </Cell>
+        <Cell width={1 / 3}>
+          <Photo {...{ photo: photos[1], mb: 10}} />
+          <Photo {...{ photo: photos[2]}} />
+        </Cell>
       </Flex>
     )}
   </Carousel>
@@ -38,4 +43,8 @@ const Photos = ({ pStyles, className, carousel }) => (
 export default styled(Photos)`
   width: 100%;
   margin: 0 auto;
+  margin-top: ${p => p.theme.space[3]}px;
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    margin-top: ${p => p.theme.space[5]}px;
+  }
 `;

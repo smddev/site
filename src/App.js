@@ -1,11 +1,11 @@
-import React, {Component, Suspense} from 'react'
-import {Root, Routes} from 'react-static'
-import {createGlobalStyle, ThemeProvider} from 'styled-components'
-import {theme} from "./theme";
-import {CloudinaryContext} from "cloudinary-react";
-import {h2Style, paragraph} from './atoms'
-import listItem from './listItem.svg'
-import {EmailContext} from "./utils";
+import { CloudinaryContext } from "cloudinary-react";
+import React, { Component, Suspense } from 'react';
+import { Root, Routes } from 'react-static';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { h2Style, paragraph } from './atoms';
+import listItem from './listItem.svg';
+import { theme } from "./theme";
+import { EmailContext } from "./utils";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,6 +21,26 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   
+  .aboutPage {
+    h2 {
+      ${h2Style};
+      width: 80%;
+      @media (max-width: ${p => p.theme.breakpoints[2]}) {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 0px;
+      }
+    }
+
+    p {
+      ${paragraph};
+      @media (max-width: ${p => p.theme.breakpoints[2]}) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+
   .markdown {
       h2 {
         ${h2Style};
@@ -64,41 +84,43 @@ const GlobalStyle = createGlobalStyle`
           }
       }
   }
-`
+`;
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.changeEmail = (value) => {
-            this.setState(state => ({
-                ...state,
-                email: value
-            }));
-        };
+    this.changeEmail = value => {
+      this.setState(state => ({
+        ...state,
+        email: value
+      }));
+    };
 
-        this.state = {
-            email: "",
-            changeEmail: this.changeEmail,
-        };
-    }
+    this.state = {
+      email: "",
+      changeEmail: this.changeEmail
+    };
+  }
 
-    render() {
-        return <Root>
-            <EmailContext.Provider value={this.state}>
-                <ThemeProvider theme={theme}>
-                    <CloudinaryContext cloudName="smddev" secure="true">
-                        <div className="content">
-                            <GlobalStyle/>
-                            <Suspense fallback={<em>Loading...</em>}>
-                                <Routes/>
-                            </Suspense>
-                        </div>
-                    </CloudinaryContext>
-                </ThemeProvider>
-            </EmailContext.Provider>
-        </Root>
-    }
+  render() {
+    return (
+      <Root>
+        <EmailContext.Provider value={this.state}>
+          <ThemeProvider theme={theme}>
+            <CloudinaryContext cloudName="smddev" secure="true">
+              <div className="content">
+                <GlobalStyle />
+                <Suspense fallback={<em>Loading...</em>}>
+                  <Routes />
+                </Suspense>
+              </div>
+            </CloudinaryContext>
+          </ThemeProvider>
+        </EmailContext.Provider>
+      </Root>
+    );
+  }
 }
 
 export default App;

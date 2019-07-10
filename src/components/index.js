@@ -8,6 +8,7 @@ import Facts from "./Facts";
 import PhoneLink from "./PhoneLink";
 import Tech from "./Tech";
 import Carousel from "./Carousel";
+import VerticalCarousel from "./VerticalCarousel";
 import {default  as Mrkdn} from "react-markdown";
 import styled from "styled-components";
 import {position, bottom, left, space} from "styled-system";
