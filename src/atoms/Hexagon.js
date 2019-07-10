@@ -25,7 +25,7 @@ const Hexagon = ({children, icon, iconHeight, height, className, iconColor}) => 
 
 const StyledHex = styled(Hexagon)`
   position: relative;
-  height: ${p=>`${p.height}px`}; 
+  height: ${p=>{console.log(`hh: ${p.height}`); return `${p.height}px`}}; 
   width: ${p=>`${p.height * HEX_PROP}px`};
   margin: ${p=>`0 ${p.height * HEX_PROP/2}px`};
   ${color};
