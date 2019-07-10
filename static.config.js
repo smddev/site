@@ -49,7 +49,7 @@ const getRoutes = async () => {
             const path = `${pathName}/${item.data.slug}`;
             return {
                 path,
-                // template: `src/containers/${component}`,
+                template: `src/containers/${component}`,
                 getData: () => ({
                     item,
                     data
