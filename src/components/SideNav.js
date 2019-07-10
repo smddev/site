@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import {space} from 'styled-system';
 import {H2} from '../atoms'
-import {IndustryList, ServiceList, TechList} from "./index";
+import {IndustryList, ServiceList, TechList} from "../components";
 
 const SideNav = ({className, industries, services, techs}) => <div {...{className}}>
     <H2>Industries</H2>

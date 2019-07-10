@@ -1,7 +1,8 @@
 import { Box, Flex } from "@rebass/grid";
 import React from 'react';
 import styled from 'styled-components';
-import { Carousel, Photo } from '../components';
+import Photo from '../components/Photo';
+import Carousel from '../components/Carousel';
 import image1 from '../image_workers_1.png';
 import image2 from '../image_workers_2.png';
 import image3 from '../image_workers_3.png';

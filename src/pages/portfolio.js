@@ -1,12 +1,15 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
-import {ProjectCard, filterBy, withSidebar} from "../components";
+import {filterBy} from "../components";
 import {description, H1WithBackground} from "../atoms";
 import queryString from 'query-string'
 import {Box, Flex} from "@rebass/grid";
 import styled from "styled-components";
 import {withLayout} from "../organisms";
 import {withWindowLocation} from "../utils"
+import ProjectCard from "../components/ProjectCard"
+import {withSidebar} from "../hocs"
+
 
 const Description = styled.div`
   margin-top: ${p => p.theme.space[5]}px};
