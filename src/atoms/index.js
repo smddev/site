@@ -152,7 +152,7 @@ export const NavLink = styled(withTheme(({theme, to, children, color, fontSize, 
 `
 
 export const Subtitle = styled.p`
-  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-size: ${p => p.theme.fontSizes[2]}px;;
   line-height: ${p => p.theme.lineHeight[2]}px;
   font-weight: ${p => p.theme.fontWeights[0]};
   margin: 0;
@@ -302,7 +302,7 @@ export const withBackground = (background, w, h, after=false) => (WrappedCompone
 
 export const H1WithBackground = withBackground(background, 241, 451)(H1)`
     position: absolute;
-    right: -100px;
+    right: -200px;
     top: -65px;
     width: 310px;
     background-image: url(${background2});

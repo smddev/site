@@ -16,6 +16,9 @@ const Container = styled.div`
   padding-bottom: 20px;
   height:100%;
   ${p => p.carousel && {'overflow-x': 'scroll'}};
+  @media (min-width: ${p=>p.theme.breakpoints[3]}){
+	'overflow': 'hidden';
+  }
   overflow-y: hidden;
   box-sizing: content-box;
   position: relative;
@@ -140,10 +143,10 @@ class CarouselPanel extends Component {
 		}
 
 		render() {
-				const {className, mt, carousel, vertical, ...props} = this.props;
+				const {className, mt, carousel, ...props} = this.props;
 				return <div {...{className, mt}}>
 						<StyledCarousel ref={this.carousel} {...{...props, carousel}}></StyledCarousel>
-						{carousel && <Toolbar mt={'40px'}>
+						{carousel && <Toolbar mt={['20px', '40px']}>
 								<ArrowButton onClick={this.handleClick(-1)} left='true'/>
 								<ArrowButton onClick={this.handleClick(1)}/>
 						</Toolbar>

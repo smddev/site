@@ -10,10 +10,7 @@ const Container = styled(Box)`
   	overflow: hidden;
   }
   img {
-    transition: opacity ease-in 0.2s;
-    -moz-transition: opacity ease-in 0.2s;
-    -webkit-transition: opacity ease-in 0.2s;
-    -o-transition: opacity ease-in 0.2s;
+    transition: opacity ease-in 0.2s;;
   }
   &:hover {
     img {
@@ -32,16 +29,16 @@ const StyledMagnifier = styled(Magnifier)`
   filter: alpha(opacity=0);
   position: absolute;
   left: 45%;
-  top: 45%;
+  top: 40%;
+  @media (max-width: ${p=>p.theme.breakpoints[1]}){
+  	top: 30%;
+  }
   transition: opacity ease-in 0.2s;
-  -moz-transition: opacity ease-in 0.2s;
-  -webkit-transition: opacity ease-in 0.2s;
-  -o-transition: opacity ease-in 0.2s;
 `;
 
 const StyledImg = styled.img`
   height:320px;
-  @media (min-width: ${p=>p.theme.breakpoints[1]}){
+  @media (min-width: 681px){
 	width:100%;
 	height:auto;
   }
@@ -61,7 +58,5 @@ const Photo = ({ photo, height, className }) => {
 };
 
 export default styled(Photo)`
-  @media (min-width: ${p => p.theme.breakpoints[3]}) {
-    margin-bottom: ${p => p.mb}px;
-  }
+
 `;
