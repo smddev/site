@@ -3,7 +3,14 @@ import React, { Fragment } from "react";
 import { withRouteData } from "react-static";
 import styled from "styled-components";
 import { space } from "styled-system";
-import { Container, H1WithBackground, H2, P, Subtitle, withBackground } from "../atoms";
+import {
+  Container,
+  H1WithBackground,
+  H2,
+  P,
+  Subtitle,
+  withBackground
+} from "../atoms";
 import { Facts, Markdown } from "../components";
 import Photos from "../components/Photos";
 import mgLeft from "../industriesLeft.svg";
@@ -13,18 +20,19 @@ import { responsive } from "../utils";
 
 const Intro = styled(P)`
   width: 100%;
-  font-size: ${p => p.theme.fontSizes[3]}px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 26px;
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 80%;
-    font-size: ${p => p.theme.fontSizes[4]}px};
+    font-size: 20px;
+    line-height: 30px;
   }
 `;
 
 const StyledFacts = styled(Facts)`
   width: 320px;
-  margin: 130px 0 0 auto;
+  margin: 113px 0 0 60px;
   @media (max-width: ${p => p.theme.breakpoints[2]}) {
     margin: auto;
   }
@@ -33,14 +41,21 @@ const StyledFacts = styled(Facts)`
   }
 `;
 
+const StyledH2 = styled(H2)`
+  @media (max-width: ${p => p.theme.breakpoints[0]}) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+`
+
 const ManagementSection = styled(withBackground(mgRight, 708, 542, true)(
   withBackground(mgLeft, 274, 343)(({ className, members }) => (
     <Container {...{ className }}>
-      <Box width={1}>
-        <H2>Management</H2>
+      <Box width={1} mb={-2}>
+        <StyledH2>Management</StyledH2>
       </Box>
 
-      <MembersGallery mt={3} members={members} />
+      <MembersGallery mt={[0, 1, 3, 4]} members={members} />
     </Container>
   ))`
     left: -360px;
@@ -63,24 +78,24 @@ export default withLayout()(
       <Container mt={6}>
         <Box width={1}>
           <H1WithBackground>{page.data.title}</H1WithBackground>
-          <Subtitle>{page.data.subtitle}</Subtitle>
-          <Intro>{page.data.intro}</Intro>
+          <Subtitle mt={[0, 1, 2, 3, 4]}>{page.data.subtitle}</Subtitle>
+          <Intro mt={[4, 4, 5]}>{page.data.intro}</Intro>
         </Box>
-        <ResponsivePhotos />
+        <ResponsivePhotos/>
       </Container>
 
-      <Container>
+      <Container mt={[3, 0, -4]}>
         <Box width={[1, 1, 1, 2 / 3]}>
-          <Markdown source={page.content} escapeHtml={false} />
+          <Markdown source={page.content} className='aboutPage' escapeHtml={false} />
         </Box>
         <Box width={[1, 1, 1, 1 / 3]}>
           <StyledFacts carousel={true} {...{ facts }} />
         </Box>
       </Container>
 
-      <ManagementSection mt={4} {...{ members }} />
+      <ManagementSection mt={3} {...{ members }} />
 
-      <Feedback {...{ reviews }} />
+      <Feedback mt={[5, 8, '155px']} {...{ reviews }} />
     </Fragment>
   ))
 );

@@ -10,6 +10,7 @@ import PhoneLink from "./PhoneLink";
 import SideNav from "./SideNav";
 import Tech from "./Tech";
 import Carousel from "./Carousel";
+import VerticalCarousel from "./VerticalCarousel";
 import {default  as Mrkdn} from "react-markdown";
 import styled from "styled-components";
 import {position, bottom, left, space} from "styled-system";
@@ -151,4 +152,4 @@ export const withSidebar = (WrappedComponent) =>  props => <Container>
 
 
 
-export {Fact, Facts, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, MemberCard, Photo, Photos, Review, Reviews}
+export {Fact, Facts, ProjectCard, PROJECT_CARD_RATIO, PhoneLink, SideNav, Carousel, VerticalCarousel, MemberCard, Photo, Photos, Review, Reviews}

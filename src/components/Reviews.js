@@ -1,10 +1,9 @@
 import React from 'react';
-import {Review, Carousel} from '../components';
-import {space} from 'styled-system';
-import styled, {css} from 'styled-components';
-import {withBackground} from "../atoms";
+import styled from 'styled-components';
+import { withBackground } from "../atoms";
+import { Carousel, Review, VerticalCarousel } from '../components';
 import quote from "../quote.svg";
-import {responsive} from "../utils";
+import { responsive } from "../utils";
 
 const FeedbackList = withBackground(quote, 240, 160)(styled.div`
   width: 100%;
@@ -12,7 +11,7 @@ const FeedbackList = withBackground(quote, 240, 160)(styled.div`
 `)`
   margin-top: -60px;
   opacity: 0.3;
-`
+`;
 
 // const CarouselCSS = css`
 // 	height:400px;
@@ -27,31 +26,76 @@ const FeedbackList = withBackground(quote, 240, 160)(styled.div`
 //  	}
 // `
 
-const StyledCarousel = styled(Carousel)`
-		height:400px;
- 		width:200px;
- 	@media(min-width: 400px) {
-		height:400px;
- 		width:290px;
-	}
- 	@media(min-width: ${p => p.theme.breakpoints[0]}) {
-		height:400px;
- 		width:370px;
-	}
-	@media(min-width: ${p => p.theme.breakpoints[1]}) {
-		height:400px;
- 		width:480px;
-	}
+const StyledVerticalCarousel = styled(VerticalCarousel)`
+  height: 400px;
+  width: 200px;
+  @media (min-width: 400px) {
+    height: 400px;
+    width: 290px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[0]}) {
+    height: 400px;
+    width: 370px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    height: 400px;
+    width: 480px;
+  }
   margin: 0 auto;
-`
+`;
 
-const Reviews = ({reviews, className}) =>
-		<FeedbackList>
-				<StyledCarousel height={400} width={480} carousel={true} ml={4} alignItems='center'>
-						{reviews.slice(0, 3).map((review, key) => <div {...{key}}>
-								<Review {...{review}} mb={3}/>
-						</div>)}
-				</StyledCarousel>
-		</FeedbackList>
+const StyledHorisontalCarousel = styled(Carousel)`
+  height: 400px;
+  width: 200px;
+  @media (min-width: 400px) {
+    height: 400px;
+    width: 290px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[0]}) {
+    height: 400px;
+    width: 370px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    height: 400px;
+    width: 480px;
+  }
+  margin: 0 auto;
+`;
 
-export default responsive(({isMobile, ...props}) => <Reviews carousel={isMobile} {...{...props}}/>);
+const Reviews = ({ reviews, className, isMobile }) => (
+  <FeedbackList>
+    {isMobile ? (
+      <StyledHorisontalCarousel
+        height={400}
+        width={480}
+        carousel={true}
+        ml={4}
+        alignItems="center"
+      >
+        {reviews.slice(0, 3).map((review, key) => (
+          <div {...{ key }}>
+            <Review {...{ review }} mb={3} />
+          </div>
+        ))}
+      </StyledHorisontalCarousel>
+    ) : (
+      <StyledVerticalCarousel
+        height={400}
+        width={480}
+        carousel={true}
+        ml={4}
+        alignItems="center"
+      >
+        {reviews.slice(0, 3).map((review, key) => (
+          <div {...{ key }}>
+            <Review {...{ review }} mb={3} />
+          </div>
+        ))}
+      </StyledVerticalCarousel>
+    )}
+  </FeedbackList>
+);
+
+export default responsive(({ isMobile, ...props }) => (
+  <Reviews {...{ ...props, isMobile }} />
+));
