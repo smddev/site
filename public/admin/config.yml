@@ -106,8 +106,8 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Author", name: "author", widget: "string", required: false}
 
-  - label: "Pages"
-    name: "pages"
+  - name: "pages"
+    label: "Pages"
     files:
       - label: "Home"
         name: "index"
