@@ -38,11 +38,13 @@ export const withWindowLocation = WrappedComponent => {
   };
 };
 
-const sizeToProps = ({ breakPoints }) => ({ width }) => ({
-  isXMobile: width <= breakPoints[0],
-  isMobile: width <= breakPoints[1],
-  isTablet: width <= breakPoints[2]
-});
+const sizeToProps = ({ breakPoints }) => ({ width }) => {
+  return {
+    isXMobile: width <= breakPoints[0],
+    isMobile: width <= breakPoints[1],
+    isTablet: width <= breakPoints[2]
+  }
+};
 
 export const responsive = WrappedComponent =>
   withTheme(props => {

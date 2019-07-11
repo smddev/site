@@ -6,6 +6,7 @@ import { h2Style, paragraph } from './atoms';
 import listItem from './listItem.svg';
 import { theme } from "./theme";
 import { EmailContext } from "./utils";
+import { SizesProvider } from 'react-sizes';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -86,6 +87,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const config = { fallbackWidth: 1920 };
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -106,18 +109,20 @@ class App extends Component {
   render() {
     return (
       <Root>
-        <EmailContext.Provider value={this.state}>
-          <ThemeProvider theme={theme}>
-            <CloudinaryContext cloudName="smddev" secure="true">
-              <div className="content">
-                <GlobalStyle />
-                <Suspense fallback={<em>Loading...</em>}>
-                  <Routes />
-                </Suspense>
-              </div>
-            </CloudinaryContext>
-          </ThemeProvider>
-        </EmailContext.Provider>
+        <SizesProvider config={config}>
+          <EmailContext.Provider value={this.state}>
+            <ThemeProvider theme={theme}>
+              <CloudinaryContext cloudName="smddev" secure="true">
+                <div className="content">
+                  <GlobalStyle />
+                  <Suspense fallback={<em>Loading...</em>}>
+                    <Routes />
+                  </Suspense>
+                </div>
+              </CloudinaryContext>
+            </ThemeProvider>
+          </EmailContext.Provider>
+        </SizesProvider>
       </Root>
     );
   }
