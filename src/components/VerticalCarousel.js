@@ -28,6 +28,7 @@ const Container = styled.div`
   > * {
     ${p => p.carousel && carouselElement};
   }
+  
 `;
 const Hover = styled.div`
   position: absolute;
@@ -44,7 +45,7 @@ const Toolbar = styled.div`
 
   >* {
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 60px;
     }
   }
 `;
@@ -152,7 +153,7 @@ class CarouselPanel extends Component {
     return (
       <Flex {...{ className, mt }}>
         {carousel && (
-          <Toolbar mt={"80px"}>
+          <Toolbar mt={"95px"}>
             <ArrowButton onClick={this.handleClick(-1)} up="true" />
             <ArrowButton onClick={this.handleClick(1)} down="true" />
           </Toolbar>

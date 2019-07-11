@@ -16,9 +16,6 @@ const Container = styled.div`
   padding-bottom: 20px;
   height:100%;
   ${p => p.carousel && {'overflow-x': 'scroll'}};
-  @media (min-width: ${p=>p.theme.breakpoints[3]}){
-	'overflow': 'hidden';
-  }
   overflow-y: hidden;
   box-sizing: content-box;
   position: relative;

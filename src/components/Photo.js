@@ -9,19 +9,6 @@ const Container = styled(Box)`
   @media (max-width: ${p=>p.theme.breakpoints[1]}){
   	overflow: hidden;
   }
-  img {
-    transition: opacity ease-in 0.2s;;
-  }
-  &:hover {
-    img {
-      background-color: rgb(0, 0, 0);
-      opacity: 0.5;
-    }
-    .StyledMagnifier {
-      opacity: 1;
-      filter: alpha(opacity=100);
-    }
-  }
 `;
 
 const StyledMagnifier = styled(Magnifier)`
@@ -34,13 +21,24 @@ const StyledMagnifier = styled(Magnifier)`
   	top: 30%;
   }
   transition: opacity ease-in 0.2s;
+   ${Container}:hover & {
+      opacity: 1;
+      filter: alpha(opacity=100);
+  }
 `;
 
 const StyledImg = styled.img`
   height:320px;
+  transition: opacity ease-in 0.2s;
+  margin: -75px 0 0 -100px;
   @media (min-width: 681px){
-	width:100%;
-	height:auto;
+	  width:100%;
+	  height:auto;
+	  margin: auto;
+  }
+  ${Container}:hover & {
+     background-color: rgb(0, 0, 0);
+      opacity: 0.5;
   }
 `
 
@@ -51,7 +49,7 @@ const Photo = ({ photo, height, className }) => {
         <div width="50%" >
           <StyledImg src={photo}/>
         </div>
-        <StyledMagnifier className="StyledMagnifier" />
+        <StyledMagnifier />
       </Container>
     </a>
   );
