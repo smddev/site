@@ -1,11 +1,11 @@
 import React from 'react';
 import Carousel from '../components/Carousel';
-import Review from '../components/Review';
 import VerticalCarousel from '../components/VerticalCarousel';
+import Review from '../components/Review';
 import styled from 'styled-components';
 import {withBackground} from "../atoms";
 import quote from "../quote.svg";
-import { responsive } from "../utils";
+import {responsive} from "../utils";
 
 const FeedbackList = withBackground(quote, 240, 160)(styled.div`
   width: 100%;
@@ -30,7 +30,7 @@ const StyledHorizontalCarousel = styled(Carousel)`
   margin: 0 auto;
 `;
 
-const Reviews = ({ reviews, className, isMobile }) => (
+const Reviews = ({reviews, className, isMobile}) => (
   <FeedbackList>
     {isMobile ? (
       <StyledHorizontalCarousel
@@ -40,7 +40,7 @@ const Reviews = ({ reviews, className, isMobile }) => (
         alignItems="center"
       >
         {reviews.slice(0, 3).map((review, key) => (
-            <Review {...{ review, key }} mb={3} />
+          <Review {...{review, key}} mb={3}/>
         ))}
       </StyledHorizontalCarousel>
     ) : (
@@ -51,15 +51,13 @@ const Reviews = ({ reviews, className, isMobile }) => (
         ml='45px'
       >
         {reviews.slice(0, 3).map((review, key) => (
-          <div {...{ key }}>
-            <Review {...{ review }} mb={3} />
-          </div>
+          <Review {...{review, key}} mb={3}/>
         ))}
       </StyledVerticalCarousel>
     )}
   </FeedbackList>
 );
 
-export default responsive(({ isMobile, ...props }) => (
-  <Reviews {...{ ...props, isMobile }} />
+export default responsive(({isMobile, ...props}) => (
+  <Reviews {...{...props, isMobile}} />
 ));

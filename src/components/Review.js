@@ -56,10 +56,10 @@ const Review = ({ review, className }) => {
 };
 
 export default styled(Review)`
-  height:428px;
-  width:280px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    height: 448px;
-    width: 480px;
+  height: 448px;
+  width: 480px;
+  @media (max-width: ${p => p.theme.breakpoints[1]}) {
+    height:428px;
+    width:280px;
   }
 `;

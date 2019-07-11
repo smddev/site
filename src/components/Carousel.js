@@ -53,70 +53,80 @@ const Toolbar = styled.div`
 `
 
 class Carousel extends Component {
-		constructor(props) {
-				super(props);
-				this.state = {dragging: false};
-				this.container = React.createRef();
-		}
+  constructor(props) {
+    super(props);
+    this.state = {dragging: false};
+    this.container = React.createRef();
+  }
 
-		handleDown = (e) => {
-				const x = e.clientX;
-				this.setState(s => ({
-						...s,
-						dragging: true,
-						initialX: x,
-						x
-				}));
-		}
+  handleDown = (e) => {
+    const x = e.clientX;
+    this.setState(s => ({
+      ...s,
+      dragging: true,
+      initialX: x,
+      x
+    }));
+  }
 
-		handleUp = (e) => {
-				const self = this;
-				setTimeout(() => {
-						self.setState(s => ({
-								...s,
-								dragging: false,
-								x: s.initialX
-						}))
-				}, 0);
+  handleUp = (e) => {
+    const self = this;
+    setTimeout(() => {
+      self.setState(s => ({
+        ...s,
+        dragging: false,
+        x: s.initialX
+      }))
+    }, 0);
 
-		}
+  }
 
-		handleMove = (e) => {
-				e.preventDefault();
-				e.stopPropagation();
-				if (this.state.dragging) {
-						this.container.current.scrollLeft += this.state.x - e.clientX;
-						const x = e.clientX;
-						this.setState(s => ({
-								x
-						}))
-				}
-		}
+  handleMove = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (this.state.dragging) {
+      this.container.current.scrollLeft += this.state.x - e.clientX;
+      const x = e.clientX;
+      this.setState(s => ({
+        x
+      }))
+    }
+  }
 
-		scroll = (dir) => {
-				const cs = this.container.current.scrollLeft;
-				const width = this.props.width + 24;
-				const cur = Math.floor(cs / width);
-				const next = cur + dir;
+  scroll = (dir) => {
+    if (!this.state.dragging) {
+      this.state.dragging = true;
+      const cs = this.container.current.scrollLeft;
+      const width = this.props.width + 24;
+      const cur = Math.floor(cs / width);
+      const next = cur + dir;
 
-				scrollTo(this.container.current, next * width, 300);
-		}
+      scrollTo(this.container.current, next * width, 300);
 
-		render() {
-				const {children, className, width, height, pStyles, carousel} = this.props;
-				const {x, initialX} = this.state;
-				const activeDrag = !!Math.abs(x - initialX);
-				return <div {...{className}} onMouseLeave={this.handleUp}
-										onMouseUp={this.handleUp}
-										onMouseDown={this.handleDown}
-										onMouseMove={this.handleMove}>
-						<Hover active={activeDrag}/>
-						<Container ref={this.container}
-											 {...{width, height, pStyles, carousel}}>
-								{children}
-						</Container>
-				</div>
-		}
+      let durationFunc = function (state) {
+        setTimeout(function () {
+          state.dragging = false;
+        }, 200);
+      };
+      durationFunc(this.state);
+    }
+  }
+
+  render() {
+    const {children, className, width, height, pStyles, carousel} = this.props;
+    const {x, initialX} = this.state;
+    const activeDrag = !!Math.abs(x - initialX);
+    return <div {...{className}} onMouseLeave={this.handleUp}
+                onMouseUp={this.handleUp}
+                onMouseDown={this.handleDown}
+                onMouseMove={this.handleMove}>
+      <Hover active={activeDrag}/>
+      <Container ref={this.container}
+                 {...{width, height, pStyles, carousel}}>
+        {children}
+      </Container>
+    </div>
+  }
 }
 
 
@@ -130,26 +140,26 @@ const StyledCarousel = styled(Carousel)`
 
 
 class CarouselPanel extends Component {
-		constructor(props) {
-				super(props);
-				this.carousel = React.createRef();
-		}
+  constructor(props) {
+    super(props);
+    this.carousel = React.createRef();
+  }
 
-		handleClick = (dir) => (e) => {
-				this.carousel.current.scroll(dir);
-		}
+  handleClick = (dir) => (e) => {
+    this.carousel.current.scroll(dir);
+  }
 
-		render() {
-				const {className, mt, carousel, ...props} = this.props;
-				return <div {...{className, mt}}>
-						<StyledCarousel ref={this.carousel} {...{...props, carousel}}></StyledCarousel>
-						{carousel && <Toolbar mt={['20px', '40px']}>
-								<ArrowButton onClick={this.handleClick(-1)} left='true'/>
-								<ArrowButton onClick={this.handleClick(1)}/>
-						</Toolbar>
-						}
-				</div>
-		}
+  render() {
+    const {className, mt, carousel, ...props} = this.props;
+    return <div {...{className, mt}}>
+      <StyledCarousel ref={this.carousel} {...{...props, carousel}}></StyledCarousel>
+      {carousel && <Toolbar mt={['20px', '40px']}>
+        <ArrowButton onClick={this.handleClick(-1)} left='true'/>
+        <ArrowButton onClick={this.handleClick(1)}/>
+      </Toolbar>
+      }
+    </div>
+  }
 }
 
 

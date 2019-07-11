@@ -138,4 +138,4 @@ top: 50%;
 margin-top: -350px
 `
 
-export {Fact, Facts, PhoneLink, Carousel, Photo, Photos, Review, Reviews}
+export {Fact, Facts, PhoneLink, Carousel, VerticalCarousel, Photo, Photos, Review, Reviews}

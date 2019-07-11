@@ -1,12 +1,12 @@
-import { CloudinaryContext } from "cloudinary-react";
-import React, { Component, Suspense } from 'react';
-import { Root, Routes } from 'react-static';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { h2Style, paragraph } from './atoms';
+import {CloudinaryContext} from "cloudinary-react";
+import React, {Component, Suspense} from 'react';
+import {Root, Routes} from 'react-static';
+import styled, {createGlobalStyle, css, ThemeProvider} from 'styled-components';
+import {h2Style, Hexagon, HexGrid, paragraph} from './atoms';
 import listItem from './listItem.svg';
-import { theme } from "./theme";
-import { EmailContext } from "./utils";
-import { SizesProvider } from 'react-sizes';
+import {theme} from "./theme";
+import {EmailContext} from "./utils";
+import {SizesProvider} from 'react-sizes';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -87,7 +87,36 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const config = { fallbackWidth: 1920 };
+const config = {fallbackWidth: 1920};
+
+const WrapperDiv = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+`
+
+const StyledHexagon = styled(Hexagon)`
+  position: absolute;
+  z-index: 0;
+  animation: spin infinite 0.8s ease-in-out;
+  pointer-events: none;
+  @keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+  }
+`
+
+const StyledEm = styled.em`
+  position: absolute;
+  z-index: 1;
+`
 
 class App extends Component {
   constructor(props) {
@@ -114,9 +143,14 @@ class App extends Component {
             <ThemeProvider theme={theme}>
               <CloudinaryContext cloudName="smddev" secure="true">
                 <div className="content">
-                  <GlobalStyle />
-                  <Suspense fallback={<em>Loading...</em>}>
-                    <Routes />
+                  <GlobalStyle/>
+                  <Suspense
+                    fallback=
+                      {<WrapperDiv>
+                        <StyledEm>Loading...</StyledEm>
+                        <StyledHexagon bg={'gray.0'} height='160'/>
+                      </WrapperDiv>}>
+                    <Routes/>
                   </Suspense>
                 </div>
               </CloudinaryContext>

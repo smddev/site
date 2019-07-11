@@ -1,9 +1,9 @@
-import { Flex } from "@rebass/grid";
-import React, { Component } from "react";
-import styled, { css } from "styled-components";
-import { space } from "styled-system";
-import { ArrowButton } from "../atoms";
-import { scrollTo } from "../utils";
+import {Flex} from "@rebass/grid";
+import React, {Component} from "react";
+import styled, {css} from "styled-components";
+import {space} from "styled-system";
+import {ArrowButton} from "../atoms";
+import {scrollTo} from "../utils";
 
 const carouselElement = css`
   width: ${p => p.width}px;
@@ -16,7 +16,7 @@ const carouselElement = css`
 const Container = styled.div`
   padding-bottom: 20px;
   height: 100%;
-  ${p => p.carousel && { "overflow-x": "scroll" }};
+  ${p => p.carousel && {"overflow-x": "scroll"}};
   overflow-y: hidden;
   box-sizing: content-box;
   position: relative;
@@ -53,7 +53,7 @@ const Toolbar = styled.div`
 class Carousel extends Component {
   constructor(props) {
     super(props);
-    this.state = { dragging: false };
+    this.state = {dragging: false};
     this.container = React.createRef();
   }
 
@@ -91,12 +91,22 @@ class Carousel extends Component {
   };
 
   scroll = dir => {
-    const cs = this.container.current.scrollLeft;
-    const width = this.props.width + 24;
-    const cur = Math.floor(cs / width);
-    const next = cur + dir;
+    if (!this.state.dragging) {
+      this.state.dragging = true;
+      const cs = this.container.current.scrollLeft;
+      const width = this.props.width + 24;
+      const cur = Math.floor(cs / width);
+      const next = cur + dir;
 
-    scrollTo(this.container.current, next * width, 300);
+      scrollTo(this.container.current, next * width, 300);
+
+      let durationFunc = function (state) {
+        setTimeout(function () {
+          state.dragging = false;
+        }, 200);
+      };
+      durationFunc(this.state);
+    }
   };
 
   render() {
@@ -108,20 +118,20 @@ class Carousel extends Component {
       pStyles,
       carousel
     } = this.props;
-    const { x, initialX } = this.state;
+    const {x, initialX} = this.state;
     const activeDrag = !!Math.abs(x - initialX);
     return (
       <div
-        {...{ className }}
+        {...{className}}
         onMouseLeave={this.handleUp}
         onMouseUp={this.handleUp}
         onMouseDown={this.handleDown}
         onMouseMove={this.handleMove}
       >
-        <Hover active={activeDrag} />
+        <Hover active={activeDrag}/>
         <Container
           ref={this.container}
-          {...{ width, height, pStyles, carousel }}
+          {...{width, height, pStyles, carousel}}
         >
           {children}
         </Container>
@@ -132,7 +142,7 @@ class Carousel extends Component {
 
 const StyledCarousel = styled(Carousel)`
   width: 100%;
-  ${p => p.carousel && { height: `${p.height}px` }};
+  ${p => p.carousel && {height: `${p.height}px`}};
   overflow: hidden;
   position: relative;
   ${space}
@@ -149,16 +159,16 @@ class CarouselPanel extends Component {
   };
 
   render() {
-    const { className, mt, carousel, ...props } = this.props;
+    const {className, mt, carousel, ...props} = this.props;
     return (
-      <Flex {...{ className, mt }}>
+      <Flex {...{className, mt}}>
         {carousel && (
           <Toolbar mt={"95px"}>
-            <ArrowButton onClick={this.handleClick(-1)} up="true" />
-            <ArrowButton onClick={this.handleClick(1)} down="true" />
+            <ArrowButton onClick={this.handleClick(-1)} up="true"/>
+            <ArrowButton onClick={this.handleClick(1)} down="true"/>
           </Toolbar>
         )}
-        <StyledCarousel ref={this.carousel} {...{ ...props, carousel }} />
+        <StyledCarousel ref={this.carousel} {...{...props, carousel}} />
       </Flex>
     );
   }

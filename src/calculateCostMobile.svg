@@ -3531,24 +3531,24 @@
      d="m 275.63251,210.44563 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z"
      id="path8796"
      inkscape:connector-curvature="0"
-     style="fill:#f36e1e" />
+     style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f" />
   <path
      d="m 605.60063,90.47518 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z"
      id="path8798"
      inkscape:connector-curvature="0"
-     style="fill:#fdb811" />
+     style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f"/>
   <path
-     style="fill:#f36e1e"
-     inkscape:connector-curvature="0"
+    style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f"
+      inkscape:connector-curvature="0"
      d="m 468.13705,135.47288 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z"
      id="path8796-8" />
   <path
-     style="fill:#fdb811"
+     style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f"
      inkscape:connector-curvature="0"
      d="m 798.05165,135.60791 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z"
      id="path8798-2" />
   <path
-     style="fill:#f36e1e"
+          style="fill:#f36e1e"
      inkscape:connector-curvature="0"
      d="m 1128.1441,75.67221 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z"
      id="path8796-5" />
@@ -3558,12 +3558,12 @@
      d="m 1238.002,225.54692 h -20 l -7.5,14.99999 7.5,15 h 20 l 7.5,-15 -7.5,-14.99999 z"
      id="path8798-22" />
   <path
-     style="fill:#f36e1e"
+     style="fill:#fdb811"
      inkscape:connector-curvature="0"
      d="m 550.63208,270.53681 h -20 l -7.5,15 7.5,14.99999 h 20 l 7.5,-14.99999 -7.5,-15 z"
      id="path8796-8-2" />
   <path
-     style="fill:#fdb811"
+          style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f"
      inkscape:connector-curvature="0"
      d="m 138.07748,255.53923 h -20 l -7.5,14.99999 7.5,15 h 20 l 7.5,-15 -7.5,-14.99999 z"
      id="path8798-2-1" />
@@ -5088,7 +5088,7 @@
      id="path8588-8-4"
      d="m 688.0829,255.59676 h -19.99998 l -7.50001,15 7.50001,15 h 19.99998 l 7.5,-15 -7.5,-15 z" />
   <path
-     style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f"
+     style="fill:#f36e1e"
      inkscape:connector-curvature="0"
      id="path8590-1-9"
      d="m 743.0829,255.59676 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z" />
@@ -5838,7 +5838,7 @@
      id="path8594-7-6"
      d="m 1018.0695,225.6222 h -19.99991 l -7.5001,15 7.5001,15 h 19.99991 l 7.5,-15 -7.5,-15 z" />
   <path
-     style="opacity:0.5;fill:#000000;fill-opacity:0;stroke:#44464f"
+     style="fill:#fdb811"
      inkscape:connector-curvature="0"
      id="path8596-6-36"
      d="m 1045.5694,210.6222 h -20 l -7.5,15 7.5,15 h 20 l 7.5,-15 -7.5,-15 z" />
