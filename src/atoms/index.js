@@ -6,36 +6,36 @@ import background from '../h1.svg'
 import background2 from "../facts2.svg";
 
 import {
-    themeGet,
-    backgroundImage,
-    backgroundPosition,
-    backgroundRepeat,
-    backgroundSize,
-    borderColor,
-    borderRadius,
-    borders,
-    bottom,
-    boxShadow,
-    color,
-    fontFamily,
-    fontSize,
-    fontWeight,
-    height,
-    left,
-    maxHeight,
-    maxWidth,
-    minHeight,
-    minWidth,
-    opacity,
-    position,
-    right,
-    style,
-    textAlign,
-    top,
-    width,
-    buttonStyle,
-    space,
-    lineHeight
+  themeGet,
+  backgroundImage,
+  backgroundPosition,
+  backgroundRepeat,
+  backgroundSize,
+  borderColor,
+  borderRadius,
+  borders,
+  bottom,
+  boxShadow,
+  color,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  height,
+  left,
+  maxHeight,
+  maxWidth,
+  minHeight,
+  minWidth,
+  opacity,
+  position,
+  right,
+  style,
+  textAlign,
+  top,
+  width,
+  buttonStyle,
+  space,
+  lineHeight
 } from 'styled-system'
 import {IoMdArrowBack as LeftArrow, IoMdArrowForward as RightArrow} from "react-icons/io";
 
@@ -75,7 +75,7 @@ const inputStyles = css`
     &:-webkit-autofill:hover, 
     &:-webkit-autofill:focus, 
     &:-webkit-autofill:active  {
-        -webkit-box-shadow: 0 0 0 30px ${p=>p.theme.colors.black[0]} inset !important;
+        -webkit-box-shadow: 0 0 0 30px ${p => p.theme.colors.black[0]} inset !important;
         -webkit-text-fill-color: white !important;
     }
     
@@ -113,7 +113,7 @@ export const Link1 = styled.a`
 export const underline = css`
     background-image: linear-gradient(to right, ${props => props.theme.colors.gray[2]} 50%, transparent 50%);
     background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 5}px;
-    @media(max-width: ${p=>p.theme.breakpoints[1]}) {
+    @media(max-width: ${p => p.theme.breakpoints[1]}) {
       background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 2}px;
     }
     background-repeat: repeat-x;
@@ -131,23 +131,23 @@ export const Link2 = styled.a`
 `
 
 export const NavLink = styled(withTheme(({theme, to, children, color, fontSize, fontFamily, className}) =>
-    <StyledLink fontSize={fontSize}
-                color={theme.colors.white[0]}
-                to={to}
-                className={className}
-                fontFamily={fontFamily}
-                getProps={({isCurrent}) => {
-                    // the object returned here is passed to the
-                    // anchor element's props
-                    return {
-                        style: {
-                            color: isCurrent ? `${theme.colors.orange[1]}` : null,
-                            fontWeight: isCurrent ? 700 : 300
-                        }
-                    };
-                }}>
-        {children}
-    </StyledLink>))`
+  <StyledLink fontSize={fontSize}
+              color={theme.colors.white[0]}
+              to={to}
+              className={className}
+              fontFamily={fontFamily}
+              getProps={({isCurrent}) => {
+                // the object returned here is passed to the
+                // anchor element's props
+                return {
+                  style: {
+                    color: isCurrent ? `${theme.colors.orange[1]}` : null,
+                    fontWeight: isCurrent ? 700 : 300
+                  }
+                };
+              }}>
+    {children}
+  </StyledLink>))`
   ${hoverLinkStyles};
 `
 
@@ -160,7 +160,7 @@ export const Subtitle = styled.p`
   ${space};
   ${width};
   
-  @media(min-width: ${p =>p.theme.breakpoints[0]}) {
+  @media(min-width: ${p => p.theme.breakpoints[0]}) {
     font-size: ${p => p.theme.fontSizes[3]}px;
     line-height: ${p => p.theme.lineHeight[3]}px;
   } 
@@ -173,7 +173,7 @@ export const H1 = styled.h1`
   ${space};
   position: relative;
   
-  @media(min-width: ${p =>p.theme.breakpoints[1]}) {
+  @media(min-width: ${p => p.theme.breakpoints[1]}) {
     line-height: ${p => p.theme.lineHeight[7]}px;
     font-size: ${p => p.theme.fontSizes[7]}px;
   } 
@@ -220,7 +220,6 @@ export const H3 = styled.h3`
 `
 
 
-
 export const Text = styled.span`
    ${fontSize}
    ${fontWeight}
@@ -247,40 +246,40 @@ export const Description = styled(Text)`
 `
 
 const filter = style({
-    prop: 'filter'
+  prop: 'filter'
 });
 
 
 export const FlexDiv = styled(Flex)(
-    borders,
-    borderColor,
-    borderRadius,
-    boxShadow,
-    backgroundImage,
-    backgroundSize,
-    backgroundPosition,
-    backgroundRepeat,
-    opacity,
-    filter,
-    position,
-    top,
-    bottom,
-    left,
-    right,
-    width,
-    height,
-    minWidth,
-    minHeight,
-    maxWidth,
-    maxHeight,
+  borders,
+  borderColor,
+  borderRadius,
+  boxShadow,
+  backgroundImage,
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat,
+  opacity,
+  filter,
+  position,
+  top,
+  bottom,
+  left,
+  right,
+  width,
+  height,
+  minWidth,
+  minHeight,
+  maxWidth,
+  maxHeight,
 )
 
-export const withBackground = (background, w, h, after=false) => (WrappedComponent) => (strings, ...args) => {
-    const position = css(strings, ...args);
-    const width = `${w}px`;
-    const height = `${h}px`;
+export const withBackground = (background, w, h, after = false) => (WrappedComponent) => (strings, ...args) => {
+  const position = css(strings, ...args);
+  const width = `${w}px`;
+  const height = `${h}px`;
 
-    const bg = css`
+  const bg = css`
       content:'';
       position: absolute;
       background-image: url(${background});
@@ -292,9 +291,9 @@ export const withBackground = (background, w, h, after=false) => (WrappedCompone
       ${position}
     `;
 
-    const wrapper = after ? css`&:after {${bg}}`:css`&:before {${bg}}`
+  const wrapper = after ? css`&:after {${bg}}` : css`&:before {${bg}}`
 
-    return styled(WrappedComponent)`
+  return styled(WrappedComponent)`
       position: relative;
       ${wrapper}
     `;
@@ -319,7 +318,7 @@ export const H1WithBackground = withBackground(background, 241, 451)(H1)`
 `;
 
 const active = p => ({
-    color: p.theme.colors.orange[1]
+  color: p.theme.colors.orange[1]
 })
 
 export const yellowLinkStyles = css`
@@ -344,7 +343,7 @@ const ArrowLink_Left = styled(LeftArrow)`
   ${space};
 `
 
-const  ArrowLink_Right = styled(RightArrow)`
+const ArrowLink_Right = styled(RightArrow)`
   ${ArrowStyles};
   ${space};
 `
@@ -356,9 +355,9 @@ const SL = styled(StyledLink)`
 `
 
 export const ArrowLink = ({to, left, children, className, getProps}) => <SL {...{className, to, getProps}}>
-    {left && <ArrowLink_Left mr={1}/>}
-    {children}
-    {!left && <ArrowLink_Right ml={1}/>}
+  {left && <ArrowLink_Left mr={1}/>}
+  {children}
+  {!left && <ArrowLink_Right ml={1}/>}
 </SL>
 
 

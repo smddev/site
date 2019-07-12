@@ -159,7 +159,7 @@ const FooterContacts = styled(({className}) => <Container {...{
   justifyContent: 'space-between'
 }}>
   <Contacts/>
-  <Routes/>
+  <Routes onClick={ () => { window.scrollTo(0, 0); }}/>
 </Container>)`
   ${space};
 `

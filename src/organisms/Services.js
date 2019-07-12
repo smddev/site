@@ -47,11 +47,11 @@ const Services =  ({page, services, className}) =>
             <H1WithBackground dangerouslySetInnerHTML={{ __html: page.data.title }}/>
             <Subtitle mb={5}>{page.data.subtitle}</Subtitle>
             <Dscrptn source={page.content} escapeHtml={false}/>
-            <B1 mt={3}/>
+            <B1 onClick={ () => { window.scrollTo(0, 0); }} mt={3}/>
         </Box>
         <Box width={[1, 1, 1, 1, 1 / 2]} mt={[-3, 0, 2]}>
             <HexServiceList services={services}/>
-            <B2 mt={6}/>
+            <B2 onClick={ () => { window.scrollTo(0, 0); }} mt={6}/>
         </Box>
 
 </Container>

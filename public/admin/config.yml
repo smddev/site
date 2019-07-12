@@ -150,3 +150,12 @@ collections:
       - {label: "Position", name: "position", widget: "string"}
       - {label: "Link", name: "link", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string", required: false}
+
+  - name: "why"
+    label: "Why"
+    folder: "src/content/reasons"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Reasons", name: "reasons", widget: "list"}

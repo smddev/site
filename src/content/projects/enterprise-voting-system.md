@@ -1,0 +1,21 @@
+---
+order: 3
+title: Enterprise Voting System
+industries:
+  - Retail
+  - Distribution 
+services:
+  - software-development
+techs:
+  - Laravel
+  - MongoDB
+  - Ionic
+description: This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. 
+             It’s available on iOS 7+, Android 4.1+, and Windows 10.
+---
+
+##  Key features
+
+## Outcome
+
+Product was delivered to a large distribution company with branches in all major Russia cities

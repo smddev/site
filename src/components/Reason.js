@@ -3,18 +3,18 @@ import styled, {css} from "styled-components";
 import {StyledLink} from "../atoms";
 
 const active = p => ({
-    color: p.theme.colors.gray[0],
-    'background-color': 'white'
+  color: p.theme.colors.gray[0],
+  'background-color': 'white'
 });
 
 export default styled(({className, item, linkPath, small}) => {
-        return (small ?
-            <div {...{className}}>{item.data.title}</div> :
-            <StyledLink onClick={ () => { window.scrollTo(0, 0); }} to={`${linkPath}${item.data.slug}`} {...{className}}>
-                {item.data.title}
-            </StyledLink>
-        )
-    }
+    return (small ?
+        <div {...{className}}>{item.data.title}</div> :
+        <StyledLink onClick={ () => { window.scrollTo(0, 0); }} to={`${linkPath}${item.data.slug}`} {...{className}}>
+          {item.data.title}
+        </StyledLink>
+    )
+  }
 )`
   display: inline-block;
   background-color: ${p => p.small ? p.theme.colors.black[0] : p.theme.colors.gray[0]};

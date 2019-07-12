@@ -4,10 +4,16 @@ title: Cloud orchestration
 cover: cloud-orch.jpg
 industries:
   - it
+  - DevOps
 services:
   - software-development
 techs:
   - java
+  - J2EE
+  - Primefaces
+  - Wildfly
+  - MongoDB
+  - MySQL
 description: The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application
 ---
 The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.

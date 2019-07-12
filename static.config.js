@@ -84,6 +84,9 @@ const getRoutes = async () => {
         pageRoute('contacts', {
             projects: siteData.collections.project,
         }),
+        pageRoute('why', {
+          members: siteData.collections.why
+        }),
         pageRoute('about', {
             members: siteData.collections.member,
             facts: siteData.collections.facts,
@@ -119,6 +122,10 @@ const getSiteData = () => {
         {
             path: '/portfolio',
             name: 'Portfolio'
+        },
+        {
+            path: '/why',
+            name: 'Why us?'
         },
         {
             path: '/about',

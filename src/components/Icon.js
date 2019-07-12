@@ -52,7 +52,7 @@ const SL = styled(StyledLink)`
 export default withTheme((props) => {
     const {linkPath, item, vertical, active} = props;
     const url = `${linkPath}${item.data.slug}`
-    return <SL vertical={vertical ? 1:0} to={url}>
+    return <SL onClick={ () => { window.scrollTo(0, 0); }} vertical={vertical ? 1:0} to={url}>
         <Flex
             alignItems='center'
             flexDirection={vertical ? 'column' : 'row'}>
