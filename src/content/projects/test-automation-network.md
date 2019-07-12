@@ -6,7 +6,7 @@ industries:
   - Real estate
   - Finance 
 services:
-  - software-development
+  - test-automation
 techs:
   - Python
   - Robot Framework
@@ -14,8 +14,10 @@ techs:
 description: This framework addresses two main problems
             * testing processes unification of 20+ products
             * allows junior test engineers develop autotests of good quality
-
 ---
+This framework addresses two main problems
+            * testing processes unification of 20+ products
+            * allows junior test engineers develop autotests of good quality
 
 ## Outcome
 

@@ -3,6 +3,8 @@ order: 2
 title: Professional Risk Audit System
 industries:
   - Energy industry
+services:
+  - test-automation
 techs:
   - ReactJS
   - Redux

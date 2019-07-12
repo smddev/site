@@ -10,7 +10,7 @@ const active = p => ({
 export default styled(({className, item, linkPath, small}) => {
         return (small ?
             <div {...{className}}>{item.data.title}</div> :
-            <StyledLink onClick={ () => { window.scrollTo(0, 0); }} to={`${linkPath}${item.data.slug}`} {...{className}}>
+            <StyledLink onClick={ () => { window.scrollTo(0, 100); }} to={`${linkPath}${item.data.slug}`} {...{className}}>
                 {item.data.title}
             </StyledLink>
         )

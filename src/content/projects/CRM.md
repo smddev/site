@@ -12,8 +12,7 @@ techs:
   - MongoDB
 description: The CRM implements tailoring order process workflow across studios and sewing factories.
 ---
-
-It supports  user roles, calendar, and administration functionality. We’ve developed the backend for it.
+The CRM implements tailoring order process workflow across studios and sewing factories. It supports user roles, calendar, and administration functionality. We’ve developed the backend for it.
 
 ## Outcome
 

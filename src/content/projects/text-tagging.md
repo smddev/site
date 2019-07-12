@@ -2,17 +2,17 @@
 order: 11
 title: Text tagging and categorization systems
 industries:
-  - machine-learning
+  - Machine Learning
+  - Publishing
 services:
-  - software-development
+  - data-science
 techs:
   - Python
   - sklearn
   - gensim
   - flask
-description: We developed a number of automated solutions for texts tagging. It is a more or less standard task, to label or categorized new texts, based on a knowledge extracted from an existing texts corpora.
+description: We developed a number of automated solutions for texts tagging.
 ---
-
 We implemented a standard text processing pipeline:
 * Data gathering
   * Web-scraping

@@ -12,8 +12,9 @@ techs:
   - Qt
   - PHP
   - AngularJS
-description: HelpConnect is a full-featured help support center which supported VoiceIP,  chat, file transfer, and remote desktop control.
+description: A full-featured help support center which supported VoiceIP, chat, file transfer, and remote desktop control.
 ---
+HelpConnect is a full-featured help support center which supported VoiceIP, chat, file transfer, and remote desktop control.
 
 ## Outcome
 

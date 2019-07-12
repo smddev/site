@@ -2,16 +2,18 @@
 order: 10
 title: Threat detection decision module
 industries:
-  - machine-learning
+  - Machine Learning
+  - Real estate
 services:
-  - software-development
+  - data-science
 techs:
   - Python
   - sklearn
   - lightgbm
   - C++
-description: Our customer has been developing a sophisticated security radar system, able to detect weapons and explosives, based on characteristics of a reflected microwave signal. They have a decision module, however its performance was not good enough. They contracted us to analyze the problem and develop a better solution.
+description: A security radar system, able to detect weapons and explosives, based on characteristics of a reflected microwave signal.
 ---
+Our customer has been developing a sophisticated security radar system, able to detect weapons and explosives, based on characteristics of a reflected microwave signal. They have a decision module, however its performance was not good enough. They contracted us to analyze the problem and develop a better solution.
 
 ## Challenges
 

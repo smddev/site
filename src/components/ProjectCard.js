@@ -24,7 +24,7 @@ const CARD_X_PADDING='40px';
 const CARD_Y_PADDING='24px';
 
 const Industries = styled(({industries, className}) => <Subtitle {...{className}}>
-    {industries.join(',')}
+    {industries.join(', ')}
 </Subtitle>)`
   ${position};
   ${bottom};
@@ -57,7 +57,7 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
 `
 
 
-const ProjectCard = ({project, className}) => <StyledLink onClick={ () => { window.scrollTo(0, 0); }} className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
+const ProjectCard = ({project, className}) => <StyledLink onClick={ () => { window.scrollTo(0, 100); }} className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
     <AspectBox ratio={PROJECT_CARD_RATIO}>
         <HoverProjectCard {...{project}}/>
         <VoidProjectCard {...{project}}/>

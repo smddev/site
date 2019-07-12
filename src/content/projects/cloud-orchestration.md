@@ -3,12 +3,12 @@ order: 0
 title: Cloud orchestration
 cover: cloud-orch.jpg
 industries:
-  - it
+  - IT
   - DevOps
 services:
   - software-development
 techs:
-  - java
+  - Java
   - J2EE
   - Primefaces
   - Wildfly

@@ -12,10 +12,8 @@ techs:
   - MongoDB
   - Ionic
 description: This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. 
-             It’s available on iOS 7+, Android 4.1+, and Windows 10.
 ---
-
-##  Key features
+This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. It’s available on iOS 7+, Android 4.1+, and Windows 10.
 
 ## Outcome
 
