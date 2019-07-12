@@ -1,6 +1,7 @@
 ---
 order: 3
 title: Enterprise Voting System
+cover: voting.jpg
 industries:
   - Retail
   - Distribution 

@@ -1,6 +1,7 @@
 ---
 order: 4
 title: Corporate QA Processes Audit
+cover: audit.jpg
 industries:
   - Telecom
 techs:

@@ -85,7 +85,7 @@ const getRoutes = async () => {
             projects: siteData.collections.project,
         }),
         pageRoute('why', {
-          members: siteData.collections.why
+            why: siteData.collections.why
         }),
         pageRoute('about', {
             members: siteData.collections.member,

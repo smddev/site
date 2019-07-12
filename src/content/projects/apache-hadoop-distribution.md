@@ -1,6 +1,7 @@
 ---
 order: 6
 title: Commercial Apache Hadoop Distribution
+cover: hadoop.jpg
 industries:
   - Telecom, IT
 services:

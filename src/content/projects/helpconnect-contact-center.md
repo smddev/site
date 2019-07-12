@@ -1,6 +1,7 @@
 ---
 order: 7
 title: HelpConnect Contact Center
+cover: helpconnect.jpg
 industries:
   - Telecom
 services:

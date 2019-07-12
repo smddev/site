@@ -158,4 +158,4 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Reasons", name: "reasons", widget: "list"}
+      - {label: "Reasons", name: "reasons", widget: "markdown"}

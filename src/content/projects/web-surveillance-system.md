@@ -1,6 +1,7 @@
 ---
 order: 7
 title: Web Surveillance System
+cover: video.jpg
 industries:
   - Construction
   - Video Surveillance

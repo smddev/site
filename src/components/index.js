@@ -69,12 +69,12 @@ export const TechList = styled(({className, ...props}) =>
   ${left}
 `
 
-export const ReasonsList = styled(
-  ({className, ...props}) => <List flexDirection={'column'} items={props.techs} includes={props.techIds} vertical={true}
-                                   className={className} linkPath={`/portfolio?tech=`} filterBy={'tech'}>
-
-  </List>
-)``
+// export const ReasonsList = styled(
+//   ({className, ...props}) => <List flexDirection={'column'} items={props.reasons} includes={props.techIds} vertical={true}
+//                                    className={className} linkPath={`/portfolio?tech=`} filterBy={'tech'}>
+//
+//   </List>
+// )``
 
 export const Markdown = (props) => <Mrkdn className={'markdown'} {...props}/>
 
