@@ -128,7 +128,7 @@ const Link = styled(NavLink)`
 `
 
 const Routes = styled(withSiteData(({routes, className}) => <div {...{className}}>
-  {routes && routes.map(r => <Link key={r.name} to={r.path}>{r.name}</Link>)}
+  {routes && routes.map(r => <Link onClick={ () => { window.scrollTo(0, 100); }} key={r.name} to={r.path}>{r.name}</Link>)}
 </div>))`
   display: inline-flex;
 `
@@ -159,7 +159,7 @@ const FooterContacts = styled(({className}) => <Container {...{
   justifyContent: 'space-between'
 }}>
   <Contacts/>
-  <Routes onClick={ () => { window.scrollTo(0, 0); }}/>
+  <Routes/>
 </Container>)`
   ${space};
 `

@@ -9,13 +9,17 @@ import {EmailContext} from "./utils";
 import {SizesProvider} from 'react-sizes';
 
 const GlobalStyle = createGlobalStyle`
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
   body {
     font-family: ${theme.fonts.base};
     margin: 0; 
     padding: 0;
     background: ${theme.colors.black[0]}
     color: ${theme.colors.white[0]}
-    overflow-x: hidden;
   }
   
   ul {
