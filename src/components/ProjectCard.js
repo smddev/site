@@ -19,12 +19,12 @@ const HoverTitle = styled(Title)`
   color: ${p => p.theme.colors.orange[1]};
 `
 
-export const PROJECT_CARD_RATIO=.73;
-const CARD_X_PADDING='40px';
-const CARD_Y_PADDING='24px';
+export const PROJECT_CARD_RATIO = .73;
+const CARD_X_PADDING = '40px';
+const CARD_Y_PADDING = '24px';
 
 const Industries = styled(({industries, className}) => <Subtitle {...{className}}>
-    {industries.join(', ')}
+  {industries.join(', ')}
 </Subtitle>)`
   ${position};
   ${bottom};
@@ -33,7 +33,7 @@ const Industries = styled(({industries, className}) => <Subtitle {...{className}
   padding: 0 ${CARD_X_PADDING};
 `
 
-const IMAGE_PATH='site/project'
+const IMAGE_PATH = 'site/project'
 const getImageUrl = (name) => cloudinary.url(`${IMAGE_PATH}/${name}`, {width: 320, crop: "scale"})
 
 const cover = css`
@@ -44,24 +44,28 @@ const cover = css`
   background-color: ${p => p.theme.colors.gray[0]};
 `
 
-const preventDefault = (e) => {e.preventDefault()}
+const preventDefault = (e) => {
+  e.preventDefault()
+}
 
 const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
-    <HoverTitle mt={'32px'}>{project.data.title}</HoverTitle>
-    <Subtitle mt={1} px={CARD_X_PADDING}>{project.data.description}</Subtitle>
-    <Industries mt={2} industries={project.data.industries}/>
-    <TechList small position='absolute' bottom={CARD_Y_PADDING}
-              left={CARD_X_PADDING} techs={project.data.techs.map(t => ({data:{title:t, slug:t}}))}/>
+  <HoverTitle mt={'32px'}>{project.data.title}</HoverTitle>
+  <Subtitle mt={1} px={CARD_X_PADDING}>{project.data.description}</Subtitle>
+  <Industries mt={2} industries={project.data.industries}/>
+  <TechList small position='absolute' bottom={CARD_Y_PADDING}
+            left={CARD_X_PADDING} techs={project.data.techs.map(t => ({data: {title: t, slug: t}}))}/>
 </div>)`
   ${cover};
 `
 
 
-const ProjectCard = ({project, className}) => <StyledLink onClick={ () => { window.scrollTo(0, 100); }} className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
-    <AspectBox ratio={PROJECT_CARD_RATIO}>
-        <HoverProjectCard {...{project}}/>
-        <VoidProjectCard {...{project}}/>
-    </AspectBox>
+const ProjectCard = ({project, className}) => <StyledLink onClick={() => {
+  window.scrollTo(0, 100);
+}} className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
+  <AspectBox ratio={PROJECT_CARD_RATIO}>
+    <HoverProjectCard {...{project}}/>
+    <VoidProjectCard {...{project}}/>
+  </AspectBox>
 </StyledLink>
 
 
@@ -72,8 +76,8 @@ const StyledProjectCard = styled(ProjectCard)`
 `
 
 const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
-    <Title position='absolute' left='0' bottom='56px'>{project.data.title}</Title>
-    <Industries position='absolute' bottom={CARD_Y_PADDING} industries={project.data.industries}/>
+  <Title position='absolute' left='0' bottom='56px'>{project.data.title}</Title>
+  <Industries position='absolute' bottom={CARD_Y_PADDING} industries={project.data.industries}/>
 </div>)`
   ${cover};
   transition: opacity .5s;  
@@ -84,7 +88,7 @@ const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
   &:before {
     content: '';
     ${cover};  
-    background-image: ${p=> `url('${getImageUrl(p.project.data.cover)}')`};
+    background-image: ${p => `url('${getImageUrl(typeof p.project.data.cover !== 'undefined' ? p.project.data.cover : 'close-up-code-codes-239898')}')`};
     background-size: cover;
     filter: brightness(75%);
   }  

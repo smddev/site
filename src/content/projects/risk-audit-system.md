@@ -9,8 +9,9 @@ techs:
   - ReactJS
   - Redux
   - Redux-Saga
-description: This web application allows for planning and carrying out  professional risk audits. 
+description: This web application allows planning and carrying out professional risk audits. 
 ---
+This web application allows planning and carrying out professional risk audits. 
 System consisted of two major parts: audit schedule to define audit dates, places and responsible persons for checks and a block dedicated to audit reports - to assess professional risks found during check routine, upload photos, assign responsible for fixing. 
 
 ## Outcome

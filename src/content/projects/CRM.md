@@ -1,6 +1,7 @@
 ---
 order: 8
 title: CRM for Tailoring Studios 
+cover: tailoring.jpg
 industries:
   - Retail
   - Distribution 

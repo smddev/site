@@ -3,11 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Photo from '../components/Photo';
 import Carousel from '../components/Carousel';
-import image1 from '../image_workers_1.png';
-import image2 from '../image_workers_2.png';
-import image3 from '../image_workers_3.png';
 
-const photos = [image1, image2, image3];
+const photos = ['image1', 'image2', 'image3'];
 
 const Cell = styled(Box)`
   overflow: hidden;
@@ -42,8 +39,7 @@ const Photos = ({ pStyles, className, carousel }) => (
 
 export default styled(Photos)`
   width: 100%;
-  margin: 0 auto;
-  margin-top: ${p => p.theme.space[3]}px;
+  margin: ${p => p.theme.space[3]}px auto 0;
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     margin-top: ${p => p.theme.space[5]}px;
   }

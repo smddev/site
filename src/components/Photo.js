@@ -2,6 +2,7 @@ import { Box } from "@rebass/grid";
 import React from 'react';
 import styled from 'styled-components';
 import { Magnifier } from '../icons';
+import { Image } from "cloudinary-react";
 
 const Container = styled(Box)`
   display: block;
@@ -27,7 +28,7 @@ const StyledMagnifier = styled(Magnifier)`
   }
 `;
 
-const StyledImg = styled.img`
+const StyledImg = styled(Image)`
   height:320px;
   transition: opacity ease-in 0.2s;
   margin: -75px 0 0 -100px;
@@ -47,7 +48,10 @@ const Photo = ({ photo, height, className }) => {
     <a href={photo} target="_blank" rel="noopener noreferrer">
       <Container {...{ className }}>
         <div width="50%" >
-          <StyledImg src={photo}/>
+          <StyledImg
+            publicId={`site/group-photos/${photo}`}
+            gravity="face"
+            crop="fill"/>
         </div>
         <StyledMagnifier />
       </Container>
