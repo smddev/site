@@ -61,5 +61,6 @@ const Stages = withBackground(background, 538, 433)(({stages, className}) => <Co
 `
 
 export default styled(Stages)`
+  max-width: 100%;
   ${space}
 `

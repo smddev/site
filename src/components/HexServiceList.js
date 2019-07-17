@@ -64,6 +64,7 @@ const HexServiceList = responsive(
 export default withBackground(background, 703, 631)(styled(HexServiceList)`
   display: flex;
   justify-content: center;
+  max-width: 100%;
   @media(min-width: ${p=>p.theme.breakpoints[3]}) {
     display: block;
   }
