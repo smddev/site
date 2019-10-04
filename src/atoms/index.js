@@ -363,7 +363,7 @@ export const ArrowLink = ({to, left, children, className, getProps}) => <SL {...
 
 export Button from './Button';
 export Hexagon from './Hexagon';
-export HexGrid from './HexGrid';
+export {ServicesGrid, StagesGrid} from './HexGrid';
 export Container from './Container';
 export AspectBox from './AspectBox'
 export ArrowButton, {ARROW_BUTTON_HEIGHT} from './ArrowButton'

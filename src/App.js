@@ -108,12 +108,12 @@ const StyledHexagon = styled(Hexagon)`
   animation: spin infinite 0.8s ease-in-out;
   pointer-events: none;
   @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(180deg);
-  }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
   }
 `
 

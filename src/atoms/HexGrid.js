@@ -4,39 +4,63 @@ import {HEX_PROP} from './Hexagon';
 
 const PADDING = 8;
 
-const HexGrid = ({children, direction, className, height, horizontal}) => {
+const HexGrid = ({children, direction, className, height}) => {
     const chldrn = Children.map(children, (child, index) => {
        return  cloneElement(child, {height})
     });
     return <div className={className}>{chldrn}</div>
 }
 
-const vertical = css`
+const vertical = (height) => `
   >:nth-child(even) {
-    margin-left: ${p => `${p.height * HEX_PROP * 2 + PADDING}px`};
+    margin-left: ${height * HEX_PROP * 2 + PADDING}px;
   }
   
   >:not(:last-child) {
-    margin-bottom: ${p => `-${(p.height - PADDING)/2}px`};
+    margin-bottom: -${(height - PADDING)/2}px;
   }
 `
 
-const horizontal = css`
-  padding-bottom: ${p => `${(p.height + PADDING)/2}px`};
+const horizontal = (height) => `
+  padding-bottom: ${(height + PADDING)/2}px;
   
   >* {
     display: inline-block;
   }
   
   >:nth-child(even) {
-    margin-bottom: ${p => `-${(p.height + PADDING)/2}px`};
+    margin-bottom: -${(height + PADDING)/2}px !important;
+    margin-left:0;
   }
   
   >:not(:last-child) {
-    margin-right: ${p => `${PADDING}px`};
+    margin-right: ${PADDING}px;
+    margin-bottom: unset;
   }
 `
 
-export default styled(HexGrid)`
-  ${p=>p.horizontal ? horizontal : vertical}
+export const StagesGrid = styled(HexGrid)`
+  @media (max-width: ${p=>p.theme.breakpoints[0] - 1}) {
+    ${vertical(132)};
+  }
+  
+  @media (min-width: ${p=>p.theme.breakpoints[0]}) and (max-width: ${p=>p.theme.breakpoints[2] - 1}){
+    ${vertical(206)}
+  }
+  
+  @media (min-width: ${p=>p.theme.breakpoints[2]}) {
+    ${horizontal(206)}
+  }
+`
+
+export const ServicesGrid = styled(HexGrid)`
+  ${vertical(128)};
+  
+  @media (min-width: ${p=>p.theme.breakpoints[0]}) {
+    ${vertical(200)}
+  }
+  
+  @media (min-width: ${p=>p.theme.breakpoints[1]}) {
+    ${vertical(274)}
+  }
 `

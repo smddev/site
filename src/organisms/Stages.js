@@ -1,5 +1,5 @@
 import React from 'react';
-import {H1, Container, HexGrid, Subtitle, Hexagon, description, withBackground} from '../atoms';
+import {H1, Container, Subtitle, Hexagon, description, withBackground, StagesGrid} from '../atoms';
 import {Box, Flex} from '@rebass/grid'
 import {space} from 'styled-system';
 import styled from 'styled-components';
@@ -31,7 +31,7 @@ const backgrounds = ['orange.1', 'orange.2', 'orange.0', 'orange.1'];
 
 const HG=responsive(({isXMobile, isMobile, isTablet, stages}) =>
 
-    <HexGrid horizontal={!isTablet} height={isXMobile ? 132 : 206}>
+    <StagesGrid height={isXMobile ? 132 : 206}>
     {stages.slice(0, 4).map((stage, index) => {
         return <Hexagon
             iconPos={'lt'}
@@ -43,7 +43,7 @@ const HG=responsive(({isXMobile, isMobile, isTablet, stages}) =>
             <Stage dangerouslySetInnerHTML={{ __html: stage.data.subtitle }}/>
         </Hexagon>
     })}
-</HexGrid>)
+</StagesGrid>)
 
 const Stages = withBackground(background, 538, 433)(({stages, className}) => <Container
        flexWrap='wrap' className={className} alignItems='center'>

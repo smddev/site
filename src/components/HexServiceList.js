@@ -1,5 +1,5 @@
 import React from 'react';
-import {Hexagon, HexGrid, Link2, withBackground} from '../atoms'
+import {Hexagon, ServicesGrid, Link2, withBackground} from '../atoms'
 import {Image} from "cloudinary-react";
 import styled, {withTheme, css} from "styled-components";
 import background from "../servicesHex.svg";
@@ -38,7 +38,7 @@ const HexServiceList = responsive(
         return <div className={className}>
           {console.log(isXMobile)}
           {console.log(isMobile)}
-            <HexGrid height={isXMobile ? 128 : (isMobile ? 200 : 274)}>
+            <ServicesGrid height={isXMobile ? 128 : (isMobile ? 200 : 274)}>
                 {services.slice(0, 3).map((service, index) =>
                     <Hexagon key={index}
                              iconColor={icons[index].color}
@@ -56,7 +56,7 @@ const HexServiceList = responsive(
                         </Link>
                     </Hexagon>
                 )}
-            </HexGrid>
+            </ServicesGrid>
         </div>
     }
 );
