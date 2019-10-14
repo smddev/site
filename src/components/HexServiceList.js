@@ -7,12 +7,17 @@ import {responsive} from "../utils"
 import {ServicesHex, ServicesHexIcon} from "../atoms";
 
 const Icon = styled((props) => <div className={props.className}><Image {...props}/></div>)`
-  width: ${p => `${p.width}px`};
-  height: ${p => `${p.width}px`};
+  width: ${p => `${p.theme.icons[6]}px`};
+  height: ${p => `${p.theme.icons[6]}px`};
   
   img {
     width: 100%;
     height: 100%;
+  }
+  
+  @media (min-width: ${p => p.theme.breakpoints[0]}) {
+    width: ${p => `${p.theme.icons[0]}px`};
+    height: ${p => `${p.theme.icons[0]}px`};
   }
 `
 
@@ -21,15 +26,12 @@ const Link = styled(({className, ...props}) => <div className={className}><Link2
   text-align: center;
 `
 
-const ICN = ({color, url, pxSize}) => ({}) =><ServicesHexIcon color={color}>
+const ICN = ({color, url}) => ({}) =><ServicesHexIcon color={color}>
   <Icon publicId={url}
-        crop="scale"
-        width={pxSize}
-        height={pxSize} responsive/>
+        crop="scale"/>
 </ServicesHexIcon>
 
 const HexServiceList = ({services, theme, className}) => {
-        const pxSize = theme.icons[0];
         const icons = [{
             pos: 'lt',
             color: '2'
@@ -47,7 +49,7 @@ const HexServiceList = ({services, theme, className}) => {
                 {services.slice(0, 3).map((service, index) =>
                     <ServicesHex key={index}
                              iconPos={icons[index].pos}
-                             icon={ICN({color:theme.colors.orange[icons[index].color], url:`site/icons/${service.data.icon}`, pxSize})}
+                             icon={ICN({color:theme.colors.orange[icons[index].color], url:`site/icons/${service.data.icon}`})}
                              color={theme.colors.gray[0]}>
                         <Link
                             fontSize={[3,4]}
