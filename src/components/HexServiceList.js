@@ -4,6 +4,7 @@ import {Image} from "cloudinary-react";
 import styled, {withTheme, css} from "styled-components";
 import background from "../servicesHex.svg";
 import {responsive} from "../utils"
+import {ServicesHex, ServicesHexIcon} from "../atoms";
 
 const Icon = styled((props) => <div className={props.className}><Image {...props}/></div>)`
   width: ${p => `${p.width}px`};
@@ -20,48 +21,48 @@ const Link = styled(({className, ...props}) => <div className={className}><Link2
   text-align: center;
 `
 
-const HexServiceList = responsive(
-    ({services, theme, className, isXMobile, isMobile}) => {
-        const pxSize = isMobile ? 20 : theme.icons[0];
+const ICN = ({color, url, pxSize}) => ({}) =><ServicesHexIcon color={color}>
+  <Icon publicId={url}
+        crop="scale"
+        width={pxSize}
+        height={pxSize} responsive/>
+</ServicesHexIcon>
+
+const HexServiceList = ({services, theme, className}) => {
+        const pxSize = theme.icons[0];
         const icons = [{
             pos: 'lt',
-            color: 'orange.2'
+            color: '2'
         },{
             pos: 'rc',
-            color: 'orange.0'
+            color: '0'
         },{
             pos: 'lb',
-            color: 'orange.1'
+            color: '1'
         },
         ]
 
         return <div className={className}>
-          {console.log(isXMobile)}
-          {console.log(isMobile)}
-            <ServicesGrid height={isXMobile ? 128 : (isMobile ? 200 : 274)}>
+            <ServicesGrid>
                 {services.slice(0, 3).map((service, index) =>
-                    <Hexagon key={index}
-                             iconColor={icons[index].color}
+                    <ServicesHex key={index}
                              iconPos={icons[index].pos}
-                             icon={<Icon publicId={`site/icons/${service.data.icon}`}
-                                         crop="scale"
-                                         width={pxSize}
-                                         height={pxSize} responsive/>}
-                             bg={'gray.0'}>
+                             icon={ICN({color:theme.colors.orange[icons[index].color], url:`site/icons/${service.data.icon}`, pxSize})}
+                             color={theme.colors.gray[0]}>
                         <Link
-                            fontSize={isMobile ? 3 : 4}
-                            lineHeight={`${isMobile ? theme.lineHeight[3] : theme.lineHeight[4]}px`}
+                            fontSize={[3,4]}
+                            lineHeight={[3,4]}
                             href={`/portfolio?service=${service.data.slug}`}>
                             {service.data.title}
                         </Link>
-                    </Hexagon>
+                    </ServicesHex>
                 )}
             </ServicesGrid>
         </div>
     }
-);
 
-export default withBackground(background, 703, 631)(styled(HexServiceList)`
+
+export default withBackground(background, 703, 631)(styled(withTheme(HexServiceList))`
   display: flex;
   justify-content: center;
   max-width: 100%;

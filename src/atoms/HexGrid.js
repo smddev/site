@@ -4,11 +4,8 @@ import {HEX_PROP} from './Hexagon';
 
 const PADDING = 8;
 
-const HexGrid = ({children, direction, className, height}) => {
-    const chldrn = Children.map(children, (child, index) => {
-       return  cloneElement(child, {height})
-    });
-    return <div className={className}>{chldrn}</div>
+const HexGrid = ({children, className}) => {
+    return <div className={className}>{children}</div>
 }
 
 const vertical = (height) => `
@@ -30,21 +27,19 @@ const horizontal = (height) => `
   
   >:nth-child(even) {
     margin-bottom: -${(height + PADDING)/2}px !important;
-    margin-left:0;
   }
   
   >:not(:last-child) {
     margin-right: ${PADDING}px;
-    margin-bottom: unset;
   }
 `
 
 export const StagesGrid = styled(HexGrid)`
-  @media (max-width: ${p=>p.theme.breakpoints[0] - 1}) {
+  @media (max-width: ${p=>p.theme.brkpnts[0] - 1}px){
     ${vertical(132)};
   }
   
-  @media (min-width: ${p=>p.theme.breakpoints[0]}) and (max-width: ${p=>p.theme.breakpoints[2] - 1}){
+  @media (min-width: ${p=>p.theme.breakpoints[0]}) and (max-width: ${p=>p.theme.brkpnts[2] - 1}px) {
     ${vertical(206)}
   }
   

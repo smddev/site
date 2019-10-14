@@ -2,11 +2,12 @@ import {CloudinaryContext} from "cloudinary-react";
 import React, {Component, Suspense} from 'react';
 import {Root, Routes} from 'react-static';
 import styled, {createGlobalStyle, css, ThemeProvider} from 'styled-components';
-import {h2Style, Hexagon, HexGrid, paragraph} from './atoms';
+import {h2Style,  paragraph} from './atoms';
 import listItem from './listItem.svg';
 import {theme} from "./theme";
 import {EmailContext} from "./utils";
 import {SizesProvider} from 'react-sizes';
+import {LoadingHex} from "./atoms/Hexagon";
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -64,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
           color: ${theme.colors.gray[2]}
           font-weight: ${theme.fontWeights[1]};
           font-size:  ${theme.fontSizes[11]}px;
-          line-height: ${theme.lineHeight[11]}px;
+          line-height: ${theme.lineHeights[11]};
           background: url(${listItem}) no-repeat left top;
           padding: 0 35px;
           margin-bottom: 20px;
@@ -81,11 +82,11 @@ const GlobalStyle = createGlobalStyle`
       @media(max-width: ${p => p.theme.breakpoints[0]}) {
           h2 {
             font-size: ${p => `${p.theme.fontSizes[4]}px`};
-            line-height: ${theme.lineHeight[4]}px;
+            line-height: ${theme.lineHeights[4]};
           }
           p {
             font-size: ${p => `${p.theme.fontSizes[3]}px`};
-            line-height: ${theme.lineHeight[3]}px;
+            line-height: ${theme.lineHeights[3]};
           }
       }
   }
@@ -100,21 +101,6 @@ const WrapperDiv = styled.div`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-`
-
-const StyledHexagon = styled(Hexagon)`
-  position: absolute;
-  z-index: 0;
-  animation: spin infinite 0.8s ease-in-out;
-  pointer-events: none;
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(180deg);
-    }
-  }
 `
 
 const StyledEm = styled.em`
@@ -152,7 +138,7 @@ class App extends Component {
                     fallback=
                       {<WrapperDiv>
                         <StyledEm>Loading...</StyledEm>
-                        <StyledHexagon bg={'gray.0'} height='160'/>
+                        <LoadingHex color={theme.colors.gray[0]}/>
                       </WrapperDiv>}>
                     <Routes/>
                   </Suspense>

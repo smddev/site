@@ -4,9 +4,8 @@ import styled, {withTheme, css} from 'styled-components'
 import {Flex, Box} from '@rebass/grid'
 import background from '../h1.svg'
 import background2 from "../facts2.svg";
-
+import { themeGet } from '@styled-system/theme-get'
 import {
-  themeGet,
   backgroundImage,
   backgroundPosition,
   backgroundRepeat,
@@ -35,7 +34,7 @@ import {
   width,
   buttonStyle,
   space,
-  lineHeight
+  typography
 } from 'styled-system'
 import {IoMdArrowBack as LeftArrow, IoMdArrowForward as RightArrow} from "react-icons/io";
 
@@ -55,7 +54,7 @@ export const hoverLinkStyles = css`
 export const paragraph = css`
   font-weight: ${p => p.theme.fontWeights[0]};
   font-size:  ${p => p.theme.fontSizes[10]}px;
-  line-height: ${p => p.theme.lineHeight[10]}px;
+  line-height: ${p => p.theme.lineHeights[10]};
 `
 
 const inputStyles = css`
@@ -112,9 +111,9 @@ export const Link1 = styled.a`
 
 export const underline = css`
     background-image: linear-gradient(to right, ${props => props.theme.colors.gray[2]} 50%, transparent 50%);
-    background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 5}px;
-    @media(max-width: ${p => p.theme.breakpoints[1]}) {
-      background-position: 0 ${p => themeGet('fontSizes.' + p.fontSize)(p) + 2}px;
+    background-position: 0 ${p => themeGet('fontSizes.4')(p) + 5}px;
+    @media(max-width: ${p => p.theme.breakpoints[0]}) {
+      background-position: 0 ${p => themeGet('fontSizes.3')(p) + 2}px;
     }
     background-repeat: repeat-x;
     background-size: 4px 1px;
@@ -126,7 +125,7 @@ export const Link2 = styled.a`
     
     ${underline};
     ${fontSize};
-    ${lineHeight};
+    ${typography};
     ${space} 
 `
 
@@ -153,7 +152,7 @@ export const NavLink = styled(withTheme(({theme, to, children, color, fontSize, 
 
 export const Subtitle = styled.p`
   font-size: ${p => p.theme.fontSizes[2]}px;;
-  line-height: ${p => p.theme.lineHeight[2]}px;
+  line-height: ${p => p.theme.lineHeights[2]};
   font-weight: ${p => p.theme.fontWeights[0]};
   margin: 0;
   color: ${p => p.theme.colors.gray[2]};
@@ -162,19 +161,19 @@ export const Subtitle = styled.p`
   
   @media(min-width: ${p => p.theme.breakpoints[0]}) {
     font-size: ${p => p.theme.fontSizes[3]}px;
-    line-height: ${p => p.theme.lineHeight[3]}px;
+    line-height: ${p => p.theme.lineHeights[3]};
   } 
 `
 
 export const H1 = styled.h1`
-  line-height: ${p => p.theme.lineHeight[5]}px;
+  line-height: ${p => p.theme.lineHeights[5]};
   font-size: ${p => p.theme.fontSizes[5]}px;
   margin: 0 0 ${p => p.theme.space[2]}px 0;
   ${space};
   position: relative;
   
   @media(min-width: ${p => p.theme.breakpoints[1]}) {
-    line-height: ${p => p.theme.lineHeight[7]}px;
+    line-height: ${p => p.theme.lineHeights[7]};
     font-size: ${p => p.theme.fontSizes[7]}px;
   } 
 `
@@ -182,7 +181,7 @@ export const H1 = styled.h1`
 export const h2Style = css`
   font-weight: ${p => p.theme.fontWeights[1]};
   font-size:  ${p => p.theme.fontSizes[12]}px;
-  line-height: ${p => p.theme.lineHeight[12]}px;
+  line-height: ${p => p.theme.lineHeights[12]};
   margin-bottom: 24px;
 `;
 
@@ -197,7 +196,7 @@ export const P = styled.p`
 `
 
 export const H4 = styled.h4`
-  line-height: ${p => p.theme.lineHeight[4]}px;
+  line-height: ${p => p.theme.lineHeights[4]};
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights[1]};
   margin: 0 0 ${p => p.theme.space[2]}px 0;
@@ -205,7 +204,7 @@ export const H4 = styled.h4`
 `
 
 export const H5 = styled.h5`
-  line-height: ${p => p.theme.lineHeight[3]}px;
+  line-height: ${p => p.theme.lineHeights[3]};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights[2]};
   margin: 0 0 ${p => p.theme.space[1]}px 0;
@@ -228,20 +227,20 @@ export const Text = styled.span`
 
 export const description = css`
   font-size: ${p => p.theme.fontSizes[3]}px;
-  line-height: ${p => p.theme.lineHeight[3]}px;
+  line-height: ${p => p.theme.lineHeights[3]};
   font-weight: ${p => p.theme.fontWeights[0]};
   color: white;
 
   @media(min-width: ${p => p.theme.breakpoints[2]}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
-    line-height: ${p => p.theme.lineHeight[4]}px;
+    line-height: ${p => p.theme.lineHeights[4]};
   }
 `
 
 export const Description = styled(Text)`
     ${description}
     ${fontSize}
-    ${lineHeight}
+    ${typography}
     ${space}
 `
 
@@ -362,7 +361,7 @@ export const ArrowLink = ({to, left, children, className, getProps}) => <SL {...
 
 
 export Button from './Button';
-export Hexagon from './Hexagon';
+export {ServicesHex, ServicesHexIcon} from './Hexagon';
 export {ServicesGrid, StagesGrid} from './HexGrid';
 export Container from './Container';
 export AspectBox from './AspectBox'

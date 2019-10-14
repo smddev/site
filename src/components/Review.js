@@ -11,7 +11,7 @@ const ItalicText = styled.div`
 
   @media (max-width: ${p => p.theme.breakpoints[1]}) {
     font-size: ${p => p.theme.fontSizes[3]}px;
-    line-height: ${p => p.theme.lineHeight[3]}px;
+    line-height: ${p => p.theme.lineHeights[3]};
   }
   ${paragraph}
 `;

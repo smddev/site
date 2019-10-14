@@ -1,8 +1,9 @@
 import React from 'react'
 import {Image} from "cloudinary-react";
 import styled, {withTheme, css} from 'styled-components';
-import {H2, StyledLink, Description, Text, Hexagon, hoverLinkStyles} from "../atoms";
+import {H2, StyledLink, Description, Text, hoverLinkStyles} from "../atoms";
 import {Flex, Box} from '@rebass/grid'
+import {IconHex} from "../atoms/Hexagon";
 
 const ImageWrapper = styled(Box)`
   width: ${p=> `${p.vertical ? p.theme.icons[2] : p.theme.icons[1]}px`};
@@ -80,12 +81,12 @@ const HexImageWrapper = styled.div`
 
 export const HexIcon = ({className, item, pxSize, linkPath, mt, active}) => <StyledLink onClick={ () => { window.scrollTo(0, 100); }} to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
     <Flex alignItems={'center'}>
-        <Hexagon bg={item.data.background} height={40}>
+        <IconHex color={item.data.background} height={40}>
             <HexImageWrapper {...{pxSize}}>
                 <Image publicId={`site/icons/${item.data.icon}`}
                        crop="fit"/>
             </HexImageWrapper>
-        </Hexagon>
+        </IconHex>
         <StyledDescription
             ml={['0px', '0px','10px','24px', '24px']}
             active={active}>

@@ -1,10 +1,11 @@
 import React from 'react';
-import {H1, Container, Subtitle, Hexagon, description, withBackground, StagesGrid} from '../atoms';
+import {H1, Container, Subtitle, description, withBackground, StagesGrid} from '../atoms';
 import {Box, Flex} from '@rebass/grid'
 import {space} from 'styled-system';
-import styled from 'styled-components';
+import styled, {withTheme} from 'styled-components';
 import background from './../stages.svg';
 import {responsive} from "../utils";
+import {StagesHex, StagesHexIcon} from "../atoms/Hexagon";
 
 const Icon = styled.span`
   ${description};
@@ -27,21 +28,23 @@ const Stage = styled(Subtitle)`
   }
 `;
 
-const backgrounds = ['orange.1', 'orange.2', 'orange.0', 'orange.1'];
+const backgrounds = ['1', '2', '0', '1'];
 
-const HG=responsive(({isXMobile, isMobile, isTablet, stages}) =>
+const ICN = ({color, title}) => ({}) => <StagesHexIcon color={color}>
+    <Icon>{title}</Icon>
+</StagesHexIcon>
 
-    <StagesGrid height={isXMobile ? 132 : 206}>
+const HG=withTheme(({theme,stages}) =>
+
+    <StagesGrid>
     {stages.slice(0, 4).map((stage, index) => {
-        return <Hexagon
+        return <StagesHex
             iconPos={'lt'}
-            iconHeight={isXMobile ? 28 : 43}
             key={index}
-            iconColor={'black.1'}
-            icon={<Icon>{stage.data.title}</Icon>}
-            bg={backgrounds[index]}>
+            icon={ICN({color:`${theme.colors.black[1]}`, title:stage.data.title})}
+            color={theme.colors.orange[backgrounds[index]]}>
             <Stage dangerouslySetInnerHTML={{ __html: stage.data.subtitle }}/>
-        </Hexagon>
+        </StagesHex>
     })}
 </StagesGrid>)
 
