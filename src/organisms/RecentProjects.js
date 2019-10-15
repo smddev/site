@@ -64,7 +64,7 @@ const RecentProjects = ({projects, className, pStyles, carousel}) => <Container 
       <Title/>
     </Cell>
 
-    {projects.slice(0, 3).map((p, i) =>
+    {projects.slice(0, 5).map((p, i) =>
       <Cell key={i}>
         <ProjectCard project={p}/>
       </Cell>
