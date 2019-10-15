@@ -28,10 +28,28 @@ const Cell = styled(({children, className}) => <Box {...{className}} width={[1, 
 ${display}
 `
 
-const SC = styled(responsive(({isTablet, className, children}) =>
-  <Carousel width={350} height={350 * PROJECT_CARD_RATIO} {...{className}} carousel={isTablet}>
-    {children}
-  </Carousel>))`
+const TabletCarousel = styled(Carousel)`
+  @media(min-width: ${p => p.theme.breakpoints[2]}) {
+    display: none;
+  }
+`
+
+const DesktopCarousel = styled(Carousel)`
+  @media(max-width: ${p => p.theme.brkpnts[2] - 1}px) {
+    display: none;
+  }
+`
+
+
+const SC = styled(responsive(({isTablet, className, children}) => <Fragment>
+    <TabletCarousel width={350} height={350 * PROJECT_CARD_RATIO} {...{className}} carousel>
+      {children}
+    </TabletCarousel>
+    <DesktopCarousel width={350} height={350 * PROJECT_CARD_RATIO} {...{className}}>
+      {children}
+    </DesktopCarousel>
+  </Fragment>
+  ))`
   width: 100%;
   ${space};
 `
