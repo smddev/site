@@ -15,7 +15,7 @@ import { FactsCarousel, Markdown } from "../components";
 import Photos from "../components/Photos";
 import mgLeft from "../industriesLeft.svg";
 import mgRight from "../managementRight.svg";
-import { Feedback, MembersGallery, withLayout } from "../organisms";
+import { Feedback, MembersGallery as MG, withLayout } from "../organisms";
 import { responsive } from "../utils";
 
 const Intro = styled(P)`
@@ -46,6 +46,10 @@ const StyledH2 = styled(H2)`
     font-size: 24px;
     line-height: 36px;
   }
+`
+
+const MembersGallery = styled(MG)`
+  ${space};
 `
 
 const ManagementSection = styled(withBackground(mgRight, 708, 542, true)(
@@ -89,7 +93,7 @@ export default withLayout()(
           <Markdown source={page.content} className='aboutPage' escapeHtml={false} />
         </Box>
         <Box width={[1, 1, 1, 1 / 3]}>
-          <StyledFacts carousel={true} {...{ facts }} />
+          <StyledFacts {...{ facts }} />
         </Box>
       </Container>
 
