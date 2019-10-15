@@ -31,8 +31,12 @@ const StyledDescription = styled(Description)`
 `
 
 const verticalStyles = css`
-  width: 150px;
+  width: 130px;
   margin-bottom: 22px;
+  
+  @media(min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 150px;
+  }
   @media(min-width: ${p => p.theme.breakpoints[2]}) {
     width: 240px;
     margin-bottom: 80px;
