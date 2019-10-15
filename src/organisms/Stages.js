@@ -6,6 +6,7 @@ import styled, {withTheme} from 'styled-components';
 import background from './../stages.svg';
 import {responsive} from "../utils";
 import {StagesHex, StagesHexIcon} from "../atoms/Hexagon";
+import {CONTAINER_WIDTH} from "../atoms/Container";
 
 const Icon = styled.span`
   ${description};
@@ -64,6 +65,7 @@ const Stages = withBackground(background, 538, 433)(({stages, className}) => <Co
 `
 
 export default styled(Stages)`
-  max-width: 100%;
+  max-width: ${CONTAINER_WIDTH};
+  margin: 0 auto;
   ${space}
 `
