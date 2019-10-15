@@ -23,32 +23,31 @@ const pStyles = css`
   }
 `;
 
+const Facts = ({facts, mobile = true, className}) => <Carousel className={className} width={320} height={225}
+      {...{pStyles, carousel:mobile}} alignItems='center'>
+  {facts.slice(0, 3).map((fact, key) => <div {...{key}}>
+    <Fact {...{fact}}/>
+  </div>)}
+</Carousel>
 
-const MobileCarousel = styled(Carousel)`
+const MobileFacts = styled(Facts)`
   ${commonStyles};
   @media(min-width: ${p => p.theme.breakpoints[1]}) {
     display: none;
   }
 `
 
-const DesktopCarousel = styled(Carousel)`
+const DesktopFacts = styled(Facts)`
   ${commonStyles};
   @media(max-width: ${p => p.theme.brkpnts[1] - 1}px) {
     display: none;
   }
 `
 
-const Facts = ({facts}) => <Fragment>
-    <MobileCarousel width={320} height={225} {...{pStyles, carousel:true}} alignItems='center'>
-      {facts.slice(0, 3).map((fact, key) => <div {...{key}}>
-        <Fact {...{fact}}/>
-      </div>)}
-    </MobileCarousel>
-    <DesktopCarousel width={320} height={225} {...{pStyles, carousel:false}} alignItems='center'>
-      {facts.slice(0, 3).map((fact, key) => <div {...{key}}>
-        <Fact {...{fact}}/>
-      </div>)}
-    </DesktopCarousel>
+export const CombinedFacts = ({facts}) => <Fragment>
+    <MobileFacts {...{facts}}/>
+    <DesktopFacts {...{facts, mobile: false}}/>
   </Fragment>
 
-export default Facts;
+
+export const FactsCarousel = ({facts, className}) => <Facts {...{facts, className}}/>

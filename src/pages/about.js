@@ -11,7 +11,7 @@ import {
   Subtitle,
   withBackground
 } from "../atoms";
-import { Facts, Markdown } from "../components";
+import { FactsCarousel, Markdown } from "../components";
 import Photos from "../components/Photos";
 import mgLeft from "../industriesLeft.svg";
 import mgRight from "../managementRight.svg";
@@ -30,9 +30,9 @@ const Intro = styled(P)`
   }
 `;
 
-const StyledFacts = styled(Facts)`
+const StyledFacts = styled(FactsCarousel)`
   width: 320px;
-  margin: 113px 0 0 60px;
+  margin: 113px auto 0 auto;
   @media (max-width: ${p => p.theme.breakpoints[2]}) {
     margin: auto;
   }

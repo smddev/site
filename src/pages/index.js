@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {withRouteData} from 'react-static'
 import {withBackground} from '../atoms';
-import {Facts} from '../components';
+import {CombinedFacts} from '../components';
 import styled, {css} from 'styled-components';
 import {
     Services,
@@ -23,7 +23,7 @@ export default withLayout()(withRouteData(({page, services, projects, industries
 
         <Services mt={[6, 7, 8]} page={page} services={services}/>
 
-        <Facts {...{facts}}/>
+        <CombinedFacts {...{facts}}/>
 
         <Industries mt={8} industries={industries}/>
 

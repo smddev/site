@@ -4,7 +4,7 @@ import Card from "./Card";
 import Icon, {HexIcon} from "./Icon";
 import List from "./List";
 import Fact from "./Fact";
-import Facts from "./Facts";
+import {CombinedFacts, FactsCarousel} from "./Facts";
 import PhoneLink from "./PhoneLink";
 import Tech from "./Tech";
 import Carousel from "./Carousel";
@@ -145,4 +145,4 @@ top: 50%;
 margin-top: -350px
 `
 
-export {Fact, Facts, PhoneLink, Carousel, VerticalCarousel, Photo, Photos, Review, Reviews}
+export {Fact, CombinedFacts, FactsCarousel, PhoneLink, Carousel, VerticalCarousel, Photo, Photos, Review, Reviews}
