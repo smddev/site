@@ -59,3 +59,9 @@ const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|
 
 export const validateEmail = email =>
   email && email.trim() && EMAIL_REGEX.test(email.trim());
+
+export const getField = (source, field) => {
+  return field.split('.').filter(f => !!f).reduce(function(obj, i) {
+    return obj ? obj[i] : null;
+  }, source);
+}

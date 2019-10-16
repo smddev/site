@@ -4,6 +4,7 @@ import styled, {withTheme, css} from 'styled-components';
 import {H2, StyledLink, Description, Text, hoverLinkStyles} from "../atoms";
 import {Flex, Box} from '@rebass/grid'
 import {IconHex} from "../atoms/Hexagon";
+import {getField} from "../utils";
 
 const ImageWrapper = styled(Box)`
   width: ${p=> `${p.vertical ? p.theme.icons[2] : p.theme.icons[1]}px`};
@@ -83,9 +84,9 @@ const HexImageWrapper = styled.div`
   }
 `
 
-export const HexIcon = ({className, item, pxSize, linkPath, mt, active}) => <StyledLink onClick={ () => { window.scrollTo(0, 100); }} to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
+export const HexIcon = withTheme(({theme, className, item, pxSize, linkPath, mt, active}) => <StyledLink onClick={ () => { window.scrollTo(0, 100); }} to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
     <Flex alignItems={'center'}>
-        <IconHex color={item.data.background} height={40}>
+        <IconHex color={getField(theme.colors, item.data.background)} height={40}>
             <HexImageWrapper {...{pxSize}}>
                 <Image publicId={`site/icons/${item.data.icon}`}
                        crop="fit"/>
@@ -97,5 +98,5 @@ export const HexIcon = ({className, item, pxSize, linkPath, mt, active}) => <Sty
             {item.data.title}
         </StyledDescription>
     </Flex>
-</StyledLink>;
+</StyledLink>);
 

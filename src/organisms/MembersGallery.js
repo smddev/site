@@ -55,4 +55,4 @@ const CMG = ({members, className}) => <Fragment>
 	<DesktopManagement {...{members, className}}/>
 </Fragment>
 
-export default CMG
+export default styled(CMG)`${space};`

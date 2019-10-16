@@ -3,7 +3,6 @@ import {Hexagon, ServicesGrid, Link2, withBackground} from '../atoms'
 import {Image} from "cloudinary-react";
 import styled, {withTheme, css} from "styled-components";
 import background from "../servicesHex.svg";
-import {responsive} from "../utils"
 import {ServicesHex, ServicesHexIcon} from "../atoms";
 
 const Icon = styled((props) => <div className={props.className}><Image {...props}/></div>)`

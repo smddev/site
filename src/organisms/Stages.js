@@ -4,7 +4,6 @@ import {Box, Flex} from '@rebass/grid'
 import {space} from 'styled-system';
 import styled, {withTheme} from 'styled-components';
 import background from './../stages.svg';
-import {responsive} from "../utils";
 import {StagesHex, StagesHexIcon} from "../atoms/Hexagon";
 import {CONTAINER_WIDTH} from "../atoms/Container";
 
