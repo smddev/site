@@ -16,7 +16,6 @@ import Photos from "../components/Photos";
 import mgLeft from "../industriesLeft.svg";
 import mgRight from "../managementRight.svg";
 import { Feedback, MembersGallery, withLayout } from "../organisms";
-import { responsive } from "../utils";
 
 const Intro = styled(P)`
   width: 100%;
@@ -68,10 +67,6 @@ const ManagementSection = styled(withBackground(mgRight, 708, 542, true)(
   ${space}
 `;
 
-const ResponsivePhotos = responsive(({ isMobile, ...props }) => (
-  <Photos carousel={isMobile} {...{ ...props }} />
-));
-
 export default withLayout()(
   withRouteData(({ page, members, facts, reviews }) => (
     <Fragment>
@@ -81,10 +76,10 @@ export default withLayout()(
           <Subtitle mt={[0, 1, 2, 3, 4]}>{page.data.subtitle}</Subtitle>
           <Intro mt={[4, 4, 5]}>{page.data.intro}</Intro>
         </Box>
-        <ResponsivePhotos/>
+        <Photos/>
       </Container>
 
-      <Container mt={[3, 0, -4]}>
+      <Container mt={3}>
         <Box width={[1, 1, 1, 2 / 3]}>
           <Markdown source={page.content} className='aboutPage' escapeHtml={false} />
         </Box>

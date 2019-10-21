@@ -1,23 +1,23 @@
 import { Box } from "@rebass/grid";
 import React from 'react';
 import styled from 'styled-components';
+import {space} from 'styled-system'
 import { Magnifier } from '../icons';
 import { Image } from "cloudinary-react";
 
-const Container = styled(Box)`
+const Container = styled.a`
   display: block;
   position: relative;
-  @media (max-width: ${p=>p.theme.breakpoints[1]}){
-  	overflow: hidden;
-  }
 `;
 
 const StyledMagnifier = styled(Magnifier)`
   opacity: 0;
   filter: alpha(opacity=0);
   position: absolute;
-  left: 45%;
-  top: 40%;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
   @media (max-width: ${p=>p.theme.breakpoints[1]}){
   	top: 30%;
   }
@@ -29,36 +29,27 @@ const StyledMagnifier = styled(Magnifier)`
 `;
 
 const StyledImg = styled(Image)`
-  height:320px;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+    
   transition: opacity ease-in 0.2s;
-  margin: -75px 0 0 -100px;
-  @media (min-width: 681px){
-	  width:100%;
-	  height:auto;
-	  margin: auto;
-  }
+  
   ${Container}:hover & {
      background-color: rgb(0, 0, 0);
       opacity: 0.5;
   }
 `
 
-const Photo = ({ photo, height, className }) => {
-  return (
-    <a href={photo} target="_blank" rel="noopener noreferrer">
-      <Container {...{ className }}>
-        <div width="50%" >
-          <StyledImg
-            publicId={`site/group-photos/${photo}`}
-            gravity="face"
-            crop="fill"/>
-        </div>
-        <StyledMagnifier />
-      </Container>
-    </a>
-  );
+const Photo = ({ photo, className }) => {
+  return <Container className={className} href={photo} target="_blank" rel="noopener noreferrer">
+    <StyledImg
+      publicId={`site/group-photos/${photo}`}/>
+    <StyledMagnifier />
+  </Container>
 };
 
 export default styled(Photo)`
-
+  ${space};
 `;

@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import {space, display} from 'styled-system';
 import {AspectBox, H1, Subtitle} from "../atoms";
 import {Carousel} from '../components';
-import {responsive} from "../utils";
 import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 
 const Title = styled(({className}) => <div {...{className}}>
@@ -41,7 +40,7 @@ const DesktopCarousel = styled(Carousel)`
 `
 
 
-const SC = styled(responsive(({isTablet, className, children}) => <Fragment>
+const SC = styled(({className, children}) => <Fragment>
     <TabletCarousel width={350} height={350 * PROJECT_CARD_RATIO} {...{className}} carousel>
       {children}
     </TabletCarousel>
@@ -49,7 +48,7 @@ const SC = styled(responsive(({isTablet, className, children}) => <Fragment>
       {children}
     </DesktopCarousel>
   </Fragment>
-  ))`
+  )`
   width: 100%;
   ${space};
 `
