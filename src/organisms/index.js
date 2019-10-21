@@ -22,7 +22,7 @@ export {
 export const withLayout = (props) => (WrappedComponent) => {
     const {noFooter, noForm, noNav} = props || {};
     return props => {
-        useEffect(()=>{if (typeof window !== 'undefined') {window.scrollTo(0,0)}}, [])
+        useEffect(()=>{if (typeof window !== 'undefined') {window.scrollTo(0,0)}})
         return <Fragment>
             {!noNav && <NavBar/>}
             <WrappedComponent {...props}/>
