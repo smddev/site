@@ -120,15 +120,23 @@ const CalculateCost = withBackground(background, 1957, 415, true)(withBackground
    }
 `
 
-
 const Link = styled(NavLink)`
+    white-space: nowrap;
+    
+    
     &:not(:first-child) {
-      margin-left: ${props => props.theme.space[5] + 'px'}
+      margin-left: ${props => props.theme.space[3] + 'px'}
+    }
+    
+    @media (min-width:  ${p => p.theme.breakpoints[1]}) {
+      &:not(:first-child) {
+        margin-left: ${props => props.theme.space[5] + 'px'}
+      }
     }
 `
 
 const Routes = styled(withSiteData(({routes, className}) => <div {...{className}}>
-  {routes && routes.map(r => <Link onClick={ () => { window.scrollTo(0, 100); }} key={r.name} to={r.path}>{r.name}</Link>)}
+  {routes && routes.map(r => <Link key={r.name} to={r.path}>{r.name}</Link>)}
 </div>))`
   display: inline-flex;
 `

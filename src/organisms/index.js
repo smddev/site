@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect} from "react";
 
 import Services from './Services'
 import Industries from './Industries'
@@ -21,9 +21,12 @@ export {
 
 export const withLayout = (props) => (WrappedComponent) => {
     const {noFooter, noForm, noNav} = props || {};
-    return props => <Fragment>
-        {!noNav && <NavBar/>}
-        <WrappedComponent {...props}/>
-        {!noFooter && <Footer mt={10} mb={6} {...{noForm}}/>}
-    </Fragment>
+    return props => {
+        useEffect(()=>{if (typeof window !== 'undefined') {window.scrollTo(0,0)}}, [])
+        return <Fragment>
+            {!noNav && <NavBar/>}
+            <WrappedComponent {...props}/>
+            {!noFooter && <Footer mt={10} mb={6} {...{noForm}}/>}
+        </Fragment>
+    }
 };

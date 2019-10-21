@@ -18,9 +18,7 @@ const StyledMagnifier = styled(Magnifier)`
   margin-left: -20px;
   top: 50%;
   margin-top: -20px;
-  @media (max-width: ${p=>p.theme.breakpoints[1]}){
-  	top: 30%;
-  }
+  
   transition: opacity ease-in 0.2s;
    ${Container}:hover & {
       opacity: 1;
