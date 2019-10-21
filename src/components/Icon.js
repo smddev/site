@@ -58,7 +58,7 @@ const SL = styled(StyledLink)`
 export default withTheme((props) => {
     const {linkPath, item, vertical, active} = props;
     const url = `${linkPath}${item.data.slug}`
-    return <SL onClick={ () => { window.scrollTo(0, 100); }} vertical={vertical ? 1:0} to={url}>
+    return <SL vertical={vertical ? 1:0} to={url}>
         <Flex
             alignItems='center'
             flexDirection={vertical ? 'column' : 'row'}>
@@ -84,7 +84,7 @@ const HexImageWrapper = styled.div`
   }
 `
 
-export const HexIcon = withTheme(({theme, className, item, pxSize, linkPath, mt, active}) => <StyledLink onClick={ () => { window.scrollTo(0, 100); }} to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
+export const HexIcon = withTheme(({theme, className, item, pxSize, linkPath, mt, active}) => <StyledLink to={`${linkPath}${item.data.slug}`} {...{className, mt}}>
     <Flex alignItems={'center'}>
         <IconHex color={getField(theme.colors, item.data.background)} height={40}>
             <HexImageWrapper {...{pxSize}}>

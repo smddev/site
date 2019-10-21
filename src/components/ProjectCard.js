@@ -59,9 +59,7 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
 `
 
 
-const ProjectCard = ({project, className}) => <StyledLink onClick={() => {
-  window.scrollTo(0, 100);
-}} className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
+const ProjectCard = ({project, className}) => <StyledLink className={className} onDragStart={preventDefault} to={`/portfolio/projects/${project.data.slug}`}>
   <AspectBox ratio={PROJECT_CARD_RATIO}>
     <HoverProjectCard {...{project}}/>
     <VoidProjectCard {...{project}}/>
