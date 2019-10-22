@@ -64,12 +64,12 @@ const StyledImage = styled(Image)`
 const Gallery = styled(({className}) => <Flex className={className}>
   <Cell width={2 / 3} pr={3}>
     <MainPhoto>
-      <Photo photo={`./${photos[0]}`}/>
+      <Photo photo={`/${photos[0]}`}/>
     </MainPhoto>
   </Cell>
   <Cell width={1 / 3} height={'100%'}>
-    <SmallPhoto first><Photo photo={`./${photos[1]}`}/></SmallPhoto>
-    <SmallPhoto><Photo position={'center'} photo={`./${photos[2]}`}/></SmallPhoto>
+    <SmallPhoto first><Photo photo={`/${photos[1]}`}/></SmallPhoto>
+    <SmallPhoto><Photo position={'center'} photo={`/${photos[2]}`}/></SmallPhoto>
   </Cell>
 </Flex>)`
  width: 100%;
@@ -88,7 +88,7 @@ const StyleCarousel = styled(({pStyles, className})=> <Carousel
   {...{ pStyles, className }}
   carousel={true}
   alignItems="center">
-  {photos.map((photo, key) => <Photo key={key} photo={photo}/>)}
+  {photos.map((photo, key) => <Photo key={key} photo={`/${photo}`}/>)}
 </Carousel>)`
   width: 100%;
   margin: ${p => p.theme.space[3]}px auto 0;
