@@ -26,9 +26,10 @@ const StyledMagnifier = styled(Magnifier)`
   }
 `;
 
-const StyledImg = styled(Image)`
+const StyledImg = styled.img`
   width: 100%;
-  object-position: center;
+  filter: grayscale(.4);
+  object-position: ${p => p.position ? p.position : 'top'};
   object-fit: cover;
   height: 100%;
     
@@ -40,10 +41,11 @@ const StyledImg = styled(Image)`
   }
 `
 
-const Photo = ({ photo, className }) => {
+const Photo = ({ photo, className, position }) => {
   return <Container className={className} href={photo} target="_blank" rel="noopener noreferrer">
     <StyledImg
-      publicId={`site/group-photos/${photo}`}/>
+      position={position}
+      src={photo}/>
     <StyledMagnifier />
   </Container>
 };

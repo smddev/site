@@ -6,7 +6,7 @@ import { Image } from "cloudinary-react";
 import Carousel from '../components/Carousel';
 import {layout, space} from 'styled-system';
 
-const photos = ['image1', 'image2', 'image3'];
+const photos = ['167_IMG_0993.jpg', '060_IMG_3611.jpg', '070_IMG_0934-flipped.jpg'];
 
 const Cell = styled(Box)`
   ${layout}
@@ -51,15 +51,25 @@ const StyledImage = styled(Image)`
     }
 `
 
+/*
+/home/kna/workspaces/site-netlify/public/070_IMG_0934.jpg
+/home/kna/workspaces/site-netlify/public/060_IMG_3611.jpg
+/home/kna/workspaces/site-netlify/public/060_IMG_3611.jpg
+/home/kna/workspaces/site-netlify/public/065_IMG_0926.jpg
+/home/kna/workspaces/site-netlify/public/105_IMG_0954.jpg
+/home/kna/workspaces/site-netlify/public/172_IMG_1000.jpg
+/home/kna/workspaces/site-netlify/public/167_IMG_0993.jpg
+/home/kna/workspaces/site-netlify/public/070_IMG_0934-flipped.jpg*/
+
 const Gallery = styled(({className}) => <Flex className={className}>
   <Cell width={2 / 3} pr={3}>
     <MainPhoto>
-      <Photo photo={'image1'}/>
+      <Photo photo={`./${photos[0]}`}/>
     </MainPhoto>
   </Cell>
   <Cell width={1 / 3} height={'100%'}>
-    <SmallPhoto first><Photo photo={'image2'}/></SmallPhoto>
-    <SmallPhoto><Photo photo={'image3'}/></SmallPhoto>
+    <SmallPhoto first><Photo photo={`./${photos[1]}`}/></SmallPhoto>
+    <SmallPhoto><Photo position={'center'} photo={`./${photos[2]}`}/></SmallPhoto>
   </Cell>
 </Flex>)`
  width: 100%;
