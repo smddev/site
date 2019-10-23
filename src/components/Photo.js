@@ -29,7 +29,7 @@ const StyledMagnifier = styled(Magnifier)`
 const StyledImg = styled(Image)`
   width: 100%;
   filter: grayscale(.4);
-  object-position: center;
+  object-position: ${p => p.position ? p.position : 'top'};
   object-fit: cover;
   height: 100%;
     
