@@ -7,9 +7,8 @@ import Carousel from '../components/Carousel';
 import {layout, space} from 'styled-system';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import cloudinary from 'cloudinary-core';
+import cloudinary from "../cloudinary";
 
-const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'smddev', secure: true});
 
 const photos = ['167_IMG_0993', '060_IMG_3611', '070_IMG_0934-flipped'];
 
@@ -103,7 +102,7 @@ const StyledCarousel = styled(({pStyles, className, onClick})=> <Carousel
 `
 
 const getImageUrl = (index) => {
-  const url = cloudinaryCore.url(`site/group-photos/${photos[index]}`);
+  const url = cloudinary.url(`site/group-photos/${photos[index]}`);
   return url;
 }
 

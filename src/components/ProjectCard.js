@@ -4,6 +4,7 @@ import cloudinary from "../cloudinary"
 import styled, {css} from 'styled-components';
 import {position, bottom, left, space} from 'styled-system';
 import {TechList} from '../components';
+import {DEFAULT_PROJECT_COVER} from "../utils";
 
 const Title = styled.h3`
   ${description};
@@ -86,7 +87,7 @@ const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
   &:before {
     content: '';
     ${cover};  
-    background-image: ${p => `url('${getImageUrl(typeof p.project.data.cover !== 'undefined' ? p.project.data.cover : 'close-up-code-codes-239898')}')`};
+    background-image: ${p => `url('${getImageUrl( p.project.data.cover || DEFAULT_PROJECT_COVER)}')`};
     background-size: cover;
     filter: brightness(75%);
   }  

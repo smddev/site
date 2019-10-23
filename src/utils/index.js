@@ -54,3 +54,5 @@ export const getField = (source, field) => {
     return obj ? obj[i] : null;
   }, source);
 }
+
+export const DEFAULT_PROJECT_COVER = 'close-up-code-codes-239898';

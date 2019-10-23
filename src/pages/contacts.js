@@ -48,6 +48,7 @@ const IconLink = styled(Link1)`
       margin-left: 47px;
       font-size: ${p => p.theme.fontSizes[11]}px;
       ${underline};
+      background-position: 0 37px !important;
   }
 `
 
