@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {space} from 'styled-system'
 import { Magnifier } from '../icons';
-import { Image } from "cloudinary-react";
+import { Image, Transformation } from "cloudinary-react";
 
 const Container = styled.div`
   display: block;
@@ -29,7 +29,7 @@ const StyledMagnifier = styled(Magnifier)`
 const StyledImg = styled(Image)`
   width: 100%;
   filter: grayscale(.4);
-  object-position: ${p => p.position ? p.position : 'top'};
+  object-position: center;
   object-fit: cover;
   height: 100%;
     
@@ -45,8 +45,9 @@ const Photo = ({ photo, className, position, onClick }) => {
   return <Container className={className} onClick={onClick(photo)}>
     <StyledImg
       position={position}
-      width="790"
-      publicId={`site/group-photos/${photo}`}/>
+      publicId={`site/group-photos/${photo}`}>
+      <Transformation width="784" height="470" crop="fill" gravity="faces"/>
+    </StyledImg>
     <StyledMagnifier />
   </Container>
 };
