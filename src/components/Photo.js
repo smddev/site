@@ -45,6 +45,7 @@ const Photo = ({ photo, className, position, onClick }) => {
   return <Container className={className} onClick={onClick(photo)}>
     <StyledImg
       position={position}
+      width="790"
       publicId={`site/group-photos/${photo}`}/>
     <StyledMagnifier />
   </Container>
