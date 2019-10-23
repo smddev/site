@@ -26,7 +26,7 @@ async function loadSiteData() {
             const files = await Promise.all(fileNames.map(file => readDoc(c.folder, file)))
             return {
                 name: c.name,
-                docs: _.sortBy(files, ['order', 'name'])
+                docs: _.sortBy(files, f=>f.data.order, f=>f.data.title)
             }
         }))
     const pages = await Promise.all(config.collections
