@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   
+  .ril__navButtons {
+    outline: none;
+  }
+  
   .aboutPage {
     h2 {
       ${h2Style};

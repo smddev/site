@@ -5,7 +5,7 @@ import {space} from 'styled-system'
 import { Magnifier } from '../icons';
 import { Image } from "cloudinary-react";
 
-const Container = styled.a`
+const Container = styled.div`
   display: block;
   position: relative;
 `;
@@ -26,7 +26,7 @@ const StyledMagnifier = styled(Magnifier)`
   }
 `;
 
-const StyledImg = styled.img`
+const StyledImg = styled(Image)`
   width: 100%;
   filter: grayscale(.4);
   object-position: ${p => p.position ? p.position : 'top'};
@@ -41,11 +41,11 @@ const StyledImg = styled.img`
   }
 `
 
-const Photo = ({ photo, className, position }) => {
-  return <Container className={className} href={photo} target="_blank" rel="noopener noreferrer">
+const Photo = ({ photo, className, position, onClick }) => {
+  return <Container className={className} onClick={onClick(photo)}>
     <StyledImg
       position={position}
-      src={photo}/>
+      publicId={`site/group-photos/${photo}`}/>
     <StyledMagnifier />
   </Container>
 };
