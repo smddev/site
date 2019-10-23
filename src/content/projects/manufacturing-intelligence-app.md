@@ -1,6 +1,6 @@
 ---
 order: '1'
-title: Manufacturing intelligence software 
+title: Manufacturing Intelligence Software 
 cover: factory.jpg
 industries:
   - Manufacturing
