@@ -9,7 +9,7 @@ services:
 techs:
   - Python
   - JavaScript
-description: Helps manufacturing companies to track, calculate and assess the efficiency of their plant equipment.
+description: Helps manufacturing companies to track, calculate and assess the efficiency of their equipment.
 ---
 On-premise software that helps manufacturing companies to track, calculate and assess the efficiency of their plant equipment. 
 
