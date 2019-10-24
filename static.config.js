@@ -147,7 +147,7 @@ const Document = ({Html, Head, Body, children, state: {routeInfo, siteData, rend
     const {data: rData} = routeInfo || {};
     const {item, page, why} = rData || {};
     const {data} = item || page || {};
-    const {title = 'Smart design'} = data || {};
+    const {title = 'Smart Design'} = data || {};
 
     return <Html lang="en-US">
         <Head>
@@ -155,7 +155,7 @@ const Document = ({Html, Head, Body, children, state: {routeInfo, siteData, rend
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
             {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
-            <title>{title}</title>
+            <title>{title.replace('&nbsp;', ' ')}</title>
         </Head>
         <Body>{children}</Body>
     </Html>
