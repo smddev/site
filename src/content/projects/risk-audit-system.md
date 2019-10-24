@@ -4,7 +4,7 @@ title: Professional Risk Audit System
 industries:
   - Energy industry
 services:
-  - test-automation
+  - software-development
 techs:
   - ReactJS
   - Redux
@@ -16,4 +16,4 @@ System consisted of two major parts: audit schedule to define audit dates, place
 
 ## Outcome
 
-Product was delivered to the leading producer of electricity and heat in the North-West region of Russia
+Product was delivered to the leading producer of electricity and heat in the North West region of Russia.
