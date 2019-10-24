@@ -2,7 +2,7 @@
 order: 2
 title: Professional Risk Audit System
 industries:
-  - Energy industry
+  - Manufacturing
 services:
   - test-automation
 techs:
