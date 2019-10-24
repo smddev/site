@@ -9,8 +9,10 @@ services:
 techs:
    - Meetings
    - MS Word + PowerPoint
-description: The goal of the audit was to make proposals for QA processes in order to lower expenses and increase quality of products. 
+description:  
 ---
+The goal of the audit was to make proposals for QA processes in order to lower expenses and increase quality of products.
+
 Over 30 meetings were held with developers, quality engineers and tech. support both in-house and 3rd party vendors.
 
 ## Outcome
