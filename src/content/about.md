@@ -6,5 +6,6 @@ intro: We are the team of coding enthusiasts emerged from former Sun Microsystem
 ---
 ## The purpose of our work is the successful development of the client's business
 
-We have extensive expertise in Web Service UI & backend development, Clustering, Messaging, Communications, Distributed computing, Test automation. Our team members contributed for years to Java Development Kit, Java Compatibility Kit
-and Java Virtual Machine. 
+We have extensive expertise in Web Service UI & backend development, Clustering, Messaging, Communications, Distributed computing, Test automation. 
+
+Our team members contributed for years to Java Development Kit, Java Compatibility Kit and Java Virtual Machine. 
