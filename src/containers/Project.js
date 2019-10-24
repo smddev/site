@@ -11,6 +11,7 @@ import {Markdown, TechList, Carousel} from '../components';
 import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 import background from '../OtherProjects.svg'
 import {withSidebar} from '../hocs'
+import {DEFAULT_PROJECT_COVER} from "../utils";
 
 
 const serviceList = (serviceIds, services) => {
@@ -20,8 +21,9 @@ const serviceList = (serviceIds, services) => {
 }
 
 const Cover= styled(AspectBox)`
-  background-image: url(${p=>cloudinary.url('site/project/' + p.item.data.cover)});
+  background-image: url(${p=>cloudinary.url('site/project/' + (p.item.data.cover || DEFAULT_PROJECT_COVER), {width: 800, height: 400, crop: 'fill'})});
   background-size: cover;
+  background-position: center;
   ${space}
 `
 

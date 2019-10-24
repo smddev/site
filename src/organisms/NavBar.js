@@ -4,7 +4,7 @@ import {Link} from '@reach/router'
 import {Box, Flex} from '@rebass/grid'
 import styled from 'styled-components'
 import logoImg from 'logo-white.png'
-import {PhoneLink} from '../components'
+import {EmailLink} from '../components'
 import {ArrowLink, MenuButton, Container, NavLink, withBackground} from '../atoms'
 import background from '../navbar.svg'
 
@@ -65,9 +65,11 @@ const Sandwich = styled(MenuButton)`
   }
 `
 
-const Phone = styled(PhoneLink)`
+const Email = styled(EmailLink)`
   margin-right: auto;
   line-height: 40px;
+  padding-top:1px;
+  font-size: ${p => p.theme.fontSizes[10]}px
 `
 
 const NavBar_Collapse = styled.div`
@@ -147,7 +149,7 @@ class NavBar extends Component {
             <NavBar_Back/>
             <NavBar_Backdrop {...{collapsed}}/>
             <NavBar_Collapse {...{collapsed}}>
-                <Phone/>
+                <Email/>
                 {routes && routes.map(r =>
                     <NavBar_Link key={r.name} to={r.path} fontFamily='base'>{r.name}</NavBar_Link>
                 )}
