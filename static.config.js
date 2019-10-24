@@ -84,9 +84,7 @@ const getRoutes = async () => {
         pageRoute('contacts', {
             projects: siteData.collections.project,
         }),
-        pageRoute('why', {
-            why: siteData.collections.why
-        }),
+        pageRoute('why'),
         pageRoute('about', {
             members: siteData.collections.member,
             facts: siteData.collections.facts,
@@ -145,16 +143,24 @@ const getSiteData = () => {
 const googleFontLink = (name, sizes) => `https://fonts.googleapis.com/css?family=${name}:${sizes}`
 const GoogleFont = ({name, sizes}) => <link href={googleFontLink(name, sizes)} rel="stylesheet"/>
 
-const Document = ({Html, Head, Body, children, siteData, renderMeta}) =>
-    <Html lang="en-US">
-    <Head>
-        <meta charSet="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
-        {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
-    </Head>
-    <Body>{children}</Body>
+const Document = ({Html, Head, Body, children, state: {routeInfo, siteData, renderMeta}}) => {
+    const {data: rData} = routeInfo || {};
+    const {item, page, why} = rData || {};
+    const {data} = item || page || {};
+    const {title = 'Smart design'} = data || {};
+
+    return <Html lang="en-US">
+        <Head>
+            <meta charSet="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+            {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
+            <title>{title}</title>
+        </Head>
+        <Body>{children}</Body>
     </Html>
+}
+
 
 export default {
     getSiteData,

@@ -1,6 +1,8 @@
 ---
 title: Why Smart Design
+
 ---
+
 * Both Fortune 500 and small companies are amongst our clients (ask for references)
 * We accept both the Fixed Price and Time & Materials contracts
 * We are a boutique software development company, and we treat each customer as a partner

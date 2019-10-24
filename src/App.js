@@ -62,6 +62,7 @@ const GlobalStyle = createGlobalStyle`
       }
       
       ul {
+        margin-top: 1em;
         list-style: none;
         padding: 0;
         li {

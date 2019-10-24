@@ -7,8 +7,7 @@ industries:
 services:
   
 techs:
-   - Meetings
-   - MS Word + PowerPoint
+      
 description:  
 ---
 The goal of the audit was to make proposals for QA processes in order to lower expenses and increase quality of products.

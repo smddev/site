@@ -54,7 +54,7 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
   <Subtitle mt={1} px={CARD_X_PADDING}>{project.data.description}</Subtitle>
   <Industries mt={2} industries={project.data.industries}/>
   <TechList small position='absolute' bottom={CARD_Y_PADDING}
-            left={CARD_X_PADDING} techs={project.data.techs.map(t => ({data: {title: t, slug: t}}))}/>
+            left={CARD_X_PADDING} techs={(project.data.techs || []).map(t => ({data: {title: t, slug: t}}))}/>
 </div>)`
   ${cover};
 `

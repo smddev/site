@@ -138,7 +138,12 @@ collections:
           - {label: "Phone", name: "phone", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-
+      - label: "Why"
+        name: "why"
+        file: "src/content/why.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Reasons", name: "reasons", widget: "markdown"}
   - name: "review"
     label: "Reviews"
     folder: "src/content/reviews"
@@ -150,12 +155,3 @@ collections:
       - {label: "Position", name: "position", widget: "string"}
       - {label: "Link", name: "link", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string", required: false}
-
-  - name: "why"
-    label: "Why"
-    folder: "src/content/reasons"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Reasons", name: "reasons", widget: "markdown"}

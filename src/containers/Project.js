@@ -52,8 +52,12 @@ const Project = ({item, techs, services}) => <Fragment>
     <Cover mt={5} mb={5} ratio={.5} item={item}></Cover>
 
     <Markdown source={item.content} escapeHtml={false}/>
-    <H2>Technologies</H2>
-    <TechList large mt={4} techs={techs} techIds={item.data.techs}/>
+  {item.data.techs &&
+    <Fragment>
+      <H2>Technologies</H2>
+      <TechList large mt={4} techs={techs} techIds={item.data.techs}/>
+    </Fragment>
+  }
 </Fragment>
 
 const ProjectWithSidebar = ({item, data}) => {
