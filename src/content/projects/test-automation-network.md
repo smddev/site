@@ -15,7 +15,7 @@ description: 20+ products testing unification.
 ---
 This framework addresses two main problems:
 * testing processes unification of 20+ products
-* allows junior test engineers develop autotests of good quality
+* allow junior test engineers to develop autotests of good quality
 
 ## Outcome
 
