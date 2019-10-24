@@ -19,4 +19,4 @@ This framework addresses two main problems:
 
 ## Outcome
 
-Our solution became corporate standard for test automation is a large US company (5000+ employees).
+Our solution became corporate standard for test automation in a large US company (5000+ employees).
