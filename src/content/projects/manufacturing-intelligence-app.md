@@ -6,6 +6,7 @@ industries:
   - Manufacturing
 services:
   - software-development
+  - data-science
 techs:
   - Python
   - JavaScript

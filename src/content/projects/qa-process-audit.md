@@ -5,7 +5,7 @@ cover: audit.jpg
 industries:
   - Telecom
 services:
-  - test-automation
+  
 techs:
    - Meetings
    - MS Word + PowerPoint
