@@ -13,8 +13,8 @@ techs:
   - Ionic
 description: This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. 
 ---
-This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. It’s available on iOS 7+, Android 4.1+, and Windows 10.
+This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. Available on iOS 7+, Android 4.1+, and Windows 10.
 
 ## Outcome
 
-Product was delivered to a large distribution company with branches in all major Russia cities
+Product was delivered to a large distribution company with branches in all major Russia cities.
