@@ -11,10 +11,12 @@ techs:
   - Laravel
   - MongoDB
   - Ionic
-description: This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. 
+description: Allows top management to remotely vote on important issues. 
 ---
-This mobile voting system allows top management to securely vote on financial and managerial decisions without having to be physically present in one location. It’s available on iOS 7+, Android 4.1+, and Windows 10.
+This mobile voting system allows top management to securely vote on financial and managerial issues without having to be physically present in one location. 
+
+Available on iOS 7+, Android 4.1+, and Windows 10.
 
 ## Outcome
 
-Product was delivered to a large distribution company with branches in all major Russia cities
+Product was delivered to a large distribution company with branches in all major cities of Russia.

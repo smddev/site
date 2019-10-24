@@ -14,14 +14,15 @@ techs:
   - Akka
   - AngularJS
   - Hadoop
-description: We’ve built a commercial Apache Hadoop Distribution for one of the Fortune 500 companies. 
+description: Hadoop services deployment and provisioning to a cluster up to 2000 nodes.  
 ---
+We’ve built a commercial Apache Hadoop Distribution for one of the Fortune 500 companies.
 It supports Hadoop services deployment and provisioning to a cluster up to 2000 nodes.
 
 ##  Key features
 
 * System health monitoring
-* Performance profiler for workflow-driven application hotspot breakdown
+* Performance profiler for workflow driven application hotspot breakdown
 * HBase explorer
 * Amazon EMR integration
 

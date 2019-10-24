@@ -6,6 +6,7 @@ industries:
   - IT
 services:
   - software-development
+  - data-science
 techs:
   - Java
   - Python

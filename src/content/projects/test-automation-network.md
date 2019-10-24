@@ -11,14 +11,12 @@ techs:
   - Python
   - Robot Framework
   - Atlassian Bamboo
-description: This framework addresses two main problems
-            * testing processes unification of 20+ products
-            * allows junior test engineers develop autotests of good quality
+description: 20+ products testing unification.           
 ---
-This framework addresses two main problems
-            * testing processes unification of 20+ products
-            * allows junior test engineers develop autotests of good quality
+This framework addresses two main problems:
+* testing processes unification of 20+ products
+* allow junior test engineers to develop autotests of good quality
 
 ## Outcome
 
-Our solution became the US-based company (5000+ employees) standard for test automation.
+Our solution became corporate standard for test automation in a large US company (5000+ employees).
