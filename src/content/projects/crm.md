@@ -17,7 +17,7 @@ The CRM implements tailoring order process workflow across studios and sewing fa
 
 It supports user roles, calendar, and administration functionality. 
 
-We’ve developed the backend for it.
+We’ve developed its backend.
 
 ## Outcome
 
