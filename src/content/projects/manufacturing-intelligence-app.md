@@ -15,4 +15,4 @@ On-premise software that helps manufacturing companies to track, calculate and a
 
 ## Outcome
 
-Product is in use by few big production companies in China
+Product is in use by few big production companies in China.
