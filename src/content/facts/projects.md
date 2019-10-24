@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 60+
-subtitle: successfully completed projects around the world
+title: $1M+
+subtitle: max project budget
 background: facts2
 ---
