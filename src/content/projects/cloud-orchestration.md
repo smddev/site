@@ -10,8 +10,8 @@ services:
 techs:
   - Java
   - J2EE
-  - Primefaces
-  - Wildfly
+  - PrimeFaces
+  - WildFly
   - MongoDB
   - MySQL
 description: The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.
