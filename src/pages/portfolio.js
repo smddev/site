@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {withRouteData} from 'react-static'
+import {withRouteData, withSiteData} from 'react-static'
 import {filterBy} from "../components";
 import {description, H1WithBackground} from "../atoms";
 import queryString from 'query-string'
@@ -22,24 +22,38 @@ const CardContainer = styled(Flex)`
 `
 
 const Cell = ({children}) => <Box width={[1, 1, 1, 1, 1 / 2]} px={'12px'} pb={'24px'}>
-		{children}
+    {children}
 </Box>
 
 //order of HOCs is important nested HOCs expect props from parent props
-export default withLayout()(withRouteData(withSidebar(withWindowLocation(({projects, industries, services, techs, location}) => {
-		const query = queryString.parse(location.search);
-		const selectedProjects = projects.filter(filterBy(query));
+export default withLayout()(withRouteData(withSidebar(withSiteData(withWindowLocation(({projects, industries, services, techs, location, routes}) => {
+    const query = queryString.parse(location.search);
+    const selectedProjects = projects.filter(filterBy(query));
+    const data = {
+        industry: industries,
+        service: services,
+        tech: techs
+    }
+    var tag = null
+    for (var key in query) {
+        if (data[key]) {
+            const selector = data[key].find(e => e.data.slug == query[key])
+            if (selector) {
+                tag = selector.data.title
+                break
+            }
+        }
+    }
 
-		return <Fragment>
-				<H1WithBackground>Portfolio</H1WithBackground>
-				<Description>
-						For 7 years our specialists have developed more than 70 different projects.
-						The most successful and interesting solutions are presented here.
-				</Description>
-				<CardContainer>
-						{selectedProjects.map((p, i) => <Cell key={i}>
-								<ProjectCard project={p}/>
-						</Cell>)}
-				</CardContainer>
-		</Fragment>
-}))))
+    return <Fragment>
+        <H1WithBackground>Portfolio</H1WithBackground>
+        <Description>
+            These are our projects {tag ? 'with ' + tag : ''}:
+        </Description>
+        <CardContainer>
+            {selectedProjects.map((p, i) => <Cell key={i}>
+                <ProjectCard project={p}/>
+            </Cell>)}
+        </CardContainer>
+    </Fragment>
+})))))
