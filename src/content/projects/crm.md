@@ -4,7 +4,6 @@ title: CRM for Tailoring Studios
 cover: tailoring.jpg
 industries:
   - Retail
-  - Distribution 
 services:
   - software-development
 techs:

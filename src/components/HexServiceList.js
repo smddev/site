@@ -53,7 +53,7 @@ const HexServiceList = ({services, theme, className}) => {
                         <Link
                             fontSize={[3,4]}
                             lineHeight={[3,4]}
-                            href={`/portfolio?service=${service.data.slug}`}>
+                            to={`/portfolio?service=${service.data.slug}`}>
                             {service.data.title}
                         </Link>
                     </ServicesHex>

@@ -119,7 +119,7 @@ export const underline = css`
     background-size: 4px 1px;
 `
 
-export const Link2 = styled.a`
+export const Link2 = styled(Link)`
     text-decoration: none;
     color: ${props => props.theme.colors.white[0]};
     

@@ -4,7 +4,6 @@ title: Enterprise Voting System
 cover: voting.jpg
 industries:
   - Retail
-  - Distribution 
 services:
   - software-development
 techs:
