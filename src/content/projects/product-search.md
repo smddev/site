@@ -13,7 +13,7 @@ techs:
   - MongoDB
   - Elasticsearch
   - Kubernetes 
-description: Domain-oriented search engine that recognizes parameters of electronic components in customer-written search line and then finds the relevant product in catalog.
+description: Domain-oriented search engine that recognizes parameters of electronic components in customer-written search lines
 ---
 Large electronic component distributor company approached us with a problem of automating their online purchase workflow. 
 

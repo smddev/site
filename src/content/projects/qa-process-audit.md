@@ -5,14 +5,12 @@ cover: audit.jpg
 industries:
   - Telecom
 services:
-  
 techs:
-      
-description:  
+description:  Revision and improvement of the quality control processes on customer side
 ---
 The goal of the audit was to make proposals for QA processes in order to lower expenses and increase quality of products.
 
-Over 30 meetings were held with developers, quality engineers and tech. support both in-house and 3rd party vendors.
+We've held over 30 meetings with the developers, quality engineers and tech. support both in-house and 3rd party vendors.
 
 ## Outcome
 
