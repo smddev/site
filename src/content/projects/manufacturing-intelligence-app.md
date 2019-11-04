@@ -1,7 +1,7 @@
 ---
 order: 1
 title: Manufacturing Intelligence Software 
-cover: factory.jpg
+cover: steel-plant.jpg
 industries:
   - Manufacturing
 services:
