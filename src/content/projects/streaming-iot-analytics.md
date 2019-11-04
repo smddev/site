@@ -3,7 +3,7 @@ order: 4
 title: Streaming IoT Analytics Platform
 cover: iot.jpg
 industries:
-  - IT
+  - Manufacturing
 services:
   - software-development
 techs:

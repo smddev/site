@@ -10,7 +10,6 @@ services:
 techs:
   - Python
   - Robot Framework
-  - Atlassian Bamboo
 description: 20+ products testing unification.           
 ---
 This framework addresses two main problems:

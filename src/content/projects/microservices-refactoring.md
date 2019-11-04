@@ -1,6 +1,7 @@
 ---
 order: 7
 title: Migration from ESB to microservices
+cover: microservices.jpg
 industries:
   - Telecom
 services:

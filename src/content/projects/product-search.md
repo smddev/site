@@ -1,6 +1,7 @@
 ---
 order: 3
 title: ML-powered product search - guess what customers did mean
+cover: electronic-parts.jpg
 industries:
   - Retail
 services:

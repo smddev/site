@@ -55,4 +55,4 @@ export const getField = (source, field) => {
   }, source);
 }
 
-export const DEFAULT_PROJECT_COVER = 'close-up-code-codes-239898';
+export const DEFAULT_PROJECT_COVER = 'coding-screen';

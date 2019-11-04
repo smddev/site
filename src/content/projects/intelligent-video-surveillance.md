@@ -1,7 +1,7 @@
 ---
 order: 2
-title: Intelligent Video Surveillance 
-cover: factory.jpg
+title: Artificial vision for process and quality control 
+cover: factory-worker.jpg
 industries:
   - Manufacturing
 services:

@@ -1,6 +1,7 @@
 ---
 order: 10
 title: Professional Risk Audit System
+cover: power-station.jpg
 industries:
   - Manufacturing
 services:

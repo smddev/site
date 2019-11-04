@@ -1,6 +1,7 @@
 ---
 order: 6
 title: Travel planner and blog platform
+cover: travel.jpg
 industries:
   - Travel
 services:
