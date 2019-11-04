@@ -89,7 +89,7 @@ const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
     ${cover};  
     background-image: ${p => `url('${getImageUrl( p.project.data.cover || DEFAULT_PROJECT_COVER)}')`};
     background-size: cover;
-    filter: brightness(75%);
+    filter: brightness(40%);
   }  
 `
 

@@ -1,7 +1,7 @@
 ---
 order: 8
 title: QA for backend systems
-cover: audit.jpg
+cover: microscope.jpg
 industries:
   - telecom
 services:
