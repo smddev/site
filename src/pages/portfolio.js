@@ -11,11 +11,6 @@ import ProjectCard from "../components/ProjectCard"
 import {withSidebar} from "../hocs"
 
 
-const Description = styled.div`
-  margin-top: ${p => p.theme.space[5]}px};
-  ${description}
-`
-
 const CardContainer = styled(Flex)`
   margin: 80px -12px 0; 
   flex-wrap: wrap;
@@ -47,9 +42,6 @@ export default withLayout()(withRouteData(withSidebar(withSiteData(withWindowLoc
 
     return <Fragment>
         <H1WithBackground>Portfolio</H1WithBackground>
-        <Description>
-            These are our projects {tag ? 'with ' + tag : ''}:
-        </Description>
         <CardContainer>
             {selectedProjects.map((p, i) => <Cell key={i}>
                 <ProjectCard project={p}/>

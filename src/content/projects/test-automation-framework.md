@@ -3,7 +3,6 @@ order: 13
 title: Test Automation Framework
 cover: test-automation.jpg
 industries:
-  - Real estate
   - Finance 
 services:
   - test-automation

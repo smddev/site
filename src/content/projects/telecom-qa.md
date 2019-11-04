@@ -3,7 +3,7 @@ order: 8
 title: QA for backend systems
 cover: microscope.jpg
 industries:
-  - telecom
+  - Telecom
 services:
   - test-automation
 techs:
