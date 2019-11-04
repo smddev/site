@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 14
 title: Corporate QA Processes Audit
 cover: audit.jpg
 industries:

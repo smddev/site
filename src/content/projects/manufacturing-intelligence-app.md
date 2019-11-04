@@ -1,15 +1,18 @@
 ---
-order: '1'
+order: 1
 title: Manufacturing Intelligence Software 
 cover: factory.jpg
 industries:
   - Manufacturing
 services:
   - software-development
-  - data-science
 techs:
   - Python
+  - Pandas
   - JavaScript
+  - React
+  - GraphQL
+  - MongoDB
 description: Helps manufacturing companies to track, calculate and assess the efficiency of their equipment.
 ---
 On-premise software that helps manufacturing companies to track, calculate and assess the efficiency of their plant equipment. 

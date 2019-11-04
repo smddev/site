@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 10
 title: Professional Risk Audit System
 industries:
   - Manufacturing

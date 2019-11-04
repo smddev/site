@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 11
 title: Enterprise Voting System
 cover: voting.jpg
 industries:

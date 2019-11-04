@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 9
 title: Commercial Apache Hadoop Distribution
 cover: hadoop.jpg
 industries:

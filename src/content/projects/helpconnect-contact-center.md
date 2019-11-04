@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 15
 title: HelpConnect Contact Center
 cover: helpconnect.jpg
 industries:

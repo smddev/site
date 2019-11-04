@@ -1,5 +1,5 @@
 ---
-order: 8
+order: 12
 title: CRM for Tailoring Studios 
 cover: tailoring.jpg
 industries:
