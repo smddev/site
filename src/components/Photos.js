@@ -10,7 +10,7 @@ import 'react-image-lightbox/style.css';
 import cloudinary from "../cloudinary";
 
 
-const photos = ['167_IMG_0993', '060_IMG_3611', '070_IMG_0934-flipped'];
+const photos = ['group_photo_1.jpg', 'group_photo_2.jpg', 'group_photo_3.jpg'];
 
 const Cell = styled(Box)`
   ${layout}
