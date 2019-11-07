@@ -226,8 +226,8 @@ export const Text = styled.span`
 `
 
 export const description = css`
-  font-size: ${p => p.theme.fontSizes[3]}px;
-  line-height: ${p => p.theme.lineHeights[3]};
+  font-size: ${p => p.theme.fontSizes[11]}px;
+  line-height: ${p => p.theme.lineHeights[11]};
   font-weight: ${p => p.theme.fontWeights[0]};
   color: white;
 

@@ -92,7 +92,7 @@ const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
   &:before {
     content: '';
     ${cover};
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%,rgba(0,0,0,0.80) 100%); 
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.40) 50%, rgba(0,0,0,0.90)); 
   }
 `
 
