@@ -35,14 +35,13 @@ const Industries = styled(({industries, className}) => <Subtitle {...{className}
 `
 
 const IMAGE_PATH = 'site/project'
-const getImageUrl = (name) => cloudinary.url(`${IMAGE_PATH}/${name}`, {width: 320, crop: "scale"})
+const getImageUrl = (name) => cloudinary.url(`${IMAGE_PATH}/${name}`, {width: 550, crop: "scale"})
 
 const cover = css`
   white-space: normal;
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: ${p => p.theme.colors.gray[0]};
 `
 
 const preventDefault = (e) => {
@@ -57,6 +56,7 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
             left={CARD_X_PADDING} techs={(project.data.techs || []).map(t => ({data: {title: t, slug: t}}))}/>
 </div>)`
   ${cover};
+  background-color: ${p => p.theme.colors.gray[0]};
 `
 
 
@@ -79,18 +79,21 @@ const VoidProjectCard = styled(({project, className}) => <div {...{className}}>
   <Industries position='absolute' bottom={CARD_Y_PADDING} industries={project.data.industries}/>
 </div>)`
   ${cover};
-  transition: opacity .5s;  
+  background-color: ${p => p.theme.colors.gray[0]};
+  background-image: ${p => `url('${getImageUrl( p.project.data.cover || DEFAULT_PROJECT_COVER)}')`};
+  background-size: cover;
+  transition: opacity .5s;
+    
   opacity: 1;
   ${StyledProjectCard}:hover & {
     opacity: 0;
   }
+  
   &:before {
     content: '';
-    ${cover};  
-    background-image: ${p => `url('${getImageUrl( p.project.data.cover || DEFAULT_PROJECT_COVER)}')`};
-    background-size: cover;
-    filter: brightness(40%);
-  }  
+    ${cover};
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%,rgba(0,0,0,0.80) 100%); 
+  }
 `
 
 export default StyledProjectCard;
