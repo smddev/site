@@ -153,6 +153,16 @@ const Document = ({Html, Head, Body, children, state: {routeInfo, siteData, rend
         <Head>
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111454437-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-111454437-1');
+            </script>
+
             <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
             {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
             <title>{title.replace('&nbsp;', ' ')}</title>
