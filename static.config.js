@@ -155,11 +155,9 @@ const Document = ({Html, Head, Body, children, state: {routeInfo, siteData, rend
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_KEY}`}></script>
-            <script async src="analytics/google.js"></script>
-
-
-            <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_KEY}`}/>
+            <script async src="analytics/google.js"/>
+            <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"/>
             {_.keys(theme.fonts).map(k => <GoogleFont key={k} name={theme.fonts[k]} sizes={theme.fontWeights.join(',')}/>)}
             <title>{title.replace('&nbsp;', ' ')}</title>
         </Head>
