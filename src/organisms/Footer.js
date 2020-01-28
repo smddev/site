@@ -7,8 +7,8 @@ import {Flex, Box} from '@rebass/grid';
 import {space} from 'styled-system';
 import background from '../calculateCost.svg'
 import backgroundMobile from '../calculateCostMobile.svg'
-import {EmailContext, validateEmail} from "../utils";
-import {navigate} from '@reach/router'
+import {EmailContext, validateEmail, YEAR} from "../utils";
+import {navigate} from '@reach/router';
 
 const Description = styled(Subtitle)`width: 90%`;
 const Email = styled(Input)`
@@ -172,9 +172,11 @@ const FooterContacts = styled(({className}) => <Container {...{
   ${space};
 `
 
-const Copyright = styled(({className}) => <Container {...{className}}>
-  <Subtitle>© 2019 Smart Design. All rights reserved.</Subtitle>
-</Container>)`${space}`
+const Copyright = styled(({className}) => {
+  return <Container {...{className}}>
+    <Subtitle>© {YEAR} Smart Design. All rights reserved.</Subtitle>
+  </Container>
+})`${space}`
 
 export default styled(({noForm, className}) => <div {...{className}}>
   {!noForm && <CalculateCost/>}

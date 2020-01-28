@@ -58,3 +58,5 @@ export const getField = (source, field) => {
 export const DEFAULT_PROJECT_COVER = 'coding-screen';
 
 export const GOOGLE_ANALYTICS_KEY = 'UA-111454437-1'
+
+export const YEAR = new Date().getFullYear();
