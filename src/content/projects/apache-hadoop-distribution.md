@@ -1,6 +1,6 @@
 ---
 order: 9
-title: Commercial Apache Hadoop Distribution
+title: Коммерческий дистрибутив Apache Hadoop
 cover: hadoop.jpg
 industries:
   - Telecom
@@ -14,7 +14,7 @@ techs:
   - Akka
   - AngularJS
   - Hadoop
-description: Hadoop services deployment and provisioning to a cluster up to 2000 nodes.  
+description: Модуль развертывания и мониторинга кластера из 2000 нод.
 ---
 We’ve built a commercial Apache Hadoop Distribution for one of the Fortune 500 companies.
 It supports Hadoop services deployment and provisioning to a cluster up to 2000 nodes.

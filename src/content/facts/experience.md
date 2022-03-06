@@ -1,6 +1,6 @@
 ---
 order: 0
 title: 10 years
-subtitle: on the market of custom software development
+subtitle: на рынке разработки ПО
 background: facts1
 ---

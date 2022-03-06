@@ -1,6 +1,6 @@
 ---
 order: 1
 title: $1M+
-subtitle: max project budget
+subtitle: макс. бюджет проектов
 background: facts2
 ---

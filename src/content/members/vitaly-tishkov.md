@@ -1,13 +1,12 @@
 ---
 order: 0
-title: Vitaly Tishkov
-role: CEO
+title: Виталий Тишков
+role: Генеральный директор
 avatar: tishkov
 category: management
 email: vitaly.tishkov@smddev.com
 ---
-Vitaly has over 15 years experience in software development and management.
-
-Prior to co-founding Smart Design Vitaly held various technical and management positions at Sun Microsystems, Intel Corporation and various outsourcing companies.
-
-He holds a MS degree in Computer Science from St. Petersburg State University, Russia.
+Руководитель с 15-летним опытом управления командами IT разработчиков.  
+Получил многолетний опыт работы в ведущих технологических компаниях Sun Microsystems и Intel. 
+Окончил Математико-Механический фаультет Санкт-Петербургского университета, 
+имеет степень Магистра компьютерных наук.

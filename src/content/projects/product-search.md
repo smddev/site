@@ -1,9 +1,9 @@
 ---
 order: 3
-title: AI-powered product search - guess what customers mean
+title: Интеллектуальная поисковая система электронных компонентов
 cover: electronic-parts.jpg
 industries:
-  - Retail
+  - Ecommerce
 services:
   - data-science
   - software-development
@@ -13,20 +13,25 @@ techs:
   - MongoDB
   - Elasticsearch
   - Kubernetes 
-description: Domain-oriented search engine that recognizes parameters of electronic components in customer-written search lines
+description: Предметно-ориентированный поисковый движок, способный распознавать характеристики электронных
+компонентов в поисковых запросах клиентов.
 ---
-Large electronic component distributor company approached us with a problem of automating their online purchase workflow. 
+Компания-заказчик, крупный дистрибьютор электронных компонентов, поставила нам задачу повысить эффективность работы отдела продаж.
+Нам удалось ее решить за счет существенного увеличения качества поисковой системы электронных компонентов
+которой пользуются сотрудники компании при обработке заказов от клиентов.
 
-## Challenges
+## Проблема
 
-Their customers are used to submit the lists with descriptions of products to be ordered in freely written form that has to be linked with a real product by human. 
+Клиенты присылают списки товаров для закупки написанные в произвольной текстовой форме, поскольку в промышленности не существует
+единого общепринятого стандарта наименования компонентов.
 
-## Solution
+## Решение
+В рамках проекта мы построили Data Warehouse в котором регулярно собирались данные о миллионах различных продуктов
+от различных поставщиков. На его основе была создана поисковая система, которая, помимо прочего, включает в себя
+натренированную NLP модель для распознавания именованных сущностей (NER). 
+Данная модель была применена для выделения в поисковой строке ключевых характеристик компонентов, таких как размеры, типы корпусов, емкости и рабочие напряжения.  
+За счет определения характеристик удалось существенно улучшить качество поиска.
 
-We have developed Natural Language Processing (NLP) model that does Named Entity Recognition (NER) over customer search lines 
-and identifies various kinds of product parameters, such as electrical units of measure and their relevant values, part numbers, dimensions, case codes e.t.c.
-The recognized product parameters then were used for relevant product search.
 
-## Outcome
-
-The developed model has achieved ~90% accuracy in identifying electronic parts parameters.
+## Результат
+Разработанная нами система достигала ~90% точности в определении характеристик электронных компонентов.

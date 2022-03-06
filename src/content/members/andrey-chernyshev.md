@@ -1,11 +1,13 @@
 ---
 order: 1
 title: Andrey Chernyshev
-role: CTO
+role: Технический директор
 avatar: chernyshev
 category: management
 email: andrey.chernyshev@smddev.com
 ---
-Andrey is a leading  specialist  in architecture and development for communications, 
-data storage and processing. He is a server side  Java & Scala technology expert with 
-long term experience in research and technical management of development teams at Sun Microsystems and Intel. He holds a MS degree in Physics from St. Petersburg State University, Russia.
+Ведущий специалист - Full-stack разработчик, имеющий за плечами 20 лет опыта построения и руководства
+командами инженеров, включая работу в сложных интернациональных проектах (РФ/США/Китай/Индия/Румыния).  
+Разрабатывает Web-сервисы, решает задачи по Data Science / машинному обучению. 
+Окончил Санкт-Петербургский университет. Получил многолетний опыт работы в ведущих технологических
+компаниях Sun Microsystems и Intel. 
