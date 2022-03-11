@@ -1,5 +1,5 @@
 ---
-title: Telecom
+title: Телеком
 thumbnail:
 icon: satellite 
 ---

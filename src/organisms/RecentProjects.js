@@ -8,8 +8,8 @@ import {Carousel} from '../components';
 import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 
 const Title = styled(({className}) => <div {...{className}}>
-  <H1 mt={3}>Latest projects</H1>
-  <Subtitle width={'60%'}>60+ successfully completed projects around the world</Subtitle>
+  <H1 mt={3}>Последние проекты</H1>
+  <Subtitle width={'60%'}>60+ успешно выполненных проектов по всему миру</Subtitle>
 </div>)`
 ${display}
 ${space}

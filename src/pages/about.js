@@ -51,7 +51,7 @@ const ManagementSection = styled(withBackground(mgRight, 708, 542, true)(
   withBackground(mgLeft, 274, 343)(({ className, members }) => (
     <Container {...{ className }}>
       <Box width={1} mb={-2}>
-        <StyledH2>Management</StyledH2>
+        <StyledH2>Менеджмент</StyledH2>
       </Box>
 
       <MembersGallery mt={[0, 1, 3, 4]} members={members} />

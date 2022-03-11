@@ -1,6 +1,6 @@
 ---
 order: 7
-title: Migration from ESB to microservices
+title: Миграция с ESB к микросервисам
 cover: microservices.jpg
 industries:
   - Telecom
@@ -12,9 +12,9 @@ techs:
   - Kubernetes
   - Docker
   - Tibco
-description: Breaking monolith ESB system of large telecom operator into microservices.
+description: Разбиение монолита ESB-системы крупного телекоммуникационного оператора на микросервисы.
 ---
-We helped our client, large telecom operator, to expand their modem business from serving individuals to legal entities.
-Their existing monolith system was implemented on top of ESB and was no longer be able to meet the challenges of rapidly expanding functionality.
-Our team has tackled the challenge by gradually breaking the monolith system into a set of microservices while applying the best known technologies.
-This has helped to preserve the existing business-critical functionality while opening up the numerous opportunities to add more features and support new business needs.
+Мы помогли нашему клиенту, крупному оператору связи, расширить свой модемный бизнес с обслуживания физических лиц до обслуживания юридических.
+Существующая монолитная система была реализована на базе ESB и уже не справлялась с задачами быстрого расширения функциональности.
+Наша команда решила эту задачу, постепенно разбивая монолитную систему на множество микросервисов, применяя при этом лучшие технологии.
+Это помогло сохранить существующие критически важные для бизнеса функции, открыв при этом многочисленные возможности для добавления дополнительных функций и поддержки новых потребностей бизнеса.

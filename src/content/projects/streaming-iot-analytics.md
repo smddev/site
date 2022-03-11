@@ -1,6 +1,6 @@
 ---
 order: 4
-title: Streaming IoT Analytics Platform
+title: Платформа потоковой аналитики IoT
 cover: iot.jpg
 industries:
   - Manufacturing
@@ -14,8 +14,8 @@ techs:
   - Elasticsearch
   - Kubernetes
 members:
-description: An industrial grade storage and analytics IoT platform that supports automatic deployment to public and private clouds. 
+description: IoT-платформа для хранения и аналитики промышленного уровня, поддерживающая автоматическое развертывание в публичных и частных облаках.
 ---
-Our team has helped our customer to develop and deploy streaming analytic platform that adapts the latest Big Data, Machine Learning and Cloud Computing technologies into a turn-key solution for IIoT. 
-The platform deploys in Cloud, Edge or IoT gateways supporting dynamically distributed analytics and can be customized into specific use cases through declarative configurations. 
-It is designed to enable intelligent industrial operations that are secure, reliable and scalable.
+Наша команда помогла клиенту разработать и внедрить потоковую аналитическую платформу, которая адаптирует новейшие технологии Big Data, машинного обучения и облачных вычислений в готовое решение для IIoT. 
+Платформа развёртывается в облаке, Edge или IoT-шлюзах, поддерживая динамически распредёленную аналитику, и может быть настроена под конкретные случаи использования с помощью декларативных конфигураций.
+Она предназначена для обеспечения безопасных, надёжных и масштабируемых интеллектуальных промышленных операций.

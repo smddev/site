@@ -96,12 +96,12 @@ class ContactForm extends Component {
         return <form {...{className}} action="/form-submit" name="contact" method="POST" data-netlify="true"
               ref={this.formRef}>
             <input type="hidden" name="form-name" value="contact" />
-            <Input name="name" placeholder={'Name'}/>
+            <Input name="name" placeholder={'Имя'}/>
             <Input mt={6} value={email} onChange={this.handleChange} type={'text'} name="email"
-                   placeholder={'Your email*'}/>
-            <Comment name="message" mt={6} placeholder={'Comment'}/>
+                   placeholder={'Ваш email*'}/>
+            <Comment name="message" mt={6} placeholder={'Комментарий'}/>
 
-            <Button disabled={!validateEmail(email)} onClick={this.formSubmit} mt={6}>Submit</Button>
+            <Button disabled={!validateEmail(email)} onClick={this.formSubmit} mt={6}>Отправить</Button>
         </form>
     }
 }

@@ -1,6 +1,6 @@
 ---
 order: 10
-title: Professional Risk Audit System
+title: Система аудита профессиональных рисков
 cover: power-station.jpg
 industries:
   - Manufacturing
@@ -10,12 +10,12 @@ techs:
   - ReactJS
   - Redux
   - Redux-Saga
-description: Planning and carrying out professional risk audits. 
+description: Планирование и проведение профессиональных аудитов рисков.
 ---
-This web application allows planning and carrying out professional risk audits. 
+Это веб-приложение позволяет планировать и проводить профессиональные аудиты рисков.
 
-It consists of two major parts: audit schedule (to define audit dates, places and responsible persons for checks) and a block dedicated to audit reports (to assess professional risks found during check routine, upload photos, assign responsible for fixing.) 
+Оно состоит из двух основных частей: графика аудита (для определения дат, мест и ответственных лиц за проверки) и блока, посвящённого отчётам по аудиту (для оценки профессиональных рисков, обнаруженных в ходе проверки, загрузки фотографий, назначения ответственных за исправление).
 
-## Outcome
+## Результат
 
-Product was delivered to the leading producer of electricity and heat in the North West region of Russia.
+Продукт был поставлен ведущему производителю электрической и тепловой энергии в Северо-Западном регионе России.

@@ -151,9 +151,9 @@ class NavBar extends Component {
             <NavBar_Collapse {...{collapsed}}>
                 <Email/>
                 {routes && routes.map(r =>
-                    <NavBar_Link key={r.name} to={r.path} fontFamily='base'>{r.name}</NavBar_Link>
+                    <NavBar_Link key={r.name} to={r.path} fontFamily='ru'>{r.name}</NavBar_Link>
                 )}
-                <NavBar_ArrowLink to={'/contacts'}>Send request</NavBar_ArrowLink>
+                <NavBar_ArrowLink to={'/contacts'}>Отправить заявку</NavBar_ArrowLink>
             </NavBar_Collapse>
             <Sandwich {...{collapsed}} onClick={this.handleCollapse}/>
         </NavContainer>

@@ -51,7 +51,7 @@ const HG=withTheme(({theme,stages}) =>
 const Stages = withBackground(background, 538, 433)(({stages, className}) => <Container
        flexWrap='wrap' className={className} alignItems='center'>
     <Box width={[1, 1, 1, 1, 1/4]}>
-        <H1>Stages of work</H1>
+        <H1>Этапы работ</H1>
     </Box>
     <Flex width={[1, 1, 1, 1, 3/4]}
           mt={[3, 5, 6, 6, '0px']}

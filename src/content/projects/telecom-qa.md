@@ -1,6 +1,6 @@
 ---
 order: 8
-title: QA for backend systems
+title: QA для бэкенд систем
 cover: microscope.jpg
 industries:
   - Telecom
@@ -15,6 +15,6 @@ techs:
   - Testlink
   - Consul
   - Tibco
-description: Quality management and test automation for backend systems of telecom operator 
+description: Контроль качества и автоматизация тестирования бэкэнд-систем телекоммуникационного оператора
 ---
-Our team has helped to set up the process of quality management for Business Support System (BSS) for top-tier Russian telecom operator.
+Наша команда помогла наладить процесс контроля качества системы поддержки бизнеса (BSS) для высококлассного российского оператора связи.

@@ -1,17 +1,17 @@
 ---
 order: 14
-title: Corporate QA Processes Audit
+title: Аудит корпоративных QA процессов
 cover: audit.jpg
 industries:
   - Telecom
 services:
 techs:
-description:  Revision and improvement of the quality control processes on customer side
+description: Пересмотр и улучшение процессов контроля качества на стороне клиента
 ---
-The goal of the audit was to make proposals for QA processes in order to lower expenses and increase quality of products.
+Цель аудита заключалась в том, чтобы внести предложения по QA процессам с целью снижения затрат и повышения качества продукции.
 
-We've held over 30 meetings with the developers, quality engineers and tech. support both in-house and 3rd party vendors.
+Мы провели более 30 встреч с разработчиками, инженерами по качеству и тех. поддержкой, как собственной, так и сторонних поставщиков.
 
-## Outcome
+## Результат
 
-A detailed report was delivered to a top-tier telecom provider. Our recommendations were not limited to QA - developers also had got quite a lot to improve in their work.
+Подробный отчет был передан высококлассному телекоммуникационному провайдеру. Наши рекомендации не ограничивались QA - разработчикам также было что улучшить в своей работе.

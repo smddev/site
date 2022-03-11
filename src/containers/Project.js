@@ -30,7 +30,7 @@ const Cover= styled(AspectBox)`
 
 const ProjectCarousel = withBackground(background, 937, 542)(styled(({projects, className}) =>
     <Box width={1}{...{className}}>
-        <H1> Other projects</H1>
+        <H1> Другие проекты</H1>
         <Carousel carousel={true} mt={6} width={400} height={400 * PROJECT_CARD_RATIO}>
             {projects.
             //reduce((acc, e) => acc.concat([e,e]), []).
@@ -54,7 +54,7 @@ const Project = ({item, techs, services}) => <Fragment>
     <Markdown source={item.content} escapeHtml={false}/>
   {item.data.techs &&
     <Fragment>
-      <H2>Technologies</H2>
+      <H2>Технологии</H2>
       <TechList large mt={4} techs={techs} techIds={item.data.techs}/>
     </Fragment>
   }

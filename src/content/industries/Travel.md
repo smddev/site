@@ -1,5 +1,5 @@
 ---
-title: Travel
+title: Путешествия
 thumbnail:
 icon: tickets 
 ---

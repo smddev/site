@@ -1,6 +1,6 @@
 ---
 order: 16
-title: Web Surveillance System
+title: Система веб-наблюдения
 cover: video.jpg
 industries:
   - Construction
@@ -10,12 +10,12 @@ services:
 techs:
   - Flash
   - Java
-description: Security for over 1 hectare industrial construction site.
+description: Охрана промышленной строительной площадки площадью более 1 га.
 ---
-Web Surveillance system with indexed video storage was built to provide security and progress visibility over 1 hectare industrial construction site.
+Система веб-наблюдения с индексированным видеохранилищем была построена для обеспечения безопасности и наблюдения за ходом работ на промышленной строительной площадке площадью 1 га.
 
-We used 5MP (2592х1944) IP cameras to minimize their quantity.
+Мы использовали 5MP (2592х1944) IP камеры для минимизации их количества.
 
-## Outcome
+## Результат
 
-The system was used for several years until the construction works have been finished.
+Система использовалась в течение нескольких лет, пока не были завершены строительные работы.

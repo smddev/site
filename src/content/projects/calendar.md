@@ -1,7 +1,7 @@
 ---
 order: 3
 title: Корпоративный календарь
-cover: electronic-parts.jpg
+cover: schedule.jpg
 industries:
   - Ecommerce
 services:

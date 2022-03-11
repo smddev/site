@@ -1,5 +1,5 @@
 ---
-title: Software at all&nbsp;times
-subtitle: Development for Web, Mobile and IoT
+title: Программное обеспечение&nbsp;в любое время
+subtitle: Разработка для Web, Mobile и IoT
 ---
-Analytical study of the concept, technical specifications, software product implementation and technical support.
+Аналитическое исследование концепции, технических спецификаций, внедрение программного продукта и техническая поддержка.

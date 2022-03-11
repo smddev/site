@@ -41,7 +41,7 @@ export default withLayout()(withRouteData(withSidebar(withSiteData(withWindowLoc
     }
 
     return <Fragment>
-        <H1WithBackground>Portfolio</H1WithBackground>
+        <H1WithBackground>Портфолио</H1WithBackground>
         <CardContainer>
             {selectedProjects.map((p, i) => <Cell key={i}>
                 <ProjectCard project={p}/>

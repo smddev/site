@@ -1,6 +1,6 @@
 ---
 order: 12
-title: CRM for Tailoring Studios 
+title: CRM для Tailoring Studios 
 cover: tailoring.jpg
 industries:
   - Retail
@@ -10,14 +10,14 @@ techs:
   - Java
   - Spring
   - MongoDB
-description: Implements tailoring order process workflow across studios and sewing factories.
+description: Внедряет процесс обработки заказов на пошив одежды в ателье и на швейных фабриках.
 ---
-The CRM implements tailoring order process workflow across studios and sewing factories. 
+CRM реализует процесс обработки заказов на пошив одежды в ателье и на швейных фабриках.
 
-It supports user roles, calendar, and administration functionality. 
+Поддерживает роли пользователей, календарь, и функции администрирования. 
 
-We’ve developed its backend.
+Мы разрабатывали бэкенд.
 
-## Outcome
+## Результат
 
-The CRM is being used by our customer to communicate with various sewing factories and studios.
+CRM используется нашим клиентом для коммуникации с различными швейными фабриками и ателье.

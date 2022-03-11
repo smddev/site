@@ -25,7 +25,7 @@ const CARD_X_PADDING = '40px';
 const CARD_Y_PADDING = '24px';
 
 const Industries = styled(({industries, className}) => <Subtitle {...{className}}>
-  {industries.join(', ')}
+  {industries?.join(', ')}
 </Subtitle>)`
   ${position};
   ${bottom};

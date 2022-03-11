@@ -120,19 +120,19 @@ const getSiteData = () => {
     const routes = [
         {
             path: '/portfolio',
-            name: 'Portfolio'
+            name: 'Портфолио'
         },
         {
             path: '/why',
-            name: 'Why us?'
+            name: 'Почему мы?'
         },
         {
             path: '/about',
-            name: 'About'
+            name: 'О нас'
         },
         {
             path: '/contacts',
-            name: 'Contacts'
+            name: 'Контакты'
         }
     ]
 

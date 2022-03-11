@@ -16,11 +16,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: ${theme.fonts.base};
+    font-family: ${theme.fonts.ru};
     margin: 0; 
     padding: 0;
-    background: ${theme.colors.black[0]}
-    color: ${theme.colors.white[0]}
+    background: ${theme.colors.black[0]};
+    color: ${theme.colors.white[0]};
   }
   
   ul {
@@ -142,7 +142,7 @@ class App extends Component {
                   <Suspense
                     fallback=
                       {<WrapperDiv>
-                        <StyledEm>Loading...</StyledEm>
+                        <StyledEm>Загрузка...</StyledEm>
                         <LoadingHex color={theme.colors.gray[0]}/>
                       </WrapperDiv>}>
                     <Routes/>

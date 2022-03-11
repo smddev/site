@@ -61,9 +61,9 @@ class EForm extends Component {
     const {className} = this.props;
     const {email} = this.state;
     return <div {...{className}}>
-      <Email value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Your email'}/>
+      <Email value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Ваш email'}/>
       <Button disabled={!validateEmail(email)} onClick={this.processSubmit}
-              mt={['35px', '35px', '35px', '35px', '48px']}>Calculate Cost</Button>
+              mt={['35px', '35px', '35px', '35px', '48px']}>Рассчитать стоимость</Button>
     </div>
   }
 }
@@ -86,10 +86,10 @@ const SB = styled(Box)`
 const CalculateCost = withBackground(background, 1957, 415, true)(withBackground(backgroundMobile, 1329, 511)(styled(({className}) =>
   <Container {...{className}}>
     <Box width={[1, 1, 1, 1, 1 / 2]} pr={'40px'}>
-      <H1 mt={['40px', '60px', '60px', '80px', '104px']}>Calculate the cost of the project</H1>
-      <Description>The price is calculated individually depending on the complexity,
-        volume and terms of work. Usually the project involves an analyst, designer, developers,
-        testers and project Manager.
+      <H1 mt={['40px', '60px', '60px', '80px', '104px']}>Рассчитайте стоимость проекта</H1>
+      <Description>Цена рассчитывается индивидуально в зависимости от сложности,
+        объема и сроков выполнения работ. Обычно в проекте участвуют аналитик, дизайнер, разработчики,
+        тестировщики и руководитель.
       </Description>
     </Box>
     <SB width={['auto', 'auto', 'auto', 'auto', 1 / 2]}
@@ -174,7 +174,7 @@ const FooterContacts = styled(({className}) => <Container {...{
 
 const Copyright = styled(({className}) => {
   return <Container {...{className}}>
-    <Subtitle>© {YEAR} Smart Design. All rights reserved.</Subtitle>
+    <Subtitle>© {YEAR} Smart Design. Все права защищены.</Subtitle>
   </Container>
 })`${space}`
 

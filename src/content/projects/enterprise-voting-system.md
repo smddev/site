@@ -1,6 +1,6 @@
 ---
 order: 11
-title: Enterprise Voting System
+title: Корпоративная система голосования
 cover: voting.jpg
 industries:
   - Retail
@@ -10,12 +10,12 @@ techs:
   - Laravel
   - MongoDB
   - Ionic
-description: Allows top management to remotely vote on important issues. 
+description: Позволяет высшему руководству дистанционно голосовать по важным вопросам.
 ---
-This mobile voting system allows top management to securely vote on financial and managerial issues without having to be physically present in one location. 
+Эта мобильная система голосования позволяет высшему руководству безопасно голосовать по финансовым и управленческим вопросам без необходимости физического присутствия в одном месте.
 
-Available on iOS 7+, Android 4.1+, and Windows 10.
+Доступно на iOS 7+, Android 4.1+, и Windows 10.
 
-## Outcome
+## Результат
 
-Product was delivered to a large distribution company with branches in all major cities of Russia.
+Продукт был поставлен в крупную дистрибьюторскую компанию, имеющую филиалы во всех крупных городах России.

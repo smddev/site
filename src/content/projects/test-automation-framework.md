@@ -1,6 +1,6 @@
 ---
 order: 13
-title: Test Automation Framework
+title: Фреймворк оптимизации тестирования
 cover: test-automation.jpg
 industries:
   - Finance 
@@ -11,10 +11,10 @@ techs:
   - Robot Framework
 description: 20+ products testing unification.           
 ---
-This framework addresses two main problems:
-* testing processes unification of 20+ products
-* allow junior test engineers to develop autotests of good quality
+Этот фреймворк решает две основные проблемы:
+* унификация процессов тестирования для 20+ продуктов
+* позволение младшим инженерам по тестированию разрабатывать качественные автотесты
 
-## Outcome
+## Результат
 
-Our solution became corporate standard for test automation in a large US company (5000+ employees).
+Наше решение стало корпоративным стандартом для автоматизации тестирования в крупной американской компании (5000+ сотрудников).

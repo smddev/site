@@ -1,6 +1,6 @@
 ---
 order: 1
-title: Manufacturing Intelligence Software 
+title: Интеллектуальное ПО для производств
 cover: factory-intelligence.jpg
 industries:
   - Manufacturing
@@ -13,12 +13,12 @@ techs:
   - React
   - GraphQL
   - MongoDB
-description: Helps manufacturing companies to track, calculate and assess the efficiency of their equipment.
+description: Помогает производственным компаниям отслеживать, рассчитывать и оценивать эффективность своего оборудования.
 ---
-On-premise software that helps manufacturing companies to track, calculate and assess the efficiency of their plant equipment. 
+Программное обеспечение, помогающее производственным компаниям отслеживать, рассчитывать и оценивать эффективность работы заводского оборудования.
 
-The product is a flexible and easy to use web application where customers can upload customizable real time and configuration data sets recorded from production line equipment (such as data from pumps, compressors, etc.), configure levels of data aggregation, define efficiency metrics and their formula, simulate equipment work under various conditions as well as setup business reporting in accordance with uploaded doc templates.
+Продукт представляет собой гибкое и простое в использовании веб-приложение, в которое клиенты могут загружать настраиваемые наборы данных реального времени и конфигурации, записанные с оборудования производственной линии (например, данные насосов, компрессоров и т.д.), настраивать уровни агрегации данных, определять показатели эффективности и их формулы, моделировать работу оборудования в различных условиях, а также настраивать бизнес-отчетность в соответствии с загруженными шаблонами документов.
 
-## Outcome
+## Результат
 
-Product is in use by a number of big production companies in China.
+Продукт используется рядом крупных производственных компаний в Китае.

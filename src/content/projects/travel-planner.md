@@ -1,6 +1,6 @@
 ---
 order: 6
-title: Travel planner and blog platform
+title: Планировщик путешествий и платформа для блогов
 cover: travel.jpg
 industries:
   - Travel
@@ -12,10 +12,10 @@ techs:
   - MongoDB
   - JavaScript
   - AngularJS
-description: Online platform that allows travellers to build optimal trip itineraries, share travel experience and earn the money 
+description: Онлайн-платформа, позволяющая путешественникам строить оптимальные маршруты поездок, делиться опытом путешествий и зарабатывать деньги
 ---
-The mission of this venture project was to build an online marketplace where travellers and bloggers can meet together.
-Bloggers publish their exciting travel stories, including rich media content and time and place recommendations.
-The stories are kept in executable format such that any site visitor can create a real personalized itinerary out of the selected story, including 
-real trip dates, ready-to-buy tickets and accommodation. Once the itinerary is purchased through the partner network 
-(e.g. tickets are bought and accommodation is being charged) the author of the story get paid with the commission.
+Миссия этого венчурного проекта заключалась в создании онлайн-рынка, где могут встречаться путешественники и блоггеры.
+Блоггеры публикуют свои захватывающие истории о путешествиях с богатым медиа-контентом и рекомендациями.
+Истории хранятся в исполняемом формате, так что любой посетитель сайта может создать настоящий персонализированный маршрут на основе выбранной истории, включая
+реальные даты поездки и готовые к покупке билеты. После приобретения маршрута через партнерскую сеть
+(например, при покупке билетов и оплачивания проживания) автор истории получает комиссию.

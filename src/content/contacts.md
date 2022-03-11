@@ -1,6 +1,6 @@
 ---
-title: Contacts
-subtitle: Get a free evaluation of your project
+title: Контакты
+subtitle: Получите бесплатную оценку вашего проекта
 phone: +7 (921) 932-7150
 email: info@smddev.com
 ---

@@ -1,6 +1,6 @@
 ---
 order: 0
-title: Software Development
+title: Разработка ПО
 icon: coding
 background: orange.1
 ---

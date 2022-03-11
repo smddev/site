@@ -1,6 +1,6 @@
 ---
 order: 2
-title: Artificial vision for process and quality control 
+title: Искусственное зрение для контроля процессов и качества
 cover: factory-worker.jpg
 industries:
   - Manufacturing
@@ -11,10 +11,10 @@ techs:
   - Tensorflow
   - Keras
   - Scikit-learn
-description: Automating control of maintenance processes and workforce safety with help of artificial vision 
+description: Автоматизация управления процессами технического обслуживания и безопасности персонала с помощью искусственного зрения
 ---
-We have built a number of AI models for our customer in China that helps them to automate the supervision in manufacturing and maintenance areas.
-Our solution substantially reduces or even eliminates the need of human work in solving such problems as:
-* Behavioral analytics ensuring that contingent worker has fulfilled the list of required maintenance activities while serving locomotives in train depot
-* Workforce safety - ensuring the personnel is wearing required security apparel (special clothes, helmets e.t.c.) in manufacturing area
+Мы создали ряд моделей ИИ для нашего клиента в Китае, помогающий ему автоматизировать контроль на производстве и в сфере технического обслуживания.
+Наше решение существенно снижает или даже устраняет необходимость работы человека при решении таких проблем, как:
+* Поведенческая аналитика, гарантирующая, что заёмный работник выполнил перечень необходимых работ по техническому обслуживанию при обслуживании локомотивов в поездном депо
+* Безопасность персонала - обеспечение персонала необходимой защитной одеждой (специальная одежда, каски и т.д.) в производственной зоне
  

@@ -1,6 +1,6 @@
 ---
 order: 2
-title: Test Automation
+title: Автоматизация тестирования
 icon: note
 background: orange.2
 ---

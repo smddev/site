@@ -1,5 +1,5 @@
 ---
-title: Manufacturing
+title: Производство
 thumbnail:
 icon: factory 
 ---

@@ -13,7 +13,7 @@ const Description = styled(Markdown)`
   width: 90%;
 `
 
-const BT = (props) => <Button {...props} to={'/portfolio'}>See projects</Button>
+const BT = (props) => <Button {...props} to={'/portfolio'}>Проекты</Button>
 
 const B1 = styled(BT)`
   display: none;

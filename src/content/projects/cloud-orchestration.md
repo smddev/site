@@ -14,29 +14,29 @@ techs:
   - WildFly
   - MongoDB
   - MySQL
-description: The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.
+description: Cloud Orchestration Platform обеспечивает полную автоматизацию развёртывания инфраструктуры, сети, безопасности и компонентов продукта/приложения.
 ---
-The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.
+The Cloud Orchestration Platform позволяет полностью автоматизировать развёртывание инфраструктуры сети, безопасности и компонентов продукта/приложения.
 
-Supported resource providers include:
+В число поддерживаемых провайдеров ресурсов входят:
 
 * AWS
 * Azure
 * Google Cloud
 * Docker
-* Existing VMs (for cloud providers - compute, network and more)
+* Существующие VMs (для облачных провайдеров - вычисления, сети и многое другое)
 
-##  Key features
+##  Ключевые особенности
 
-* Cloud resources management for computing, network, security groups, DNS (Route53), S3, IAM
-* Provisioning methods with Chef, userdata, Ansible
-    <br/> - CI/CD pipeline with Jenkins integration plugin
-    <br/> - Security support with disk encryption, credentials storage in Vault, security components catalog, IAM policies/profiles defined in the security blueprint, security compliance scan, Cloudwatch logs
-* Role separation / authorization model
-* Monitoring for runtime state, compliance, drift, security components and Chef status
-* Container management with Docker and Docker Swarm
-* Managed components including HAProxy, Vault, Docker host/swarm, Elasticsearch
+* Управление облачными ресурсами для вычислений, сети, групп безопасности, DNS (Route53), S3, IAM
+* Методы предоставления ресурсов с помощью Chef, userdata, Ansible
+    <br/> - CI/CD пайплайн с интеграцией Jenkins
+    <br/> - Поддержка безопасности с помощью шифрования дисков, хранения учетных данных в Vault, каталога компонентов безопасности, политик/профилей IAM, определённых в плане безопасности, проверки соответствия требованиям безопасности, Cloudwatch логов
+* Разделение ролей / модель авторизации
+* Мониторинг состояния рантайма, соответствия, дрейфа, компонентов безопасности и состояния Chef
+* Управление контейнерами с помощью Docker и Docker Swarm
+* Управление компонентами, включающими HAProxy, Vault, Docker host/swarm, Elasticsearch
 
-## Outcome
+## Результат
 
-The product is being used in several enterprise-scale organizations by DevOps teams internally. In particular, for moving infrastructure from on prem to cloud environment.
+Продукт используется в нескольих enterprise-scale организациях DevOps командами внутри компании. В частности, для переноса инфраструктуры из помещения в облачное окружение.
