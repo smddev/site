@@ -1,5 +1,5 @@
 ---
 title: Строительство
-order: '0'
+order: '8'
 icon: crane
 ---

@@ -1,6 +1,6 @@
 ---
 title: Путешествия
-thumbnail:
+order: '6'
 icon: tickets 
 ---
 

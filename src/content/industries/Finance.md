@@ -1,6 +1,6 @@
 ---
 title: Финансы
-order: '0'
+order: '7'
 icon: coin
 ---
 

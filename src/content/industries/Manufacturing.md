@@ -1,6 +1,6 @@
 ---
 title: Производство
-thumbnail:
+order: '4'
 icon: factory 
 ---
 

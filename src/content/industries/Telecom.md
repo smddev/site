@@ -1,6 +1,6 @@
 ---
 title: Телеком
-thumbnail:
+order: '3'
 icon: satellite 
 ---
 

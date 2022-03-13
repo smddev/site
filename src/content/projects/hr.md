@@ -9,7 +9,8 @@ services:
 techs:
   - Python
   - Postgres
-  - React 
+  - ReactJS
+  - Kubernetes 
 description: Корпоративные сервисы для работы с персоналом
 ---
 Для компании-заказчика мы реализовали ряд сервисов для работы с персоналом:

@@ -3,7 +3,7 @@ order: 3
 title: Корпоративный календарь
 cover: schedule.jpg
 industries:
-  - Ecommerce
+  - HR
 services:
   - telecom
   - software-development
@@ -11,6 +11,7 @@ techs:
   - Python
   - Postgres
   - ReactJS 
+  - Kubernetes   
 description: Корпоративный календарь с бронированием Zoom/Webex конференций
 ---
 Наша команда разработала корпоративный календарь, в котором сотрудники компании могут удобным образом бронировать и управлять

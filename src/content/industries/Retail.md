@@ -1,6 +1,6 @@
 ---
 title: Ритейл
-order: '0'
+order: '5'
 icon: cart
 ---
 
