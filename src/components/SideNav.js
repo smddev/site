@@ -5,7 +5,7 @@ import {H2} from '../atoms'
 import {IndustryList, ServiceList, TechList} from "../components";
 
 const SideNav = ({className, industries, services, techs}) => <div {...{className}}>
-    <H2>Индустрии</H2>
+    <H2>Отрасли</H2>
     <IndustryList vertical iconSize={2} mt={'24px'} industries={industries}/>
     <H2 mt={'60px'}>Сервисы</H2>
     <ServiceList pxSize={18} mt={'24px'} services={services}/>

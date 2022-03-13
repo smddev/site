@@ -10,7 +10,7 @@ import {CONTAINER_WIDTH} from "../atoms/Container";
 const Industries = withBackground(bgRight, 274, 343, true)(
         withBackground(bgLeft, 274, 343)(
             ({industries, className}) => <div className={className}>
-    <H1>Индустрии</H1>
+    <H1>Отрасли</H1>
     <Subtitle>Мы создаём программное обеспечение с учётом особенностей отрасли</Subtitle>
     <Container mt={7} justifyContent='center'>
         <IndustryList industries={industries}/>
