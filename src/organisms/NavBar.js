@@ -7,6 +7,7 @@ import logoImg from 'logo-white.png'
 import {EmailLink} from '../components'
 import {ArrowLink, MenuButton, Container, NavLink, withBackground} from '../atoms'
 import background from '../navbar.svg'
+import { FormattedMessage } from 'react-intl'
 
 const NavContainer = styled(Container)`
   flex-wrap: wrap;
@@ -153,7 +154,7 @@ class NavBar extends Component {
                 {routes && routes.map(r =>
                     <NavBar_Link key={r.name} to={r.path} fontFamily='ru'>{r.name}</NavBar_Link>
                 )}
-                <NavBar_ArrowLink to={'/contacts'}>Отправить заявку</NavBar_ArrowLink>
+                <NavBar_ArrowLink to={'/contacts'}><FormattedMessage id='message.send.request'/></NavBar_ArrowLink>
             </NavBar_Collapse>
             <Sandwich {...{collapsed}} onClick={this.handleCollapse}/>
         </NavContainer>

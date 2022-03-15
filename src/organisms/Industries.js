@@ -6,12 +6,13 @@ import {space} from 'styled-system';
 import bgLeft from '../industriesLeft.svg'
 import bgRight from '../industriesRight.svg'
 import {CONTAINER_WIDTH} from "../atoms/Container";
+import { FormattedMessage } from 'react-intl'
 
 const Industries = withBackground(bgRight, 274, 343, true)(
         withBackground(bgLeft, 274, 343)(
             ({industries, className}) => <div className={className}>
-    <H1>Отраслевые решения</H1>
-    <Subtitle>Мы создаём программное обеспечение с учётом особенностей отрасли</Subtitle>
+    <H1><FormattedMessage id='message.industry.sectors'/></H1>
+    <Subtitle><FormattedMessage id='message.industry.create'/></Subtitle>
     <Container mt={7} justifyContent='center'>
         <IndustryList industries={industries}/>
     </Container>

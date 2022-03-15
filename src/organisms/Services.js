@@ -6,6 +6,7 @@ import { Button, description, Subtitle, H1WithBackground } from "../atoms";
 import Container from "../atoms/Container";
 import { Markdown } from '../components';
 import HexServiceList from "../components/HexServiceList";
+import { FormattedMessage } from 'react-intl'
 
 
 const Description = styled(Markdown)`
@@ -13,7 +14,7 @@ const Description = styled(Markdown)`
   width: 90%;
 `
 
-const BT = (props) => <Button {...props} to={'/portfolio'}>Проекты</Button>
+const BT = (props) => <Button {...props} to={'/portfolio'}><FormattedMessage id='message.projects'/></Button>
 
 const B1 = styled(BT)`
   display: none;

@@ -6,10 +6,11 @@ import {space, display} from 'styled-system';
 import {AspectBox, H1, Subtitle} from "../atoms";
 import {Carousel} from '../components';
 import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
+import { FormattedMessage } from 'react-intl'
 
 const Title = styled(({className}) => <div {...{className}}>
-  <H1 mt={3}>Последние проекты</H1>
-  <Subtitle width={'60%'}>60+ успешно выполненных проектов по всему миру</Subtitle>
+  <H1 mt={3}><FormattedMessage id='message.projects.latest'/></H1>
+  <Subtitle width={'60%'}><FormattedMessage id='message.projects.success'/></Subtitle>
 </div>)`
 ${display}
 ${space}

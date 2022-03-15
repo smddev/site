@@ -1,6 +1,7 @@
 import React from 'react';
 import {BackToSite} from '../components';
+import { FormattedMessage } from 'react-intl'
 
 export default () =>  <BackToSite>
-    Страница, которую вы искали, недоступна.
+    <FormattedMessage id='message.404'/>
 </BackToSite>

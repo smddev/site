@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import {PhoneLink, EmailLink} from '../components';
 import {withSiteData, withRouteData} from "react-static";
 import {Button, H1, Input, Subtitle, Container, NavLink, withBackground} from '../atoms';
@@ -9,6 +9,7 @@ import background from '../calculateCost.svg'
 import backgroundMobile from '../calculateCostMobile.svg'
 import {EmailContext, validateEmail, YEAR} from "../utils";
 import {navigate} from '@reach/router';
+import { FormattedMessage, useIntl } from 'react-intl'
 
 const Description = styled(Subtitle)`width: 90%`;
 const Email = styled(Input)`
@@ -28,44 +29,35 @@ const Email = styled(Input)`
         
 `;
 
-class EForm extends Component {
-  constructor(props) {
-    super(props);
+const EForm = ({ className, ...props }) => {
+  const [email, setEmail] = useState(props.email)
+  const { formatMessage } = useIntl()
 
-    this.state = {
-      email: this.props.email
-    }
+  const handleChange = e => {
+    setEmail(e.target.value)
   }
 
-  handleChange = (e) => {
-    const value = e.target.value;
-    this.setState(ps => ({
-      ...ps,
-      email: value
-    }))
-  }
+  const processSubmit = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
 
-  processSubmit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const {email} = this.state;
-    const {changeEmail} = this.props;
+    const { changeEmail } = this.props
     if (validateEmail(email)) {
-      changeEmail(email);
-      navigate('/contacts');
+      changeEmail(email)
+      navigate('/contacts')
     }
   }
 
-  render() {
-    const {className} = this.props;
-    const {email} = this.state;
-    return <div {...{className}}>
-      <Email value={email} onChange={this.handleChange} type={'email'} name="email" placeholder={'Ваш email'}/>
-      <Button disabled={!validateEmail(email)} onClick={this.processSubmit}
-              mt={['35px', '35px', '35px', '35px', '48px']}>Рассчитать стоимость</Button>
-    </div>
-  }
+  return <div { ...{ className } }>
+    <Email
+        value={ email } onChange={ handleChange } type={ 'email' } name="email"
+        placeholder={ formatMessage({ id: 'placeholder.your.email' }) }
+    />
+    <Button disabled={ !validateEmail(email) } onClick={ processSubmit }
+            mt={ ['35px', '35px', '35px', '35px', '48px'] }>
+      <FormattedMessage id="message.calculate.cost"/>
+    </Button>
+  </div>
 }
 
 const EmailForm = styled(EForm)`
@@ -86,10 +78,11 @@ const SB = styled(Box)`
 const CalculateCost = withBackground(background, 1957, 415, true)(withBackground(backgroundMobile, 1329, 511)(styled(({className}) =>
   <Container {...{className}}>
     <Box width={[1, 1, 1, 1, 1 / 2]} pr={'40px'}>
-      <H1 mt={['40px', '60px', '60px', '80px', '104px']}>Рассчитайте стоимость проекта</H1>
-      <Description>Цена рассчитывается индивидуально в зависимости от сложности,
-        объема и сроков выполнения работ. Обычно в проекте участвуют аналитик, дизайнер, разработчики,
-        тестировщики и руководитель.
+      <H1 mt={['40px', '60px', '60px', '80px', '104px']}>
+        <FormattedMessage id='message.calculate.project.cost'/>
+      </H1>
+      <Description>
+        <FormattedMessage id='message.calculate.description'/>
       </Description>
     </Box>
     <SB width={['auto', 'auto', 'auto', 'auto', 1 / 2]}
@@ -174,7 +167,7 @@ const FooterContacts = styled(({className}) => <Container {...{
 
 const Copyright = styled(({className}) => {
   return <Container {...{className}}>
-    <Subtitle>© {YEAR} Smart Design. Все права защищены.</Subtitle>
+    <Subtitle>© {YEAR} Smart Design. <FormattedMessage id='message.copyright'/></Subtitle>
   </Container>
 })`${space}`
 
