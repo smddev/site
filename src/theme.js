@@ -26,6 +26,7 @@ const colors = {
 
 const fonts = {
     base: 'Khula',
+    ru: 'Roboto'
 }
 
 const brkpnts = [480, 680, 850, 1200];

@@ -12,6 +12,7 @@ import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 import background from '../OtherProjects.svg'
 import {withSidebar} from '../hocs'
 import {DEFAULT_PROJECT_COVER} from "../utils";
+import { FormattedMessage } from 'react-intl'
 
 
 const serviceList = (serviceIds, services) => {
@@ -30,7 +31,7 @@ const Cover= styled(AspectBox)`
 
 const ProjectCarousel = withBackground(background, 937, 542)(styled(({projects, className}) =>
     <Box width={1}{...{className}}>
-        <H1> Other projects</H1>
+        <H1> <FormattedMessage id="message.other.projects"/> </H1>
         <Carousel carousel={true} mt={6} width={400} height={400 * PROJECT_CARD_RATIO}>
             {projects.
             //reduce((acc, e) => acc.concat([e,e]), []).
@@ -54,7 +55,7 @@ const Project = ({item, techs, services}) => <Fragment>
     <Markdown source={item.content} escapeHtml={false}/>
   {item.data.techs &&
     <Fragment>
-      <H2>Technologies</H2>
+      <H2><FormattedMessage id='message.technologies'/></H2>
       <TechList large mt={4} techs={techs} techIds={item.data.techs}/>
     </Fragment>
   }

@@ -16,6 +16,7 @@ import Photos from "../components/Photos";
 import mgLeft from "../industriesLeft.svg";
 import mgRight from "../managementRight.svg";
 import { Feedback, MembersGallery, withLayout } from "../organisms";
+import { FormattedMessage } from 'react-intl'
 
 const Intro = styled(P)`
   width: 100%;
@@ -51,7 +52,7 @@ const ManagementSection = styled(withBackground(mgRight, 708, 542, true)(
   withBackground(mgLeft, 274, 343)(({ className, members }) => (
     <Container {...{ className }}>
       <Box width={1} mb={-2}>
-        <StyledH2>Management</StyledH2>
+        <StyledH2><FormattedMessage id='message.about.management'/></StyledH2>
       </Box>
 
       <MembersGallery mt={[0, 1, 3, 4]} members={members} />

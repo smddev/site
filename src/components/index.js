@@ -21,6 +21,7 @@ import Reviews from './Reviews';
 
 import {yellowLinkStyles, Link1, Description, Button, withBackground, H1WithBackground, Container} from "../atoms";
 import {Box} from "@rebass/grid";
+import { FormattedMessage } from 'react-intl'
 
 function filterByTag(item, tagName, tagValue) {
   return tagValue ? (item.data[tagName] && item.data[tagName].includes(tagValue)) : true
@@ -122,10 +123,10 @@ export const BackToSite = withBackground(bg, 703, 631)(styled(({className, child
   <div {...{className}}>
     <Description as={'div'}>
       <p>{children}</p>
-      <p>Follow the link below to return to the site.</p>
+      <p><FormattedMessage id='message.back.site'/></p>
     </Description>
 
-    <Button mt={6} to={'/'}>Back to site</Button>
+    <Button mt={6} to={'/'}><FormattedMessage id='message.back.link'/></Button>
   </div>
 ))`
     padding-left: 24px;

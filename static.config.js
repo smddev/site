@@ -20,8 +20,14 @@ async function readDoc(folder, file) {
 
 async function loadSiteData() {
     const config = yaml.safeLoad(await fs.readFileSync('public/admin/config.yml', 'utf8'));
+    const lang = process.env.LANG
     const docs = await Promise.all(config.collections
         .filter(c => !!c.folder)
+        .map(c => {
+            const path = c.folder.split('/')
+            path.splice(2, 0, lang)
+            return { ...c, folder: path.join('/')}
+        })
         .map(async c => {
             const fileNames = (await fs.readdir(c.folder)).filter(f => path.extname(f) === '.md')
             const files = await Promise.all(fileNames.map(file => readDoc(c.folder, file)))
@@ -32,6 +38,11 @@ async function loadSiteData() {
         }))
     const pages = await Promise.all(config.collections
         .filter(c => !!c.files)[0].files
+        .map(f => {
+            const path = f.file.split('/')
+            path.splice(2, 0, lang)
+            return { ...f, file: path.join('/') }
+        })
         .map(f => readDoc(path.dirname(f.file), path.basename(f.file))))
 
     return {
@@ -117,24 +128,28 @@ const getRoutes = async () => {
 }
 
 const getSiteData = () => {
-    const routes = [
-        {
-            path: '/portfolio',
-            name: 'Portfolio'
+    const localRoutes = {
+        '/portfolio': {
+            ['ru']: 'Портфолио',
+            ['en']: 'Portfolio'
         },
-        {
-            path: '/why',
-            name: 'Why us?'
+        '/why': {
+            ['ru']: 'Почему мы',
+            ['en']: 'Why us?'
         },
-        {
-            path: '/about',
-            name: 'About'
+        '/about': {
+            ['ru']: 'О нас',
+            ['en']: 'About'
         },
-        {
-            path: '/contacts',
-            name: 'Contacts'
-        }
-    ]
+        '/contacts': {
+            ['ru']: 'Контакты',
+            ['en']: 'Contacts'
+        },
+    }
+    const lang = process.env.LANG
+
+    const paths = ['/portfolio', '/why', '/about', '/contacts']
+    const routes = paths.map(path => ({ path, name: localRoutes[path][lang]}))
 
     return {
         routes,
@@ -150,7 +165,7 @@ const Document = ({Html, Head, Body, children, state: {routeInfo, siteData, rend
     const {data} = item || page || {};
     const {title = 'Smart Design'} = data || {};
 
-    return <Html lang="en-US">
+    return <Html lang={ process.env.LANG }>
         <Head>
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>

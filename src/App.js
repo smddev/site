@@ -1,6 +1,9 @@
 import {CloudinaryContext} from "cloudinary-react";
 import React, {Component, Suspense} from 'react';
 import {Root, Routes} from 'react-static';
+import { FormattedMessage, IntlProvider } from 'react-intl'
+import ru from './i18n/ru.json'
+import en from './i18n/en.json'
 import styled, {createGlobalStyle, css, ThemeProvider} from 'styled-components';
 import {h2Style,  paragraph} from './atoms';
 import listItem from './listItem.svg';
@@ -16,11 +19,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: ${theme.fonts.base};
+    font-family: ${theme.fonts.ru};
     margin: 0; 
     padding: 0;
-    background: ${theme.colors.black[0]}
-    color: ${theme.colors.white[0]}
+    background: ${theme.colors.black[0]};
+    color: ${theme.colors.white[0]};
   }
   
   ul {
@@ -113,6 +116,11 @@ const StyledEm = styled.em`
   z-index: 1;
 `
 
+const locales = {
+  ['ru']: ru,
+  ['en']: en
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -131,27 +139,34 @@ class App extends Component {
   }
 
   render() {
+    const lang = document.documentElement.lang
+
     return (
       <Root>
-        <SizesProvider config={config}>
-          <EmailContext.Provider value={this.state}>
-            <ThemeProvider theme={theme}>
-              <CloudinaryContext cloudName="smddev" secure="true">
-                <div className="content">
-                  <GlobalStyle/>
-                  <Suspense
-                    fallback=
-                      {<WrapperDiv>
-                        <StyledEm>Loading...</StyledEm>
-                        <LoadingHex color={theme.colors.gray[0]}/>
-                      </WrapperDiv>}>
-                    <Routes/>
-                  </Suspense>
-                </div>
-              </CloudinaryContext>
-            </ThemeProvider>
-          </EmailContext.Provider>
-        </SizesProvider>
+        <IntlProvider locale={ lang } messages={ locales[lang] }>
+          <SizesProvider config={config}>
+            <EmailContext.Provider value={this.state}>
+              <ThemeProvider theme={theme}>
+                <CloudinaryContext cloudName="smddev" secure="true">
+                  <div className="content">
+                    <GlobalStyle/>
+                    <Suspense
+                        fallback=
+                            {<WrapperDiv>
+                              <StyledEm>
+                                <FormattedMessage id="message.loading" />
+                              </StyledEm>
+                              <LoadingHex color={theme.colors.gray[0]}/>
+                            </WrapperDiv>}
+                    >
+                      <Routes/>
+                    </Suspense>
+                  </div>
+                </CloudinaryContext>
+              </ThemeProvider>
+            </EmailContext.Provider>
+          </SizesProvider>
+        </IntlProvider>
       </Root>
     );
   }

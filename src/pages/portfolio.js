@@ -9,6 +9,7 @@ import {withLayout} from "../organisms";
 import {withWindowLocation} from "../utils"
 import ProjectCard from "../components/ProjectCard"
 import {withSidebar} from "../hocs"
+import { FormattedMessage } from 'react-intl'
 
 
 const CardContainer = styled(Flex)`
@@ -41,7 +42,7 @@ export default withLayout()(withRouteData(withSidebar(withSiteData(withWindowLoc
     }
 
     return <Fragment>
-        <H1WithBackground>Portfolio</H1WithBackground>
+        <H1WithBackground><FormattedMessage id='message.portfolio'/></H1WithBackground>
         <CardContainer>
             {selectedProjects.map((p, i) => <Cell key={i}>
                 <ProjectCard project={p}/>

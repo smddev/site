@@ -6,6 +6,7 @@ import styled, {withTheme} from 'styled-components';
 import background from './../stages.svg';
 import {StagesHex, StagesHexIcon} from "../atoms/Hexagon";
 import {CONTAINER_WIDTH} from "../atoms/Container";
+import { FormattedMessage } from 'react-intl'
 
 const Icon = styled.span`
   ${description};
@@ -51,7 +52,7 @@ const HG=withTheme(({theme,stages}) =>
 const Stages = withBackground(background, 538, 433)(({stages, className}) => <Container
        flexWrap='wrap' className={className} alignItems='center'>
     <Box width={[1, 1, 1, 1, 1/4]}>
-        <H1>Stages of work</H1>
+        <H1><FormattedMessage id='message.work.stages'/></H1>
     </Box>
     <Flex width={[1, 1, 1, 1, 3/4]}
           mt={[3, 5, 6, 6, '0px']}
