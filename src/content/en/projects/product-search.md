@@ -3,7 +3,7 @@ order: 3
 title: AI-powered product search - guess what customers mean
 cover: electronic-parts.jpg
 industries:
-  - Retail
+  - Ecommerce
 services:
   - data-science
   - software-development
