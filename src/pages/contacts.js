@@ -73,7 +73,7 @@ const ContactForm = ({ className, changeEmail, ...props }) => {
     const formSubmit = (e) => {
         e.preventDefault()
         e.stopPropagation()
-        props.changeEmail(email)
+        changeEmail(email)
         formRef.current.submit()
     }
 
