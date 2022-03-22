@@ -29,7 +29,7 @@ const Email = styled(Input)`
         
 `;
 
-const EForm = ({ className, ...props }) => {
+const EForm = ({ className, changeEmail, ...props }) => {
   const [email, setEmail] = useState(props.email)
   const { formatMessage } = useIntl()
 
@@ -41,7 +41,6 @@ const EForm = ({ className, ...props }) => {
     e.preventDefault()
     e.stopPropagation()
 
-    const { changeEmail } = this.props
     if (validateEmail(email)) {
       changeEmail(email)
       navigate('/contacts')
