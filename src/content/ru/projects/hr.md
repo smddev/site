@@ -1,5 +1,5 @@
 ---
-order: 3
+order: -14
 title: Системы для работы с персоналом
 cover: employees.jpg
 industries:

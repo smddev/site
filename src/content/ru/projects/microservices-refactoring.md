@@ -1,5 +1,5 @@
 ---
-order: 7
+order: -2
 title: Миграция с ESB к микросервисам
 cover: microservices.jpg
 industries:

@@ -1,5 +1,5 @@
 ---
-order: 14
+order: 0
 title: Аудит корпоративных QA процессов
 cover: audit.jpg
 industries:

@@ -1,5 +1,5 @@
 ---
-order: 6
+order: -11
 title: Планировщик путешествий и платформа для блогов
 cover: travel.jpg
 industries:

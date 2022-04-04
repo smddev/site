@@ -1,5 +1,5 @@
 ---
-order: 11
+order: -8
 title: Корпоративная система голосования
 cover: voting.jpg
 industries:

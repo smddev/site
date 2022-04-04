@@ -1,5 +1,5 @@
 ---
-order: 1
+order: -12
 title: Интеллектуальное ПО для производств
 cover: factory-intelligence.jpg
 industries:

@@ -1,5 +1,5 @@
 ---
-order: 15
+order: -3
 title: HelpConnect Контакт-центр
 cover: helpconnect.jpg
 industries:

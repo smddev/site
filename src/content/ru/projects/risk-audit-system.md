@@ -1,5 +1,5 @@
 ---
-order: 10
+order: -1
 title: Система аудита профессиональных рисков
 cover: power-station.jpg
 industries:

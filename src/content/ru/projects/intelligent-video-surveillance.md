@@ -1,5 +1,5 @@
 ---
-order: 2
+order: -13
 title: Искусственное зрение для контроля процессов и качества
 cover: factory-worker.jpg
 industries:

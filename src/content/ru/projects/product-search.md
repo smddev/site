@@ -1,5 +1,5 @@
 ---
-order: 3
+order: -17
 title: Интеллектуальная поисковая система электронных компонентов
 cover: electronic-parts.jpg
 industries:

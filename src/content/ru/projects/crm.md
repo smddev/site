@@ -1,5 +1,5 @@
 ---
-order: 12
+order: -7
 title: CRM для Tailoring Studios 
 cover: tailoring.jpg
 industries:

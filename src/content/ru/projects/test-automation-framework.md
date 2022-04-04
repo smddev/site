@@ -1,5 +1,5 @@
 ---
-order: 13
+order: -9
 title: Фреймворк оптимизации тестирования
 cover: test-automation.jpg
 industries:

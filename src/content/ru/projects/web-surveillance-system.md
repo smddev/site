@@ -1,5 +1,5 @@
 ---
-order: 16
+order: -4
 title: Система веб-наблюдения
 cover: video.jpg
 industries:

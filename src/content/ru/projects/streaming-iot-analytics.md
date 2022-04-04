@@ -1,5 +1,5 @@
 ---
-order: 4
+order: -15
 title: Платформа потоковой аналитики IoT
 cover: iot.jpg
 industries:

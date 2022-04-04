@@ -1,5 +1,5 @@
 ---
-order: 5
+order: -10
 title: Cloud Orchestration Platform
 cover: cloud-orch.jpg
 industries:

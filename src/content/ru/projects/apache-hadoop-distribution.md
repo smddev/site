@@ -1,5 +1,5 @@
 ---
-order: 9
+order: -5
 title: Коммерческий дистрибутив Apache Hadoop
 cover: hadoop.jpg
 industries:
