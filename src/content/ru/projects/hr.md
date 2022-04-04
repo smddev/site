@@ -1,7 +1,7 @@
 ---
 order: 3
 title: Системы для работы с персоналом
-cover: electronic-parts.jpg
+cover: employees.jpg
 industries:
   - HR
 services:
