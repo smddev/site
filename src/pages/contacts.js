@@ -159,11 +159,6 @@ export default withLayout({noForm: true})(withRouteData(({page, photos}) => (
                             {page.data.email}
                         </IconLink>
                     </Box>
-                    <Box width={[1, 1/2, 1, 1/2]} mt={[0, 0, 4, 0]}>
-                        <IconLink fontSize={13} href={`tel: ${page.data.phone}`} image={Phone}>
-                            {page.data.phone}
-                        </IconLink>
-                    </Box>
                 </Flex>
             </Flex>
             <Box width={[1, 1, 1/2]} m={[0, 3, 0]}>
