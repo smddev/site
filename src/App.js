@@ -139,7 +139,7 @@ class App extends Component {
   }
 
   render() {
-    const lang = document.documentElement.lang
+    const lang = process.env.LANG
 
     return (
       <Root>
