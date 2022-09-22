@@ -138,7 +138,6 @@ const SE = styled(EmailLink)`
 `
 
 const Contacts = styled(({className}) => <div {...{className}}>
-  <PhoneLink big/>
   <SE/>
 </div>)`
   width: 100%;
