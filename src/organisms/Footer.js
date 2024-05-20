@@ -7,7 +7,7 @@ import {Flex, Box} from '@rebass/grid';
 import {space} from 'styled-system';
 import background from '../calculateCost.svg'
 import backgroundMobile from '../calculateCostMobile.svg'
-import {EmailContext, validateEmail, YEAR} from "../utils";
+import {YEAR} from "../utils";
 import {navigate} from '@reach/router';
 import { FormattedMessage, useIntl } from 'react-intl'
 
@@ -41,18 +41,12 @@ const EForm = ({ className, changeEmail, ...props }) => {
     e.preventDefault()
     e.stopPropagation()
 
-    if (validateEmail(email)) {
-      changeEmail(email)
-      navigate('/contacts')
-    }
+    navigate('/contacts');
+    
   }
 
   return <div { ...{ className } }>
-    <Email
-        value={ email } onChange={ handleChange } type={ 'email' } name="email"
-        placeholder={ formatMessage({ id: 'placeholder.your.email' }) }
-    />
-    <Button disabled={ !validateEmail(email) } onClick={ processSubmit }
+    <Button onClick={ processSubmit }
             mt={ ['35px', '35px', '35px', '35px', '48px'] }>
       <FormattedMessage id="message.calculate.cost"/>
     </Button>
@@ -65,7 +59,7 @@ const EmailForm = styled(EForm)`
 
 const SB = styled(Box)`
   position: absolute;
-  bottom: 80px;
+  bottom: 140px;
   left: 16px;
   right: 16px;
   @media(min-width: ${p => p.theme.breakpoints[3]}) {
@@ -87,11 +81,7 @@ const CalculateCost = withBackground(background, 1957, 415, true)(withBackground
     <SB width={['auto', 'auto', 'auto', 'auto', 1 / 2]}
         pl={['0px', '0px', '0px', '0px', '120px']}
         position={['absolute']}>
-      <EmailContext.Consumer>
-        {(context) =>
-          <EmailForm mt={[4, 4, 4, 4, '136px']} {...context}/>
-        }
-      </EmailContext.Consumer>
+      <EmailForm mt={[4, 4, 4, 4, '136px']} />
     </SB>
   </Container>)`
   position: relative;

@@ -16,7 +16,6 @@ import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
 import styled from "styled-components";
 import {space} from "styled-system";
-import {validateEmail, EmailContext} from "../utils";
 import { FormattedMessage, useIntl } from 'react-intl'
 
 const IconLink = styled(Link1)`
@@ -65,43 +64,6 @@ const Comment = styled(Textarea)`
   height: 250px;
 `
 
-const ContactForm = ({ className, changeEmail, ...props }) => {
-    const [email, setEmail] = useState(props.email)
-    const formRef = useRef()
-    const { formatMessage } = useIntl()
-
-    const formSubmit = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        changeEmail(email)
-        formRef.current.submit()
-    }
-
-    const handleChange = (e) => {
-        setEmail(e.target.value)
-    }
-
-    return <form
-        { ...{ className } } action="/form-submit" name="contact" method="POST" data-netlify="true" ref={ formRef }
-    >
-        <input type="hidden" name="form-name" value="contact"/>
-        <Input name="name" placeholder={ formatMessage({ id: 'placeholder.name' }) }/>
-        <Input
-            mt={ 6 } value={ email } onChange={ handleChange } type={ 'text' } name="email"
-            placeholder={ formatMessage({ id: 'placeholder.your.email'}) + '*' }
-        />
-        <Comment name="message" mt={ 6 } placeholder={ formatMessage({ id: 'placeholder.comment' }) }/>
-
-        <Button disabled={ !validateEmail(email) } onClick={ formSubmit } mt={ 6 }>
-            <FormattedMessage id='message.submit'/>
-        </Button>
-    </form>
-}
-
-const StyledContactForm = styled(ContactForm)`
-  ${space};
-`
-
 export default withLayout({noForm: true})(withRouteData(({page, photos}) => (
     <Fragment>
         <Container mt={7}>
@@ -119,13 +81,6 @@ export default withLayout({noForm: true})(withRouteData(({page, photos}) => (
                     </Box>
                 </Flex>
             </Flex>
-            <Box width={[1, 1, 1/2]} m={[0, 3, 0]}>
-                <EmailContext.Consumer>
-                    {context =>
-                        <StyledContactForm {...context} mt={6}/>
-                    }
-                </EmailContext.Consumer>
-            </Box>
         </Container>
     </Fragment>
 )))

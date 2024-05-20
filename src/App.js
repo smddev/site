@@ -8,7 +8,6 @@ import styled, {createGlobalStyle, css, ThemeProvider} from 'styled-components';
 import {h2Style,  paragraph} from './atoms';
 import listItem from './listItem.svg';
 import {theme} from "./theme";
-import {EmailContext} from "./utils";
 import {SizesProvider} from 'react-sizes';
 import {LoadingHex} from "./atoms/Hexagon";
 
@@ -124,18 +123,6 @@ const locales = {
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.changeEmail = value => {
-      this.setState(state => ({
-        ...state,
-        email: value
-      }));
-    };
-
-    this.state = {
-      email: "",
-      changeEmail: this.changeEmail
-    };
   }
 
   render() {
@@ -145,26 +132,24 @@ class App extends Component {
       <Root>
         <IntlProvider locale={ lang } messages={ locales[lang] }>
           <SizesProvider config={config}>
-            <EmailContext.Provider value={this.state}>
-              <ThemeProvider theme={theme}>
-                <CloudinaryContext cloudName="smddev" secure="true">
-                  <div className="content">
-                    <GlobalStyle/>
-                    <Suspense
-                        fallback=
-                            {<WrapperDiv>
-                              <StyledEm>
-                                <FormattedMessage id="message.loading" />
-                              </StyledEm>
-                              <LoadingHex color={theme.colors.gray[0]}/>
-                            </WrapperDiv>}
-                    >
-                      <Routes/>
-                    </Suspense>
-                  </div>
-                </CloudinaryContext>
-              </ThemeProvider>
-            </EmailContext.Provider>
+            <ThemeProvider theme={theme}>
+              <CloudinaryContext cloudName="smddev" secure="true">
+                <div className="content">
+                  <GlobalStyle/>
+                  <Suspense
+                      fallback=
+                          {<WrapperDiv>
+                            <StyledEm>
+                              <FormattedMessage id="message.loading" />
+                            </StyledEm>
+                            <LoadingHex color={theme.colors.gray[0]}/>
+                          </WrapperDiv>}
+                  >
+                    <Routes/>
+                  </Suspense>
+                </div>
+              </CloudinaryContext>
+            </ThemeProvider>
           </SizesProvider>
         </IntlProvider>
       </Root>
