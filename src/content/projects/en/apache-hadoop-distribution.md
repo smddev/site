@@ -1,7 +1,7 @@
 ---
 order: 9
 title: Commercial Apache Hadoop Distribution
-cover: hadoop.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1573113048/site/project/hadoop.jpg
 industries:
   - Telecom
   - IT
@@ -14,7 +14,7 @@ techs:
   - Akka
   - AngularJS
   - Hadoop
-description: Hadoop services deployment and provisioning to a cluster up to 2000 nodes.  
+description: Hadoop services deployment and provisioning to a cluster up to 2000 nodes.
 ---
 We’ve built a commercial Apache Hadoop Distribution for one of the Fortune 500 companies.
 It supports Hadoop services deployment and provisioning to a cluster up to 2000 nodes.

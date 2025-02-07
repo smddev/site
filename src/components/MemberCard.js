@@ -4,6 +4,7 @@ import React from 'react';
 import styled from "styled-components";
 import { H5, Subtitle } from "../atoms";
 import { StyledEmailLink } from "../components";
+import { normalizeName as normalizeImageName } from '../utils';
 
 const StyledImage = styled.div`
   img {
@@ -33,24 +34,27 @@ const TextBox = styled(Box)`
   }
 `;
 
-export default ({ item, carousel }) => (
-  <Box mb={3}>
-    <Flex width={1} {...{ flexWrap: carousel ? "wrap" : "nowrap" }}>
-      <StyledImage>
-        <Image
-          publicId={`site/member/${item.data.avatar}`}
-          gravity="face"
-          crop="fill"
-          width={160}
-          height={160}
-        />
-      </StyledImage>
-      <MorphBox>
-        <H5> {item.data.title}</H5>
-        <Subtitle mt={2}>{item.data.role}</Subtitle>
-        <StyledEmailLink mt={2} email={item.data.email} />
-      </MorphBox>
-    </Flex>
-    <TextBox mt={"10px"}>{item.content}</TextBox>
-  </Box>
-);
+export default ({ item, carousel }) => {
+  const normalized = normalizeImageName(item.data.avatar)
+  return (
+    <Box mb={3}>
+      <Flex width={1} {...{ flexWrap: carousel ? "wrap" : "nowrap" }}>
+        <StyledImage>
+          <Image
+            publicId={`site/member/${normalized}`}
+            gravity="face"
+            crop="fill"
+            width={160}
+            height={160}
+          />
+        </StyledImage>
+        <MorphBox>
+          <H5> {item.data.title}</H5>
+          <Subtitle mt={2}>{item.data.role}</Subtitle>
+          <StyledEmailLink mt={2} email={item.data.email} />
+        </MorphBox>
+      </Flex>
+      <TextBox mt={"10px"}>{item.content}</TextBox>
+    </Box>
+  );
+};

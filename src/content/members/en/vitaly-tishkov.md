@@ -5,6 +5,7 @@ role: CEO
 avatar: tishkov
 category: management
 email: vitaly.tishkov@smddev.com
+image: https://res.cloudinary.com/smddev/image/upload/v1544808856/site/member/tishkov.jpg
 ---
 Vitaly has over 15 years experience in software development and management.
 

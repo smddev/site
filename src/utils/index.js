@@ -48,6 +48,14 @@ export const getField = (source, field) => {
   }, source);
 }
 
+export const normalizeName = (name) => {
+  if (name?.startsWith('http')) {
+    const segments = name.split('/');
+    return segments[segments.length - 1] || name;
+  }
+  return name;
+}
+
 export const DEFAULT_PROJECT_COVER = 'coding-screen';
 
 export const GOOGLE_ANALYTICS_KEY = 'UA-111454437-1'

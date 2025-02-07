@@ -5,6 +5,7 @@ role: CTO
 avatar: chernyshev
 category: management
 email: andrey.chernyshev@smddev.com
+image: https://res.cloudinary.com/smddev/image/upload/v1544808855/site/member/chernyshev.jpg
 ---
 Andrey is a leading  specialist  in architecture and development for communications, 
 data storage and processing. He is a server side  Java & Scala technology expert with 
