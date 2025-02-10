@@ -14,12 +14,12 @@ techs:
   - Akka
   - AngularJS
   - Hadoop
-description: Hadoop services deployment and provisioning to a cluster up to 2000 nodes.
+description: Deployment and provisioning of Hadoop services on clusters with up
+  to 2,000 nodes.
 ---
-We’ve built a commercial Apache Hadoop Distribution for one of the Fortune 500 companies.
-It supports Hadoop services deployment and provisioning to a cluster up to 2000 nodes.
+We developed a commercial Apache Hadoop distribution tailored for a Fortune 500 company. This solution enables seamless deployment and provisioning of Hadoop services across clusters with up to 2,000 nodes, ensuring scalability, reliability, and efficiency for large-scale data processing.
 
-##  Key features
+## Key features
 
 * System health monitoring
 * Performance profiler for workflow driven application hotspot breakdown
@@ -28,4 +28,4 @@ It supports Hadoop services deployment and provisioning to a cluster up to 2000 
 
 ## Outcome
 
-Production clusters have been deployed for multiple clients of our customer, including AT&T, Cisco, HP and China Mobile Communications Corporation.
+Production clusters have been successfully deployed for several clients of our customer, including AT&T, Cisco, HP, and China Mobile Communications Corporation.
