@@ -1,7 +1,7 @@
 ---
 order: 0
 title: Vitaly Tishkov
-role: CEO
+role: CEO!!!
 avatar: tishkov
 category: management
 email: vitaly.tishkov@smddev.com
