@@ -1,6 +1,6 @@
 ---
 order: 3
-title: "AI-driven product search: intuitively understands what customers mean"
+title: "AI-driven search: understands customer intent"
 cover: https://res.cloudinary.com/smddev/image/upload/v1572876102/site/project/electronic-parts.jpg
 industries:
   - Ecommerce
