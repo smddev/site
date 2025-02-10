@@ -1,7 +1,7 @@
 ---
 order: -4
 title: Система веб-наблюдения
-cover: video.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/video.jpg
 industries:
   - Construction
   - Video Surveillance

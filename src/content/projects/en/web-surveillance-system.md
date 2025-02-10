@@ -1,7 +1,7 @@
 ---
 order: 16
 title: Web Surveillance System
-cover: video.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/video.jpg
 industries:
   - Construction
   - Video Surveillance
@@ -10,12 +10,10 @@ services:
 techs:
   - Flash
   - Java
-description: Security for over 1 hectare industrial construction site.
+description: Custom security solution for a 1-hectare industrial construction site.
 ---
-Web Surveillance system with indexed video storage was built to provide security and progress visibility over 1 hectare industrial construction site.
-
-We used 5MP (2592х1944) IP cameras to minimize their quantity.
+We designed a comprehensive web surveillance system for a 1-hectare industrial construction site, ensuring enhanced security and real-time visibility into project progress. By utilizing high-resolution 5MP IP cameras (2592x1944), we optimized camera placement to minimize the number required while maintaining thorough coverage. The system features indexed video storage, providing easy access to footage for monitoring and incident review.
 
 ## Outcome
 
-The system was used for several years until the construction works have been finished.
+The system remained in operation for several years, reliably serving the construction site until project completion.
