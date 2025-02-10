@@ -1,7 +1,7 @@
 ---
 order: 3
-title: Corporate calendar
-cover: schedule.jpg
+title: Corporate Meeting Management
+cover: https://res.cloudinary.com/smddev/image/upload/v1647014280/site/project/schedule.jpg
 industries:
   - HR
 services:
@@ -10,14 +10,22 @@ services:
 techs:
   - Python
   - Postgres
-  - ReactJS 
+  - ReactJS
   - Kubernetes
 description: Corporate calendar with Zoom/Webex conference booking
 ---
-Our team has developed a corporate calendar where employees can conveniently book and manage
-meetings using a fixed pool of corporate licenses for Zoom and Webex conferences.
-The functionality of creating meetings based on the company's structure and lists of employees was implemented.
-The system has also been integrated with Google and MS Exchange calendars.
+Our solution simplifies corporate meeting management by providing a centralized platform for booking and managing meetings. Key features include:
+
+* **Unified Conferencing**
+
+  Employees can easily schedule meetings using shared Zoom and Webex licenses.
+* **Organizational Integration**
+
+  Meetings are created based on the company's structure and employee lists, ensuring seamless collaboration.
+* **Calendar Sync**
+
+  The system integrates with Google Calendar and Microsoft Exchange, eliminating scheduling conflicts.
 
 ## Outcome
-The convenience and efficiency of the company's employees has improved.
+
+This streamlined approach enhances productivity by reducing administrative burdens and improving meeting organization.
