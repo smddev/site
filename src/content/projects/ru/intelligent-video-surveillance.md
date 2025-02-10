@@ -1,7 +1,7 @@
 ---
 order: -13
 title: Искусственное зрение для контроля процессов и качества
-cover: factory-worker.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1572875212/site/project/factory-worker.jpg
 industries:
   - Manufacturing
 services:

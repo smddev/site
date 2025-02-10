@@ -1,7 +1,7 @@
 ---
 order: 2
 title: Artificial vision for process and quality control
-cover: factory-worker.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1572875212/site/project/factory-worker.jpg
 industries:
   - Manufacturing
 services:
@@ -11,10 +11,10 @@ techs:
   - Tensorflow
   - Keras
   - Scikit-learn
-description: Automating control of maintenance processes and workforce safety
-  with help of artificial vision
+description: Automating Maintenance Control and Workforce Safety with Artificial Vision
 ---
-We have built a number of AI models for our customer in China that helps them to automate the supervision in manufacturing and maintenance areas.
-Our solution substantially reduces or even eliminates the need of human work in solving such problems as:
-* Behavioral analytics ensuring that contingent worker has fulfilled the list of required maintenance activities while serving locomotives in train depot
-* Workforce safety - ensuring the personnel is wearing required security apparel (special clothes, helmets e.t.c.) in manufacturing area
+We've developed AI models for our Chinese clients to automate supervision in manufacturing and maintenance. Our solutions significantly reduce or eliminate the need for human intervention in key areas, including:
+* Behavioral Analytics: Ensuring contingent workers complete required locomotive maintenance tasks at train depots.
+* Workforce Safety: Verifying personnel wear necessary safety gear, such as special clothing and helmets, in manufacturing zones.
+
+These AI-driven innovations enhance efficiency, reduce errors, and improve overall operational safety.
