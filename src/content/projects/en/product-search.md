@@ -1,7 +1,7 @@
 ---
 order: 3
-title: AI-powered product search - guess what customers mean
-cover: electronic-parts.jpg
+title: "AI-driven product search: intuitively understands what customers mean"
+cover: https://res.cloudinary.com/smddev/image/upload/v1572876102/site/project/electronic-parts.jpg
 industries:
   - Ecommerce
 services:
@@ -12,21 +12,20 @@ techs:
   - Spacy
   - MongoDB
   - Elasticsearch
-  - Kubernetes 
-description: Domain-oriented search engine that recognizes parameters of electronic components in customer-written search lines
+  - Kubernetes
+description: Domain-specific search engine that interprets electronic component
+  parameters from customer queries
 ---
-Large electronic component distributor company approached us with a problem of automating their online purchase workflow. 
+A leading electronic component distributor approached us to automate their online purchasing workflow.
 
 ## Challenges
 
-Their customers are used to submit the lists with descriptions of products to be ordered in freely written form that has to be linked with a real product by human. 
+Their customers typically submit lists with product descriptions in free-form text, which must be manually matched to actual products by humans.
 
 ## Solution
 
-We have developed Natural Language Processing (NLP) model that does Named Entity Recognition (NER) over customer search lines 
-and identifies various kinds of product parameters, such as electrical units of measure and their relevant values, part numbers, dimensions, case codes e.t.c.
-The recognized product parameters then were used for relevant product search.
+We've developed an advanced NLP model that leverages Named Entity Recognition (NER) to extract key product parameters—such as electrical units, part numbers, dimensions, and case codes—from customer search queries. This enables precise and efficient product searches by automatically matching user intent with relevant products.
 
 ## Outcome
 
-The developed model has achieved ~90% accuracy in identifying electronic parts parameters.
+Our NLP model has achieved an impressive accuracy of approximately 90% in identifying electronic parts parameters, ensuring highly reliable and efficient product searches.
