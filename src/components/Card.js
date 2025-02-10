@@ -1,12 +1,13 @@
 import React from 'react'
 import {FlexDiv, H2, StyledLink} from "../atoms";
 import cloudinary from "../cloudinary"
+import { normalizeName } from '../utils';
 
 
 export default ({item, basePath, imagePath}) =>
     <StyledLink to={`${basePath}/${item.data.slug}`}>
         <FlexDiv height='320px' position={'relative'}>
-            <FlexDiv backgroundImage={`url(${cloudinary.url(imagePath + '/' + item.data.cover,
+            <FlexDiv backgroundImage={`url(${cloudinary.url(imagePath + '/' + normalizeName(item.data.cover),
                 {width: 320, crop: "scale"})})`}
                      backgroundSize='cover'
                      borderRadius={0}
