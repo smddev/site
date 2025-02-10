@@ -14,7 +14,10 @@ techs:
 description: Automating Maintenance Control and Workforce Safety with Artificial Vision
 ---
 We've developed AI models for our Chinese clients to automate supervision in manufacturing and maintenance. Our solutions significantly reduce or eliminate the need for human intervention in key areas, including:
-* Behavioral Analytics: Ensuring contingent workers complete required locomotive maintenance tasks at train depots.
-* Workforce Safety: Verifying personnel wear necessary safety gear, such as special clothing and helmets, in manufacturing zones.
+
+* **Behavioral Analytics:**
+  Ensuring contingent workers complete required locomotive maintenance tasks at train depots.
+* **Workforce Safety:**
+  Verifying personnel wear necessary safety gear, such as special clothing and helmets, in manufacturing zones.
 
 These AI-driven innovations enhance efficiency, reduce errors, and improve overall operational safety.
