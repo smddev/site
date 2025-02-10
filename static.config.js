@@ -10,9 +10,12 @@ const _ = require('lodash')
 
 const pages = 'src/pages'
 
-async function readDoc(folder, file) {
+async function readDoc(folder, file, lang) {
     const data = await fs.readFile(`${folder}/${file}`, 'utf8')
     const dataObj = matter(data)
+    if (lang) {
+        dataObj.data = dataObj.data[lang]
+    }
     dataObj.data.slug = file.replace(/\.md$/, "")
     delete dataObj.orig
     return dataObj
@@ -25,8 +28,8 @@ async function loadSiteData() {
         .filter(c => !!c.folder)
         .map(c => {
             const path = c.folder.split('/')
-            path.splice(2, 0, lang)
-            return { ...c, folder: path.join('/')}
+            path.splice(3, 0, lang)
+            return { ...c, folder: `${c.folder}/${lang}`}
         })
         .map(async c => {
             const fileNames = (await fs.readdir(c.folder)).filter(f => path.extname(f) === '.md')
@@ -38,12 +41,7 @@ async function loadSiteData() {
         }))
     const pages = await Promise.all(config.collections
         .filter(c => !!c.files)[0].files
-        .map(f => {
-            const path = f.file.split('/')
-            path.splice(2, 0, lang)
-            return { ...f, file: path.join('/') }
-        })
-        .map(f => readDoc(path.dirname(f.file), path.basename(f.file))))
+        .map(f => readDoc(path.dirname(f.file), path.basename(f.file), lang)))
 
     return {
         collections: _(docs).keyBy('name').mapValues('docs').value(),

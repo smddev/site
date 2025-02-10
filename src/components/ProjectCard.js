@@ -4,7 +4,7 @@ import cloudinary from "../cloudinary"
 import styled, {css} from 'styled-components';
 import {position, bottom, left, space} from 'styled-system';
 import {TechList} from '../components';
-import {DEFAULT_PROJECT_COVER} from "../utils";
+import {DEFAULT_PROJECT_COVER, normalizeName} from "../utils";
 
 const Title = styled.h3`
   ${description};
@@ -35,7 +35,10 @@ const Industries = styled(({industries, className}) => <Subtitle {...{className}
 `
 
 const IMAGE_PATH = 'site/project'
-const getImageUrl = (name) => cloudinary.url(`${IMAGE_PATH}/${name}`, {width: 550, crop: "scale"})
+const getImageUrl = (name) => {
+  const normalized = normalizeName(name)
+  return cloudinary.url(`${IMAGE_PATH}/${normalized}`, {width: 550, crop: "scale"})
+}
 
 const cover = css`
   white-space: normal;

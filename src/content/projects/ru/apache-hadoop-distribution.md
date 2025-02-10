@@ -1,7 +1,7 @@
 ---
 order: -5
 title: Коммерческий дистрибутив Apache Hadoop
-cover: hadoop.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1573113048/site/project/hadoop.jpg
 industries:
   - Telecom
   - IT

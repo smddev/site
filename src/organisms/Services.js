@@ -47,7 +47,7 @@ const Services =  ({page, services, className}) =>
         <Box width={[1, 1, 1, 1, 1 / 2]} pr={['0px', 5, 5]}>
             <H1WithBackground dangerouslySetInnerHTML={{ __html: page.data.title }}/>
             <Subtitle mb={5}>{page.data.subtitle}</Subtitle>
-            <Dscrptn source={page.content} escapeHtml={false}/>
+            <Dscrptn source={page.body} escapeHtml={false}/>
             <B1 mt={3}/>
         </Box>
         <Box width={[1, 1, 1, 1, 1 / 2]} mt={[-3, 0, 2]}>

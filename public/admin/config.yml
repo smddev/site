@@ -1,157 +1,183 @@
+
+local_backend: true
+
 backend:
   name: github
-  repo: smddev/site # Path to your Bitbucket repository
+  repo: smddev/site # Path to your GitHub repository
+
+
 media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
 public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
 media_library:
   name: cloudinary
-  output_filename_only: true
+  #output_filename_only: true
   config:
     cloud_name: 'smddev'
     api_key: '451488314613789'
+
+i18n:
+  structure: multiple_folders
+  locales: [en, ru]
+  default_locale: en
 
 
 collections:
   - name: "industry"
     label: "Industry"
     folder: "src/content/industries"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Icon", name: "icon", widget: "string", required: false}
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Icon", name: "icon", widget: "string", required: false, i18n: true}
 
   - name: "service"
     label: "Service"
     folder: "src/content/services"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Icon", name: "icon", widget: "string", required: false}
-      - {label: "background", name: "background", widget: "string", required: false}
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Icon", name: "icon", widget: "string", required: false, i18n: true}
+      - {label: "background", name: "background", widget: "string", required: false, i18n: true}
 
   - name: "facts"
     label: "Facts"
     folder: "src/content/facts"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string"}
-      - {label: "Background", name: "background", widget: "string"}
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Subtitle", name: "subtitle", widget: "string", i18n: true}
+      - {label: "Background", name: "background", widget: "string", i18n: true}
 
   - name: "stages"
     label: "Stages"
     folder: "src/content/stages"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Subtitle", name: "subtitle", widget: "string", i18n: true}
 
   - name: "tech"
     label: "Technologies"
     folder: "src/content/techs"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Code", name: "code", widget: "string"}
-      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Code", name: "code", widget: "string", i18n: true}
+      - {label: "Image", name: "image", widget: "image", required: false, i18n: true}
 
   - name: "member"
     label: "Members"
     folder: "src/content/members"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Role", name: "role", widget: "string"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Role", name: "role", widget: "string", i18n: true}
+      - {label: "Image", name: "image", widget: "image", required: false, i18n: true}
+      - {label: "Body", name: "body", widget: "markdown", i18n: true}
 
   - name: "project"
     label: "Projects"
     folder: "src/content/projects"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number", default: 0, min: 0}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Industries", name: "industries", widget: "list"}
-      - {label: "Services", name: "services",  widget: "list"}
-      - {label: "Technologies", name: "techs", widget: "list"}
-      - {label: "Members",  name: "members",  widget: "list", required: false   }
-      - {label: "Description",  name: "description",  widget: "string", required: false   }
+      - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
+      - {label: "Name", name: "title", widget: "string", i18n: true}
+      - {label: "Cover", name: "cover", widget: "image", required: false, i18n: true}
+      - {label: "Body", name: "body", widget: "markdown", i18n: true}
+      - {label: "Industries", name: "industries", widget: "list", i18n: true}
+      - {label: "Services", name: "services",  widget: "list", i18n: true}
+      - {label: "Technologies", name: "techs", widget: "list", i18n: true}
+      - {label: "Members",  name: "members",  widget: "list", required: false, i18n: true}
+      - {label: "Description",  name: "description",  widget: "string", required: false, i18n: true}
 
   - name: "post"
     label: "Post"
     folder: "src/content/posts"
+    i18n: true
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Order", name: "order", widget: "number"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "image"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Author", name: "author", widget: "string", required: false}
+      - {label: "Order", name: "order", widget: "number", i18n: true}
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      - {label: "Cover", name: "cover", widget: "image", i18n: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: true}
+      - {label: "Body", name: "body", widget: "markdown", i18n: true}
+      - {label: "Author", name: "author", widget: "string", required: false, i18n: true}
 
   - name: "pages"
     label: "Pages"
+    i18n:
+      structure: single_file
     files:
       - label: "Home"
         name: "index"
-        file: "src/content/index.md"
+        i18n: true
+        file: "src/content/pages/index.md"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Subtitle", name: "subtitle", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Title", name: "title", widget: "string", i18n: true}
+          - {label: "Subtitle", name: "subtitle", widget: "string", i18n: true}
+          - {label: "Body", name: "body", widget: "markdown", i18n: true}
       - label: "Portfolio"
         name: "portfolio"
-        file: "src/content/portfolio.md"
+        i18n: true
+        file: "src/content/pages/portfolio.md"
         fields:
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Body", name: "body", widget: "markdown", i18n: true}
       - label: "About"
         name: "about"
-        file: "src/content/about.md"
+        i18n: true
+        file: "src/content/pages/about.md"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Subtitle", name: "subtitle", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "markdown"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Title", name: "title", widget: "string", i18n: true}
+          - {label: "Subtitle", name: "subtitle", widget: "string", i18n: true}
+          - {label: "Intro", name: "intro", widget: "markdown", i18n: true}
+          - {label: "Body", name: "body", widget: "markdown", i18n: true}
       - label: "Contacts"
         name: "contacts"
-        file: "src/content/contacts.md"
+        i18n: true
+        file: "src/content/pages/contacts.md"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Subtitle", name: "subtitle", widget: "string"}
-          - {label: "Phone", name: "phone", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Title", name: "title", widget: "string", i18n: true}
+          - {label: "Subtitle", name: "subtitle", widget: "string", i18n: true}
+          - {label: "Phone", name: "phone", widget: "string", i18n: true}
+          - {label: "Email", name: "email", widget: "string", i18n: true}
+          - {label: "Body", name: "body", widget: "markdown", i18n: true}
       - label: "Why"
         name: "why"
-        file: "src/content/why.md"
+        i18n: true
+        file: "src/content/pages/why.md"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Reasons", name: "reasons", widget: "markdown"}
+          - {label: "Title", name: "title", widget: "string", i18n: true}
+          - {label: "Reasons", name: "reasons", widget: "markdown", i18n: true}
   - name: "review"
     label: "Reviews"
     folder: "src/content/reviews"
+    i18n: true
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Review", name: "review", widget: "string"}
-      - {label: "Reviewer", name: "reviewer", widget: "string", required: false}
-      - {label: "Position", name: "position", widget: "string"}
-      - {label: "Link", name: "link", widget: "string"}
-      - {label: "Icon", name: "icon", widget: "string", required: false}
+      - {label: "Review", name: "review", widget: "string", i18n: true}
+      - {label: "Reviewer", name: "reviewer", widget: "string", required: false, i18n: true}
+      - {label: "Position", name: "position", widget: "string", i18n: true}
+      - {label: "Link", name: "link", widget: "string", i18n: true}
+      - {label: "Icon", name: "icon", widget: "string", required: false, i18n: true}
