@@ -18,7 +18,8 @@ Our solution simplifies corporate meeting management by providing a centralized 
 
 **Key features include:**
 
-* **Unified Conferencing**
+* ##### Unified Conferencing
+
   Employees can easily schedule meetings using shared Zoom and Webex licenses.
 * **Organizational Integration**
   Meetings are created based on the company's structure and employee lists, ensuring seamless collaboration.
