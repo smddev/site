@@ -1,7 +1,7 @@
 ---
 order: -7
-title: CRM для Tailoring Studios 
-cover: tailoring.jpg
+title: CRM для Tailoring Studios
+cover: https://res.cloudinary.com/smddev/image/upload/v1562967523/site/project/tailoring.jpg
 industries:
   - Retail
 services:
@@ -10,7 +10,8 @@ techs:
   - Java
   - Spring
   - MongoDB
-description: Внедряет процесс обработки заказов на пошив одежды в ателье и на швейных фабриках.
+description: Внедряет процесс обработки заказов на пошив одежды в ателье и на
+  швейных фабриках.
 ---
 CRM реализует процесс обработки заказов на пошив одежды в ателье и на швейных фабриках.
 

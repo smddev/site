@@ -1,7 +1,7 @@
 ---
 order: 12
-title: CRM for Tailoring Studios 
-cover: tailoring.jpg
+title: CRM for Tailoring Studios
+cover: https://res.cloudinary.com/smddev/image/upload/v1562967523/site/project/tailoring.jpg
 industries:
   - Retail
 services:
@@ -10,13 +10,14 @@ techs:
   - Java
   - Spring
   - MongoDB
-description: Implements tailoring order process workflow across studios and sewing factories.
+description: Enterprise-grade workflow system orchestrating comprehensive order
+  processing across integrated tailoring studios and manufacturing facilities.
 ---
-The CRM implements tailoring order process workflow across studios and sewing factories. 
+Enterprise CRM system orchestrates comprehensive order processing workflows across integrated tailoring studios and manufacturing facilities. 
 
-It supports user roles, calendar, and administration functionality. 
+Features comprehensive role-based access control, advanced calendar management, and enterprise-grade administrative capabilities.
 
-We’ve developed its backend.
+We've engineered a robust backend infrastructure, focusing exclusively on the core server-side architecture and technical implementation.
 
 ## Outcome
 
