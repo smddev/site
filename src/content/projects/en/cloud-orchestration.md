@@ -1,7 +1,7 @@
 ---
 order: 5
 title: Cloud Orchestration Platform
-cover: cloud-orch.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/cloud-orch.jpg
 industries:
   - IT
   - DevOps
