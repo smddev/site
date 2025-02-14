@@ -1,7 +1,7 @@
 ---
 order: -14
 title: Системы для работы с персоналом
-cover: employees.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1647014513/site/project/employees.jpg
 industries:
   - HR
 services:
@@ -9,7 +9,7 @@ services:
 techs:
   - Python
   - Postgres
-  - React 
+  - React
 description: Корпоративные сервисы для работы с персоналом
 ---
 Для компании-заказчика мы реализовали ряд сервисов для работы с персоналом:
