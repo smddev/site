@@ -58,6 +58,10 @@ const GlobalStyle = createGlobalStyle`
         ${h2Style};
         margin: 60px 0 0 0;
       }
+
+      h3 {
+        margin: 0
+      }
       
       p {
         ${paragraph};
