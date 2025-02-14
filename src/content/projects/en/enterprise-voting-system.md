@@ -1,7 +1,7 @@
 ---
 order: 11
 title: Enterprise Voting System
-cover: voting.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/voting.jpg
 industries:
   - Retail
 services:

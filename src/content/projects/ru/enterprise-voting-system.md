@@ -1,7 +1,7 @@
 ---
 order: -8
 title: Корпоративная система голосования
-cover: voting.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/voting.jpg
 industries:
   - Retail
 services:
