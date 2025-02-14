@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
   .markdown {
       h2 {
         ${h2Style};
-        margin: 60px 0 0 0;
+        margin: 60px 0 32px 0;
       }
 
       h3 {
