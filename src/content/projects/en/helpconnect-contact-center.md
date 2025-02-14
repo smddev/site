@@ -1,7 +1,7 @@
 ---
 order: 15
 title: HelpConnect Contact Center
-cover: helpconnect.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/helpconnect.jpg
 industries:
   - Telecom
 services:
@@ -12,10 +12,10 @@ techs:
   - Qt
   - PHP
   - AngularJS
-description: A full-featured help support center.
+description: A comprehensive support center
 ---
-HelpConnect is a full-featured help support center which supported VoIP, chat, file transfer, and remote desktop control.
+HelpConnect is a comprehensive support center featuring VoIP, chat, file transfer, and remote desktop control capabilities.
 
 ## Outcome
 
-There was a few commercial deployments but it was later closed in favor of another product.
+There were a few commercial deployments, but the product was later closed in favor of another solution.

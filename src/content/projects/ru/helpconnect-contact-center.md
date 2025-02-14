@@ -1,7 +1,7 @@
 ---
 order: -3
 title: HelpConnect Контакт-центр
-cover: helpconnect.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/helpconnect.jpg
 industries:
   - Telecom
 services:
