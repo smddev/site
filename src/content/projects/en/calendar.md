@@ -14,7 +14,9 @@ techs:
   - Kubernetes
 description: Corporate calendar with Zoom/Webex conference booking
 ---
-Our solution simplifies corporate meeting management by providing a centralized platform for booking and managing meetings. Key features include:
+Our solution simplifies corporate meeting management by providing a centralized platform for booking and managing meetings. 
+
+**Key features include:**
 
 * **Unified Conferencing**
   Employees can easily schedule meetings using shared Zoom and Webex licenses.
