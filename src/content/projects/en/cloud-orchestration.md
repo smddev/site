@@ -14,9 +14,10 @@ techs:
   - WildFly
   - MongoDB
   - MySQL
-description: The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.
+description: "Cloud Orchestration: Automated deployment across infrastructure &
+  applications."
 ---
-The Cloud Orchestration Platform enables complete deployment automation across infrastructure, network, security and components of a product/application.
+Our Cloud Orchestration Platform automates the deployment of infrastructure, network, security, and product/application components. This comprehensive solution streamlines complex processes by integrating automated tasks into cohesive workflows, ensuring seamless management across diverse cloud environments.
 
 Supported resource providers include:
 
