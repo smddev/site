@@ -71,6 +71,23 @@ const GlobalStyle = createGlobalStyle`
         margin-top: 1em;
         list-style: none;
         padding: 0;
+        
+        ul {
+          position: relative;
+          li {
+            background: none;
+            display: block;
+            width: 100%;
+            padding-left: 24px;
+
+            &:before {
+              content: "–";
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+
         li {
           vertical-align: top;
           color: ${theme.colors.gray[2]}
