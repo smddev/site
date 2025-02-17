@@ -1,7 +1,7 @@
 ---
 order: 8
 title: QA for backend systems
-cover: microscope.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1572877777/site/project/microscope.jpg
 industries:
   - Telecom
 services:
@@ -15,6 +15,6 @@ techs:
   - Testlink
   - Consul
   - Tibco
-description: Quality management and test automation for backend systems of telecom operator 
+description: Telecom Backend Quality Management and Test Automation
 ---
-Our team has helped to set up the process of quality management for Business Support System (BSS) for top-tier Russian telecom operator.
+Our team assisted a leading Russian telecom operator in establishing quality management processes for their Business Support System (BSS).
