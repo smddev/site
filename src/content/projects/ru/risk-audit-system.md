@@ -1,7 +1,7 @@
 ---
 order: -1
 title: Система аудита профессиональных рисков
-cover: power-station.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1572876306/site/project/power-station.jpg
 industries:
   - Manufacturing
 services:

@@ -1,7 +1,7 @@
 ---
 order: 10
-title: Professional Risk Audit System
-cover: power-station.jpg
+title: Professional Risk Assessment System
+cover: https://res.cloudinary.com/smddev/image/upload/v1572876306/site/project/power-station.jpg
 industries:
   - Manufacturing
 services:
@@ -10,12 +10,18 @@ techs:
   - ReactJS
   - Redux
   - Redux-Saga
-description: Planning and carrying out professional risk audits. 
+description: Conducting Professional Risk Audit Planning and Execution
 ---
-This web application allows planning and carrying out professional risk audits. 
+This web application facilitates the planning and execution of professional risk audits. It comprises two primary modules:
 
-It consists of two major parts: audit schedule (to define audit dates, places and responsible persons for checks) and a block dedicated to audit reports (to assess professional risks found during check routine, upload photos, assign responsible for fixing.) 
+* ### Audit Schedule
+
+Defines audit dates, locations, and personnel responsible for conducting checks.
+
+* ### Audit Reports
+
+Allows for the assessment of professional risks identified during routine checks, the uploading of photographic evidence, and the assignment of responsibility for corrective actions.
 
 ## Outcome
 
-Product was delivered to the leading producer of electricity and heat in the North West region of Russia.
+The product was successfully delivered to the leading electricity and heat producer in Russia's North-West region.
