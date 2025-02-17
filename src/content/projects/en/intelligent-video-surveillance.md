@@ -13,7 +13,7 @@ techs:
   - Scikit-learn
 description: Automating Maintenance Control and Workforce Safety with Artificial Vision
 ---
-We've developed AI models for our Chinese clients to automate supervision in manufacturing and maintenance. Our solutions significantly reduce or eliminate the need for human intervention in key areas, including:
+We have developed advanced AI solutions for our Chinese clients to automate manufacturing and maintenance supervision. Our technology significantly reduces or eliminates human intervention in key operational areas, including:
 
 * **Behavioral Analytics:**
   Ensuring contingent workers complete required locomotive maintenance tasks at train depots.
