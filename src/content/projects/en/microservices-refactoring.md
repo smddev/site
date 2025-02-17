@@ -1,7 +1,7 @@
 ---
 order: 7
-title: Migration from ESB to microservices
-cover: microservices.jpg
+title: Transitioning from ESB to Microservices Architecture
+cover: https://res.cloudinary.com/smddev/image/upload/v1572875745/site/project/microservices.jpg
 industries:
   - Telecom
 services:
@@ -12,9 +12,7 @@ techs:
   - Kubernetes
   - Docker
   - Tibco
-description: Breaking monolith ESB system of large telecom operator into microservices.
+description: Decomposing a Monolithic ESB System into Microservices for a Major
+  Telecom Operator
 ---
-We helped our client, large telecom operator, to expand their modem business from serving individuals to legal entities.
-Their existing monolith system was implemented on top of ESB and was no longer be able to meet the challenges of rapidly expanding functionality.
-Our team has tackled the challenge by gradually breaking the monolith system into a set of microservices while applying the best known technologies.
-This has helped to preserve the existing business-critical functionality while opening up the numerous opportunities to add more features and support new business needs.
+We assisted a major telecom operator in expanding their modem business from individual consumers to legal entities. Their existing monolithic system, built on an ESB architecture, was unable to meet the demands of rapidly evolving functionality. Our team addressed this challenge by strategically decomposing the monolith into a suite of microservices, leveraging leading-edge technologies. This approach not only preserved business-critical functionality but also unlocked significant opportunities for feature enhancements and support for emerging business requirements.
