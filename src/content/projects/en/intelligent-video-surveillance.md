@@ -11,16 +11,19 @@ techs:
   - Tensorflow
   - Keras
   - Scikit-learn
-description: Automating Maintenance Control and Workforce Safety with Artificial Vision
+description: Enhancing Maintenance Control and Workforce Safety through
+  Automation and Artificial Vision
 ---
 We have developed advanced AI solutions for our Chinese clients to automate manufacturing and maintenance supervision. Our technology significantly reduces or eliminates human intervention in key operational areas, including:
 
 * ### Behavioral Analytics
 
-  Ensuring contingent workers complete required locomotive maintenance tasks at train depots.
+  Ensuring qualified locomotive maintenance personnel complete all scheduled maintenance tasks at designated train depots.
 
 * ### Workforce Safety
 
-  Verifying personnel wear necessary safety gear, such as special clothing and helmets, in manufacturing zones.
+  Conducting systematic verification that all personnel wear mandatory personal protective equipment, including specified safety attire and approved head protection, throughout manufacturing zones.
 
-These AI-driven innovations enhance efficiency, reduce errors, and improve overall operational safety.
+## Outcome
+
+These AI-driven innovations boost efficiency, minimize errors, and enhance overall operational safety.
