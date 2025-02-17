@@ -1,7 +1,7 @@
 ---
 order: 1
-title: Manufacturing Intelligence Software 
-cover: factory-intelligence.jpg
+title: Manufacturing Intelligence Software
+cover: https://res.cloudinary.com/smddev/image/upload/v1572881581/site/project/factory-intelligence.jpg
 industries:
   - Manufacturing
 services:
@@ -13,12 +13,25 @@ techs:
   - React
   - GraphQL
   - MongoDB
-description: Helps manufacturing companies to track, calculate and assess the efficiency of their equipment.
+description: Helps manufacturing companies to track, calculate and assess the
+  efficiency of their equipment.
 ---
-On-premise software that helps manufacturing companies to track, calculate and assess the efficiency of their plant equipment. 
+On-premise manufacturing software solution that tracks, calculates, and analyzes plant equipment performance metrics to assess operational efficiency.
 
-The product is a flexible and easy to use web application where customers can upload customizable real time and configuration data sets recorded from production line equipment (such as data from pumps, compressors, etc.), configure levels of data aggregation, define efficiency metrics and their formula, simulate equipment work under various conditions as well as setup business reporting in accordance with uploaded doc templates.
+This web application provides a flexible and user-friendly environment for customers to:
+
+* ### Manage Data
+
+  Upload real-time configuration data from production equipment.
+
+* ### Analyze Performance
+
+  Define efficiency metrics, configure data aggregation, and simulate equipment performance.
+
+* ### Generate Reports
+  
+  Set up custom business reports using your own document templates.
 
 ## Outcome
 
-Product is in use by a number of big production companies in China.
+The product is currently utilized by several major production companies in China.
