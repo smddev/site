@@ -1,20 +1,20 @@
 ---
 order: 13
 title: Test Automation Framework
-cover: test-automation.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/test-automation.jpg
 industries:
-  - Finance 
+  - Finance
 services:
   - test-automation
 techs:
   - Python
   - Robot Framework
-description: 20+ products testing unification.           
+description: Unifying the Testing Processes for Over 20 Products.
 ---
-This framework addresses two main problems:
-* testing processes unification of 20+ products
-* allow junior test engineers to develop autotests of good quality
+This framework addresses two key challenges:
+* Standardizing testing processes across more than 20 products
+* Enabling junior test engineers to develop high-quality automated tests
 
 ## Outcome
 
-Our solution became corporate standard for test automation in a large US company (5000+ employees).
+Our solution is now the corporate standard for test automation at a major U.S. company (5,000+ employees).

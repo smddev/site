@@ -1,15 +1,15 @@
 ---
 order: -9
 title: Фреймворк оптимизации тестирования
-cover: test-automation.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809814/site/project/test-automation.jpg
 industries:
-  - Finance 
+  - Finance
 services:
   - test-automation
 techs:
   - Python
   - Robot Framework
-description: 20+ products testing unification.           
+description: 20+ products testing unification.
 ---
 Этот фреймворк решает две основные проблемы:
 * унификация процессов тестирования для 20+ продуктов
