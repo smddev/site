@@ -1,11 +1,11 @@
 ---
 order: 0
 title: Аудит корпоративных QA процессов
-cover: audit.jpg
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809815/site/project/audit.jpg
 industries:
   - Telecom
-services:
-techs:
+services: null
+techs: null
 description: Пересмотр и улучшение процессов контроля качества на стороне клиента
 ---
 Цель аудита заключалась в том, чтобы внести предложения по QA процессам с целью снижения затрат и повышения качества продукции.

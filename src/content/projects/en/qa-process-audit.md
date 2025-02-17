@@ -1,17 +1,17 @@
 ---
 order: 14
-title: Corporate QA Processes Audit
-cover: audit.jpg
+title: Corporate Quality Assurance Process Assessment
+cover: https://res.cloudinary.com/smddev/image/upload/v1544809815/site/project/audit.jpg
 industries:
   - Telecom
-services:
-techs:
-description:  Revision and improvement of the quality control processes on customer side
+services: null
+techs: null
+description: Revision and improvement of the quality control processes on customer side
 ---
-The goal of the audit was to make proposals for QA processes in order to lower expenses and increase quality of products.
+The objective of the audit was to provide recommendations for improving QA processes to reduce costs and enhance product quality.
 
-We've held over 30 meetings with the developers, quality engineers and tech. support both in-house and 3rd party vendors.
+We conducted over 30 meetings with developers, quality engineers, and technical support teams, both in-house and from third-party vendors.
 
 ## Outcome
 
-A detailed report was delivered to a top-tier telecom provider. Our recommendations were not limited to QA - developers also had got quite a lot to improve in their work.
+We delivered a comprehensive report to a leading telecommunications provider, detailing strategic recommendations that extended beyond quality assurance. The development team received substantial actionable insights for process improvements, enabling them to enhance their workflow efficiency and code quality.
