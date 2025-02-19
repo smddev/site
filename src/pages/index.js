@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {withRouteData} from 'react-static'
+import {useRouteData} from 'react-static'
 import {withBackground} from '../atoms';
 import {CombinedFacts} from '../components';
 import styled, {css} from 'styled-components';
@@ -18,20 +18,23 @@ const FeedbackWB = withBackground(background, 1133, 686)(({className, mt, review
     top: 247px;
 `
 
-export default withLayout()(withRouteData(({page, services, projects, industries, facts, stages, reviews}) => (
-    <Fragment>
+export default withLayout()(() => { 
+    const { page, services, projects, industries, facts, stages, reviews } = useRouteData();    
+    return (
+        <Fragment>
 
-        <Services mt={[6, 7, 8]} page={page} services={services}/>
+            <Services mt={[6, 7, 8]} page={page} services={services}/>
 
-        <CombinedFacts {...{facts}}/>
+            <CombinedFacts {...{facts}}/>
 
-        <Industries mt={8} industries={industries}/>
+            <Industries mt={8} industries={industries}/>
 
-        <Stages mt={11} stages={stages}/>
+            <Stages mt={11} stages={stages}/>
 
-        <FeedbackWB mt={[5, 5, 5 ,5, 11]} {...{reviews}}/>
+            <FeedbackWB mt={[5, 5, 5 ,5, 11]} {...{reviews}}/>
 
-        <RecentProjects mt={8} projects={projects}/>
+            <RecentProjects mt={8} projects={projects}/>
 
-    </Fragment>
-)))
+        </Fragment>
+    )}
+)
