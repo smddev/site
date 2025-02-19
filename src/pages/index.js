@@ -18,7 +18,7 @@ const FeedbackWB = withBackground(background, 1133, 686)(({className, mt, review
     top: 247px;
 `
 
-export default withLayout()(() => { 
+export default () => { 
     const { page, services, projects, industries, facts, stages, reviews } = useRouteData();    
     return (
         <Fragment>
@@ -37,4 +37,4 @@ export default withLayout()(() => {
 
         </Fragment>
     )}
-)
+
