@@ -9,7 +9,7 @@ export default withLayout()(withRouteData(({page}) => (
   <Fragment>
     <Container mt={6}>
       <H1WithBackground mb={4}>{page.data.title}:</H1WithBackground>
-      <Markdown source={page.content} className='markdown aboutPage' escapeHtml={false}/>
+      <Markdown source={page.data.reasons} className='markdown aboutPage' escapeHtml={false}/>
     </Container>
   </Fragment>
 )))
