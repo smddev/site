@@ -15,3 +15,7 @@
 .react-chatbot-kit-chat-bot-avatar-container {
     background-color: #A8A9AE;
 }
+
+.react-chatbot-kit-chat-input {
+    outline: none;
+}
