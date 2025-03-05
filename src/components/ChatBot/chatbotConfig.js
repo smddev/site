@@ -1,18 +1,20 @@
 // chatbotConfig.js
+import React from 'react'
 import { createChatBotMessage } from 'react-chatbot-kit';
 
 import {theme} from "../../theme";
 import BotChatMessage from './customMessage';
 
+import { FormattedMessage } from 'react-intl'
 
-const botName = 'ExcitementBot';
+
 
 const config = {
-  initialMessages: [createChatBotMessage({message: "Hello"})],
+  initialMessages: [createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})],
   customComponents: {
+    header: () => <div />,
     botChatMessage: BotChatMessage,
   },
-  botName: botName,
   customStyles: {
     botMessageBox: {
       backgroundColor: theme.colors.orange[1],

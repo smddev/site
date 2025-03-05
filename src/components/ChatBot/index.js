@@ -6,6 +6,8 @@ import config from './chatbotConfig';
 import MessageParser from './messageParser';
 import ActionProvider from './actionProvider';
 import validator from './validator'
+import { useIntl } from 'react-intl';
+import './styles.css'
 
 const ChatbotContainer = styled.div`
   position: fixed;
@@ -15,6 +17,7 @@ const ChatbotContainer = styled.div`
 `;
 
 const ChatBot = () => {
+  const intl = useIntl();
   return (
     <ChatbotContainer>
       <Chatbot
@@ -22,6 +25,7 @@ const ChatBot = () => {
         messageParser={MessageParser}
         actionProvider={ActionProvider}
         validator={validator}
+        placeholderText={intl.formatMessage({id: 'chatbot.placeholder'})}
       />
     </ChatbotContainer>
   );

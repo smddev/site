@@ -36,7 +36,7 @@ export default withLayout()(() => {
 
             <RecentProjects mt={8} projects={projects}/>
 
-        <ChatBot />
+            <ChatBot />
 
         </Fragment>
     )}

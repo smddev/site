@@ -1,0 +1,17 @@
+.react-chatbot-kit-chat-container {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.react-chatbot-kit-chat-message-container {
+    overflow: auto;
+    height: 450px;
+}
+
+.react-chatbot-kit-user-avatar-container {
+    background-color: #44464F;
+}
+
+.react-chatbot-kit-chat-bot-avatar-container {
+    background-color: #A8A9AE;
+}
