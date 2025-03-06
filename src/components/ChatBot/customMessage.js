@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { theme } from "../../theme";
 import { border } from "styled-system";
 
+const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
+
 export default function BotChatMessage({ message: payload, loader }) {
   const { message: m, question } = payload;
 
@@ -11,7 +13,7 @@ export default function BotChatMessage({ message: payload, loader }) {
     if (question) {
       const fetchAnswer = async (question) => {
         try {
-          const response = await fetch("http://localhost:8000/ask", {
+          const response = await fetch(`${assistentUrl}/messages`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -38,12 +40,10 @@ export default function BotChatMessage({ message: payload, loader }) {
   return (
     <div
       className="react-chatbot-kit-chat-bot-message"
-      style={{ backgroundColor: theme.colors.orange[1] }}
     >
       <span>{message || loader}</span>
       <div
         className="react-chatbot-kit-chat-bot-message-arrow"
-        style={{ borderRightColor: theme.colors.orange[1] }}
       ></div>
     </div>
   );

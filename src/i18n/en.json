@@ -30,6 +30,6 @@
   "placeholder.name": "Name",
   "placeholder.comment": "Comment",
 
-  "chatbot.initial": "Hello! How I can help you?",
+  "chatbot.initial": "Hello! How can I help you?",
   "chatbot.placeholder": "Type your question here"
 }
