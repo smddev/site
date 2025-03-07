@@ -28,5 +28,8 @@
 
   "placeholder.your.email": "Your email",
   "placeholder.name": "Name",
-  "placeholder.comment": "Comment"
+  "placeholder.comment": "Comment",
+
+  "chatbot.initial": "Hello! How can I help you?",
+  "chatbot.placeholder": "Type your question here"
 }

@@ -28,5 +28,7 @@
 
   "placeholder.your.email": "Ваш email",
   "placeholder.name": "Имя",
-  "placeholder.comment": "Комментарий"
+  "placeholder.comment": "Комментарий",
+
+  "chatbot.initial": "Привет! Как я могу вам помочь?"
 }

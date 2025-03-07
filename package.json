@@ -23,6 +23,7 @@
     "moment": "^2.24.0",
     "query-string": "^6.7.0",
     "react": "^16.8.6",
+    "react-chatbot-kit": "^2.2.2",
     "react-dom": "^16.8.6",
     "react-easy-swipe": "0.0.18",
     "react-hot-loader": "^4.11.0",
@@ -43,12 +44,12 @@
     "babel-core": "^6.26.3",
     "babel-plugin-styled-components": "^1.10.0",
     "circular-dependency-plugin": "^5.0.2",
+    "cross-env": "^7.0.3",
     "eslint-config-react-tools": "^1.1.7",
     "fs-extra": "^8.0.1",
     "js-yaml": "^3.13.1",
     "react-static-plugin-styled-components": "^7.0.10",
     "serve": "^11.0.1",
-    "styled-components": "^4.3.1",
-    "cross-env": "^7.0.3"
+    "styled-components": "^4.3.1"
   }
 }

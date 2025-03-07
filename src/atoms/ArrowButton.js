@@ -6,6 +6,7 @@ export const ARROW_BUTTON_HEIGHT = '20px';
 
 const yellowSvgStyles = css`
   cursor: pointer;
+  
   transition: fill .5s;
   
   fill: ${p => p.theme.colors.orange[1]};
