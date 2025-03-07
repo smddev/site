@@ -11,7 +11,7 @@ import Logo from '../../icons/Logo';
 
 
 const config = {
-  initialMessages: [createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})],
+  initialMessages: [],
   customComponents: {
     header: () => <div />,
     botChatMessage: BotChatMessage,

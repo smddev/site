@@ -5,9 +5,7 @@ import { border } from "styled-system";
 const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
 
 export default function BotChatMessage({ message: payload, loader }) {
-  const { message: m, question } = payload;
-
-  const [message, setMessage] = useState(m);
+  const { message, question, actionProvider, id } = payload;
 
   useEffect(() => {
     if (question) {
@@ -15,6 +13,7 @@ export default function BotChatMessage({ message: payload, loader }) {
         try {
           const response = await fetch(`${assistentUrl}/messages`, {
             method: "POST",
+            credentials: "include",
             headers: {
               "Content-Type": "application/json",
             },
@@ -26,7 +25,7 @@ export default function BotChatMessage({ message: payload, loader }) {
           }
 
           const data = await response.json();
-          setMessage(data)
+          actionProvider.updateMessageInState({id, message: data})
 
         } catch (error) {
           console.error("Error:", error);

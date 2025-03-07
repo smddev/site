@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import Chatbot from "react-chatbot-kit";
+import React, { useEffect, useState } from 'react'
+import Chatbot, { createChatBotMessage, createClientMessage } from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css';
 import styled from "styled-components";
 import config from './chatbotConfig';
 import MessageParser from './messageParser';
 import ActionProvider from './actionProvider';
 import validator from './validator'
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import './styles.css'
 import IconButton from '../../atoms/IconButton';
 import Robot from '../../icons/Robot';
@@ -24,11 +24,37 @@ const ChatbotContainer = styled.div`
 
 const ChatBot = () => {
   const intl = useIntl();
-  const [ show, setShow ] = useState(false);
+  const [ show, setShow ] = useState(false)
+  const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
+
+  useEffect(() => {
+    const fetchHistory = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/messages', {
+          credentials: "include"
+        })
+        const data = await response.json()
+        const hist = data.map((m) => {
+          const { content: message, type: t } = m
+          return t === 'ai' ? createChatBotMessage({message}) : createClientMessage(message)
+        })
+
+        setHistory((prev) => [...prev, ...hist])
+      } catch (error) {
+        console.log("failed to load message history")
+      }
+    }
+    fetchHistory()
+  }, [])
 
   const toggleChat = () => {
     setShow((s) => !s);
   }
+
+  const saveMessages = (messages, HTMLString) => {
+    setHistory(messages)
+  };
+
   return (
     <ChatbotContainer>
       {show && (
@@ -38,6 +64,8 @@ const ChatBot = () => {
           actionProvider={ActionProvider}
           validator={validator}
           placeholderText={intl.formatMessage({id: 'chatbot.placeholder'})}
+          messageHistory={history}
+          saveMessages={saveMessages}
         />
       )}
 
