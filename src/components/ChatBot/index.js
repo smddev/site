@@ -22,6 +22,8 @@ const ChatbotContainer = styled.div`
   gap: 16px;
 `;
 
+const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
+
 const ChatBot = () => {
   const intl = useIntl();
   const [ show, setShow ] = useState(false)
@@ -30,7 +32,7 @@ const ChatBot = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch('http://localhost:8000/messages', {
+        const response = await fetch(`${assistentUrl}/messages`, {
           credentials: "include"
         })
         const data = await response.json()
