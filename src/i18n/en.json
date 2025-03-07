@@ -31,5 +31,6 @@
   "placeholder.comment": "Comment",
 
   "chatbot.initial": "Hello! How can I help you?",
-  "chatbot.placeholder": "Type your question here"
+  "chatbot.placeholder": "Type your question here",
+  "chatbot.error": "Sorry, I can't answer your question now. Try again later."
 }

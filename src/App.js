@@ -10,6 +10,7 @@ import listItem from './listItem.svg';
 import {theme} from "./theme";
 import {SizesProvider} from 'react-sizes';
 import {LoadingHex} from "./atoms/Hexagon";
+import ChatBot from "./components/ChatBot";
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -167,6 +168,7 @@ class App extends Component {
                           </WrapperDiv>}
                   >
                     <Routes/>
+                    <ChatBot />
                   </Suspense>
                 </div>
               </CloudinaryContext>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { theme } from "../../theme";
 import { border } from "styled-system";
+import { FormattedMessage } from "react-intl";
 
 const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
 
@@ -29,7 +30,7 @@ export default function BotChatMessage({ message: payload, loader }) {
 
         } catch (error) {
           console.error("Error:", error);
-          setMessage("Sorry, there was an error processing your request.")
+          actionProvider.updateMessageInState({id, message: <FormattedMessage id="chatbot.error"/>})
         }
       };
       fetchAnswer(question);

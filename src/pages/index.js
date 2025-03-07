@@ -12,7 +12,6 @@ import {
 } from '../organisms'
 import background from "../feedback.svg";
 import {withLayout} from "../organisms";
-import ChatBot from '../components/ChatBot';
 
 const FeedbackWB = withBackground(background, 1133, 686)(({className, mt, reviews}) => <Feedback {...{className, mt, reviews}}/>)`
     left: -230px;
@@ -35,8 +34,6 @@ export default withLayout()(() => {
             <FeedbackWB mt={[5, 5, 5 ,5, 11]} {...{reviews}}/>
 
             <RecentProjects mt={8} projects={projects}/>
-
-            <ChatBot />
 
         </Fragment>
     )}
