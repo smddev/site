@@ -2,24 +2,41 @@
 en:
   title: About
   subtitle: We create software products for IT startups and large companies.
-  intro: We are the team of coding enthusiasts emerged from former Sun Microsystems and Intel R&D centers. 
-    A common shared desire to build great bleeding edge software was the thing that kept us together for all this time.
-  body: |-
-    ## The purpose of our work is the successful development of the client's business
+  intro: We are the team of coding enthusiasts emerged from former Sun
+    Microsystems and Intel R&D centers. A common shared desire to build great
+    bleeding edge software was the thing that kept us together for all this
+    time.
+  body: >-
+    ## The purpose of our work is the successful development of the client's
+    business
 
-    We have extensive expertise in Web Service UI & backend development, Clustering, Messaging, Communications, Distributed computing, Test automation. 
 
-    Our team members contributed for years to Java Development Kit, Java Compatibility Kit and Java Virtual Machine. 
+    The company was founded in 2009 by Vitaly Tishkov, Andrey Chernyshev, Nikolay Kuznetsov, and Oleg Mokhovikov, who previously worked at Sun Microsystems and Intel Corporation.
+
+
+    In the early 2000s, the founding team participated in the development of various Java components. Andrey is a co-author of a patent related to Java testing.
+
+
+    Since 2004, the team moved to Intel Corporation, where they worked on the virtual machine and libraries for an alternative Java implementation under the Apache License, Apache Harmony, and the Moxie JVM virtual machine. Oleg co-authored a paper on the implementation of Moxie JVM. Upon completion of this project, the team was recognized with the Division Recognition Award by Intel President Craig R. Barrett. Later, the Apache Harmony codebase was used by Google in Android OS, so it is safe to say that the work done by the team is still being used by millions of people worldwide.
+
+
+    In 2009, Smart Design was established to independently execute IT projects for both international and Russian clients.
+
+
+    Today, the company successfully delivers projects in custom software development, Big Data, machine learning, and artificial intelligence, leveraging LLM (Large Language Models) to solve various customer challenges.
 ru:
   title: О нас
   subtitle: Мы создаём программные продукты для IT-стартапов и крупных компаний.
-  intro: Мы - команда энтузиастов-разработчиков, вышедшая из бывших научно-исследовательских центров Sun Microsystems и Intel.
-    На протяжении многих лет нас удерживало вместе общее стремление создавать передовое программное обеспечение.
-  body: |-
+  intro: Мы - команда энтузиастов-разработчиков, вышедшая из бывших
+    научно-исследовательских центров Sun Microsystems и Intel. На протяжении
+    многих лет нас удерживало вместе общее стремление создавать передовое
+    программное обеспечение.
+  body: >-
     ## Цель нашей работы - успешное развитие бизнеса клиента
+
 
     Мы обладаем обширным опытом в области создания пользовательских интерфейсов и backend разработки, кластеризации, обмена сообщениями, коммуникаций, распределенных вычислений, автоматизации тестирования.
 
+
     Инженеры из нашей команды в течение многих лет вносили вклад в разработку Java Development Kit, Java Compatibility Kit и Java Virtual Machine.
 ---
-
