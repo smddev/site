@@ -82,7 +82,7 @@ export default withLayout()(
 
       <Container mt={3}>
         <Box width={[1, 1, 1, 2 / 3]}>
-          <Markdown source={page.content} className='aboutPage' escapeHtml={false} />
+          <Markdown source={page.data.body} className='aboutPage' escapeHtml={false} />
         </Box>
         <Box width={[1, 1, 1, 1 / 3]}>
           <StyledFacts {...{ facts }} />
