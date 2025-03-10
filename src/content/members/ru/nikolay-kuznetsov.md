@@ -2,6 +2,7 @@
 order: 4
 title: Николай Кузнецов
 role: Ведущий инженер
+email: nikolay.kuznetsov@smddev.com
 image: https://res.cloudinary.com/smddev/image/upload/v1741596176/site/member/photo_2025-03-10_11-36-52.jpg
 ---
 Николай — опытный fullstack-разработчик с акцентом на фронтенд-разработку. Имеет более 15 лет опыта работы в ведущих технологических компаниях, включая Sun Microsystems и Intel. В Sun занимался разработкой инструментов для сборки Java Compatibility Kit, а в Intel участвовал в создании сетевых компонентов для сервис-ориентированных архитектур (SOAE). Внес значительный вклад в проект Apache Harmony, занимаясь разработкой многопоточности в JVM и библиотек Java (включая regex).
