@@ -17,7 +17,7 @@ en:
     In the early 2000s, the founding team participated in the development of various Java components. Andrey is a co-author of a patent related to Java testing.
 
 
-    Since 2004, the team moved to Intel Corporation, where they worked on the virtual machine and libraries for an alternative Java implementation under the Apache License, Apache Harmony, and the Moxie JVM virtual machine. Oleg co-authored a paper on the implementation of Moxie JVM. Upon completion of this project, the team was recognized with the Division Recognition Award by Intel President Craig R. Barrett. Later, the Apache Harmony codebase was used by Google in Android OS, so it is safe to say that the work done by the team is still being used by millions of people worldwide.
+    Since 2004, the team moved to Intel Corporation, where they worked on the virtual machine and libraries for an alternative Java implementation under the Apache License, Apache Harmony, and the Moxie JVM virtual machine. Oleg co-authored a [paper on the implementation of Moxie JVM](http://users.cecs.anu.edu.au/~steveb/pubs/papers/TR-CS-08-01.pdf). Upon completion of this project, the team was recognized with the Division Recognition Award by Intel President Craig R. Barrett. Later, the Apache Harmony codebase was used by Google in Android OS, so it is safe to say that the work done by the team is still being used by millions of people worldwide.
 
 
     In 2009, Smart Design was established to independently execute IT projects for both international and Russian clients.
