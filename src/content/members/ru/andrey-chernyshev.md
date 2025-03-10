@@ -1,6 +1,6 @@
 ---
 order: 1
-title: Andrey Chernyshev
+title: Андрей Чернышёв
 role: Технический директор
 avatar: chernyshev
 category: management
