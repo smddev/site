@@ -35,7 +35,7 @@ const TextBox = styled(Box)`
 `;
 
 export default ({ item, carousel }) => {
-  const normalized = normalizeImageName(item.data.avatar)
+  const normalized = normalizeImageName(item.data.image)
   return (
     <Box mb={3}>
       <Flex width={1} {...{ flexWrap: carousel ? "wrap" : "nowrap" }}>
