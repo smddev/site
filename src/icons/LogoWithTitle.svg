@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="460.09399pt"
+   height="80.711586pt"
+   viewBox="0 0 460.09399 80.711586"
+   version="1.1"
+   id="svg3589"
+   sodipodi:docname="SVGlogoWhite.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3593">
+    <rect
+       x="677.41612"
+       y="188.52445"
+       width="712.54169"
+       height="249.69924"
+       id="rect4790" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview3591"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="1.7203835"
+     inkscape:cx="308.65211"
+     inkscape:cy="143.86327"
+     inkscape:window-width="1878"
+     inkscape:window-height="1163"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="surface4" />
+  <g
+     id="surface2"
+     transform="translate(-174.14844,-62.949219)">
+    <path
+       style="fill:#f36e1e;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       d="M 203.10156,113.05078 215.19922,98.351562 206.75,85.398438 187.44922,85.25 l -13.30078,13 7.05078,14.85156 21.90234,-0.0508"
+       id="path3577" />
+    <path
+       style="fill:#f5941e;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       d="M 238.25,99.550781 H 218.14844 L 206.25,114.35156 215.80078,131 H 239 L 249.19922,114.19922 238.25,99.550781 m 9.64844,-36.601562 h 16.75 l 10.15234,9.902343 -6.65234,10.949219 -18.25,-0.152343 -9.59766,-11.199219 7.59766,-9.5"
+       id="path3579" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       d="M 250.10156,85.699219 241.25,98.398438 252.30078,112.89844 273.10156,112.80078 280.30078,98.5 268.5,85.851562 250.10156,85.699219"
+       id="path3581" />
+    <path
+       style="fill:#fdb811;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       d="m 277.55078,73.800781 -6.5,11.050781 11.89844,12.546876 18.94922,0.05078 4.95312,-12.347657 L 294.5,74 277.55078,73.800781"
+       id="path3583" />
+  </g>
+  <g
+     id="surface4"
+     transform="translate(-15.148438,-84.949219)">
+    <text
+       style="fill:#f7941e"
+       font-family="'Futura Md BT'"
+       font-size="50px"
+       id="0"
+       transform="translate(162.1425,138.0925)"
+       xml:space="preserve"><![CDATA[Smart Design]]></text>
+    <text
+       style="fill:#000000"
+       font-family="'Futura Md BT'"
+       font-size="30px"
+       id="1"
+       transform="matrix(0.88798743,0,0,0.88798743,167.77597,165.39441)"
+       xml:space="preserve"><tspan
+         style="fill:#ffffff"
+         id="tspan4786"><![CDATA[scalable solutions]]></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.75,0,0,0.75,15.148438,84.949219)"
+       id="text4788"
+       style="fill:#ffffff;white-space:pre;shape-inside:url(#rect4790)" />
+  </g>
+</svg>

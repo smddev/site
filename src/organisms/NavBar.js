@@ -8,6 +8,7 @@ import {EmailLink} from '../components'
 import {ArrowLink, MenuButton, Container, NavLink, withBackground} from '../atoms'
 import background from '../navbar.svg'
 import { FormattedMessage } from 'react-intl'
+import LogoWithTitle from '../icons/LogoWithTitle';
 
 const NavContainer = styled(Container)`
   flex-wrap: wrap;
@@ -32,7 +33,7 @@ const NavBar_Link = styled(NavLink)`
 `
 
 const NavBar_Logo = styled((props) => <Link {...props} to={'/'}>
-    <img src={logoImg} alt="Smart Design"/>
+    <LogoWithTitle height="32px"/>
 </Link>)`
   height: 32px;
   margin-right: ${props => props.theme.space[5] + 'px'};
