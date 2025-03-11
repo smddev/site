@@ -1,10 +1,11 @@
 ---
 order: 2
-title: Core Programming & Scripting Languages
+title: Backend & Microservices
 techs:
-  - Python
-  - JavaScript/Node.js
-  - Golang
-  - Java (Spring)
+  - Python/FastAPI
+  - Java/Akka/Spring
   - Scala
+  - NodeJS
+  - Golang
+  - Kafka
 ---
