@@ -2,10 +2,7 @@
 en:
   title: About
   subtitle: We create software products for IT startups and large companies.
-  intro: We are the team of coding enthusiasts emerged from former Sun
-    Microsystems and Intel R&D centers. A common shared desire to build great
-    bleeding edge software was the thing that kept us together for all this
-    time.
+  intro: We are a modern software development team specializing in cutting-edge web platforms, AI-driven data solutions, and scalable cloud applications. Our expertise spans from building robust backend systems in Python, Node.js, and Golang to crafting high-performance user interfaces in React and Next.js. We excel in designing and orchestrating data pipelines with Apache Airflow, Prefect, and Kafka, while leveraging modern databases (PostgreSQL, MongoDB, DuckDB) and AI toolkits (LangChain, TensorFlow, Scikit-learn) to deliver advanced analytics and intelligent software solutions. Backed by strong DevOps practices and extensive industry experience, we ensure reliable, future-proof technology implementations that drive tangible value for our clients.
   body: >-
     ## The purpose of our work is the successful development of the client's
     business
@@ -27,10 +24,7 @@ en:
 ru:
   title: О нас
   subtitle: Мы создаём программные продукты для IT-стартапов и крупных компаний.
-  intro: Мы - команда энтузиастов-разработчиков, вышедшая из бывших
-    научно-исследовательских центров Sun Microsystems и Intel. На протяжении
-    многих лет нас удерживало вместе общее стремление создавать передовое
-    программное обеспечение.
+  intro: Мы — современная команда разработчиков программного обеспечения, специализирующаяся на передовых веб-платформах, решениях для работы с данными на основе искусственного интеллекта и масштабируемых облачных приложениях. Наш опыт охватывает создание надежных бэкенд-систем на Python, Node.js и Golang, а также разработку высокопроизводительных пользовательских интерфейсов на React и Next.js. Мы преуспеваем в проектировании и организации конвейеров данных с использованием Apache Airflow, Prefect и Kafka, одновременно применяя современные базы данных (PostgreSQL, MongoDB, DuckDB) и инструменты ИИ (LangChain, TensorFlow, Scikit-learn) для предоставления продвинутой аналитики и интеллектуальных программных решений. Благодаря сильным DevOps-практикам и обширному опыту в отрасли, мы обеспечиваем надежные и перспективные технологические реализации, которые приносят ощутимую пользу нашим клиентам.
   body: >-
     ## Цель нашей работы - успешное развитие бизнеса клиента
 
