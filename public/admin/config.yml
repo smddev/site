@@ -79,9 +79,9 @@ collections:
       - {label: "Code", name: "code", widget: "string", i18n: true}
       - {label: "Image", name: "image", widget: "image", required: false, i18n: true}
 
-  - name: "specs"
-    label: "Specializations"
-    folder: "src/content/specs"
+  - name: "expertise"
+    label: "Expertise"
+    folder: "src/content/expertise"
     i18n: true
     create: true
     slug: "{{slug}}"
