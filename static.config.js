@@ -89,7 +89,8 @@ const getRoutes = async () => {
             stages: siteData.collections.stages,
             industries: siteData.collections.industry,
             techs: siteData.collections.tech,
-            reviews: siteData.collections.review
+            reviews: siteData.collections.review,
+            specs: siteData.collections.specs
         }, '/'),
         pageRoute('contacts', {
             projects: siteData.collections.project,
@@ -105,13 +106,15 @@ const getRoutes = async () => {
             industries: siteData.collections.industry,
             services: siteData.collections.service,
             techs: siteData.collections.tech,
+            specs: siteData.collections.specs
         }, null, [
             ...collectionRoutes('project', 'projects',
                 {
                     projects: siteData.collections.project,
                     services: siteData.collections.service,
                     industries: siteData.collections.industry,
-                    techs: siteData.collections.tech
+                    techs: siteData.collections.tech,
+                    specs: siteData.collections.specs
                 })
         ]),
         {
