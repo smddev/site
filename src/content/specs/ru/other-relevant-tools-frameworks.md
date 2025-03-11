@@ -1,14 +1,9 @@
 ---
 order: 5
-title: Other Relevant Tools & Frameworks
+title: ML & NLP
 techs:
-  - GraphQL
-  - Laravel
-  - PHP
   - Scikit-learn
   - TensorFlow
   - Keras
-  - spaCy
-  - Redux
-  - Hadoop
+  - SpaCy
 ---
