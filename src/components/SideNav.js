@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import {space} from 'styled-system';
 import {H2} from '../atoms'
-import {IndustryList, ServiceList, TechList} from "../components";
+import {IndustryList, ServiceList, TechList, ExpertiseList} from "../components";
 import { FormattedMessage } from 'react-intl'
 
-const SideNav = ({className, industries, services, techs}) => <div {...{className}}>
+const SideNav = ({className, industries, services, expertise, techs}) => <div {...{className}}>
     <H2>
         <FormattedMessage id='message.industries'/>
     </H2>
@@ -14,6 +14,10 @@ const SideNav = ({className, industries, services, techs}) => <div {...{classNam
         <FormattedMessage id='message.services'/>
     </H2>
     <ServiceList pxSize={18} mt={'24px'} services={services}/>
+    <H2 mt={'60px'}>
+        <FormattedMessage id='message.expertises'/>
+    </H2>
+    <ExpertiseList vertical iconSize={2} mt={'24px'} expertises={expertise}/>
     <H2 mt={'60px'}>
         <FormattedMessage id='message.technologies'/>
     </H2>

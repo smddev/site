@@ -9,4 +9,5 @@ techs:
   - Prisma
   - Playwright
   - Scrapy
+icon: microchip
 ---

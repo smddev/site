@@ -7,4 +7,5 @@ techs:
   - AWS
   - GC
   - YC
+icon: microchip
 ---

@@ -22,12 +22,13 @@ const Cell = ({children}) => <Box width={[1, 1, 1, 1, 1 / 2]} px={'12px'} pb={'2
 </Box>
 
 //order of HOCs is important nested HOCs expect props from parent props
-export default withLayout()(withRouteData(withSidebar(withSiteData(withWindowLocation(({projects, industries, services, techs, location, routes}) => {
+export default withLayout()(withRouteData(withSidebar(withSiteData(withWindowLocation(({projects, industries, services, expertise, techs, location, routes}) => {
     const query = queryString.parse(location.search);
     const selectedProjects = projects.filter(filterBy(query));
     const data = {
         industry: industries,
         service: services,
+        expertise: expertise,
         tech: techs
     }
     var tag = null

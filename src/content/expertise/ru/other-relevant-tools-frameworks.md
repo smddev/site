@@ -6,4 +6,5 @@ techs:
   - TensorFlow
   - Keras
   - SpaCy
+icon: microchip
 ---

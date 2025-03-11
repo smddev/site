@@ -13,4 +13,5 @@ techs:
   - DuckDB
   - Airflow
   - Prefect
+icon: microchip
 ---

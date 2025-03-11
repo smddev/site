@@ -60,6 +60,9 @@ export const ServiceList = (props) =>
     <HexIcon {...props}/>
   </List>
 
+export const ExpertiseList = (props) =>
+    <PortfolioList items={props.expertises} filterBy='expertise' {...props}/>
+
 export const TechList = styled(({className, ...props}) =>
   <List flexDirection={'row'} items={props.techs} includes={props.techIds} vertical={true}
         className={className} linkPath={`/portfolio?tech=`} filterBy={'tech'}>

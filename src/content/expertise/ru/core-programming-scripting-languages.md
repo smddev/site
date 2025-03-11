@@ -8,4 +8,5 @@ techs:
   - NodeJS
   - Golang
   - Kafka
+icon: microchip
 ---

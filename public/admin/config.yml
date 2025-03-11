@@ -88,7 +88,7 @@ collections:
     fields:
       - {label: "Order", name: "order", widget: "number", default: 0, min: 0, i18n: true}
       - {label: "Name", name: "title", widget: "string", i18n: true}
-      - {label: "Image", name: "image", widget: "image", required: false, i18n: true}
+      - {label: "Icon", name: "icon", widget: "string", required: false, i18n: true}
       - {label: "Technologies", name: "techs", widget: "list", i18n: true }
 
   - name: "member"

@@ -10,4 +10,5 @@ techs:
   - Meilisearch
   - OracleDB
   - Redis
+icon: microchip
 ---
