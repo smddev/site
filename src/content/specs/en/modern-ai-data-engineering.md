@@ -1,16 +1,16 @@
 ---
 order: 0
-title: Modern AI & Data Engineering
+title: AI & Data
 techs:
+  - OpenAI
+  - Meta AI
+  - DeepSeek-R1
+  - Mistral AI
   - LangChain
   - LangGraph
-  - Polars
   - Pandas
+  - Polars
   - DuckDB
-  - StarRocks
-  - Redis
-  - Apache Kafka
-  - Apache Airflow
+  - Airflow
   - Prefect
-  - Meilisearch
 ---
