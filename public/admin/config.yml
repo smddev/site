@@ -181,6 +181,7 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string", i18n: true}
           - {label: "Reasons", name: "reasons", widget: "markdown", i18n: true}
+
   - name: "review"
     label: "Reviews"
     folder: "src/content/reviews"
