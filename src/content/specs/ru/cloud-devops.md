@@ -1,8 +1,10 @@
 ---
 order: 4
-title: Cloud & DevOps
+title: DevOps & Cloud
 techs:
   - Kubernetes
   - Docker
-  - CI/CD tools
+  - AWS
+  - GC
+  - YC
 ---
