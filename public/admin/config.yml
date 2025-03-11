@@ -80,7 +80,7 @@ collections:
       - {label: "Image", name: "image", widget: "image", required: false, i18n: true}
 
   - name: "specs"
-    label: "Technologies"
+    label: "Specializations"
     folder: "src/content/specs"
     i18n: true
     create: true
