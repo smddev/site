@@ -1,11 +1,13 @@
 ---
 order: 3
-title: Databases & Data Stores
+title: Databases
 techs:
   - PostgreSQL
-  - MySQL
   - MongoDB
+  - StarRocks
   - Cassandra
   - Elasticsearch
+  - Meilisearch
   - OracleDB
+  - Redis
 ---
