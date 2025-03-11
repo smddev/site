@@ -1,14 +1,12 @@
 ---
 order: 1
-title: Web & Application Development
+title: Web & Frontend
 techs:
-  - Next.js
-  - React.js
+  - ReactJS
+  - NextJS
   - React Query
   - tRPC
   - Prisma
   - Playwright
   - Scrapy
-  - FastAPI
-  - AIOgram
 ---
