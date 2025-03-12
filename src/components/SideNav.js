@@ -15,9 +15,9 @@ const SideNav = ({className, industries, services, expertise, techs}) => <div {.
     </H2>
     <ServiceList pxSize={18} mt={'24px'} services={services}/>
     <H2 mt={'60px'}>
-        <FormattedMessage id='message.expertises'/>
+        <FormattedMessage id='message.expertise'/>
     </H2>
-    <ExpertiseList vertical iconSize={2} mt={'24px'} expertises={expertise}/>
+    <ExpertiseList vertical iconSize={2} mt={'24px'} expertise={expertise}/>
     <H2 mt={'60px'}>
         <FormattedMessage id='message.technologies'/>
     </H2>

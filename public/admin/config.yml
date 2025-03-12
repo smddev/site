@@ -3,6 +3,7 @@
 backend:
   name: github
   repo: smddev/site # Path to your GitHub repository
+  branch: expertises
 
 
 media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
