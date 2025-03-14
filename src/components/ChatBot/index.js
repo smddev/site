@@ -10,6 +10,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import './styles.css'
 import IconButton from '../../atoms/IconButton';
 import Robot from '../../icons/Robot';
+import MessageSound from '../../sounds/sound3.mp3';
 
 const ChatbotContainer = styled.div`
   position: fixed;
@@ -30,18 +31,6 @@ const ChatBot = () => {
   const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
 
   useEffect(() => {
-    // Automatically open the chat after 30 seconds only if history is empty
-    const timer = setTimeout(() => {
-      if (history.length <= 1) { // Check if history is empty (initial message only)
-        setShow(true);
-      }
-    }, 30000);
-
-    // Cleanup the timer on unmount
-    return () => clearTimeout(timer);
-  }, [history]); // Add history as a dependency
-
-  useEffect(() => {
     const fetchHistory = async () => {
       try {
         const response = await fetch(`${assistentUrl}/messages`, {
@@ -54,11 +43,28 @@ const ChatBot = () => {
         })
 
         setHistory((prev) => [...prev, ...hist])
+        return hist;
       } catch (error) {
         console.log("failed to load message history")
+        return null;
       }
     }
-    fetchHistory()
+
+    fetchHistory().then((hist) => {
+      // start the timer only if history is empty
+      if (hist && hist.length === 0) {
+        const timer = setTimeout(() => {
+          setShow(true);
+          const audio = new Audio(MessageSound);
+          audio.play().catch((error) => {
+            console.error("Failed to play sound:", error);
+          });
+        }, 30000);
+
+        // Cleanup the timer on unmount
+        return () => clearTimeout(timer);
+      }
+    });
   }, [])
 
   const toggleChat = () => {
