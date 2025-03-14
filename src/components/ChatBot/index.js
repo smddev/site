@@ -30,6 +30,16 @@ const ChatBot = () => {
   const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
 
   useEffect(() => {
+    // Automatically open the chat after 30 seconds
+    const timer = setTimeout(() => {
+      setShow(true);
+    }, 30000);
+
+    // Cleanup the timer on unmount
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const fetchHistory = async () => {
       try {
         const response = await fetch(`${assistentUrl}/messages`, {
