@@ -30,7 +30,7 @@
   "placeholder.name": "Name",
   "placeholder.comment": "Comment",
 
-  "chatbot.initial": "Hello! I am an AI consultant at Smart Design, I can speak English and Russian and am ready to consult you on our company's experience.",
+  "chatbot.initial": "Hello! I am an AI consultant at Smart Design and am ready to consult you on our company's experience.",
   "chatbot.placeholder": "Type your question here",
   "chatbot.error": "Sorry, I can't answer your question now. Try again later."
 }

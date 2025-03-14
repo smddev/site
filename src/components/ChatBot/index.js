@@ -10,6 +10,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import './styles.css'
 import IconButton from '../../atoms/IconButton';
 import Robot from '../../icons/Robot';
+import MessageSound from '../../sounds/quick-short-shutdown-sound.mp3';
 
 const ChatbotContainer = styled.div`
   position: fixed;
@@ -28,6 +29,22 @@ const ChatBot = () => {
   const intl = useIntl();
   const [ show, setShow ] = useState(false)
   const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
+  const [initialVisit, setInitialVisit] = useState(false)
+
+  useEffect(() => {
+    if (initialVisit) {
+      const timer = setTimeout(() => {
+        setShow(true);
+        const audio = new Audio(MessageSound);
+        audio.play().catch((error) => {
+          console.error("Failed to play sound:", error);
+        });
+      }, 30000);
+
+      // Cleanup the timer on unmount
+      return () => clearTimeout(timer);
+    }
+  }, [initialVisit]);
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -42,6 +59,7 @@ const ChatBot = () => {
         })
 
         setHistory((prev) => [...prev, ...hist])
+        setInitialVisit(hist.length === 0);
       } catch (error) {
         console.log("failed to load message history")
       }
