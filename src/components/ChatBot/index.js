@@ -30,14 +30,16 @@ const ChatBot = () => {
   const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
 
   useEffect(() => {
-    // Automatically open the chat after 30 seconds
+    // Automatically open the chat after 30 seconds only if history is empty
     const timer = setTimeout(() => {
-      setShow(true);
+      if (history.length <= 1) { // Check if history is empty (initial message only)
+        setShow(true);
+      }
     }, 30000);
 
     // Cleanup the timer on unmount
     return () => clearTimeout(timer);
-  }, []);
+  }, [history]); // Add history as a dependency
 
   useEffect(() => {
     const fetchHistory = async () => {
