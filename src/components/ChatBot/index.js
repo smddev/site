@@ -11,6 +11,8 @@ import './styles.css'
 import IconButton from '../../atoms/IconButton';
 import Robot from '../../icons/Robot';
 import MessageSound from '../../sounds/quick-short-shutdown-sound.mp3';
+import { motion, AnimatePresence } from "framer-motion";
+
 
 const ChatbotContainer = styled.div`
   position: fixed;
@@ -76,24 +78,38 @@ const ChatBot = () => {
   };
 
   return (
-    <ChatbotContainer>
-      {show && (
-        <Chatbot
-          config={config}
-          messageParser={MessageParser}
-          actionProvider={ActionProvider}
-          validator={validator}
-          placeholderText={intl.formatMessage({id: 'chatbot.placeholder'})}
-          messageHistory={history}
-          saveMessages={saveMessages}
-        />
-      )}
+      <ChatbotContainer>
+        <AnimatePresence>
+          {show && (
+              <motion.div
+                  initial={{ opacity: 0, x: -350 }} // Начальное состояние: элемент скрыт слева
+                  animate={{ opacity: 1, x: 0 }}   // Анимация: элемент появляется, двигаясь вправо
+                  exit={{ opacity: 0, x: -350 }}   // Конечное состояние: элемент скрывается влево
+                  transition={{ duration: 0.5 }}   // Длительность анимации
+              >
+                <Chatbot
+                    config={config}
+                    messageParser={MessageParser}
+                    actionProvider={ActionProvider}
+                    validator={validator}
+                    placeholderText={intl.formatMessage({id: 'chatbot.placeholder'})}
+                    messageHistory={history}
+                    saveMessages={saveMessages}
+                />
+              </motion.div>
+          )}
+        </AnimatePresence>
 
-      <IconButton
-        icon={Robot}
-        onClick={toggleChat}
-      />
-    </ChatbotContainer>
+        <motion.div
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: 0.9}}
+        >
+          <IconButton
+              icon={Robot}
+              onClick={toggleChat}
+          />
+        </motion.div>
+      </ChatbotContainer>
   );
 };
 
