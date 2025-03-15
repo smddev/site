@@ -41,8 +41,8 @@ export default function BotChatMessage({ message: payload, loader }) {
   return (
       <motion.div
           className="react-chatbot-kit-chat-bot-message"
-          initial={{ opacity: 0, x: 50 }} // Начальное состояние: сообщение скрыто справа
-          animate={{ opacity: 1, x: 0 }}   // Анимация: сообщение появляется, двигаясь влево
+          initial={{ opacity: 0, x: -50 }} // Начальное состояние: сообщение скрыто слева
+          animate={{ opacity: 1, x: 0 }}   // Анимация: сообщение появляется, двигаясь вправо
           transition={{ duration: 0.3 }}   // Длительность анимации
       >
         <span>{message || loader}</span>
