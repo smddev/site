@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Chatbot, { createChatBotMessage, createClientMessage } from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css';
 import styled from "styled-components";
@@ -32,15 +32,22 @@ const ChatBot = () => {
   const [ show, setShow ] = useState(false)
   const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
   const [initialVisit, setInitialVisit] = useState(false)
+  const historyRef = useRef(history);
+
+  useEffect(() => {
+    historyRef.current = history
+  }, [history]);
 
   useEffect(() => {
     if (initialVisit) {
       const timer = setTimeout(() => {
-        setShow(true);
-        const audio = new Audio(MessageSound);
-        audio.play().catch((error) => {
-          console.error("Failed to play sound:", error);
-        });
+        if (historyRef.current.length <= 1) {
+          setShow(true);
+          const audio = new Audio(MessageSound);
+          audio.play().catch((error) => {
+            console.error("Failed to play sound:", error);
+          });
+        }
       }, 30000);
 
       // Cleanup the timer on unmount
@@ -52,7 +59,7 @@ const ChatBot = () => {
     const fetchHistory = async () => {
       try {
         const response = await fetch(`${assistentUrl}/messages`, {
-          credentials: "include"
+          credentials: "include",
         })
         const data = await response.json()
         const hist = data.map((m) => {
