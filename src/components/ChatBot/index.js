@@ -12,6 +12,9 @@ import IconButton from '../../atoms/IconButton';
 import Robot from '../../icons/Robot';
 import MessageSound from '../../sounds/quick-short-shutdown-sound.mp3';
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../../icons/Logo";
+import {Text} from "../../atoms";
+import ChatbotButton from "./chatbotButton";
 
 
 const ChatbotContainer = styled.div`
@@ -113,10 +116,12 @@ const ChatBot = () => {
             whileHover={{scale: 1.1}}
             whileTap={{scale: 0.9}}
         >
-          <IconButton
-              icon={Robot}
+          <ChatbotButton
+              icon={Logo}
               onClick={toggleChat}
-          />
+              isChatOpen={show}
+          >
+          </ChatbotButton>
         </motion.div>
       </ChatbotContainer>
   );

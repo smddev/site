@@ -25,6 +25,7 @@
   "message.submit": "Отправить",
   "message.portfolio": "Портфолио",
   "message.request.success": "Ваш запрос успешно отправлен.",
+  "chatbot.button.label": "AI Assistant",
 
   "placeholder.your.email": "Ваш email",
   "placeholder.name": "Имя",
