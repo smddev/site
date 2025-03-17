@@ -25,6 +25,7 @@
   "message.submit": "Submit",
   "message.portfolio": "Portfolio",
   "message.request.success": "Your request was successfully submitted.",
+  "chatbot.button.label": "AI Assistant",
 
   "placeholder.your.email": "Your email",
   "placeholder.name": "Name",
