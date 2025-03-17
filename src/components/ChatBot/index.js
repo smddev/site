@@ -26,6 +26,7 @@ const ChatbotContainer = styled.div`
   flex-direction: column;
   align-items: end;
   gap: 16px;
+  pointer-events: ${({ $isVisible }) => ($isVisible ? 'auto' : 'none')};
 `;
 
 const ChatbotWrapper = styled(motion.div)`
