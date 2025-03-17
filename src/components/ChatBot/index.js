@@ -95,7 +95,7 @@ const ChatBot = () => {
   };
 
   return (
-      <ChatbotContainer>
+      <ChatbotContainer $isVisible={show}>
         <ChatbotWrapper
             $isVisible={show}
             initial={{ opacity: 0, x: 350 }}
