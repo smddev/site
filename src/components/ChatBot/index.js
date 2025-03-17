@@ -25,6 +25,12 @@ const ChatbotContainer = styled.div`
   gap: 16px;
 `;
 
+const ChatbotWrapper = styled(motion.div)`
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  transition: opacity 0.5s, visibility 0.5s;
+`;
+
 const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
 
 const ChatBot = () => {
@@ -86,26 +92,22 @@ const ChatBot = () => {
 
   return (
       <ChatbotContainer>
-        <AnimatePresence>
-          {show && (
-              <motion.div
-                  initial={{ opacity: 0, x: 350 }} // Начальное состояние: элемент скрыт справа
-                  animate={{ opacity: 1, x: 0 }}   // Анимация: элемент появляется, двигаясь влево
-                  exit={{ opacity: 0, x: 350 }}   // Конечное состояние: элемент скрывается вправо
-                  transition={{ duration: 0.5 }}   // Длительность анимации
-              >
-                <Chatbot
-                    config={config}
-                    messageParser={MessageParser}
-                    actionProvider={ActionProvider}
-                    validator={validator}
-                    placeholderText={intl.formatMessage({id: 'chatbot.placeholder'})}
-                    messageHistory={history}
-                    saveMessages={saveMessages}
-                />
-              </motion.div>
-          )}
-        </AnimatePresence>
+        <ChatbotWrapper
+            $isVisible={show}
+            initial={{ opacity: 0, x: 350 }}
+            animate={{ opacity: show ? 1 : 0, x: show ? 0 : 350 }}
+            transition={{ duration: 0.5 }}
+        >
+          <Chatbot
+              config={config}
+              messageParser={MessageParser}
+              actionProvider={ActionProvider}
+              validator={validator}
+              placeholderText={intl.formatMessage({ id: 'chatbot.placeholder' })}
+              messageHistory={history}
+              saveMessages={saveMessages}
+          />
+        </ChatbotWrapper>
 
         <motion.div
             whileHover={{scale: 1.1}}
