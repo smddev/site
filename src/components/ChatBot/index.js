@@ -78,10 +78,10 @@ const ChatBot = () => {
 
         setHistory((prev) => [...prev, ...hist])
         setInitialVisit(hist.length === 0);
-        setIsLoaded(true);
       } catch (error) {
         console.log("failed to load message history")
         setInitialVisit(false);
+      } finally {
         setIsLoaded(true);
       }
     }
