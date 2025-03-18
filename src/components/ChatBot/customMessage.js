@@ -27,7 +27,7 @@ export default function BotChatMessage({ message: payload, loader }) {
           }
 
           const data = await response.json();
-          actionProvider.updateMessageInState({id, message: data})
+          actionProvider.updateMessageInState({id, message: data['answer']})
 
         } catch (error) {
           console.error("Error:", error);
