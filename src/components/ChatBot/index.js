@@ -1,19 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react'
-import Chatbot, { createChatBotMessage, createClientMessage } from "react-chatbot-kit";
+import Chatbot from "react-chatbot-kit";
+import ChatbotError, {createChatBotMessage, createClientMessage} from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css';
 import styled from "styled-components";
 import config from './chatbotConfig';
 import MessageParser from './messageParser';
 import ActionProvider from './actionProvider';
 import validator from './validator'
-import { FormattedMessage, useIntl } from 'react-intl';
+import {FormattedMessage, useIntl} from 'react-intl';
 import './styles.css'
-import IconButton from '../../atoms/IconButton';
-import Robot from '../../icons/Robot';
 import MessageSound from '../../sounds/quick-short-shutdown-sound.mp3';
-import { motion, AnimatePresence } from "framer-motion";
+import {motion} from "framer-motion";
 import Logo from "../../icons/Logo";
-import {Text} from "../../atoms";
 import ChatbotButton from "./chatbotButton";
 
 
@@ -43,6 +41,7 @@ const ChatBot = () => {
   const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
   const [initialVisit, setInitialVisit] = useState(false)
   const historyRef = useRef(history);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     historyRef.current = history
@@ -81,6 +80,9 @@ const ChatBot = () => {
         setInitialVisit(hist.length === 0);
       } catch (error) {
         console.log("failed to load message history")
+        setInitialVisit(false);
+      } finally {
+        setIsLoaded(true);
       }
     }
     fetchHistory()
@@ -96,22 +98,23 @@ const ChatBot = () => {
 
   return (
       <ChatbotContainer $isVisible={show}>
-        <ChatbotWrapper
-            $isVisible={show}
-            initial={{ opacity: 0, x: 350 }}
-            animate={{ opacity: show ? 1 : 0, x: show ? 0 : 350 }}
-            transition={{ duration: 0.5 }}
-        >
-          <Chatbot
-              config={config}
-              messageParser={MessageParser}
-              actionProvider={ActionProvider}
-              validator={validator}
-              placeholderText={intl.formatMessage({ id: 'chatbot.placeholder' })}
-              messageHistory={history}
-              saveMessages={saveMessages}
-          />
-        </ChatbotWrapper>
+        {isLoaded && (
+          <ChatbotWrapper
+              $isVisible={show}
+              initial={{ opacity: 0, x: 350 }}
+              animate={{ opacity: show ? 1 : 0, x: show ? 0 : 350 }}
+              transition={{ duration: 0.5 }}
+          >
+            <Chatbot
+                config={config}
+                messageParser={MessageParser}
+                actionProvider={ActionProvider}
+                validator={validator}
+                placeholderText={intl.formatMessage({ id: 'chatbot.placeholder' })}
+                messageHistory={history}
+                saveMessages={saveMessages}
+            />
+          </ChatbotWrapper>)}
 
         <motion.div
             whileHover={{scale: 1.1}}
