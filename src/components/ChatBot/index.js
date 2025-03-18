@@ -1,19 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react'
-import Chatbot, { createChatBotMessage, createClientMessage } from "react-chatbot-kit";
+import Chatbot from "react-chatbot-kit";
+import ChatbotError, {createChatBotMessage, createClientMessage} from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css';
 import styled from "styled-components";
 import config from './chatbotConfig';
 import MessageParser from './messageParser';
 import ActionProvider from './actionProvider';
 import validator from './validator'
-import { FormattedMessage, useIntl } from 'react-intl';
+import {FormattedMessage, useIntl} from 'react-intl';
 import './styles.css'
-import IconButton from '../../atoms/IconButton';
-import Robot from '../../icons/Robot';
 import MessageSound from '../../sounds/quick-short-shutdown-sound.mp3';
-import { motion, AnimatePresence } from "framer-motion";
+import {motion} from "framer-motion";
 import Logo from "../../icons/Logo";
-import {Text} from "../../atoms";
 import ChatbotButton from "./chatbotButton";
 
 
@@ -83,6 +81,8 @@ const ChatBot = () => {
         setIsLoaded(true);
       } catch (error) {
         console.log("failed to load message history")
+        setInitialVisit(false);
+        setIsLoaded(true);
       }
     }
     fetchHistory()
