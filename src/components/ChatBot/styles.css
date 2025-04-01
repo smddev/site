@@ -21,6 +21,10 @@
     height: 450px;
 }
 
+.react-chatbot-kit-chat-bot-message-container {
+    flex-wrap: wrap;
+}
+
 .react-chatbot-kit-user-avatar-container {
     background-color: #44464F;
 }
@@ -44,7 +48,7 @@
 
 .react-chatbot-kit-chat-bot-message {
     background-color: #F5941E;
-    width: 230px
+    width: 215px
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {

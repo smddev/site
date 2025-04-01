@@ -13,12 +13,12 @@ class ActionProvider {
     }));
   };
 
-  updateMessageInState = ({ id, message }) => {
+  updateMessageInState = ({ id, message, messageLinks }) => {
     this.setState((state) => {
       const messages = [...state.messages];
       for (let i = messages.length - 1; i >= 0; i--) {
         if (messages[i].id === id) {
-          messages[i] = { ...messages[i], message: { message } };
+          messages[i] = { ...messages[i], message: { message, messageLinks } };
           return { ...state, messages }
         }
       }

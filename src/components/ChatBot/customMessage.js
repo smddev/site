@@ -3,11 +3,12 @@ import { theme } from "../../theme";
 import { border } from "styled-system";
 import { FormattedMessage } from "react-intl";
 import { motion } from "framer-motion";
+import InternalLinks from "./InternalLinks";
 
 const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
 
 export default function BotChatMessage({ message: payload, loader }) {
-  const { message, question, actionProvider, id } = payload;
+  const { message, question, actionProvider, id, messageLinks } = payload;
 
   useEffect(() => {
     if (question) {
@@ -27,7 +28,7 @@ export default function BotChatMessage({ message: payload, loader }) {
           }
 
           const data = await response.json();
-          actionProvider.updateMessageInState({id, message: data['answer']})
+          actionProvider.updateMessageInState({id, message: data.answer, messageLinks: data.context})
 
         } catch (error) {
           console.error("Error:", error);
@@ -39,6 +40,7 @@ export default function BotChatMessage({ message: payload, loader }) {
   }, [question]);
 
   return (
+    <>
       <motion.div
           className="react-chatbot-kit-chat-bot-message"
           initial={{ opacity: 0, x: -50 }} // Начальное состояние: сообщение скрыто слева
@@ -50,5 +52,8 @@ export default function BotChatMessage({ message: payload, loader }) {
             className="react-chatbot-kit-chat-bot-message-arrow"
         ></div>
       </motion.div>
+      {messageLinks && <InternalLinks mt={2} value={messageLinks} />}
+    </>
+      
   );
 }
