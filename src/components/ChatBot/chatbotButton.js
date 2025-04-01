@@ -1,9 +1,10 @@
 import React from "react";
-import styled, {css} from 'styled-components';
-import {FormattedMessage} from "react-intl";
-import {H4, H5, Subtitle} from "../../atoms";
+import styled, { css } from 'styled-components';
+import { FormattedMessage } from "react-intl";
+import { H4, H5, Subtitle } from "../../atoms";
+import { motion } from "framer-motion";
 
-const ButtonBody = styled.div`
+const ButtonBody = styled(motion.div)`
     border-radius: 50%;
     user-select: none;
     width: 110px;
@@ -22,28 +23,32 @@ const BlinkingText = styled(H5)`
     margin-top: 5px;
     transition: opacity 0.3s ease;
     ${({ $isChatOpen }) =>
-            !$isChatOpen &&
-            css`
+        !$isChatOpen &&
+        css`
       animation: blink 2.5s infinite;
     `}
 
     @keyframes blink {
-    0%,
-    100% {
-        opacity: 1;
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.3;
+        }
     }
-    50% {
-        opacity: 0.3;
-    }
-}
 `;
 
 const ChatbotButton = ({ icon: Icon, onClick, isChatOpen }) => {
     return (
-        <ButtonBody onClick={onClick}>
+        <ButtonBody
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={onClick}
+        >
             <Icon />
             <BlinkingText $isChatOpen={isChatOpen}>
-                <FormattedMessage id="chatbot.button.label"/>
+                <FormattedMessage id="chatbot.button.label" />
             </BlinkingText>
         </ButtonBody>
     );

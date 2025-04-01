@@ -52,7 +52,7 @@ export default function BotChatMessage({ message: payload, loader }) {
             className="react-chatbot-kit-chat-bot-message-arrow"
         ></div>
       </motion.div>
-      {messageLinks && <InternalLinks mt={2} value={messageLinks} />}
+      {messageLinks && <InternalLinks mt={3} value={messageLinks} />}
     </>
       
   );

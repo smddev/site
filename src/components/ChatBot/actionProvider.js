@@ -7,10 +7,22 @@ class ActionProvider {
   }
 
   addMessageToState = (message) => {
-    this.setState((state) => ({
-      ...state,
-      messages: [...state.messages, message],
-    }));
+    this.setState((state) => {
+      const messages = [...state.messages, message];
+      if (messages.length > 2 && messages[messages.length - 3].type === 'bot') {
+        const previousBot = messages[messages.length - 3]
+        const { message } = previousBot;
+
+        delete message.messageLinks;
+
+        messages[messages.length - 3] = {
+          ...previousBot,
+          message
+        }
+      }
+
+      return { ...state, messages };
+    });
   };
 
   updateMessageInState = ({ id, message, messageLinks }) => {

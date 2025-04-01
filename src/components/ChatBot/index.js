@@ -1,16 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Chatbot from "react-chatbot-kit";
-import ChatbotError, {createChatBotMessage, createClientMessage} from "react-chatbot-kit";
+import ChatbotError, { createChatBotMessage, createClientMessage } from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css';
 import styled from "styled-components";
 import config from './chatbotConfig';
 import MessageParser from './messageParser';
 import ActionProvider from './actionProvider';
 import validator from './validator'
-import {FormattedMessage, useIntl} from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import './styles.css'
 import MessageSound from '../../sounds/quick-short-shutdown-sound.mp3';
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import Logo from "../../icons/Logo";
 import ChatbotButton from "./chatbotButton";
 
@@ -37,8 +37,8 @@ const assistentUrl = process.env.ASSISTENT_URL || 'http://localhost:8000'
 
 const ChatBot = () => {
   const intl = useIntl();
-  const [ show, setShow ] = useState(false)
-  const [history, setHistory] = useState([createChatBotMessage({message: <FormattedMessage id='chatbot.initial'/>})])
+  const [show, setShow] = useState(false)
+  const [history, setHistory] = useState([createChatBotMessage({ message: <FormattedMessage id='chatbot.initial' /> })])
   const [initialVisit, setInitialVisit] = useState(false)
   const historyRef = useRef(history);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -73,7 +73,7 @@ const ChatBot = () => {
         const data = await response.json()
         const hist = data.map((m) => {
           const { content: message, type: t } = m
-          return t === 'ai' ? createChatBotMessage({message}) : createClientMessage(message)
+          return t === 'ai' ? createChatBotMessage({ message }) : createClientMessage(message)
         })
 
         setHistory((prev) => [...prev, ...hist])
@@ -97,37 +97,33 @@ const ChatBot = () => {
   };
 
   return (
-      <ChatbotContainer $isVisible={show}>
-        {isLoaded && (
-          <ChatbotWrapper
-              $isVisible={show}
-              initial={{ opacity: 0, x: 350 }}
-              animate={{ opacity: show ? 1 : 0, x: show ? 0 : 350 }}
-              transition={{ duration: 0.5 }}
-          >
-            <Chatbot
-                config={config}
-                messageParser={MessageParser}
-                actionProvider={ActionProvider}
-                validator={validator}
-                placeholderText={intl.formatMessage({ id: 'chatbot.placeholder' })}
-                messageHistory={history}
-                saveMessages={saveMessages}
-            />
-          </ChatbotWrapper>)}
-
-        <motion.div
-            whileHover={{scale: 1.1}}
-            whileTap={{scale: 0.9}}
+    <ChatbotContainer $isVisible={show}>
+      {isLoaded && (
+        <ChatbotWrapper
+          $isVisible={show}
+          initial={{ opacity: 0, x: 350 }}
+          animate={{ opacity: show ? 1 : 0, x: show ? 0 : 350 }}
+          transition={{ duration: 0.5 }}
         >
-          <ChatbotButton
-              icon={Logo}
-              onClick={toggleChat}
-              isChatOpen={show}
-          >
-          </ChatbotButton>
-        </motion.div>
-      </ChatbotContainer>
+          <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+            validator={validator}
+            placeholderText={intl.formatMessage({ id: 'chatbot.placeholder' })}
+            messageHistory={history}
+            saveMessages={saveMessages}
+          />
+        </ChatbotWrapper>
+      )}
+
+      <ChatbotButton
+        icon={Logo}
+        onClick={toggleChat}
+        isChatOpen={show}
+      />
+
+    </ChatbotContainer>
   );
 };
 
