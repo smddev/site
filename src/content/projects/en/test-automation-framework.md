@@ -13,7 +13,7 @@ description: Unifying the Testing Processes for Over 20 Products.
 ---
 Platform for automating the testing of diverse web applications, enabling engineers with minimal programming knowledge to develop tests:
 
-* Includes a debugger for IntelliJ IDEA
+* Includes a debugger for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 * Standardizing testing processes across more than 20 products
 * Enabling junior test engineers to develop high-quality automated tests
 * Became the corporate standard for automated testing
