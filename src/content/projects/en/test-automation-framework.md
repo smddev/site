@@ -11,10 +11,13 @@ techs:
   - Robot Framework
 description: Unifying the Testing Processes for Over 20 Products.
 ---
-This framework addresses two key challenges:
+Platform for automating the testing of diverse web applications, enabling engineers with minimal programming knowledge to develop tests:
+
+* Includes a debugger for IntelliJ IDEA
 * Standardizing testing processes across more than 20 products
 * Enabling junior test engineers to develop high-quality automated tests
+* Became the corporate standard for automated testing
 
 ## Outcome
 
-Our solution is now the corporate standard for test automation at a major U.S. company (5,000+ employees).
+Our solution is now the corporate standard for test automation at [Altisource ](https://www.altisource.com)(5,000+ employees), US, Banking.
