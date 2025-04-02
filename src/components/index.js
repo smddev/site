@@ -24,7 +24,7 @@ import {Box} from "@rebass/grid";
 import { FormattedMessage } from 'react-intl'
 
 function filterByTag(item, tagName, tagValue) {
-  return tagValue ? (item.data[tagName] && item.data[tagName].includes(tagValue)) : true
+  return tagValue ? (item.data[tagName] && (Array.isArray(tagValue) ? tagValue.some(tv => item.data[tagName].includes(tv)) : item.data[tagName].includes(tagValue))) : true
 }
 
 export const filterBy = ({industry, service, tech}) => (project) => {
@@ -60,10 +60,10 @@ export const ServiceList = (props) =>
     <HexIcon {...props}/>
   </List>
 
-export const TechList = styled(({className, ...props}) =>
-  <List flexDirection={'row'} items={props.techs} includes={props.techIds} vertical={true}
-        className={className} linkPath={`/portfolio?tech=`} filterBy={'tech'}>
-    <Tech {...props}/>
+export const CategoryList = styled(({className, categories, categoryIds, kind = 'tech', small}) =>
+  <List flexDirection={'row'} items={categories} includes={categoryIds} vertical={true}
+        className={className} linkPath={`/portfolio?${kind}=`} filterBy={kind}>
+    <Tech small={small} />
   </List>)`
   ${position}
   ${bottom}

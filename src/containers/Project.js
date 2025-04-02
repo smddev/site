@@ -7,7 +7,7 @@ import styled from "styled-components";
 import {space} from "styled-system";
 import AspectBox from "../atoms/AspectBox";
 import cloudinary from "../cloudinary";
-import {Markdown, TechList, Carousel} from '../components';
+import {Markdown, CategoryList, Carousel} from '../components';
 import ProjectCard, {PROJECT_CARD_RATIO} from '../components/ProjectCard';
 import background from '../OtherProjects.svg'
 import {withSidebar} from '../hocs'
@@ -56,7 +56,7 @@ const Project = ({item, techs, services}) => <Fragment>
   {item.data.techs &&
     <Fragment>
       <H2><FormattedMessage id='message.technologies'/></H2>
-      <TechList large mt={4} techs={techs} techIds={item.data.techs}/>
+      <CategoryList large mt={4} categories={techs} categoryIds={item.data.techs}/>
     </Fragment>
   }
 </Fragment>

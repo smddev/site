@@ -3,7 +3,7 @@ import {Subtitle, AspectBox, description, StyledLink} from '../atoms'
 import cloudinary from "../cloudinary"
 import styled, {css} from 'styled-components';
 import {position, bottom, left, space} from 'styled-system';
-import {TechList} from '../components';
+import {CategoryList} from '../components';
 import {DEFAULT_PROJECT_COVER, normalizeName} from "../utils";
 
 const Title = styled.h3`
@@ -55,8 +55,8 @@ const HoverProjectCard = styled(({project, className}) => <div {...{className}}>
   <HoverTitle mt={'32px'}>{project.data.title}</HoverTitle>
   <Subtitle mt={1} px={CARD_X_PADDING}>{project.data.description}</Subtitle>
   <Industries mt={2} industries={project.data.industries}/>
-  <TechList small position='absolute' bottom={CARD_Y_PADDING}
-            left={CARD_X_PADDING} techs={(project.data.techs || []).map(t => ({data: {title: t, slug: t}}))}/>
+  <CategoryList small position='absolute' bottom={CARD_Y_PADDING}
+            left={CARD_X_PADDING} categories={(project.data.techs || []).map(t => ({data: {title: t, slug: t}}))}/>
 </div>)`
   ${cover};
   background-color: ${p => p.theme.colors.gray[0]};
