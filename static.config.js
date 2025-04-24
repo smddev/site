@@ -101,6 +101,7 @@ const getRoutes = async () => {
             facts: siteData.collections.facts,
             reviews: siteData.collections.review
         }),
+        pageRoute('privacy-policy'),
         pageRoute('portfolio', {
             projects: siteData.collections.project,
             industries: siteData.collections.industry,
@@ -146,10 +147,14 @@ const getSiteData = () => {
             ['ru']: 'Контакты',
             ['en']: 'Contacts'
         },
+        '/privacy-policy': {
+            ['ru']: 'Политика конфиденциальности',
+            ['en']: 'Privacy Policy'
+        },
     }
     const lang = process.env.LANG
 
-    const paths = ['/portfolio', '/why', '/about', '/contacts']
+    const paths = ['/portfolio', '/why', '/about', '/contacts', '/privacy-policy']
     const routes = paths.map(path => ({ path, name: localRoutes[path][lang]}))
 
     return {

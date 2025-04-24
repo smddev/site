@@ -181,6 +181,15 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string", i18n: true}
           - {label: "Reasons", name: "reasons", widget: "markdown", i18n: true}
+      - label: "Privacy Policy"
+        name: "privacy"
+        i18n: true
+        file: "src/content/pages/privacy-policy.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true}
+          - {label: "Subtitle", name: "subtitle", widget: "string", i18n: true}
+          - {label: "Intro", name: "intro", widget: "markdown", i18n: true}
+          - {label: "Body", name: "body", widget: "markdown", i18n: true}
 
   - name: "review"
     label: "Reviews"
