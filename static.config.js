@@ -146,15 +146,11 @@ const getSiteData = () => {
         '/contacts': {
             ['ru']: 'Контакты',
             ['en']: 'Contacts'
-        },
-        '/privacy-policy': {
-            ['ru']: 'Политика конфиденциальности',
-            ['en']: 'Privacy Policy'
-        },
+        }
     }
     const lang = process.env.LANG
 
-    const paths = ['/portfolio', '/why', '/about', '/contacts', '/privacy-policy']
+    const paths = ['/portfolio', '/why', '/about', '/contacts']
     const routes = paths.map(path => ({ path, name: localRoutes[path][lang]}))
 
     return {
