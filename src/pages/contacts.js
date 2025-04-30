@@ -14,6 +14,7 @@ import {withLayout} from "../organisms";
 import {Box, Flex} from "@rebass/grid";
 import Envelop from "../envelop.svg";
 import Phone from "../phone.svg";
+import LinkedInIcon from "../icons/linkedin.svg";
 import styled from "styled-components";
 import {space} from "styled-system";
 import { FormattedMessage, useIntl } from 'react-intl'
@@ -77,6 +78,11 @@ export default withLayout({noForm: true})(withRouteData(({page, photos}) => (
                     <Box width={[1, 1/2, 1, 1/2]}>
                         <IconLink fontSize={13} href={`mailto: ${page.data.email}`} image={Envelop}>
                             {page.data.email}
+                        </IconLink>
+                    </Box>
+                    <Box width={[1, 1/2, 1, 1/2]} mt={[3, 0, 3, 0]}>
+                        <IconLink fontSize={13} href="https://www.linkedin.com/company/5075534" image={LinkedInIcon}>
+                            {page.data.linkedin}
                         </IconLink>
                     </Box>
                 </Flex>

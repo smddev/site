@@ -10,6 +10,7 @@ import backgroundMobile from '../calculateCostMobile.svg'
 import {YEAR} from "../utils";
 import {navigate} from '@reach/router';
 import { FormattedMessage, useIntl } from 'react-intl'
+import LinkedIn from '../icons/LinkedIn';
 
 const Description = styled(Subtitle)`width: 90%`;
 const Email = styled(Input)`
@@ -127,8 +128,38 @@ const SE = styled(EmailLink)`
   display: inline-block;
 `
 
+const StyledLinkedInLink = styled.a`
+  display: inline-block;
+  color: ${p => p.theme.colors.white}; /* Match email text color */
+  margin-left: 20px; /* Add spacing between icons */
+  transition: color 0.3s;
+
+  &:hover {
+    color: ${p => p.theme.colors.gray[2]}; /* Add hover effect */
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: #0077B5; /* Standard LinkedIn blue */
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: #005582; /* Darker LinkedIn blue on hover */
+    }
+  }
+`;
+
+
 const Contacts = styled(({className}) => <div {...{className}}>
   <SE/>
+  <StyledLinkedInLink
+      href="https://www.linkedin.com/company/5075534"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <LinkedIn />
+    </StyledLinkedInLink>
 </div>)`
   width: 100%;
   margin-bottom: 30px;
