@@ -7,4 +7,6 @@
 # SPA fallback for all other routes
 /*  /index.html  200
 
-https://smddev.netlify.com/* https://smddev.com/:splat 301!
+# Only redirect the default Netlify subdomain, don't interfere with custom domains
+# Remove this line if both .com and .ru domains are on the same Netlify site
+# https://smddev.netlify.com/* https://smddev.com/:splat 301!
