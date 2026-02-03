@@ -1,2 +1,10 @@
+# Static assets should be served directly
+/templates/*  /templates/:splat  200
+/static/*     /static/:splat     200
+/styles.*     /styles.:splat     200
+/main.*       /main.:splat       200
+
+# SPA fallback for all other routes
 /*  /index.html  200
+
 https://smddev.netlify.com/* https://smddev.com/:splat 301!
