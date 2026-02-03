@@ -1,7 +1,7 @@
 # Static assets should be served directly
 /templates/*  /templates/:splat  200
 /static/*     /static/:splat     200
-/styles.*     /styles.:splat     200
+/styles.*     /styles.*     200
 /main.*       /main.:splat       200
 
 # SPA fallback for all other routes
