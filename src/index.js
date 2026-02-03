@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+// Import CSS files
+import './icons/index.css'
+
 // Your top level component
 import App from './App'
 
