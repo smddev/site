@@ -57,7 +57,7 @@ docker run -p 8080:8080 -e PORT=8080 smddev-site
 ### Note on Configuration
 
 - `ASSISTENT_URL` and `LANG` are embedded during build time and cannot be changed at runtime
-- `PORT` is a runtime environment variable that can be set when running the container (defaults to 3000)
+- `PORT` is a runtime environment variable supported natively by the `serve` package (defaults to 3000)
 
 ### Run in Background
 
