@@ -47,9 +47,17 @@ docker build --build-arg LANG=ru -t smddev-site:ru .
 docker run -p 3000:3000 smddev-site
 ```
 
-### Note on Runtime Configuration
+### Run with Custom Port
 
-Since both `ASSISTENT_URL` and `LANG` are embedded during build time, they cannot be changed at runtime. The container will use the values that were specified during the build process.
+```bash
+# Run on port 8080
+docker run -p 8080:8080 -e PORT=8080 smddev-site
+```
+
+### Note on Configuration
+
+- `ASSISTENT_URL` and `LANG` are embedded during build time and cannot be changed at runtime
+- `PORT` is a runtime environment variable that can be set when running the container (defaults to 3000)
 
 ### Run in Background
 
@@ -98,14 +106,9 @@ docker buildx build \
   --push .
 ```
 
-## Health Check
+## Container Management
 
-The container includes a health check that verifies the application is responding on port 3000. You can check the health status:
-
-```bash
-docker ps
-# Look for the health status in the STATUS column
-```
+The container runs a simple static file server without built-in health checks. For production deployments, configure health checks at the orchestration level (Kubernetes, Docker Swarm, etc.).
 
 ## Troubleshooting
 
