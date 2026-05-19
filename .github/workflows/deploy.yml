@@ -1,0 +1,59 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+env:
+  APP: smddev-site
+  REGISTRY: cr.yandex/crp46a0luhotq8n2jaq6
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Yandex CLI
+        run: |
+          curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+          YC_PATH="$HOME/yandex-cloud/bin"
+          echo "$YC_PATH" >> "$GITHUB_PATH"
+          printf '%s' '${{ secrets.YC_SERVICE_ACCOUNT_KEY }}' > key.json
+          "$YC_PATH/yc" config set service-account-key key.json
+          "$YC_PATH/yc" --version
+
+      - name: Build Docker image
+        run: DOCKER_BUILDKIT=1 docker build -t "${{ env.APP }}" .
+
+      - name: Tag and Push Docker
+        run: |
+          IAM_TOKEN=$(yc iam create-token)
+          docker login --username iam --password "$IAM_TOKEN" cr.yandex
+          docker tag "${{ env.APP }}" "${REGISTRY}/${{ env.APP }}:latest"
+          docker push "${REGISTRY}/${{ env.APP }}:latest"
+
+      - name: Deploy Container Revision
+        run: |
+          yc serverless container revision deploy \
+            --container-name "${{ env.APP }}" \
+            --image "${REGISTRY}/${{ env.APP }}:latest" \
+            --service-account-id ajentipdangkhd0vv4l3 \
+            --folder-id b1guh2djp0dk8ao4hla8 \
+            --execution-timeout 60s \
+            --network-id enpcq3df1vv1l1kvcs53 \
+            --memory 256MB \
+            --environment AUTH_USER=${AUTH_USER:-admin} \
+            --environment AUTH_PASSWORD=${AUTH_PASSWORD:-changeme}
+
+      - name: Clean up
+        if: always()
+        run: rm -f key.json
