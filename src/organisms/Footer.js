@@ -151,16 +151,20 @@ const StyledLinkedInLink = styled.a`
 `;
 
 
-const Contacts = styled(({className}) => <div {...{className}}>
-  <SE/>
-  <StyledLinkedInLink
-      href="https://www.linkedin.com/company/5075534"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <LinkedIn />
-    </StyledLinkedInLink>
-</div>)`
+const Contacts = styled(({className}) => {
+  const { locale } = useIntl()
+
+  return <div {...{className}}>
+    <SE/>
+    {locale !== 'ru' && <StyledLinkedInLink
+        href="https://www.linkedin.com/company/5075534"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedIn />
+      </StyledLinkedInLink>}
+  </div>
+})`
   width: 100%;
   margin-bottom: 30px;
   

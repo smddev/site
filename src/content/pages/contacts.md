@@ -7,8 +7,7 @@ en:
   linkedin: Connect with us on LinkedIn
 ru: 
   title: Контакты
-  subtitle: Получите бесплатную оценку вашего проекта
+  subtitle: Для расчета стоимости отправьте запрос по электронной почте
   email: info@smddev.com
   body: Реквизиты компании...
-  linkedin: Мы в LinkedIn
 ---
