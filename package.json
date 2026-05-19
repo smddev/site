@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env LANG=en react-static start",
+    "start": "cross-env LANG=ru react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
     "bundle": "react-static bundle",

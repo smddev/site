@@ -1,23 +1,19 @@
-import React, { Fragment, Component, useState, useRef } from 'react'
-import {withRouteData} from 'react-static'
+import React, { Fragment } from 'react'
+import { withRouteData } from 'react-static'
 import {
-    Button,
     Container,
     H1WithBackground,
     Link1,
     Subtitle,
-    Input,
-    Textarea,
     underline
 } from "../atoms";
-import {withLayout} from "../organisms";
-import {Box, Flex} from "@rebass/grid";
+import { withLayout } from "../organisms";
+import { Box, Flex } from "@rebass/grid";
 import Envelop from "../envelop.svg";
-import Phone from "../phone.svg";
 import LinkedInIcon from "../icons/linkedin.svg";
 import styled from "styled-components";
-import {space} from "styled-system";
-import { FormattedMessage, useIntl } from 'react-intl'
+import { useIntl } from 'react-intl'
+import CompanyDetails from '../components/CompanyDetails'
 
 const IconLink = styled(Link1)`
   position: relative;
@@ -56,39 +52,36 @@ const IconLink = styled(Link1)`
 const MySubtitle = styled(Subtitle)`
     font-size: ${p => p.theme.fontSizes[3]}px;
     margin-bottom: 15px;
-    @media(min-width: ${p =>p.theme.breakpoints[0]}) {
+    @media(min-width: ${p => p.theme.breakpoints[0]}) {
         font-size: ${p => p.theme.fontSizes[4]}px;
     } 
 `
 
-const Comment = styled(Textarea)`
-  height: 250px;
-`
+export default withLayout({ noForm: true })(withRouteData(({ page }) => {
+    const { locale } = useIntl()
 
-export default withLayout({noForm: true})(withRouteData(({page, photos}) => (
-    <Fragment>
+    return <Fragment>
         <Container mt={7}>
-            <Flex width={[1, 1, 1/2]} m={[0, 3, 0]} pr={[0,0,3]} flexDirection={'column'}>
+            <Flex width={[1, 1, 1 / 2]} m={[0, 3, 0]} pr={[0, 0, 3]} flexDirection={'column'}>
                 <H1WithBackground>{page.data.title}</H1WithBackground>
+                {locale === 'ru' && <CompanyDetails />}
                 <MySubtitle>
                     {page.data.subtitle}
                 </MySubtitle>
 
-                <Flex mr={[0, 0, 'auto', 0]} ml={[0, 0, 'auto', 0]} mt={[0, 7]} flexDirection={['column', 'row', 'column', 'row']}>
-                    <Box width={[1, 1/2, 1, 1/2]}>
+                <Flex mr={[0, 0, 'auto', 0]} ml={[0, 0, 'auto', 0]} mt={[3, 3, 3, 3]} flexDirection={['column', 'row', 'column', 'row']}>
+                    <Box width={[1, 1 / 2, 1, 1 / 2]}>
                         <IconLink fontSize={13} href={`mailto: ${page.data.email}`} image={Envelop}>
                             {page.data.email}
                         </IconLink>
                     </Box>
-                    <Box width={[1, 1/2, 1, 1/2]} mt={[3, 0, 3, 0]}>
+                    {page.data.linkedin && <Box width={[1, 1 / 2, 1, 1 / 2]} mt={[3, 0, 3, 0]}>
                         <IconLink fontSize={13} href="https://www.linkedin.com/company/5075534" image={LinkedInIcon}>
                             {page.data.linkedin}
                         </IconLink>
-                    </Box>
+                    </Box>}
                 </Flex>
             </Flex>
         </Container>
     </Fragment>
-)))
-
-
+}))
