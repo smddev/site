@@ -32,7 +32,7 @@ jobs:
           "$YC_PATH/yc" --version
 
       - name: Build Docker image
-        run: DOCKER_BUILDKIT=1 docker build -t "${{ env.APP }}" .
+        run: DOCKER_BUILDKIT=1 docker build --build-arg LANG=ru -t "${{ env.APP }}" .
 
       - name: Tag and Push Docker
         run: |
