@@ -62,7 +62,7 @@ export default withLayout({ noForm: true })(withRouteData(({ page }) => {
 
     return <Fragment>
         <Container mt={7}>
-            <Flex width={[1, 1, 1 / 2]} m={[0, 3, 0]} pr={[0, 0, 3]} flexDirection={'column'}>
+            <Flex width={[1, 1, 3 / 5]} m={[0, 3, 0]} pr={[0, 0, 3]} flexDirection={'column'}>
                 <H1WithBackground>{page.data.title}</H1WithBackground>
                 {locale === 'ru' && <CompanyDetails />}
                 <MySubtitle>

@@ -5,7 +5,7 @@ en:
   body: Analytical study of the concept, technical specifications, software product implementation and technical support.
 
 ru:
-  title: Программные решения для Вас
+  title: Программные решения для вас
   subtitle: Разработка для Web, Mobile и IoT
   body: Аналитика, проектирование, разработка, внедрение и поддержка программных продуктов
 ---
